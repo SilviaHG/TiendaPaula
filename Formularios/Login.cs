@@ -38,5 +38,11 @@ namespace TiendaPaula.Formularios
         {
 
         }
+
+        private void btnSignIn_Click(object sender, EventArgs e)
+        {
+            Principal iniciaPrincipal = new Principal();
+            iniciaPrincipal.Show();
+        }
     }
 }
