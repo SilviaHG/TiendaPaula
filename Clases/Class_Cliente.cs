@@ -19,7 +19,7 @@ namespace TiendaPaula.Clases
         public Class_Cliente(int cedula_Cliente, string nombre, int telefono, string email, string direccion)
         {
             Cedula_Cliente = cedula_Cliente;
-            Nombre = nombre;
+            Nombre_Completo = nombre;
             Telefono = telefono;
             Email = email;
             Direccion = direccion;
