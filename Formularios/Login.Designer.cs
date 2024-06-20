@@ -119,6 +119,7 @@
             this.btnSignIn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnSignIn.UseAccentColor = false;
             this.btnSignIn.UseVisualStyleBackColor = true;
+            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
             // materialLabel1
             // 
