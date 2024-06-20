@@ -97,5 +97,8 @@
   <ItemGroup>
     <None Include="Resources\icons8-usuario-masculino-en-círculo.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-usuario-100.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
