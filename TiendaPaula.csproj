@@ -50,6 +50,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< Updated upstream
+=======
+    <Compile Include="Clases\Class_Gastos.cs" />
+    <Compile Include="Clases\Class_Pagos.cs" />
+    <Compile Include="Clases\Class_Posicion.cs" />
+    <Compile Include="Clases\Class_Productos.cs" />
+    <Compile Include="Clases\Class_Proveedor.cs" />
+    <Compile Include="Clases\Class_TipoGastos.cs" />
+    <Compile Include="Clases\Class_Usuarios.cs" />
+    <Compile Include="Clases\Class_Ventas.cs" />
+    <Compile Include="Clases\Conexion.cs" />
+>>>>>>> Stashed changes
     <Compile Include="Formularios\Login.cs">
       <SubType>Form</SubType>
     </Compile>
