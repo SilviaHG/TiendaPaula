@@ -31,24 +31,24 @@
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabInicio = new System.Windows.Forms.TabPage();
             this.tabPersonas = new System.Windows.Forms.TabPage();
-            this.tabProductos = new System.Windows.Forms.TabPage();
-            this.tabFacturacion = new System.Windows.Forms.TabPage();
-            this.tabGestion = new System.Windows.Forms.TabPage();
-            this.txtEmpleado = new MaterialSkin.Controls.MaterialButton();
-            this.txtClientes = new MaterialSkin.Controls.MaterialButton();
-            this.txtUsuario = new MaterialSkin.Controls.MaterialButton();
-            this.txtProveedores = new MaterialSkin.Controls.MaterialButton();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtClientes = new MaterialSkin.Controls.MaterialButton();
+            this.txtEmpleado = new MaterialSkin.Controls.MaterialButton();
+            this.txtProveedores = new MaterialSkin.Controls.MaterialButton();
+            this.txtUsuario = new MaterialSkin.Controls.MaterialButton();
+            this.tabProductos = new System.Windows.Forms.TabPage();
             this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
             this.label3 = new System.Windows.Forms.Label();
             this.txtProductos = new MaterialSkin.Controls.MaterialButton();
+            this.tabFacturacion = new System.Windows.Forms.TabPage();
             this.materialCard3 = new MaterialSkin.Controls.MaterialCard();
             this.label5 = new System.Windows.Forms.Label();
             this.txtCompras = new MaterialSkin.Controls.MaterialButton();
             this.txtVentas = new MaterialSkin.Controls.MaterialButton();
             this.txtDetallesCompras = new MaterialSkin.Controls.MaterialButton();
             this.txtDetallesVentas = new MaterialSkin.Controls.MaterialButton();
+            this.tabGestion = new System.Windows.Forms.TabPage();
             this.materialCard4 = new MaterialSkin.Controls.MaterialCard();
             this.label7 = new System.Windows.Forms.Label();
             this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
@@ -58,12 +58,12 @@
             this.label8 = new System.Windows.Forms.Label();
             this.materialTabControl1.SuspendLayout();
             this.tabPersonas.SuspendLayout();
-            this.tabProductos.SuspendLayout();
-            this.tabFacturacion.SuspendLayout();
-            this.tabGestion.SuspendLayout();
             this.materialCard1.SuspendLayout();
+            this.tabProductos.SuspendLayout();
             this.materialCard2.SuspendLayout();
+            this.tabFacturacion.SuspendLayout();
             this.materialCard3.SuspendLayout();
+            this.tabGestion.SuspendLayout();
             this.materialCard4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,117 +105,6 @@
             this.tabPersonas.Text = "Personas";
             this.tabPersonas.UseVisualStyleBackColor = true;
             // 
-            // tabProductos
-            // 
-            this.tabProductos.Controls.Add(this.materialCard2);
-            this.tabProductos.Location = new System.Drawing.Point(4, 22);
-            this.tabProductos.Name = "tabProductos";
-            this.tabProductos.Size = new System.Drawing.Size(368, 357);
-            this.tabProductos.TabIndex = 2;
-            this.tabProductos.Text = "Productos";
-            this.tabProductos.UseVisualStyleBackColor = true;
-            // 
-            // tabFacturacion
-            // 
-            this.tabFacturacion.Controls.Add(this.materialCard3);
-            this.tabFacturacion.Location = new System.Drawing.Point(4, 22);
-            this.tabFacturacion.Name = "tabFacturacion";
-            this.tabFacturacion.Size = new System.Drawing.Size(368, 357);
-            this.tabFacturacion.TabIndex = 3;
-            this.tabFacturacion.Text = "Facturación";
-            this.tabFacturacion.UseVisualStyleBackColor = true;
-            // 
-            // tabGestion
-            // 
-            this.tabGestion.Controls.Add(this.materialCard4);
-            this.tabGestion.Location = new System.Drawing.Point(4, 22);
-            this.tabGestion.Name = "tabGestion";
-            this.tabGestion.Size = new System.Drawing.Size(368, 357);
-            this.tabGestion.TabIndex = 4;
-            this.tabGestion.Text = "Gestión de gastos";
-            this.tabGestion.UseVisualStyleBackColor = true;
-            // 
-            // txtEmpleado
-            // 
-            this.txtEmpleado.AutoSize = false;
-            this.txtEmpleado.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.txtEmpleado.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.txtEmpleado.Depth = 0;
-            this.txtEmpleado.ForeColor = System.Drawing.Color.Transparent;
-            this.txtEmpleado.HighEmphasis = true;
-            this.txtEmpleado.Icon = null;
-            this.txtEmpleado.Location = new System.Drawing.Point(63, 168);
-            this.txtEmpleado.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.txtEmpleado.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtEmpleado.Name = "txtEmpleado";
-            this.txtEmpleado.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.txtEmpleado.Size = new System.Drawing.Size(100, 36);
-            this.txtEmpleado.TabIndex = 0;
-            this.txtEmpleado.Text = "Empleados";
-            this.txtEmpleado.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.txtEmpleado.UseAccentColor = false;
-            this.txtEmpleado.UseVisualStyleBackColor = true;
-            // 
-            // txtClientes
-            // 
-            this.txtClientes.AutoSize = false;
-            this.txtClientes.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.txtClientes.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.txtClientes.Depth = 0;
-            this.txtClientes.HighEmphasis = true;
-            this.txtClientes.Icon = null;
-            this.txtClientes.Location = new System.Drawing.Point(187, 168);
-            this.txtClientes.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.txtClientes.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtClientes.Name = "txtClientes";
-            this.txtClientes.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.txtClientes.Size = new System.Drawing.Size(99, 36);
-            this.txtClientes.TabIndex = 1;
-            this.txtClientes.Text = "Clientes";
-            this.txtClientes.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.txtClientes.UseAccentColor = false;
-            this.txtClientes.UseVisualStyleBackColor = true;
-            // 
-            // txtUsuario
-            // 
-            this.txtUsuario.AutoSize = false;
-            this.txtUsuario.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.txtUsuario.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.txtUsuario.Depth = 0;
-            this.txtUsuario.HighEmphasis = true;
-            this.txtUsuario.Icon = null;
-            this.txtUsuario.Location = new System.Drawing.Point(63, 216);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.txtUsuario.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.txtUsuario.Size = new System.Drawing.Size(100, 36);
-            this.txtUsuario.TabIndex = 2;
-            this.txtUsuario.Text = "Usuarios";
-            this.txtUsuario.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.txtUsuario.UseAccentColor = false;
-            this.txtUsuario.UseVisualStyleBackColor = true;
-            // 
-            // txtProveedores
-            // 
-            this.txtProveedores.AutoSize = false;
-            this.txtProveedores.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.txtProveedores.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.txtProveedores.Depth = 0;
-            this.txtProveedores.HighEmphasis = true;
-            this.txtProveedores.Icon = null;
-            this.txtProveedores.Location = new System.Drawing.Point(187, 216);
-            this.txtProveedores.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.txtProveedores.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtProveedores.Name = "txtProveedores";
-            this.txtProveedores.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.txtProveedores.Size = new System.Drawing.Size(99, 36);
-            this.txtProveedores.TabIndex = 3;
-            this.txtProveedores.Text = "Proveedores";
-            this.txtProveedores.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.txtProveedores.UseAccentColor = false;
-            this.txtProveedores.UseVisualStyleBackColor = true;
-            // 
             // materialCard1
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -245,6 +134,101 @@
             this.label2.Size = new System.Drawing.Size(196, 41);
             this.label2.TabIndex = 5;
             this.label2.Text = "Personas";
+            // 
+            // txtClientes
+            // 
+            this.txtClientes.AutoSize = false;
+            this.txtClientes.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.txtClientes.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.txtClientes.Depth = 0;
+            this.txtClientes.HighEmphasis = true;
+            this.txtClientes.Icon = null;
+            this.txtClientes.Location = new System.Drawing.Point(187, 168);
+            this.txtClientes.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtClientes.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtClientes.Name = "txtClientes";
+            this.txtClientes.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.txtClientes.Size = new System.Drawing.Size(99, 36);
+            this.txtClientes.TabIndex = 1;
+            this.txtClientes.Text = "Clientes";
+            this.txtClientes.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.txtClientes.UseAccentColor = false;
+            this.txtClientes.UseVisualStyleBackColor = true;
+            this.txtClientes.Click += new System.EventHandler(this.txtClientes_Click);
+            // 
+            // txtEmpleado
+            // 
+            this.txtEmpleado.AutoSize = false;
+            this.txtEmpleado.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.txtEmpleado.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.txtEmpleado.Depth = 0;
+            this.txtEmpleado.ForeColor = System.Drawing.Color.Transparent;
+            this.txtEmpleado.HighEmphasis = true;
+            this.txtEmpleado.Icon = null;
+            this.txtEmpleado.Location = new System.Drawing.Point(63, 168);
+            this.txtEmpleado.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtEmpleado.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtEmpleado.Name = "txtEmpleado";
+            this.txtEmpleado.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.txtEmpleado.Size = new System.Drawing.Size(100, 36);
+            this.txtEmpleado.TabIndex = 0;
+            this.txtEmpleado.Text = "Empleados";
+            this.txtEmpleado.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.txtEmpleado.UseAccentColor = false;
+            this.txtEmpleado.UseVisualStyleBackColor = true;
+            this.txtEmpleado.Click += new System.EventHandler(this.txtEmpleado_Click);
+            // 
+            // txtProveedores
+            // 
+            this.txtProveedores.AutoSize = false;
+            this.txtProveedores.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.txtProveedores.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.txtProveedores.Depth = 0;
+            this.txtProveedores.HighEmphasis = true;
+            this.txtProveedores.Icon = null;
+            this.txtProveedores.Location = new System.Drawing.Point(187, 216);
+            this.txtProveedores.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtProveedores.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtProveedores.Name = "txtProveedores";
+            this.txtProveedores.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.txtProveedores.Size = new System.Drawing.Size(99, 36);
+            this.txtProveedores.TabIndex = 3;
+            this.txtProveedores.Text = "Proveedores";
+            this.txtProveedores.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.txtProveedores.UseAccentColor = false;
+            this.txtProveedores.UseVisualStyleBackColor = true;
+            this.txtProveedores.Click += new System.EventHandler(this.txtProveedores_Click);
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.AutoSize = false;
+            this.txtUsuario.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.txtUsuario.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.txtUsuario.Depth = 0;
+            this.txtUsuario.HighEmphasis = true;
+            this.txtUsuario.Icon = null;
+            this.txtUsuario.Location = new System.Drawing.Point(63, 216);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtUsuario.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.txtUsuario.Size = new System.Drawing.Size(100, 36);
+            this.txtUsuario.TabIndex = 2;
+            this.txtUsuario.Text = "Usuarios";
+            this.txtUsuario.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.txtUsuario.UseAccentColor = false;
+            this.txtUsuario.UseVisualStyleBackColor = true;
+            this.txtUsuario.Click += new System.EventHandler(this.txtUsuario_Click);
+            // 
+            // tabProductos
+            // 
+            this.tabProductos.Controls.Add(this.materialCard2);
+            this.tabProductos.Location = new System.Drawing.Point(4, 22);
+            this.tabProductos.Name = "tabProductos";
+            this.tabProductos.Size = new System.Drawing.Size(368, 357);
+            this.tabProductos.TabIndex = 2;
+            this.tabProductos.Text = "Productos";
+            this.tabProductos.UseVisualStyleBackColor = true;
             // 
             // materialCard2
             // 
@@ -293,6 +277,17 @@
             this.txtProductos.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.txtProductos.UseAccentColor = false;
             this.txtProductos.UseVisualStyleBackColor = true;
+            this.txtProductos.Click += new System.EventHandler(this.txtProductos_Click);
+            // 
+            // tabFacturacion
+            // 
+            this.tabFacturacion.Controls.Add(this.materialCard3);
+            this.tabFacturacion.Location = new System.Drawing.Point(4, 22);
+            this.tabFacturacion.Name = "tabFacturacion";
+            this.tabFacturacion.Size = new System.Drawing.Size(368, 357);
+            this.tabFacturacion.TabIndex = 3;
+            this.tabFacturacion.Text = "Facturación";
+            this.tabFacturacion.UseVisualStyleBackColor = true;
             // 
             // materialCard3
             // 
@@ -343,6 +338,7 @@
             this.txtCompras.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.txtCompras.UseAccentColor = false;
             this.txtCompras.UseVisualStyleBackColor = true;
+            this.txtCompras.Click += new System.EventHandler(this.txtCompras_Click);
             // 
             // txtVentas
             // 
@@ -364,6 +360,7 @@
             this.txtVentas.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.txtVentas.UseAccentColor = false;
             this.txtVentas.UseVisualStyleBackColor = true;
+            this.txtVentas.Click += new System.EventHandler(this.txtVentas_Click);
             // 
             // txtDetallesCompras
             // 
@@ -384,6 +381,7 @@
             this.txtDetallesCompras.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.txtDetallesCompras.UseAccentColor = false;
             this.txtDetallesCompras.UseVisualStyleBackColor = true;
+            this.txtDetallesCompras.Click += new System.EventHandler(this.txtDetallesCompras_Click);
             // 
             // txtDetallesVentas
             // 
@@ -404,6 +402,17 @@
             this.txtDetallesVentas.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.txtDetallesVentas.UseAccentColor = false;
             this.txtDetallesVentas.UseVisualStyleBackColor = true;
+            this.txtDetallesVentas.Click += new System.EventHandler(this.txtDetallesVentas_Click);
+            // 
+            // tabGestion
+            // 
+            this.tabGestion.Controls.Add(this.materialCard4);
+            this.tabGestion.Location = new System.Drawing.Point(4, 22);
+            this.tabGestion.Name = "tabGestion";
+            this.tabGestion.Size = new System.Drawing.Size(368, 357);
+            this.tabGestion.TabIndex = 4;
+            this.tabGestion.Text = "Gestión de gastos";
+            this.tabGestion.UseVisualStyleBackColor = true;
             // 
             // materialCard4
             // 
@@ -452,6 +461,7 @@
             this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton2.UseAccentColor = false;
             this.materialButton2.UseVisualStyleBackColor = true;
+            this.materialButton2.Click += new System.EventHandler(this.materialButton2_Click);
             // 
             // label1
             // 
@@ -505,12 +515,12 @@
             this.Load += new System.EventHandler(this.Principal_Load);
             this.materialTabControl1.ResumeLayout(false);
             this.tabPersonas.ResumeLayout(false);
-            this.tabProductos.ResumeLayout(false);
-            this.tabFacturacion.ResumeLayout(false);
-            this.tabGestion.ResumeLayout(false);
             this.materialCard1.ResumeLayout(false);
+            this.tabProductos.ResumeLayout(false);
             this.materialCard2.ResumeLayout(false);
+            this.tabFacturacion.ResumeLayout(false);
             this.materialCard3.ResumeLayout(false);
+            this.tabGestion.ResumeLayout(false);
             this.materialCard4.ResumeLayout(false);
             this.ResumeLayout(false);
 
