@@ -157,6 +157,12 @@
     <Compile Include="Formularios\Usuarios.Designer.cs">
       <DependentUpon>Usuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Ventas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Ventas.Designer.cs">
+      <DependentUpon>Ventas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gestiones\Gestion_Usuarios.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -180,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Usuarios.resx">
       <DependentUpon>Usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Ventas.resx">
+      <DependentUpon>Ventas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
