@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TiendaPaula.Gestiones;
 
 namespace TiendaPaula.Formularios
 {
@@ -16,8 +17,6 @@ namespace TiendaPaula.Formularios
     {
         public Login()
         {
-            InitializeComponent();
-
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
@@ -41,8 +40,42 @@ namespace TiendaPaula.Formularios
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
-            Principal iniciaPrincipal = new Principal();
-            iniciaPrincipal.Show();
+            Gestion_Usuarios bdUsuario = new Gestion_Usuarios();
+            bdUsuario.AbrirConexion(bdUsuario.establecerConexion());
+
+            if (string.IsNullOrEmpty(txtUsuario.Text) || string.IsNullOrEmpty(txtPassword.Text))
+            {
+                
+               
+                MessageBox.Show("Usuario y/o contraseña tienen campos vacios",
+                "Error de acceso",
+
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                if (bdUsuario.Verificar_Usuario_Contra(Convert.ToInt32(txtUsuario.Text), txtPassword.Text) == true)
+                {
+
+                    Principal Abrir = new Principal();
+                    Abrir.Show();
+
+                }
+                else
+                {
+                    MessageBox.Show("Usuario y/o contraseña no existen, intenta de nuevo");
+                }
+
+            }
+
+        }
+
+        private void linkCreateAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Usuarios Abrir = new Usuarios();
+            Abrir.Show();
         }
     }
 }
