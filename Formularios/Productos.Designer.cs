@@ -1,6 +1,6 @@
 ﻿namespace TiendaPaula.Formularios
 {
-    partial class Usuarios
+    partial class Productos
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // Usuarios
+            // Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "Usuarios";
-            this.Text = "Usuarios";
-            this.Load += new System.EventHandler(this.Usuarios_Load);
+            this.Name = "Productos";
+            this.Text = "Productos";
+            this.Load += new System.EventHandler(this.Productos_Load);
             this.ResumeLayout(false);
 
         }
