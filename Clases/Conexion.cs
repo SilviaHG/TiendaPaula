@@ -1,7 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,50 +10,58 @@ namespace TiendaPaula.Clases
     public class Conexion
     {
         private string cadenaConexion;
-
         string server = "jyjtechsolutions.com";
-        string nombre_base = "u481278819_tiendapaula";
+        string nombre_BD = "u481278819_tiendapaula";
         string usuario = "u481278819_paula";
-        string pass = "tPaula*2024";
+        string password = "tPaula*2024";  
+
         public Conexion()
         {
-            cadenaConexion = $"Server={server};Database={nombre_base};User id={usuario}; Password={pass};";
+            cadenaConexion =
+                $"Server = {server}; " +
+                $"Database = {nombre_BD}; " +
+                $"User Id={usuario}; " +
+                $"Password= {password};";
         }
-
-
         /// <summary>
-        /// Establece la conexion con la base de datos
+        /// Establece la conexion con la BD
         /// </summary>
         /// <returns></returns>
-        public MySqlConnection EstableceConexion()
+        public MySqlConnection establecerConexion()
         {
             return new MySqlConnection(cadenaConexion);
         }
-
-
-        public void AbrirConexion(MySqlConnection conexion)
+        /// <summary>
+        /// Abre la conexion con la base de datos
+        /// </summary>
+        /// <param name="cnn"></param>
+        public void AbrirConexion(MySqlConnection cnn)
         {
             try
             {
-                conexion.Open();
-                Console.WriteLine("Conexion establecida!!");
+                cnn.Open();
+                Console.WriteLine("Conexión establecida correctamente");
             }
             catch (MySqlException ex)
             {
-                Console.WriteLine($"Errar: {ex.Message}");
+                Console.WriteLine($"Error: {ex.Message}");
             }
+
         }
 
-        public void CerrarConexion(MySqlConnection conexion)
+        /// <summary>
+        /// Cierra la conexion con la base de datos
+        /// </summary>
+        /// <param name="cnn"></param>
+        public void cerrarConexion(MySqlConnection cnn)
         {
             try
             {
-                conexion.Close();
-
+                cnn.Close();
             }
             catch (MySqlException ex)
             {
-                Console.WriteLine($"Ocurrio un error: {ex.Message}");
+                Console.WriteLine($"Error: {ex.Message}");
             }
         }
     }

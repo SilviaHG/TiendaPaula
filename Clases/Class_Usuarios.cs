@@ -9,7 +9,6 @@ namespace TiendaPaula.Clases
     internal class Class_Usuarios
     {
         
-
         public int IdUsuario_Tabla { get; set; }
         public int Id_Usuario { get; set; }
         public string Contrasennia_Usuario { get; set; }

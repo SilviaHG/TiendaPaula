@@ -118,7 +118,6 @@
     <Compile Include="Clases\Class_Usuarios.cs" />
     <Compile Include="Clases\Class_Ventas.cs" />
     <Compile Include="Clases\Conexion.cs" />
-    <Compile Include="Clases\Conexion.cs" />
     <Compile Include="Formularios\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +130,13 @@
     <Compile Include="Formularios\Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuarios.Designer.cs">
+      <DependentUpon>Usuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestiones\Gestion_Usuarios.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\Login.resx">
@@ -169,8 +175,18 @@
   <ItemGroup>
     <None Include="Resources\icons8-usuario-100.png" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Gestiones\" />
+    <None Include="Resources\icons8-empleado-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-empleado-80 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-tienda-galaxia-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-libro-mayor-80.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
