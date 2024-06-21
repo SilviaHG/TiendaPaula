@@ -11,14 +11,14 @@ using System.Windows.Forms;
 
 namespace TiendaPaula.Formularios
 {
-    public partial class Usuarios : MaterialForm
+    public partial class Proveedores : MaterialForm
     {
-        public Usuarios()
+        public Proveedores()
         {
             InitializeComponent();
         }
 
-        private void Usuarios_Load(object sender, EventArgs e)
+        private void Proveedores_Load(object sender, EventArgs e)
         {
 
         }
