@@ -69,7 +69,7 @@
             this.txtId_Venta.Hint = "N° Venta";
             this.txtId_Venta.LeadingIcon = null;
             this.txtId_Venta.Location = new System.Drawing.Point(14, 90);
-            this.txtId_Venta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtId_Venta.Margin = new System.Windows.Forms.Padding(2);
             this.txtId_Venta.MaxLength = 50;
             this.txtId_Venta.MouseState = MaterialSkin.MouseState.OUT;
             this.txtId_Venta.Multiline = false;
@@ -96,7 +96,7 @@
             this.cbEmpleados.IntegralHeight = false;
             this.cbEmpleados.ItemHeight = 43;
             this.cbEmpleados.Location = new System.Drawing.Point(59, 145);
-            this.cbEmpleados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbEmpleados.Margin = new System.Windows.Forms.Padding(2);
             this.cbEmpleados.MaxDropDownItems = 4;
             this.cbEmpleados.MouseState = MaterialSkin.MouseState.OUT;
             this.cbEmpleados.Name = "cbEmpleados";
@@ -121,7 +121,7 @@
             this.cbClientes.IntegralHeight = false;
             this.cbClientes.ItemHeight = 43;
             this.cbClientes.Location = new System.Drawing.Point(59, 197);
-            this.cbClientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbClientes.Margin = new System.Windows.Forms.Padding(2);
             this.cbClientes.MaxDropDownItems = 4;
             this.cbClientes.MouseState = MaterialSkin.MouseState.OUT;
             this.cbClientes.Name = "cbClientes";
@@ -146,7 +146,7 @@
             this.cbTipo_pagos.IntegralHeight = false;
             this.cbTipo_pagos.ItemHeight = 43;
             this.cbTipo_pagos.Location = new System.Drawing.Point(254, 197);
-            this.cbTipo_pagos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbTipo_pagos.Margin = new System.Windows.Forms.Padding(2);
             this.cbTipo_pagos.MaxDropDownItems = 4;
             this.cbTipo_pagos.MouseState = MaterialSkin.MouseState.OUT;
             this.cbTipo_pagos.Name = "cbTipo_pagos";
@@ -163,7 +163,7 @@
             this.txtIVA.Hint = "IVA";
             this.txtIVA.LeadingIcon = null;
             this.txtIVA.Location = new System.Drawing.Point(644, 145);
-            this.txtIVA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIVA.Margin = new System.Windows.Forms.Padding(2);
             this.txtIVA.MaxLength = 50;
             this.txtIVA.MouseState = MaterialSkin.MouseState.OUT;
             this.txtIVA.Multiline = false;
@@ -182,7 +182,7 @@
             this.txtPrecioTotal.Hint = "Total";
             this.txtPrecioTotal.LeadingIcon = null;
             this.txtPrecioTotal.Location = new System.Drawing.Point(644, 197);
-            this.txtPrecioTotal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPrecioTotal.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrecioTotal.MaxLength = 50;
             this.txtPrecioTotal.MouseState = MaterialSkin.MouseState.OUT;
             this.txtPrecioTotal.Multiline = false;
@@ -201,7 +201,7 @@
             this.txtDescuento.Hint = "Descuento";
             this.txtDescuento.LeadingIcon = null;
             this.txtDescuento.Location = new System.Drawing.Point(449, 145);
-            this.txtDescuento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescuento.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescuento.MaxLength = 50;
             this.txtDescuento.MouseState = MaterialSkin.MouseState.OUT;
             this.txtDescuento.Multiline = false;
@@ -220,7 +220,7 @@
             this.txtGarantia_venta.Hint = "Días de Garantía";
             this.txtGarantia_venta.LeadingIcon = null;
             this.txtGarantia_venta.Location = new System.Drawing.Point(254, 144);
-            this.txtGarantia_venta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGarantia_venta.Margin = new System.Windows.Forms.Padding(2);
             this.txtGarantia_venta.MaxLength = 50;
             this.txtGarantia_venta.MouseState = MaterialSkin.MouseState.OUT;
             this.txtGarantia_venta.Multiline = false;
@@ -250,7 +250,7 @@
             "Activo",
             "Inactivo"});
             this.cbEstado_Venta.Location = new System.Drawing.Point(449, 197);
-            this.cbEstado_Venta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbEstado_Venta.Margin = new System.Windows.Forms.Padding(2);
             this.cbEstado_Venta.MaxDropDownItems = 4;
             this.cbEstado_Venta.MouseState = MaterialSkin.MouseState.OUT;
             this.cbEstado_Venta.Name = "cbEstado_Venta";
@@ -263,7 +263,7 @@
             this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Location = new System.Drawing.Point(3, 64);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(794, 23);
             this.dateTimePicker1.TabIndex = 9;
@@ -293,7 +293,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtVentas.DefaultCellStyle = dataGridViewCellStyle1;
             this.dtVentas.Location = new System.Drawing.Point(24, 336);
-            this.dtVentas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtVentas.Margin = new System.Windows.Forms.Padding(2);
             this.dtVentas.Name = "dtVentas";
             this.dtVentas.RowHeadersWidth = 51;
             this.dtVentas.RowTemplate.Height = 24;
@@ -369,7 +369,7 @@
             this.txtBuscar_Venta.Hint = "Buscar";
             this.txtBuscar_Venta.LeadingIcon = null;
             this.txtBuscar_Venta.Location = new System.Drawing.Point(24, 285);
-            this.txtBuscar_Venta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBuscar_Venta.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscar_Venta.MaxLength = 50;
             this.txtBuscar_Venta.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBuscar_Venta.Multiline = false;
@@ -397,7 +397,7 @@
             this.btEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btEliminar.Image = global::TiendaPaula.Properties.Resources.icons8_eliminar;
             this.btEliminar.Location = new System.Drawing.Point(708, 358);
-            this.btEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btEliminar.Name = "btEliminar";
             this.btEliminar.Size = new System.Drawing.Size(58, 53);
             this.btEliminar.TabIndex = 17;
@@ -412,7 +412,7 @@
             this.btBuscar.Image = global::TiendaPaula.Properties.Resources.icons8_buscar_30__1_;
             this.btBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btBuscar.Location = new System.Drawing.Point(474, 285);
-            this.btBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btBuscar.Name = "btBuscar";
             this.btBuscar.Size = new System.Drawing.Size(94, 41);
             this.btBuscar.TabIndex = 16;
@@ -424,7 +424,7 @@
             // 
             this.btActualizar.Image = global::TiendaPaula.Properties.Resources.icons8_actualizar;
             this.btActualizar.Location = new System.Drawing.Point(708, 453);
-            this.btActualizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btActualizar.Margin = new System.Windows.Forms.Padding(2);
             this.btActualizar.Name = "btActualizar";
             this.btActualizar.Size = new System.Drawing.Size(58, 53);
             this.btActualizar.TabIndex = 15;
@@ -438,7 +438,7 @@
             this.btAgregar.Image = global::TiendaPaula.Properties.Resources.icons8_factura_28;
             this.btAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btAgregar.Location = new System.Drawing.Point(656, 249);
-            this.btAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btAgregar.Name = "btAgregar";
             this.btAgregar.Size = new System.Drawing.Size(104, 43);
             this.btAgregar.TabIndex = 13;
