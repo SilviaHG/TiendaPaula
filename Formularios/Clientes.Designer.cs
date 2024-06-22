@@ -104,6 +104,7 @@
             this.txtNombreCompletoCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtNombreCompletoCliente.TrailingIcon = null;
             this.txtNombreCompletoCliente.UseSystemPasswordChar = false;
+            this.txtNombreCompletoCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreCompletoCliente_KeyPress);
             // 
             // txtTelefonoCliente
             // 
@@ -213,6 +214,7 @@
             this.btnClean.TabIndex = 3;
             this.btnClean.Text = "Limpiar";
             this.btnClean.UseVisualStyleBackColor = true;
+            this.btnClean.Click += new System.EventHandler(this.btnClean_Click);
             // 
             // btnEliminar
             // 
@@ -232,6 +234,7 @@
             this.btnActualiza.TabIndex = 1;
             this.btnActualiza.Text = "Actualiza";
             this.btnActualiza.UseVisualStyleBackColor = true;
+            this.btnActualiza.Click += new System.EventHandler(this.btnActualiza_Click);
             // 
             // btnAgregar
             // 
@@ -252,6 +255,7 @@
             this.dtClientes.ReadOnly = true;
             this.dtClientes.Size = new System.Drawing.Size(679, 300);
             this.dtClientes.TabIndex = 6;
+            this.dtClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtClientes_CellClick);
             // 
             // lblMsj
             // 
@@ -270,7 +274,7 @@
             this.txtBuscar.Depth = 0;
             this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtBuscar.HideSelection = true;
-            this.txtBuscar.Hint = "Buscar";
+            this.txtBuscar.Hint = "Buscar por número de cédula";
             this.txtBuscar.LeadingIcon = null;
             this.txtBuscar.Location = new System.Drawing.Point(318, 90);
             this.txtBuscar.MaxLength = 32767;
@@ -290,6 +294,8 @@
             this.txtBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtBuscar.TrailingIcon = null;
             this.txtBuscar.UseSystemPasswordChar = false;
+            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // btnBuscar
             // 
@@ -299,6 +305,7 @@
             this.btnBuscar.TabIndex = 9;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // Clientes
             // 

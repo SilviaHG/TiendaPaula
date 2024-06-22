@@ -13,7 +13,7 @@ namespace TiendaPaula.Gestiones
     public class Gestion_Clientes : Conexion
     {
         //Primero vamos a mostrar todos los datos de la BD a la tabla
-    
+
         public DataTable MostrarTodosClientes()
         {
             DataTable MostrarClientes = new DataTable();
@@ -27,15 +27,15 @@ namespace TiendaPaula.Gestiones
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     adapter.Fill(MostrarClientes);
                 }
-                catch (Exception ex) 
-                { 
-                    Console.WriteLine($"Error: { ex.Message}"); // si da un error lo mostramos
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}"); // si da un error lo mostramos
                 }
                 finally
                 {
-                    cerrarConexion( cnn ); // despues de cierra la conexion
+                    cerrarConexion(cnn); // despues de cierra la conexion
                 }
-            
+
 
             }
 
@@ -60,7 +60,6 @@ namespace TiendaPaula.Gestiones
                     mySqlCommand.Parameters.AddWithValue("ADDRESS_P", clientes.Direccion);
 
                     mySqlCommand.ExecuteNonQuery();
-                    //acá ya agregamos al nuevo cliente
 
                 }
                 catch (Exception ex)
@@ -84,10 +83,11 @@ namespace TiendaPaula.Gestiones
                     MySqlCommand cmd = new MySqlCommand("SP_DELETE_CUSTOMER", cnn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("ID_C", cliente);
-                    cmd.ExecuteNonQuery ();
+                    cmd.ExecuteNonQuery();
                 }
-                catch (Exception ex) 
-                { Console.WriteLine($"Error Eliminar Cliente {ex.Message}"); 
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error Eliminar Cliente {ex.Message}");
                 }
                 finally
                 {
@@ -96,27 +96,53 @@ namespace TiendaPaula.Gestiones
             }
         }
 
-        public bool BuscarCliente(int cliente)
+
+        public void ActualizarCliente(Class_Cliente cliente)
+        {
+            using (MySqlConnection cnn = establecerConexion())
+            {
+                try
+                {
+                    AbrirConexion(cnn);
+                    MySqlCommand cmd = new MySqlCommand("SP_UPDATE_CUSTOMER", cnn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("ID_C", cliente.Cedula_Cliente);
+                    cmd.Parameters.AddWithValue("NAME_P", cliente.Nombre_Completo);
+                    cmd.Parameters.AddWithValue("TELEPHONE_P", cliente.Telefono);
+                    cmd.Parameters.AddWithValue("EMAIL_P", cliente.Email);
+                    cmd.Parameters.AddWithValue("ADDRESS_P", cliente.Direccion);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error Actualizar Cliente {ex.Message}");
+                }
+                finally
+                {
+                    cerrarConexion(cnn);
+                }
+            }
+        }
+
+        public bool BuscarCliente(int cliente, int telefono)
         {
             bool existe = false;
 
             DataTable buscarCliente = new DataTable();
 
-            using (MySqlConnection cnn = establecerConexion()) 
+            using (MySqlConnection cnn = establecerConexion())
             {
                 try
                 {
                     AbrirConexion(cnn);
-                    MySqlCommand cmd = new MySqlCommand($"select FN_SEARCH_CUSTOMER{cliente};", cnn); //procedimiento almacenado
-                    //cmd.CommandType = CommandType.StoredProcedure;
+                    MySqlCommand cmd = new MySqlCommand("SP_SEARCH_CUSTOMER", cnn); //procedimiento almacenado
+                    cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("ID_C", cliente);
+                    cmd.Parameters.AddWithValue("PHONE", telefono);
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     adapter.Fill(buscarCliente);
-                    
-                      existe = buscarCliente.Rows.Count > 1;
-                    
-                    
-                    
+                    existe = buscarCliente.Rows.Count > 0;
+
                     Console.WriteLine(buscarCliente.Rows.Count);
                 }
                 catch (Exception ex)
@@ -128,6 +154,62 @@ namespace TiendaPaula.Gestiones
                     cerrarConexion(cnn);
                 }
             }
+
+            return existe;
+        }
+
+
+        public DataTable obtenerListaClientes(int nombre, int telefono)
+        {
+            DataTable dtCategorias = new DataTable();
+            using (MySqlConnection connection = establecerConexion())
+            {
+                try
+                {
+                    AbrirConexion(connection);
+                    MySqlCommand cmd = new MySqlCommand("SP_SEARCH_CUSTOMER", connection); //nombre del procediminto almacenado en BD
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("ID_C", nombre); //nombre de parametro que esta en el procedimiento almacenado en BD
+                    cmd.Parameters.AddWithValue("PHONE", telefono);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    adapter.Fill(dtCategorias);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+            return dtCategorias;
+        }
+
+        public bool Verificar_NumTelefono(int telefono)
+        {
+            bool existe = false;
+
+            DataTable dt = new DataTable();
+
+            using (MySqlConnection connection = establecerConexion())
+                try
+                {
+                    AbrirConexion(connection);
+
+                    MySqlCommand cmd = new MySqlCommand($"SELECT * FROM CUSTOMERS WHERE Telephone = {telefono}", connection);
+                    cmd.Parameters.AddWithValue("Telephone", telefono);
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    adapter.Fill(dt);
+
+                    existe = dt.Rows.Count > 0;
+
+                }
+                catch (MySqlException err)
+                {
+                    Console.WriteLine($"Ocurrio un error: {err.Message}");
+                }
+                finally
+                {
+                    cerrarConexion(connection);
+                }
 
             return existe;
         }
