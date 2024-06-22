@@ -34,5 +34,65 @@ namespace TiendaPaula.Formularios
         {
 
         }
+
+        private void txtEmpleado_Click(object sender, EventArgs e)
+        {
+            Empleados emple = new Empleados();
+            emple.Show();
+        }
+
+        private void txtClientes_Click(object sender, EventArgs e)
+        {
+            Clientes clientes = new Clientes();
+            clientes.Show();
+        }
+
+        private void txtUsuario_Click(object sender, EventArgs e)
+        {
+            Usuarios user = new Usuarios();
+            user.Show();
+        }
+
+        private void txtProveedores_Click(object sender, EventArgs e)
+        {
+            Proveedores proveedores = new Proveedores();
+            proveedores.Show();
+        }
+
+        private void txtProductos_Click(object sender, EventArgs e)
+        {
+            Productos productos = new Productos();
+            productos.Show();
+        }
+
+        private void txtVentas_Click(object sender, EventArgs e)
+        {
+            Ventas ventas = new Ventas();
+            ventas.Show();
+        }
+
+        private void txtCompras_Click(object sender, EventArgs e)
+        {
+            Compras compras = new Compras();
+            compras.Show();
+        }
+
+        private void txtDetallesVentas_Click(object sender, EventArgs e)
+        {
+            Detalles_Ventas detalleVenta = new Detalles_Ventas();
+            detalleVenta.Show();
+        }
+
+        private void txtDetallesCompras_Click(object sender, EventArgs e)
+        {
+            Detalles_Compras detalleCompra = new Detalles_Compras();
+            detalleCompra.Show();
+        }
+
+        private void materialButton2_Click(object sender, EventArgs e)
+        {
+            Gastos gasto = new Gastos();
+            gasto.Show();
+        }
     }
 }

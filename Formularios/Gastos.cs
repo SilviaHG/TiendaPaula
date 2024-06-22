@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,16 @@ using System.Windows.Forms;
 
 namespace TiendaPaula.Formularios
 {
-    public partial class Gastos : Form
+    public partial class Gastos : MaterialForm
     {
         public Gastos()
         {
             InitializeComponent();
+        }
+
+        private void Gastos_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
