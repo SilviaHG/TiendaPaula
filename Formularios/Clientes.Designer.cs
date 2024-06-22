@@ -34,14 +34,14 @@
             this.txtEmailCliente = new MaterialSkin.Controls.MaterialTextBox2();
             this.txtDireccionCliente = new MaterialSkin.Controls.MaterialTextBox2();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dtClientes = new System.Windows.Forms.DataGridView();
-            this.lblMsj = new System.Windows.Forms.Label();
-            this.txtBuscar = new MaterialSkin.Controls.MaterialTextBox2();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.btnClean = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualiza = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.dtClientes = new System.Windows.Forms.DataGridView();
+            this.lblMsj = new System.Windows.Forms.Label();
+            this.txtBuscar = new MaterialSkin.Controls.MaterialTextBox2();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtClientes)).BeginInit();
             this.SuspendLayout();
@@ -205,6 +205,44 @@
             this.panel1.Size = new System.Drawing.Size(250, 100);
             this.panel1.TabIndex = 5;
             // 
+            // btnClean
+            // 
+            this.btnClean.Location = new System.Drawing.Point(128, 57);
+            this.btnClean.Name = "btnClean";
+            this.btnClean.Size = new System.Drawing.Size(84, 35);
+            this.btnClean.TabIndex = 3;
+            this.btnClean.Text = "Limpiar";
+            this.btnClean.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(22, 45);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(70, 46);
+            this.btnEliminar.TabIndex = 2;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnActualiza
+            // 
+            this.btnActualiza.Location = new System.Drawing.Point(141, 3);
+            this.btnActualiza.Name = "btnActualiza";
+            this.btnActualiza.Size = new System.Drawing.Size(71, 37);
+            this.btnActualiza.TabIndex = 1;
+            this.btnActualiza.Text = "Actualiza";
+            this.btnActualiza.UseVisualStyleBackColor = true;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(26, 3);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(66, 37);
+            this.btnAgregar.TabIndex = 0;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
             // dtClientes
             // 
             this.dtClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -261,44 +299,6 @@
             this.btnBuscar.TabIndex = 9;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
-            // 
-            // btnClean
-            // 
-            this.btnClean.Location = new System.Drawing.Point(128, 57);
-            this.btnClean.Name = "btnClean";
-            this.btnClean.Size = new System.Drawing.Size(84, 35);
-            this.btnClean.TabIndex = 3;
-            this.btnClean.Text = "Limpiar";
-            this.btnClean.UseVisualStyleBackColor = true;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Image = global::TiendaPaula.Properties.Resources.icons8_borrar_para_siempre_40;
-            this.btnEliminar.Location = new System.Drawing.Point(22, 45);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(50, 46);
-            this.btnEliminar.TabIndex = 2;
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnActualiza
-            // 
-            this.btnActualiza.Image = global::TiendaPaula.Properties.Resources.icons8_reiniciar_30;
-            this.btnActualiza.Location = new System.Drawing.Point(141, 3);
-            this.btnActualiza.Name = "btnActualiza";
-            this.btnActualiza.Size = new System.Drawing.Size(45, 37);
-            this.btnActualiza.TabIndex = 1;
-            this.btnActualiza.UseVisualStyleBackColor = true;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Image = global::TiendaPaula.Properties.Resources.icons8_emoji_de_botón_de_marca_de_verificación_48__1_;
-            this.btnAgregar.Location = new System.Drawing.Point(26, 3);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(41, 37);
-            this.btnAgregar.TabIndex = 0;
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // Clientes
             // 
