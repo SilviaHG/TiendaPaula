@@ -13,6 +13,7 @@ using TiendaPaula.Clases;
 using TiendaPaula.Gestiones;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Google.Protobuf.WellKnownTypes;
 
 namespace TiendaPaula.Formularios
 {
@@ -42,6 +43,8 @@ namespace TiendaPaula.Formularios
             txtEmailCliente.Text = "";
             txtDireccionCliente.Text = "";
             txtBuscar.Text = "";
+            //limpiar el label de mensaje
+            lblMsj.Text = "";
 
             //habilitamos los botnes y el campo de texto
             txtCedulaCliente.Enabled = true;
@@ -70,8 +73,8 @@ namespace TiendaPaula.Formularios
 
         private void txtNombreCompletoCliente_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // solo pueden ingresar letras
-            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            // solo pueden ingresar letras y espacios
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
             {
                 e.Handled = true;
             }
@@ -190,12 +193,24 @@ namespace TiendaPaula.Formularios
 
             if (gestCliente.BuscarCliente(num, telefono) == true)
             {
-                gestCliente.EliminarCliente(num);
-                dtClientes.DataSource = gestCliente.MostrarTodosClientes();
+                // mensaje de confirmación
+                DialogResult optUser = MessageBox.Show($"¿Desea eliminar permanentemente al clientes" +
+                    $" con la cédula {num}?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                switch (optUser)
+                {
+                    case DialogResult.Yes:
+                        gestCliente.EliminarCliente(num);
+                        dtClientes.DataSource = gestCliente.MostrarTodosClientes();
 
-                lblMsj.ForeColor = Color.Green;
-                lblMsj.Text = "Cliente eliminado correctamente";
-                LimpiarCampos();
+                        lblMsj.ForeColor = Color.Green;
+                        lblMsj.Text = "Cliente eliminado correctamente";
+                        LimpiarCampos();
+                        break;
+                    case DialogResult.No:
+                        lblMsj.ForeColor = Color.Red;
+                        lblMsj.Text = "No se realizaron cambios en la BD";
+                        break;
+                }
             }
             else
             {
@@ -205,20 +220,107 @@ namespace TiendaPaula.Formularios
             }
         }
 
+        private void btnActualiza_Click(object sender, EventArgs e)
+        {
+            // verificamos que los campos no esten vacios
+            if (string.IsNullOrEmpty(txtNombreCompletoCliente.Text) || string.IsNullOrEmpty(txtTelefonoCliente.Text)
+                || string.IsNullOrEmpty(txtEmailCliente.Text) || string.IsNullOrEmpty(txtDireccionCliente.Text))
+            {
+
+                lblMsj.ForeColor = Color.Red;
+                lblMsj.Text = "No puede dejar campos vacíos";
+            }
+            else
+            {
+                // se valida que exista el número de teléfono
+                int cedula = Convert.ToInt32(txtCedulaCliente.Text);
+                int telefono = Convert.ToInt32(txtTelefonoCliente.Text);
+
+                if (gestCliente.Verificar_NumTelefono(telefono) == true)
+                {
+                    lblMsj.ForeColor = Color.Red;
+                    lblMsj.Text = "Este número de teléfono ya existe en la BD";
+                }
+                else
+                {
+                    // se valida que el correo sea un email válido
+                    if (EmailValido(txtEmailCliente.Text))
+                    {
+
+                        lblMsj.ForeColor = Color.Red;// mensaje de confirmación
+                        DialogResult optUser = MessageBox.Show($"¿Desea actualizar al clientes" +
+                            $" con la cédula {cedula}?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        switch (optUser)
+                        {
+                            case DialogResult.Yes:
+
+                                //se abre la conexion
+                                gestCliente.AbrirConexion(gestCliente.establecerConexion());
+                                //establecemos los valores que se actualizan
+                                cliente.Cedula_Cliente = Convert.ToInt32(txtCedulaCliente.Text);
+                                cliente.Nombre_Completo = txtNombreCompletoCliente.Text;
+                                cliente.Email = txtEmailCliente.Text;
+                                cliente.Telefono = Convert.ToInt32(txtTelefonoCliente.Text);
+                                cliente.Direccion = txtDireccionCliente.Text;
+                                //enviamos los datos a la clase gestion cliente
+                                gestCliente.ActualizarCliente(cliente);
+
+                                Console.WriteLine("Se actualizó");
+                                //volvemos a cargar el datagrid view
+                                dtClientes.DataSource = gestCliente.MostrarTodosClientes();
+
+                                //mensaje
+                                lblMsj.ForeColor = Color.Green;
+                                lblMsj.Text = $"Cliente con la cédula {cedula} actualizado correctamente";
+                                LimpiarCampos();
+                                break;
+                            case DialogResult.No:
+                                lblMsj.ForeColor = Color.Red;
+                                lblMsj.Text = "No se realizaron cambios en la BD";
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        // El correo electrónico no es válido
+                        lblMsj.ForeColor = Color.Red;
+                        lblMsj.Text = "Correo Electrónico NO valido";
+                    }
+                }
+
+            }
+            // cerramos la conexion
+            gestCliente.cerrarConexion(gestCliente.establecerConexion());
+
+        }
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
 
-            int cedula = Convert.ToInt32(txtBuscar.Text);
-            int telefono = Convert.ToInt32(txtTelefonoCliente.Text);
+            
             gestCliente.AbrirConexion(gestCliente.establecerConexion());
 
+            if (string.IsNullOrEmpty(txtBuscar.Text))
+            {
+               
+                lblMsj.ForeColor = Color.Red;
+                lblMsj.Text = "Debe ingresar un número de cédula en el campo de búsqueda";
+            }
+            else
+            {
+                int cedula = Convert.ToInt32(txtBuscar.Text);
+                int telefono = 0;
 
-            lblMsj.ForeColor = Color.Green;
-            lblMsj.Text = "Mostrando resultados...";
+                lblMsj.ForeColor = Color.Green;
+                lblMsj.Text = "Mostrando resultados...";
 
-            dtClientes.DataSource = gestCliente.obtenerListaClientes(cedula, telefono);
+                dtClientes.DataSource = gestCliente.obtenerListaClientes(cedula, telefono);
+                lblMsj.Text = "";
+                gestCliente.cerrarConexion(gestCliente.establecerConexion());
+            }
 
-            gestCliente.cerrarConexion(gestCliente.establecerConexion());
+            
 
         }
 
@@ -248,64 +350,7 @@ namespace TiendaPaula.Formularios
 
         }
 
-        private void btnActualiza_Click(object sender, EventArgs e)
-        {
-            // verificamos que los campos no esten vacios
-            if (string.IsNullOrEmpty(txtNombreCompletoCliente.Text)|| string.IsNullOrEmpty(txtTelefonoCliente.Text) 
-                || string.IsNullOrEmpty(txtEmailCliente.Text)  || string.IsNullOrEmpty(txtDireccionCliente.Text))
-            {
 
-                lblMsj.ForeColor = Color.Red;
-                lblMsj.Text = "No puede dejar campos vacíos";
-            }
-            else
-            {
-                // se valida que exista el número de teléfono
-                int cedula = Convert.ToInt32(txtCedulaCliente.Text);
-                int telefono = Convert.ToInt32(txtTelefonoCliente.Text);
-                if (gestCliente.Verificar_NumTelefono(telefono) == true)
-                {
-                    lblMsj.ForeColor = Color.Red;
-                    lblMsj.Text = "Este número de teléfono ya existe en la BD";
-                }
-                else
-                {
-                    // se valida que el correo sea un email válido
-                    if (EmailValido(txtEmailCliente.Text))
-                    {
-                        //se abre la conexion
-                        gestCliente.AbrirConexion(gestCliente.establecerConexion());
-                        //establecemos los valores que se actualizan
-                        cliente.Cedula_Cliente = Convert.ToInt32(txtCedulaCliente.Text);
-                        cliente.Nombre_Completo = txtNombreCompletoCliente.Text;
-                        cliente.Email = txtEmailCliente.Text;
-                        cliente.Telefono = Convert.ToInt32(txtTelefonoCliente.Text);
-                        cliente.Direccion = txtDireccionCliente.Text;
-                        //enviamos los datos a la clase gestion cliente
-                        gestCliente.ActualizarCliente(cliente);
-
-                        Console.WriteLine("Se actualizó");
-                        //volvemos a cargar el datagrid view
-                        dtClientes.DataSource = gestCliente.MostrarTodosClientes();
-
-                        //mensaje
-                        lblMsj.ForeColor = Color.Green;
-                        lblMsj.Text = $"Cliente con la cédula {cedula} actualizado correctamente";
-                        LimpiarCampos();
-                    }
-                    else
-                    {
-                        // El correo electrónico no es válido
-                        lblMsj.ForeColor = Color.Red;
-                        lblMsj.Text = "Correo Electrónico NO valido";
-                    }
-                }
-
-            }
-            // cerramos la conexion
-            gestCliente.cerrarConexion(gestCliente.establecerConexion());
-
-        }
     }
 
 }

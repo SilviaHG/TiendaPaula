@@ -199,7 +199,7 @@ namespace TiendaPaula.Gestiones
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     adapter.Fill(dt);
 
-                    existe = dt.Rows.Count > 1;
+                    existe = dt.Rows.Count > 0;
 
                 }
                 catch (MySqlException err)
