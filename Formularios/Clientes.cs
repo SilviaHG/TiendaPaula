@@ -276,6 +276,7 @@ namespace TiendaPaula.Formularios
                         //se abre la conexion
                         gestCliente.AbrirConexion(gestCliente.establecerConexion());
                         //establecemos los valores que se actualizan
+                        cliente.Cedula_Cliente = Convert.ToInt32(txtCedulaCliente.Text);
                         cliente.Nombre_Completo = txtNombreCompletoCliente.Text;
                         cliente.Email = txtEmailCliente.Text;
                         cliente.Telefono = Convert.ToInt32(txtTelefonoCliente.Text);
