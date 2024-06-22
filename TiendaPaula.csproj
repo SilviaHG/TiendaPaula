@@ -258,7 +258,9 @@
     <None Include="Resources\icons8-usuario-100.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-emoji-de-botón-de-marca-de-verificación-32.png" />
+
+    <None Include="Resources\icons8-factura-50.png" />
+
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-empleado-80.png" />
@@ -273,25 +275,30 @@
     <None Include="Resources\icons8-libro-mayor-80.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-emoji-de-botón-de-marca-de-verificación-60.png" />
+
+    <None Include="Resources\icons8-factura-28.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-emoji-de-botón-de-marca-de-verificación-48.png" />
+    <None Include="Resources\icons8-buscar-28.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-emoji-de-botón-de-marca-de-verificación-48 %281%29.png" />
+    <None Include="Resources\icons8-buscar-281.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-borrar-para-siempre-48.png" />
+    <None Include="Resources\icons8-buscar-30.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-borrar-para-siempre-40.png" />
+    <None Include="Resources\icons8-buscar-30 %281%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-reiniciar-40.png" />
+    <None Include="Resources\icons8-eliminar.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-reiniciar-30.png" />
+    <None Include="Resources\icons8-búsqueda.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-actualizar.gif" />
+
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
