@@ -63,6 +63,76 @@ namespace TiendaPaula.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_actualizar {
+            get {
+                object obj = ResourceManager.GetObject("icons8-actualizar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_buscar_28 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-buscar-28", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_buscar_281 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-buscar-281", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_buscar_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-buscar-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_buscar_30__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-buscar-30 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_búsqueda {
+            get {
+                object obj = ResourceManager.GetObject("icons8-búsqueda", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_eliminar {
+            get {
+                object obj = ResourceManager.GetObject("icons8-eliminar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_empleado_80 {
             get {
                 object obj = ResourceManager.GetObject("icons8-empleado-80", resourceCulture);
@@ -76,6 +146,26 @@ namespace TiendaPaula.Properties {
         internal static System.Drawing.Bitmap icons8_empleado_80__1_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-empleado-80 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_factura_28 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-factura-28", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_factura_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-factura-50", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
