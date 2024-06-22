@@ -187,6 +187,7 @@
     <Compile Include="Formularios\Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gestiones\Gestion_Clientes.cs" />
     <Compile Include="Gestiones\Gestion_Usuarios.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -257,7 +258,9 @@
     <None Include="Resources\icons8-usuario-100.png" />
   </ItemGroup>
   <ItemGroup>
+
     <None Include="Resources\icons8-factura-50.png" />
+
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-empleado-80.png" />
@@ -272,6 +275,7 @@
     <None Include="Resources\icons8-libro-mayor-80.png" />
   </ItemGroup>
   <ItemGroup>
+
     <None Include="Resources\icons8-factura-28.png" />
   </ItemGroup>
   <ItemGroup>
@@ -294,6 +298,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-actualizar.gif" />
+
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

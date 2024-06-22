@@ -34,18 +34,14 @@
             this.txtEmailCliente = new MaterialSkin.Controls.MaterialTextBox2();
             this.txtDireccionCliente = new MaterialSkin.Controls.MaterialTextBox2();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.materialButton4 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.dtClientes = new System.Windows.Forms.DataGridView();
-            this.Cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblMsj = new System.Windows.Forms.Label();
             this.txtBuscar = new MaterialSkin.Controls.MaterialTextBox2();
-            this.materialButton5 = new MaterialSkin.Controls.MaterialButton();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnClean = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnActualiza = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtClientes)).BeginInit();
             this.SuspendLayout();
@@ -78,6 +74,7 @@
             this.txtCedulaCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtCedulaCliente.TrailingIcon = null;
             this.txtCedulaCliente.UseSystemPasswordChar = false;
+            this.txtCedulaCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedulaCliente_KeyPress);
             // 
             // txtNombreCompletoCliente
             // 
@@ -136,6 +133,7 @@
             this.txtTelefonoCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtTelefonoCliente.TrailingIcon = null;
             this.txtTelefonoCliente.UseSystemPasswordChar = false;
+            this.txtTelefonoCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefonoCliente_KeyPress);
             // 
             // txtEmailCliente
             // 
@@ -198,119 +196,24 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.materialButton4);
-            this.panel1.Controls.Add(this.materialButton3);
-            this.panel1.Controls.Add(this.materialButton1);
+            this.panel1.Controls.Add(this.btnClean);
+            this.panel1.Controls.Add(this.btnEliminar);
+            this.panel1.Controls.Add(this.btnActualiza);
+            this.panel1.Controls.Add(this.btnAgregar);
             this.panel1.Location = new System.Drawing.Point(38, 397);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(250, 100);
             this.panel1.TabIndex = 5;
             // 
-            // materialButton4
-            // 
-            this.materialButton4.AutoSize = false;
-            this.materialButton4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton4.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton4.Depth = 0;
-            this.materialButton4.HighEmphasis = true;
-            this.materialButton4.Icon = null;
-            this.materialButton4.Location = new System.Drawing.Point(104, 54);
-            this.materialButton4.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton4.Name = "materialButton4";
-            this.materialButton4.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton4.Size = new System.Drawing.Size(75, 36);
-            this.materialButton4.TabIndex = 3;
-            this.materialButton4.Text = "materialButton4";
-            this.materialButton4.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton4.UseAccentColor = false;
-            this.materialButton4.UseVisualStyleBackColor = true;
-            // 
-            // materialButton3
-            // 
-            this.materialButton3.AutoSize = false;
-            this.materialButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton3.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton3.Depth = 0;
-            this.materialButton3.HighEmphasis = true;
-            this.materialButton3.Icon = null;
-            this.materialButton3.Location = new System.Drawing.Point(10, 54);
-            this.materialButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton3.Name = "materialButton3";
-            this.materialButton3.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton3.Size = new System.Drawing.Size(75, 36);
-            this.materialButton3.TabIndex = 2;
-            this.materialButton3.Text = "materialButton3";
-            this.materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton3.UseAccentColor = false;
-            this.materialButton3.UseVisualStyleBackColor = true;
-            // 
-            // materialButton1
-            // 
-            this.materialButton1.AutoSize = false;
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton1.Depth = 0;
-            this.materialButton1.HighEmphasis = true;
-            this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(10, 13);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Size = new System.Drawing.Size(75, 36);
-            this.materialButton1.TabIndex = 0;
-            this.materialButton1.Text = "materialButton1";
-            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
-            // 
             // dtClientes
             // 
             this.dtClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Cedula,
-            this.nombre,
-            this.Telefono,
-            this.Email,
-            this.Direccion});
             this.dtClientes.Location = new System.Drawing.Point(318, 149);
             this.dtClientes.Name = "dtClientes";
             this.dtClientes.ReadOnly = true;
-            this.dtClientes.Size = new System.Drawing.Size(541, 300);
+            this.dtClientes.Size = new System.Drawing.Size(679, 300);
             this.dtClientes.TabIndex = 6;
-            // 
-            // Cedula
-            // 
-            this.Cedula.HeaderText = "Cédula";
-            this.Cedula.Name = "Cedula";
-            this.Cedula.ReadOnly = true;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Cliente";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            // 
-            // Telefono
-            // 
-            this.Telefono.HeaderText = "Teléfono";
-            this.Telefono.Name = "Telefono";
-            this.Telefono.ReadOnly = true;
-            // 
-            // Email
-            // 
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            // 
-            // Direccion
-            // 
-            this.Direccion.HeaderText = "Dirección";
-            this.Direccion.Name = "Direccion";
-            this.Direccion.ReadOnly = true;
             // 
             // lblMsj
             // 
@@ -343,39 +246,66 @@
             this.txtBuscar.SelectionLength = 0;
             this.txtBuscar.SelectionStart = 0;
             this.txtBuscar.ShortcutsEnabled = true;
-            this.txtBuscar.Size = new System.Drawing.Size(482, 48);
+            this.txtBuscar.Size = new System.Drawing.Size(441, 48);
             this.txtBuscar.TabIndex = 8;
             this.txtBuscar.TabStop = false;
             this.txtBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtBuscar.TrailingIcon = null;
             this.txtBuscar.UseSystemPasswordChar = false;
             // 
-            // materialButton5
+            // btnBuscar
             // 
-            this.materialButton5.AutoSize = false;
-            this.materialButton5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton5.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton5.Depth = 0;
-            this.materialButton5.HighEmphasis = true;
-            this.materialButton5.Icon = null;
-            this.materialButton5.Location = new System.Drawing.Point(784, 102);
-            this.materialButton5.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton5.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton5.Name = "materialButton5";
-            this.materialButton5.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton5.Size = new System.Drawing.Size(75, 36);
-            this.materialButton5.TabIndex = 4;
-            this.materialButton5.Text = "Buscar";
-            this.materialButton5.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton5.UseAccentColor = false;
-            this.materialButton5.UseVisualStyleBackColor = true;
+            this.btnBuscar.Location = new System.Drawing.Point(784, 90);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 48);
+            this.btnBuscar.TabIndex = 9;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // btnClean
+            // 
+            this.btnClean.Location = new System.Drawing.Point(128, 57);
+            this.btnClean.Name = "btnClean";
+            this.btnClean.Size = new System.Drawing.Size(84, 35);
+            this.btnClean.TabIndex = 3;
+            this.btnClean.Text = "Limpiar";
+            this.btnClean.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Image = global::TiendaPaula.Properties.Resources.icons8_borrar_para_siempre_40;
+            this.btnEliminar.Location = new System.Drawing.Point(22, 45);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(50, 46);
+            this.btnEliminar.TabIndex = 2;
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnActualiza
+            // 
+            this.btnActualiza.Image = global::TiendaPaula.Properties.Resources.icons8_reiniciar_30;
+            this.btnActualiza.Location = new System.Drawing.Point(141, 3);
+            this.btnActualiza.Name = "btnActualiza";
+            this.btnActualiza.Size = new System.Drawing.Size(45, 37);
+            this.btnActualiza.TabIndex = 1;
+            this.btnActualiza.UseVisualStyleBackColor = true;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Image = global::TiendaPaula.Properties.Resources.icons8_emoji_de_botón_de_marca_de_verificación_48__1_;
+            this.btnAgregar.Location = new System.Drawing.Point(26, 3);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(41, 37);
+            this.btnAgregar.TabIndex = 0;
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(880, 520);
-            this.Controls.Add(this.materialButton5);
+            this.ClientSize = new System.Drawing.Size(1003, 520);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.lblMsj);
             this.Controls.Add(this.dtClientes);
@@ -403,16 +333,12 @@
         private MaterialSkin.Controls.MaterialTextBox2 txtDireccionCliente;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dtClientes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cedula;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
-        private MaterialSkin.Controls.MaterialButton materialButton3;
-        private MaterialSkin.Controls.MaterialButton materialButton1;
         private System.Windows.Forms.Label lblMsj;
         private MaterialSkin.Controls.MaterialTextBox2 txtBuscar;
-        private MaterialSkin.Controls.MaterialButton materialButton4;
-        private MaterialSkin.Controls.MaterialButton materialButton5;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnClean;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnActualiza;
+        private System.Windows.Forms.Button btnAgregar;
     }
 }

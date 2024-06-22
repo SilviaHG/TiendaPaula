@@ -44,7 +44,7 @@ namespace TiendaPaula.Clases
             }
             catch (MySqlException ex)
             {
-                Console.WriteLine($"Error: {ex.Message}");
+                Console.WriteLine($"Error Abrir Conexión: {ex.Message}");
             }
 
         }
@@ -61,7 +61,7 @@ namespace TiendaPaula.Clases
             }
             catch (MySqlException ex)
             {
-                Console.WriteLine($"Error: {ex.Message}");
+                Console.WriteLine($"Error Cerrar Conexión: {ex.Message}");
             }
         }
     }
