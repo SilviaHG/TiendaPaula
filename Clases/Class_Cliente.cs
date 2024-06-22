@@ -10,7 +10,7 @@ namespace TiendaPaula.Clases
     {
         public Class_Cliente() { }
 
-        public int Cedula_Cliente { get; }
+        public int Cedula_Cliente { get; set; }
         public string Nombre_Completo { get; set; }
         public int Telefono { get; set; }
         public string Email { get; set; }

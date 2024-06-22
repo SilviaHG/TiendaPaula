@@ -63,6 +63,66 @@ namespace TiendaPaula.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_borrar_para_siempre_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-borrar-para-siempre-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_borrar_para_siempre_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-borrar-para-siempre-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_emoji_de_botón_de_marca_de_verificación_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-emoji-de-botón-de-marca-de-verificación-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_emoji_de_botón_de_marca_de_verificación_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-emoji-de-botón-de-marca-de-verificación-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_emoji_de_botón_de_marca_de_verificación_48__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-emoji-de-botón-de-marca-de-verificación-48 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_emoji_de_botón_de_marca_de_verificación_60 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-emoji-de-botón-de-marca-de-verificación-60", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_empleado_80 {
             get {
                 object obj = ResourceManager.GetObject("icons8-empleado-80", resourceCulture);
@@ -86,6 +146,26 @@ namespace TiendaPaula.Properties {
         internal static System.Drawing.Bitmap icons8_libro_mayor_80 {
             get {
                 object obj = ResourceManager.GetObject("icons8-libro-mayor-80", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_reiniciar_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-reiniciar-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_reiniciar_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-reiniciar-40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

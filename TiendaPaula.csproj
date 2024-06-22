@@ -187,6 +187,7 @@
     <Compile Include="Formularios\Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gestiones\Gestion_Clientes.cs" />
     <Compile Include="Gestiones\Gestion_Usuarios.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -256,7 +257,9 @@
   <ItemGroup>
     <None Include="Resources\icons8-usuario-100.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\icons8-emoji-de-botón-de-marca-de-verificación-32.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-empleado-80.png" />
   </ItemGroup>
@@ -268,6 +271,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-libro-mayor-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-emoji-de-botón-de-marca-de-verificación-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-emoji-de-botón-de-marca-de-verificación-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-emoji-de-botón-de-marca-de-verificación-48 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-borrar-para-siempre-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-borrar-para-siempre-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-reiniciar-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-reiniciar-30.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
