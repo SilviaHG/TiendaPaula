@@ -66,6 +66,7 @@
             this.btnClean.TabIndex = 3;
             this.btnClean.Text = "Limpiar";
             this.btnClean.UseVisualStyleBackColor = true;
+            this.btnClean.Click += new System.EventHandler(this.btnClean_Click);
             // 
             // btnEliminar
             // 
@@ -75,6 +76,7 @@
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnActualizar
             // 
@@ -93,6 +95,7 @@
             this.btnAgregar.TabIndex = 0;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtDireccionP
             // 
@@ -180,6 +183,7 @@
             this.txtTelefonoP.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtTelefonoP.TrailingIcon = null;
             this.txtTelefonoP.UseSystemPasswordChar = false;
+            this.txtTelefonoP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefonoP_KeyPress);
             // 
             // txtNombreP
             // 
@@ -209,6 +213,7 @@
             this.txtNombreP.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtNombreP.TrailingIcon = null;
             this.txtNombreP.UseSystemPasswordChar = false;
+            this.txtNombreP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreP_KeyPress);
             // 
             // txtID_Proveedor
             // 
@@ -238,6 +243,7 @@
             this.txtID_Proveedor.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtID_Proveedor.TrailingIcon = null;
             this.txtID_Proveedor.UseSystemPasswordChar = false;
+            this.txtID_Proveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtID_Proveedor_KeyPress);
             // 
             // btnBuscar
             // 
@@ -276,6 +282,8 @@
             this.txtBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtBuscar.TrailingIcon = null;
             this.txtBuscar.UseSystemPasswordChar = false;
+            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // dtProveedores
             // 
