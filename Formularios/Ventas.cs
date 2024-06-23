@@ -23,5 +23,11 @@ namespace TiendaPaula.Formularios
         {
 
         }
+
+        private void Abre_DetallesVentas_Click(object sender, EventArgs e)
+        {
+            Detalles_Ventas Abrir = new Detalles_Ventas();
+            Abrir.Show();
+        }
     }
 }
