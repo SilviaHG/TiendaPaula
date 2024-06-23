@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtId_Venta = new MaterialSkin.Controls.MaterialTextBox();
             this.cbEmpleados = new MaterialSkin.Controls.MaterialComboBox();
             this.cbClientes = new MaterialSkin.Controls.MaterialComboBox();
@@ -42,12 +42,8 @@
             this.cbEstado_Venta = new MaterialSkin.Controls.MaterialComboBox();
             this.Fecha_V = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.btAgregar = new System.Windows.Forms.Button();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.label1 = new System.Windows.Forms.Label();
-            this.btEliminar = new System.Windows.Forms.Button();
-            this.btBuscar = new System.Windows.Forms.Button();
-            this.btActualizar = new System.Windows.Forms.Button();
             this.txtBuscar_Venta = new MaterialSkin.Controls.MaterialTextBox();
             this.dtVentas = new System.Windows.Forms.DataGridView();
             this.Id_Venta = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,6 +59,10 @@
             this.cbProductos = new MaterialSkin.Controls.MaterialComboBox();
             this.Abre_DetallesVentas = new System.Windows.Forms.Button();
             this.Cant_Productos = new MaterialSkin.Controls.MaterialSlider();
+            this.btEliminar = new System.Windows.Forms.Button();
+            this.btBuscar = new System.Windows.Forms.Button();
+            this.btActualizar = new System.Windows.Forms.Button();
+            this.btAgregar = new System.Windows.Forms.Button();
             this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtVentas)).BeginInit();
             this.SuspendLayout();
@@ -286,21 +286,6 @@
             this.label2.TabIndex = 19;
             this.label2.Text = "Actualizar";
             // 
-            // btAgregar
-            // 
-            this.btAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(148)))), ((int)(((byte)(32)))));
-            this.btAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAgregar.ForeColor = System.Drawing.Color.White;
-            this.btAgregar.Image = global::TiendaPaula.Properties.Resources.icons8_factura_28;
-            this.btAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btAgregar.Location = new System.Drawing.Point(42, 541);
-            this.btAgregar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btAgregar.Name = "btAgregar";
-            this.btAgregar.Size = new System.Drawing.Size(421, 53);
-            this.btAgregar.TabIndex = 13;
-            this.btAgregar.Text = "Facturar";
-            this.btAgregar.UseVisualStyleBackColor = false;
-            // 
             // materialCard1
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -337,46 +322,6 @@
             this.label1.TabIndex = 26;
             this.label1.Text = "Eliminar";
             // 
-            // btEliminar
-            // 
-            this.btEliminar.BackColor = System.Drawing.Color.White;
-            this.btEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btEliminar.Image = global::TiendaPaula.Properties.Resources.icons8_eliminar;
-            this.btEliminar.Location = new System.Drawing.Point(1244, 522);
-            this.btEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btEliminar.Name = "btEliminar";
-            this.btEliminar.Size = new System.Drawing.Size(77, 65);
-            this.btEliminar.TabIndex = 25;
-            this.btEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btEliminar.UseVisualStyleBackColor = false;
-            // 
-            // btBuscar
-            // 
-            this.btBuscar.BackColor = System.Drawing.Color.White;
-            this.btBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btBuscar.Image = global::TiendaPaula.Properties.Resources.icons8_buscar_30__1_;
-            this.btBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btBuscar.Location = new System.Drawing.Point(1195, 129);
-            this.btBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btBuscar.Name = "btBuscar";
-            this.btBuscar.Size = new System.Drawing.Size(125, 50);
-            this.btBuscar.TabIndex = 24;
-            this.btBuscar.Text = "Buscar";
-            this.btBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btBuscar.UseVisualStyleBackColor = false;
-            // 
-            // btActualizar
-            // 
-            this.btActualizar.Image = global::TiendaPaula.Properties.Resources.icons8_actualizar;
-            this.btActualizar.Location = new System.Drawing.Point(619, 522);
-            this.btActualizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btActualizar.Name = "btActualizar";
-            this.btActualizar.Size = new System.Drawing.Size(77, 65);
-            this.btActualizar.TabIndex = 23;
-            this.btActualizar.UseVisualStyleBackColor = true;
-            // 
             // txtBuscar_Venta
             // 
             this.txtBuscar_Venta.AnimateReadOnly = false;
@@ -398,19 +343,19 @@
             // 
             // dtVentas
             // 
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.dtVentas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.dtVentas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dtVentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtVentas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtVentas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dtVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id_Venta,
@@ -423,14 +368,14 @@
             this.Garantia,
             this.Fecha_Venta,
             this.Estado});
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtVentas.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtVentas.DefaultCellStyle = dataGridViewCellStyle6;
             this.dtVentas.Location = new System.Drawing.Point(560, 194);
             this.dtVentas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtVentas.Name = "dtVentas";
@@ -550,6 +495,61 @@
             this.Cant_Productos.TabIndex = 40;
             this.Cant_Productos.Text = "Productos";
             this.Cant_Productos.Value = 1;
+            // 
+            // btEliminar
+            // 
+            this.btEliminar.BackColor = System.Drawing.Color.White;
+            this.btEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btEliminar.Image = global::TiendaPaula.Properties.Resources.icons8_eliminar;
+            this.btEliminar.Location = new System.Drawing.Point(1244, 522);
+            this.btEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btEliminar.Name = "btEliminar";
+            this.btEliminar.Size = new System.Drawing.Size(77, 65);
+            this.btEliminar.TabIndex = 25;
+            this.btEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btEliminar.UseVisualStyleBackColor = false;
+            // 
+            // btBuscar
+            // 
+            this.btBuscar.BackColor = System.Drawing.Color.White;
+            this.btBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btBuscar.Image = global::TiendaPaula.Properties.Resources.icons8_buscar_30__1_;
+            this.btBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btBuscar.Location = new System.Drawing.Point(1195, 129);
+            this.btBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btBuscar.Name = "btBuscar";
+            this.btBuscar.Size = new System.Drawing.Size(125, 50);
+            this.btBuscar.TabIndex = 24;
+            this.btBuscar.Text = "Buscar";
+            this.btBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btBuscar.UseVisualStyleBackColor = false;
+            // 
+            // btActualizar
+            // 
+            this.btActualizar.Image = global::TiendaPaula.Properties.Resources.icons8_actualizar;
+            this.btActualizar.Location = new System.Drawing.Point(619, 522);
+            this.btActualizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btActualizar.Name = "btActualizar";
+            this.btActualizar.Size = new System.Drawing.Size(77, 65);
+            this.btActualizar.TabIndex = 23;
+            this.btActualizar.UseVisualStyleBackColor = true;
+            // 
+            // btAgregar
+            // 
+            this.btAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(148)))), ((int)(((byte)(32)))));
+            this.btAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAgregar.ForeColor = System.Drawing.Color.White;
+            this.btAgregar.Image = global::TiendaPaula.Properties.Resources.icons8_factura_28;
+            this.btAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btAgregar.Location = new System.Drawing.Point(42, 541);
+            this.btAgregar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btAgregar.Name = "btAgregar";
+            this.btAgregar.Size = new System.Drawing.Size(421, 53);
+            this.btAgregar.TabIndex = 13;
+            this.btAgregar.Text = "Facturar";
+            this.btAgregar.UseVisualStyleBackColor = false;
             // 
             // Ventas
             // 
