@@ -207,7 +207,7 @@ namespace TiendaPaula.Formularios
                         LimpiarCampos();
                         break;
                     case DialogResult.No:
-                        lblMsj.ForeColor = Color.Red;
+                        lblMsj.ForeColor = Color.Green;
                         lblMsj.Text = "No se realizaron cambios en la BD";
                         break;
                 }
