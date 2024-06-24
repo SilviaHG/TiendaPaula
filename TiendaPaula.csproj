@@ -188,8 +188,11 @@
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
     <Compile Include="Gestiones\Gestion_Clientes.cs" />
+    <Compile Include="Gestiones\Gestion_Compras.cs" />
+    <Compile Include="Gestiones\Gestion_Listas.cs" />
     <Compile Include="Gestiones\Gestion_Proveedores.cs" />
     <Compile Include="Gestiones\Gestion_Usuarios.cs" />
+    <Compile Include="Gestiones\Gestion_Ventas.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\Clientes.resx">
@@ -308,6 +311,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-expenses-34.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-pagado-28.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cheque.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

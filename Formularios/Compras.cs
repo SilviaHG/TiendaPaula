@@ -28,5 +28,32 @@ namespace TiendaPaula.Formularios
             Detalles_Compras Abrir = new Detalles_Compras();
             Abrir.Show();
         }
+
+        private void txtUnidad_Precio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // solo pueden ingresar números
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtGarantia_venta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // solo pueden ingresar números
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtBuscar_Compra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // solo pueden ingresar números
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
