@@ -189,6 +189,7 @@
     </Compile>
     <Compile Include="Gestiones\Gestion_Clientes.cs" />
     <Compile Include="Gestiones\Gestion_Compras.cs" />
+    <Compile Include="Gestiones\Gestion_Empleados.cs" />
     <Compile Include="Gestiones\Gestion_Listas.cs" />
     <Compile Include="Gestiones\Gestion_Proveedores.cs" />
     <Compile Include="Gestiones\Gestion_Usuarios.cs" />
