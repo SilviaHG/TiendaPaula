@@ -86,6 +86,7 @@
             this.btnActualizar.TabIndex = 1;
             this.btnActualizar.Text = "Actualiza";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnAgregar
             // 
@@ -253,6 +254,7 @@
             this.btnBuscar.TabIndex = 21;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtBuscar
             // 
@@ -262,7 +264,7 @@
             this.txtBuscar.Depth = 0;
             this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtBuscar.HideSelection = true;
-            this.txtBuscar.Hint = "Buscar por número de cédula";
+            this.txtBuscar.Hint = "Buscar por código del proveedor";
             this.txtBuscar.LeadingIcon = null;
             this.txtBuscar.Location = new System.Drawing.Point(291, 78);
             this.txtBuscar.MaxLength = 32767;
@@ -294,6 +296,7 @@
             this.dtProveedores.ReadOnly = true;
             this.dtProveedores.Size = new System.Drawing.Size(679, 300);
             this.dtProveedores.TabIndex = 19;
+            this.dtProveedores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtProveedores_CellClick);
             // 
             // lblMsj
             // 
