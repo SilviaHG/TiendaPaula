@@ -30,10 +30,29 @@ namespace TiendaPaula.Formularios
             dtVentas.DataSource = GestVentas.MostrarVentasTotales();
             LimpiarCampos();
 
-
-            cbClientes.DataSource = G_Listas.MostrarClientesLista().AsEnumerable().ToList().Select(p => p[0]).ToList();
+            AgregarComboBoxs();
 
             
+
+        }
+
+        /// <summary>
+        /// Muestra y/o actualiza las opciones de los comboBoxs
+        /// </summary>
+        public void AgregarComboBoxs()
+        {
+            cbClientes.DataSource = G_Listas.MostrarClientes().AsEnumerable().ToList().Select(p => p[0]).ToList();
+            cbClientes.AutoCompleteCustomSource.AddRange(
+                G_Listas.MostrarClientes().AsEnumerable().ToList().Select(p => p[0].ToString()).ToList().ToArray());
+
+
+            cbEmpleados.DataSource = G_Listas.MostrarEmpleados().AsEnumerable().ToList().Select(p => p[0]).ToList();
+            cbEmpleados.AutoCompleteCustomSource.AddRange(
+                G_Listas.MostrarEmpleados().AsEnumerable().ToList().Select(p => p[0].ToString()).ToList().ToArray());
+
+            cbProductos.DataSource = G_Listas.MostrarProductos().AsEnumerable().ToList().Select(p => p[0]).ToList();
+            cbEmpleados.AutoCompleteCustomSource.AddRange(
+                G_Listas.MostrarEmpleados().AsEnumerable().ToList().Select(p => p[0].ToString()).ToList().ToArray());
         }
 
         public void LimpiarCampos()
@@ -43,10 +62,10 @@ namespace TiendaPaula.Formularios
             txtDescuento.Text = "";
             txtIVA.Text = "";
             txtPrecioTotal.Text = "";
-            cbClientes.SelectedIndex = 0;
+            //cbClientes.SelectedIndex = 0;
             //cbEmpleados.SelectedIndex = 0;
-            cbTipo_pagos.SelectedIndex = 0;
-            Cant_Productos.Value = 0;
+            //cbTipo_pagos.SelectedIndex = 0;
+            //Cant_Productos.Value = 0;
             Fecha_V.Value = DateTime.Now;
             //limpiar el label de mensaje
             lblMsj.Text = "";

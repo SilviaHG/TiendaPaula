@@ -9,10 +9,10 @@ using TiendaPaula.Clases;
 
 namespace TiendaPaula.Gestiones
 {
-    public class Gestion_Listas: Conexion   
+    public class Gestion_Listas : Conexion
 
     {
-        public DataTable MostrarClientesLista()
+        public DataTable MostrarClientes()
         {
             DataTable MostrarClientes = new DataTable();
 
@@ -21,7 +21,7 @@ namespace TiendaPaula.Gestiones
                 try
                 {
                     AbrirConexion(cnn); //abrimos la conexion
-                    MySqlCommand cmd = new MySqlCommand("SELECT IdCustomer FROM CUSTOMERS", cnn); // CODIGO QUE MUESTRA SOLA EL ID DE LOS CLIENTES
+                    MySqlCommand cmd = new MySqlCommand("SELECT IdCustomer FROM CUSTOMERS", cnn); // CODIGO QUE MUESTRA SOLO EL ID DE LOS CLIENTES
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     adapter.Fill(MostrarClientes);
 
@@ -42,5 +42,69 @@ namespace TiendaPaula.Gestiones
             return MostrarClientes;
 
         }
+
+        public DataTable MostrarEmpleados()
+        {
+            DataTable MostrarEmpleados = new DataTable();
+
+            using (MySqlConnection cnn = establecerConexion()) // se establece la conexion
+            {
+                try
+                {
+                    AbrirConexion(cnn); //abrimos la conexion
+                    MySqlCommand cmd = new MySqlCommand("SELECT IdEmployee FROM EMPLOYEES", cnn); // CODIGO QUE MUESTRA SOLO EL ID DE LOS EMPLEADOS
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    adapter.Fill(MostrarEmpleados);
+
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}"); // si da un error lo mostramos
+                }
+                finally
+                {
+                    cerrarConexion(cnn); // despues de cierra la conexion
+                }
+
+
+            }
+
+            return MostrarEmpleados;
+
+        }
+
+
+        public DataTable MostrarProductos()
+        {
+            DataTable MostrarProductos = new DataTable();
+
+            using (MySqlConnection cnn = establecerConexion()) // se establece la conexion
+            {
+                try
+                {
+                    AbrirConexion(cnn); //abrimos la conexion
+                    MySqlCommand cmd = new MySqlCommand("SELECT IDProduct FROM PRODUCTS", cnn); // CODIGO QUE MUESTRA SOLO EL ID DE LOS PRODUCTOS
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    adapter.Fill(MostrarProductos);
+
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}"); // si da un error lo mostramos
+                }
+                finally
+                {
+                    cerrarConexion(cnn); // despues de cierra la conexion
+                }
+
+
+            }
+
+            return MostrarProductos;
+
+        }
+
     }
 }
