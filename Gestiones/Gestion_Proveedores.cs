@@ -106,7 +106,7 @@ namespace TiendaPaula.Gestiones
                     AbrirConexion(cnn);
                     MySqlCommand cmd = new MySqlCommand("SP_UPDATE_PROVIDER", cnn);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("ID_C", pro.Id_Proveedor); // los parametros que pedimos en el procedimiento almacenado
+                    cmd.Parameters.AddWithValue("ID_P", pro.Id_Proveedor); // los parametros que pedimos en el procedimiento almacenado
                     cmd.Parameters.AddWithValue("NAME_P", pro.Nombre_Completo);
                     cmd.Parameters.AddWithValue("TEL", pro.Telefono_Proveedor);
                     cmd.Parameters.AddWithValue("EMAIL_P", pro.Correo_Proveedor);
@@ -195,13 +195,11 @@ namespace TiendaPaula.Gestiones
                     AbrirConexion(connection);
 
                     MySqlCommand cmd = new MySqlCommand($"SELECT * FROM PROVIDERS WHERE Telephone = {telefono}", connection);
-                    cmd.Parameters.AddWithValue("Telephone", telefono);
+                    //cmd.Parameters.AddWithValue("Telephone", telefono);
 
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     adapter.Fill(dt);
-
-                    existe = dt.Rows.Count > 1;
-
+                    existe = dt.Rows.Count > 0;
                 }
                 catch (MySqlException err)
                 {

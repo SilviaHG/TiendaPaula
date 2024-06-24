@@ -236,13 +236,65 @@ namespace TiendaPaula.Formularios
                 int cedula = Convert.ToInt32(txtCedulaCliente.Text);
                 int telefono = Convert.ToInt32(txtTelefonoCliente.Text);
 
-                if (gestCliente.Verificar_NumTelefono(telefono) == true)
+                //verificamos si lo que quiere acualizar es el número 
+                DataGridViewRow fila = dtClientes.SelectedRows[0];
+                string numViejo = fila.Cells[2].Value.ToString();
+
+                if (numViejo == txtTelefonoCliente.Text)
                 {
-                    lblMsj.ForeColor = Color.Red;
-                    lblMsj.Text = "Este número de teléfono ya existe en la BD";
+                    // se valida que el correo sea un email válido
+                    if (EmailValido(txtEmailCliente.Text))
+                    {
+
+                        lblMsj.ForeColor = Color.Red;// mensaje de confirmación
+                        DialogResult optUser = MessageBox.Show($"¿Desea actualizar al clientes" +
+                            $" con la cédula {cedula}?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        switch (optUser)
+                        {
+                            case DialogResult.Yes:
+
+                                //se abre la conexion
+                                gestCliente.AbrirConexion(gestCliente.establecerConexion());
+                                //establecemos los valores que se actualizan
+                                cliente.Cedula_Cliente = Convert.ToInt32(txtCedulaCliente.Text);
+                                cliente.Nombre_Completo = txtNombreCompletoCliente.Text;
+                                cliente.Email = txtEmailCliente.Text;
+                                cliente.Telefono = Convert.ToInt32(txtTelefonoCliente.Text);
+                                cliente.Direccion = txtDireccionCliente.Text;
+                                //enviamos los datos a la clase gestion cliente
+                                gestCliente.ActualizarCliente(cliente);
+
+                                Console.WriteLine("Se actualizó");
+                                //volvemos a cargar el datagrid view
+                                dtClientes.DataSource = gestCliente.MostrarTodosClientes();
+
+                                //mensaje
+                                lblMsj.ForeColor = Color.Green;
+                                lblMsj.Text = $"Cliente con la cédula {cedula} actualizado correctamente";
+                                LimpiarCampos();
+                                break;
+                            case DialogResult.No:
+                                lblMsj.ForeColor = Color.Red;
+                                lblMsj.Text = "No se realizaron cambios en la BD";
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        // El correo electrónico no es válido
+                        lblMsj.ForeColor = Color.Red;
+                        lblMsj.Text = "Correo Electrónico NO valido";
+                    }
                 }
                 else
                 {
+                    if (gestCliente.Verificar_NumTelefono(telefono) == true)
+                    {
+                        lblMsj.ForeColor = Color.Red;
+                        lblMsj.Text = "Este número de teléfono ya existe en la BD";
+                    }
+                    else
                     // se valida que el correo sea un email válido
                     if (EmailValido(txtEmailCliente.Text))
                     {
@@ -298,12 +350,12 @@ namespace TiendaPaula.Formularios
         private void btnBuscar_Click(object sender, EventArgs e)
         {
 
-            
+            // se busca un cliente en especifico
             gestCliente.AbrirConexion(gestCliente.establecerConexion());
 
             if (string.IsNullOrEmpty(txtBuscar.Text))
             {
-               
+
                 lblMsj.ForeColor = Color.Red;
                 lblMsj.Text = "Debe ingresar un número de cédula en el campo de búsqueda";
             }
@@ -320,7 +372,7 @@ namespace TiendaPaula.Formularios
                 gestCliente.cerrarConexion(gestCliente.establecerConexion());
             }
 
-            
+
 
         }
 
@@ -331,10 +383,10 @@ namespace TiendaPaula.Formularios
 
         private void dtClientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //actualiza el cliente
+            //se muestran los datos seleccionado en los textbox, ya sea para eliminar o actualizar
 
             DataGridViewRow fila = dtClientes.SelectedRows[0];
-            // para que no pueda editar la cédula
+            //se deshabilita para que no pueda editar la cédula
             txtCedulaCliente.Enabled = false;
             //habilitamos el boton de actualizar y eliminar y deshabilitamos el de agregar
             btnActualiza.Enabled = true;
@@ -349,8 +401,5 @@ namespace TiendaPaula.Formularios
             txtDireccionCliente.Text = fila.Cells[4].Value.ToString();
 
         }
-
-
     }
-
 }
