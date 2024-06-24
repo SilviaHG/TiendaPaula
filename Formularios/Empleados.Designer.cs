@@ -67,6 +67,7 @@
             this.btnClean.TabIndex = 3;
             this.btnClean.Text = "Limpiar";
             this.btnClean.UseVisualStyleBackColor = true;
+            this.btnClean.Click += new System.EventHandler(this.btnClean_Click);
             // 
             // btnEliminar
             // 
@@ -79,21 +80,22 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(141, 3);
+            this.btnActualizar.Location = new System.Drawing.Point(128, 3);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(71, 37);
+            this.btnActualizar.Size = new System.Drawing.Size(84, 37);
             this.btnActualizar.TabIndex = 1;
             this.btnActualizar.Text = "Actualiza";
             this.btnActualizar.UseVisualStyleBackColor = true;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(26, 3);
+            this.btnAgregar.Location = new System.Drawing.Point(22, 3);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(66, 37);
+            this.btnAgregar.Size = new System.Drawing.Size(70, 37);
             this.btnAgregar.TabIndex = 0;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtDireccionE
             // 
@@ -181,6 +183,7 @@
             this.txtTelefonoE.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtTelefonoE.TrailingIcon = null;
             this.txtTelefonoE.UseSystemPasswordChar = false;
+            this.txtTelefonoE.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefonoE_KeyPress);
             // 
             // txtNombreE
             // 
@@ -210,6 +213,7 @@
             this.txtNombreE.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtNombreE.TrailingIcon = null;
             this.txtNombreE.UseSystemPasswordChar = false;
+            this.txtNombreE.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreE_KeyPress);
             // 
             // txtCedulaE
             // 
@@ -239,6 +243,7 @@
             this.txtCedulaE.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtCedulaE.TrailingIcon = null;
             this.txtCedulaE.UseSystemPasswordChar = false;
+            this.txtCedulaE.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedulaE_KeyPress);
             // 
             // cbPosiciones
             // 
@@ -249,7 +254,7 @@
             this.cbPosiciones.DropDownHeight = 174;
             this.cbPosiciones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPosiciones.DropDownWidth = 121;
-            this.cbPosiciones.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbPosiciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cbPosiciones.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cbPosiciones.FormattingEnabled = true;
             this.cbPosiciones.IntegralHeight = false;
@@ -299,6 +304,8 @@
             this.txtBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtBuscar.TrailingIcon = null;
             this.txtBuscar.UseSystemPasswordChar = false;
+            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // dtEmpleados
             // 

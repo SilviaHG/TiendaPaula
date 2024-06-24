@@ -45,7 +45,7 @@ namespace TiendaPaula.Formularios
             //limpiar el label de mensaje
             lblMsj.Text = "";
 
-            //habilitamos los botnes y el campo de texto
+            //habilitamos los botones y el campo de texto
             txtID_Proveedor.Enabled = true;
             btnActualizar.Enabled = false;
             btnEliminar.Enabled = false;
