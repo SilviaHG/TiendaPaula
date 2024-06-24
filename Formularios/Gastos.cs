@@ -22,5 +22,23 @@ namespace TiendaPaula.Formularios
         {
 
         }
+
+        private void txtNombre_Gasto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // solo pueden ingresar letras y espacios
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPrecioTotal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // solo pueden ingresar números
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
