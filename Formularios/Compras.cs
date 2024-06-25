@@ -8,11 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TiendaPaula.Gestiones;
 
 namespace TiendaPaula.Formularios
 {
     public partial class Compras : MaterialForm
     {
+
+        Gestion_Listas G_Listas = new Gestion_Listas();
+
         public Compras()
         {
             InitializeComponent();
@@ -20,9 +24,24 @@ namespace TiendaPaula.Formularios
 
         private void Compras_Load(object sender, EventArgs e)
         {
-
+            AgregarComboBoxs();
         }
 
+        public void AgregarComboBoxs()
+        {
+            cbProveedor.DataSource = G_Listas.MostrarProveedor().AsEnumerable().ToList().Select(p => p[0]).ToList();
+            cbProveedor.AutoCompleteCustomSource.AddRange(
+                G_Listas.MostrarProveedor().AsEnumerable().ToList().Select(p => p[0].ToString()).ToList().ToArray());
+
+
+            cbEmpleados.DataSource = G_Listas.MostrarEmpleados().AsEnumerable().ToList().Select(p => p[0]).ToList();
+            cbEmpleados.AutoCompleteCustomSource.AddRange(
+                G_Listas.MostrarEmpleados().AsEnumerable().ToList().Select(p => p[0].ToString()).ToList().ToArray());
+
+            cbProductos.DataSource = G_Listas.MostrarProductos().AsEnumerable().ToList().Select(p => p[0]).ToList();
+            cbEmpleados.AutoCompleteCustomSource.AddRange(
+                G_Listas.MostrarEmpleados().AsEnumerable().ToList().Select(p => p[0].ToString()).ToList().ToArray());
+        }
         private void Abre_DetallesCompra_Click(object sender, EventArgs e)
         {
             Detalles_Compras Abrir = new Detalles_Compras();

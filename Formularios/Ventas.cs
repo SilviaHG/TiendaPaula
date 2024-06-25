@@ -32,7 +32,7 @@ namespace TiendaPaula.Formularios
 
             AgregarComboBoxs();
 
-            
+            txtId_Venta.Text = GestVentas.NumeroMAX().ToString();
 
         }
 
@@ -70,8 +70,9 @@ namespace TiendaPaula.Formularios
             //limpiar el label de mensaje
             lblMsj.Text = "";
 
+            txtId_Venta.Text = GestVentas.NumeroMAX().ToString(); //actualiza el nuevo numero de factura de venta
             //habilitamos los botnes y el campo de texto
-            
+
             btActualizar.Enabled = false;
             btAgregar.Enabled = true;
         }
@@ -94,11 +95,13 @@ namespace TiendaPaula.Formularios
 
         private void txtDescuento_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // solo pueden ingresar números
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            // solo pueden ingresar números y punto
+            
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
-                e.Handled = true;
+                e.Handled = true; // Ignorar el carácter
             }
+
         }
 
         private void txtBuscar_Venta_KeyPress(object sender, KeyPressEventArgs e)
@@ -110,9 +113,72 @@ namespace TiendaPaula.Formularios
             }
         }
 
+        private void txtIVA_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // solo pueden ingresar números
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPrecioTotal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // solo pueden ingresar números
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
         private void btLimpiar_Click(object sender, EventArgs e)
         {
             LimpiarCampos();
+        }
+
+        private void AbrirClientes_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Clientes Abrir = new Clientes();
+            Abrir.Show();
+        }
+
+        private void txtDescuento_TextChanged(object sender, EventArgs e)
+        {
+            int Codigo_p =Convert.ToInt32( cbProductos.SelectedItem.ToString());
+            int Cantidad = Convert.ToInt32( Cant_Productos.Value.ToString());
+
+            txtIVA.Text = GestVentas.Monto_IVA(Codigo_p,Cantidad).ToString();
+        }
+
+        
+        //Boton de buscar
+        private void btBuscar_Click(object sender, EventArgs e)
+        {
+
+
+            if (string.IsNullOrEmpty(txtBuscar_Venta.Text))
+            {
+
+                lblMsj.ForeColor = Color.Red;
+                lblMsj.Text = "Debe ingresar un número de código en el campo de búsqueda";
+            }
+            else
+            {
+                int cod = Convert.ToInt32(txtBuscar_Venta.Text);
+               
+
+                lblMsj.ForeColor = Color.Green;
+                lblMsj.Text = "Mostrando resultados...";
+
+                dtVentas.DataSource = GestVentas.obtenerVenta(cod);
+                lblMsj.Text = "";
+                
+            }
+        }
+
+        private void btAgregar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
