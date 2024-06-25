@@ -14,7 +14,7 @@ namespace TiendaPaula.Gestiones
     {
         //Primero vamos a mostrar todos los datos de la BD a la tabla
 
-        public DataTable MostrarTodosClientes()
+        public async Task<DataTable> MostrarTodosClientes()
         {
             DataTable MostrarClientes = new DataTable();
 
@@ -22,7 +22,7 @@ namespace TiendaPaula.Gestiones
             {
                 try
                 {
-                    AbrirConexion(cnn); //abrimos la conexion
+                    await AbrirConexion(cnn); //abrimos la conexion
                     MySqlCommand cmd = new MySqlCommand("Select * from V_SHOW_CUSTOMERS", cnn); // agregamos el procedumiento almacenado
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     adapter.Fill(MostrarClientes);
@@ -33,7 +33,7 @@ namespace TiendaPaula.Gestiones
                 }
                 finally
                 {
-                    cerrarConexion(cnn); // despues de cierra la conexion
+                    await cerrarConexion(cnn); // despues de cierra la conexion
                 }
 
 
@@ -44,13 +44,13 @@ namespace TiendaPaula.Gestiones
 
         // Agregamos un cliente nuevo
 
-        public void InsertarCliente(Class_Cliente clientes) // agregamos la clase de clientes
+        public async Task InsertarCliente(Class_Cliente clientes) // agregamos la clase de clientes
         {
             using (MySqlConnection cnn = establecerConexion())
             {
                 try
                 {
-                    AbrirConexion(cnn); // abrimos conección
+                    await AbrirConexion(cnn); // abrimos conección
                     MySqlCommand mySqlCommand = new MySqlCommand("SP_REGISTER_CUSTOMER", cnn);
                     mySqlCommand.CommandType = CommandType.StoredProcedure;
                     mySqlCommand.Parameters.AddWithValue("ID_C", clientes.Cedula_Cliente); // los parametros que pedimos en el procedimiento almacenado
@@ -68,18 +68,18 @@ namespace TiendaPaula.Gestiones
                 }
                 finally
                 {
-                    cerrarConexion(cnn);
+                    await cerrarConexion(cnn);
                 }
             }
         }
 
-        public void EliminarCliente(int cliente)
+        public async Task EliminarCliente(int cliente)
         {
             using (MySqlConnection cnn = establecerConexion())
             {
                 try
                 {
-                    AbrirConexion(cnn);
+                    await AbrirConexion(cnn);
                     MySqlCommand cmd = new MySqlCommand("SP_DELETE_CUSTOMER", cnn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("ID_C", cliente);
@@ -91,19 +91,19 @@ namespace TiendaPaula.Gestiones
                 }
                 finally
                 {
-                    cerrarConexion(cnn);
+                    await cerrarConexion(cnn);
                 }
             }
         }
 
 
-        public void ActualizarCliente(Class_Cliente cliente)
+        public async Task ActualizarCliente(Class_Cliente cliente)
         {
             using (MySqlConnection cnn = establecerConexion())
             {
                 try
                 {
-                    AbrirConexion(cnn);
+                    await AbrirConexion(cnn);
                     MySqlCommand cmd = new MySqlCommand("SP_UPDATE_CUSTOMER", cnn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("ID_C", cliente.Cedula_Cliente);
@@ -119,12 +119,12 @@ namespace TiendaPaula.Gestiones
                 }
                 finally
                 {
-                    cerrarConexion(cnn);
+                    await cerrarConexion(cnn);
                 }
             }
         }
 
-        public bool BuscarCliente(int cliente, int telefono)
+        public async Task<bool> BuscarCliente(int cliente, int telefono)
         {
             bool existe = false;
 
@@ -134,7 +134,7 @@ namespace TiendaPaula.Gestiones
             {
                 try
                 {
-                    AbrirConexion(cnn);
+                    await AbrirConexion(cnn);
                     MySqlCommand cmd = new MySqlCommand("SP_SEARCH_CUSTOMER", cnn); //procedimiento almacenado
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("ID_C", cliente);
@@ -151,7 +151,7 @@ namespace TiendaPaula.Gestiones
                 }
                 finally //despues de todo que cierre la conexion
                 {
-                    cerrarConexion(cnn);
+                    await cerrarConexion(cnn);
                 }
             }
 
@@ -159,14 +159,14 @@ namespace TiendaPaula.Gestiones
         }
 
 
-        public DataTable obtenerListaClientes(int nombre, int telefono)
+        public async Task<DataTable> obtenerListaClientes(int nombre, int telefono)
         {
             DataTable dtCategorias = new DataTable();
             using (MySqlConnection connection = establecerConexion())
             {
                 try
                 {
-                    AbrirConexion(connection);
+                    await AbrirConexion(connection);
                     MySqlCommand cmd = new MySqlCommand("SP_SEARCH_CUSTOMER", connection); //nombre del procediminto almacenado en BD
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("ID_C", nombre); //nombre de parametro que esta en el procedimiento almacenado en BD
@@ -182,7 +182,7 @@ namespace TiendaPaula.Gestiones
             return dtCategorias;
         }
 
-        public bool Verificar_NumTelefono(int telefono)
+        public async Task< bool> Verificar_NumTelefono(int telefono)
         {
             bool existe = false;
 
@@ -191,7 +191,7 @@ namespace TiendaPaula.Gestiones
             using (MySqlConnection connection = establecerConexion())
                 try
                 {
-                    AbrirConexion(connection);
+                    await AbrirConexion(connection);
 
                     MySqlCommand cmd = new MySqlCommand($"SELECT * FROM CUSTOMERS WHERE Telephone = {telefono}", connection);
                     cmd.Parameters.AddWithValue("Telephone", telefono);
@@ -208,7 +208,7 @@ namespace TiendaPaula.Gestiones
                 }
                 finally
                 {
-                    cerrarConexion(connection);
+                    await cerrarConexion(connection);
                 }
 
             return existe;

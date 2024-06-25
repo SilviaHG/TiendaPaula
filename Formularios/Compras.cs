@@ -27,20 +27,20 @@ namespace TiendaPaula.Formularios
             AgregarComboBoxs();
         }
 
-        public void AgregarComboBoxs()
+        public async void AgregarComboBoxs()
         {
-            cbProveedor.DataSource = G_Listas.MostrarProveedor().AsEnumerable().ToList().Select(p => p[0]).ToList();
+            cbProveedor.DataSource = (await G_Listas.MostrarProveedor()).AsEnumerable().ToList().Select(p => p[0]).ToList();
             cbProveedor.AutoCompleteCustomSource.AddRange(
-                G_Listas.MostrarProveedor().AsEnumerable().ToList().Select(p => p[0].ToString()).ToList().ToArray());
+                (await G_Listas.MostrarProveedor()).AsEnumerable().ToList().Select(p => p[0].ToString()).ToList().ToArray());
 
 
-            cbEmpleados.DataSource = G_Listas.MostrarEmpleados().AsEnumerable().ToList().Select(p => p[0]).ToList();
+            cbEmpleados.DataSource = (await G_Listas.MostrarEmpleados()).AsEnumerable().ToList().Select(p => p[0]).ToList();
             cbEmpleados.AutoCompleteCustomSource.AddRange(
-                G_Listas.MostrarEmpleados().AsEnumerable().ToList().Select(p => p[0].ToString()).ToList().ToArray());
+                ( await G_Listas.MostrarEmpleados()).AsEnumerable().ToList().Select(p => p[0].ToString()).ToList().ToArray());
 
-            cbProductos.DataSource = G_Listas.MostrarProductos().AsEnumerable().ToList().Select(p => p[0]).ToList();
+            cbProductos.DataSource = (await G_Listas.MostrarProductos()).AsEnumerable().ToList().Select(p => p[0]).ToList();
             cbEmpleados.AutoCompleteCustomSource.AddRange(
-                G_Listas.MostrarEmpleados().AsEnumerable().ToList().Select(p => p[0].ToString()).ToList().ToArray());
+               ( await G_Listas.MostrarEmpleados()).AsEnumerable().ToList().Select(p => p[0].ToString()).ToList().ToArray());
         }
         private void Abre_DetallesCompra_Click(object sender, EventArgs e)
         {

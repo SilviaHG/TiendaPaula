@@ -28,14 +28,14 @@ namespace TiendaPaula.Formularios
             InitializeComponent();
         }
 
-        private void Clientes_Load(object sender, EventArgs e)
+        private async void Clientes_Load(object sender, EventArgs e)
         {
             //Mostramos la tabla que esta en la BD
-            dtClientes.DataSource = gestCliente.MostrarTodosClientes();
+            dtClientes.DataSource = await gestCliente.MostrarTodosClientes();
             LimpiarCampos();
         }
 
-        public void LimpiarCampos()
+        public async void LimpiarCampos()
         {
             txtCedulaCliente.Text = "";
             txtNombreCompletoCliente.Text = "";
@@ -51,6 +51,9 @@ namespace TiendaPaula.Formularios
             btnActualiza.Enabled = false;
             btnEliminar.Enabled = false;
             btnAgregar.Enabled = true;
+
+            //Mostramos la tabla que esta en la BD
+            dtClientes.DataSource = await gestCliente.MostrarTodosClientes();
         }
 
         private void txtCedulaCliente_KeyPress(object sender, KeyPressEventArgs e)
@@ -126,7 +129,7 @@ namespace TiendaPaula.Formularios
 
 
 
-        private void btnAgregar_Click(object sender, EventArgs e)
+        private async void btnAgregar_Click(object sender, EventArgs e)
         {
             // verificamos que los campos no esten vacios
             if (string.IsNullOrEmpty(txtCedulaCliente.Text) || string.IsNullOrEmpty(txtNombreCompletoCliente.Text)
@@ -141,7 +144,7 @@ namespace TiendaPaula.Formularios
                 // se valida que exista el cliente
                 int cedula = Convert.ToInt32(txtCedulaCliente.Text);
                 int telefono = Convert.ToInt32(txtTelefonoCliente.Text);
-                if (gestCliente.BuscarCliente(cedula, telefono) == true)
+                if (await gestCliente.BuscarCliente(cedula, telefono) == true)
                 {
                     lblMsj.ForeColor = Color.Red;
                     lblMsj.Text = "Este cliente y/o número de teléfono ya existe en la BD";
@@ -152,7 +155,7 @@ namespace TiendaPaula.Formularios
                     if (EmailValido(txtEmailCliente.Text))
                     {
                         //se abre la conexion
-                        gestCliente.AbrirConexion(gestCliente.establecerConexion());
+                        await gestCliente.AbrirConexion(gestCliente.establecerConexion());
                         //establecemos los valores agregamos por el usuario a los txt
                         cliente.Cedula_Cliente = Convert.ToInt32(txtCedulaCliente.Text);
                         cliente.Nombre_Completo = txtNombreCompletoCliente.Text;
@@ -160,7 +163,8 @@ namespace TiendaPaula.Formularios
                         cliente.Telefono = Convert.ToInt32(txtTelefonoCliente.Text);
                         cliente.Direccion = txtDireccionCliente.Text;
                         //enviamos los datos a la clase gestion cliente
-                        gestCliente.InsertarCliente(cliente);
+                        await gestCliente.AbrirConexion(gestCliente.establecerConexion());
+                        await gestCliente.InsertarCliente(cliente);
 
                         //volvemos a cargar el datagrid view
                         dtClientes.DataSource = gestCliente.MostrarTodosClientes();
@@ -180,18 +184,18 @@ namespace TiendaPaula.Formularios
 
             }
             // cerramos la conexion
-            gestCliente.cerrarConexion(gestCliente.establecerConexion());
+            await gestCliente.cerrarConexion(gestCliente.establecerConexion());
 
         }
         // hacerlo con que toque la tabla
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private async void btnEliminar_Click(object sender, EventArgs e)
         {
             int num = Convert.ToInt32(txtCedulaCliente.Text);
             int telefono = Convert.ToInt32(txtTelefonoCliente.Text);
             //se abre la conexion
-            gestCliente.AbrirConexion(gestCliente.establecerConexion());
+            await gestCliente.AbrirConexion(gestCliente.establecerConexion());
 
-            if (gestCliente.BuscarCliente(num, telefono) == true)
+            if (await gestCliente.BuscarCliente(num, telefono) == true)
             {
                 // mensaje de confirmación
                 DialogResult optUser = MessageBox.Show($"¿Desea eliminar permanentemente al clientes" +
@@ -199,7 +203,7 @@ namespace TiendaPaula.Formularios
                 switch (optUser)
                 {
                     case DialogResult.Yes:
-                        gestCliente.EliminarCliente(num);
+                        await gestCliente.EliminarCliente(num);
                         dtClientes.DataSource = gestCliente.MostrarTodosClientes();
 
                         lblMsj.ForeColor = Color.Green;
@@ -220,7 +224,7 @@ namespace TiendaPaula.Formularios
             }
         }
 
-        private void btnActualiza_Click(object sender, EventArgs e)
+        private async void btnActualiza_Click(object sender, EventArgs e)
         {
             // verificamos que los campos no esten vacios
             if (string.IsNullOrEmpty(txtNombreCompletoCliente.Text) || string.IsNullOrEmpty(txtTelefonoCliente.Text)
@@ -255,7 +259,7 @@ namespace TiendaPaula.Formularios
                             case DialogResult.Yes:
 
                                 //se abre la conexion
-                                gestCliente.AbrirConexion(gestCliente.establecerConexion());
+                                await gestCliente.AbrirConexion(gestCliente.establecerConexion());
                                 //establecemos los valores que se actualizan
                                 cliente.Cedula_Cliente = Convert.ToInt32(txtCedulaCliente.Text);
                                 cliente.Nombre_Completo = txtNombreCompletoCliente.Text;
@@ -263,11 +267,11 @@ namespace TiendaPaula.Formularios
                                 cliente.Telefono = Convert.ToInt32(txtTelefonoCliente.Text);
                                 cliente.Direccion = txtDireccionCliente.Text;
                                 //enviamos los datos a la clase gestion cliente
-                                gestCliente.ActualizarCliente(cliente);
+                                await gestCliente.ActualizarCliente(cliente);
 
                                 Console.WriteLine("Se actualizó");
                                 //volvemos a cargar el datagrid view
-                                dtClientes.DataSource = gestCliente.MostrarTodosClientes();
+                                dtClientes.DataSource = await gestCliente.MostrarTodosClientes();
 
                                 //mensaje
                                 lblMsj.ForeColor = Color.Green;
@@ -289,7 +293,7 @@ namespace TiendaPaula.Formularios
                 }
                 else
                 {
-                    if (gestCliente.Verificar_NumTelefono(telefono) == true)
+                    if (await gestCliente.Verificar_NumTelefono(telefono) == true)
                     {
                         lblMsj.ForeColor = Color.Red;
                         lblMsj.Text = "Este número de teléfono ya existe en la BD";
@@ -308,7 +312,7 @@ namespace TiendaPaula.Formularios
                             case DialogResult.Yes:
 
                                 //se abre la conexion
-                                gestCliente.AbrirConexion(gestCliente.establecerConexion());
+                                await gestCliente.AbrirConexion(gestCliente.establecerConexion());
                                 //establecemos los valores que se actualizan
                                 cliente.Cedula_Cliente = Convert.ToInt32(txtCedulaCliente.Text);
                                 cliente.Nombre_Completo = txtNombreCompletoCliente.Text;
@@ -316,11 +320,11 @@ namespace TiendaPaula.Formularios
                                 cliente.Telefono = Convert.ToInt32(txtTelefonoCliente.Text);
                                 cliente.Direccion = txtDireccionCliente.Text;
                                 //enviamos los datos a la clase gestion cliente
-                                gestCliente.ActualizarCliente(cliente);
+                                await gestCliente.ActualizarCliente(cliente);
 
                                 Console.WriteLine("Se actualizó");
                                 //volvemos a cargar el datagrid view
-                                dtClientes.DataSource = gestCliente.MostrarTodosClientes();
+                                dtClientes.DataSource = await gestCliente.MostrarTodosClientes();
 
                                 //mensaje
                                 lblMsj.ForeColor = Color.Green;
@@ -343,15 +347,15 @@ namespace TiendaPaula.Formularios
 
             }
             // cerramos la conexion
-            gestCliente.cerrarConexion(gestCliente.establecerConexion());
+            await gestCliente.cerrarConexion(gestCliente.establecerConexion());
 
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+        private async void btnBuscar_Click(object sender, EventArgs e)
         {
 
             // se busca un cliente en especifico
-            gestCliente.AbrirConexion(gestCliente.establecerConexion());
+            await gestCliente.AbrirConexion(gestCliente.establecerConexion());
 
             if (string.IsNullOrEmpty(txtBuscar.Text))
             {
@@ -369,7 +373,7 @@ namespace TiendaPaula.Formularios
 
                 dtClientes.DataSource = gestCliente.obtenerListaClientes(cedula, telefono);
                 lblMsj.Text = "";
-                gestCliente.cerrarConexion(gestCliente.establecerConexion());
+                await gestCliente.cerrarConexion(gestCliente.establecerConexion());
             }
 
 
