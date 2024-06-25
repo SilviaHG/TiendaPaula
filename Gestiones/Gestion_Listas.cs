@@ -12,7 +12,7 @@ namespace TiendaPaula.Gestiones
     public class Gestion_Listas : Conexion
 
     {
-        public DataTable MostrarClientes()
+        public async Task<DataTable> MostrarClientes()
         {
             DataTable MostrarClientes = new DataTable();
 
@@ -20,7 +20,7 @@ namespace TiendaPaula.Gestiones
             {
                 try
                 {
-                    AbrirConexion(cnn); //abrimos la conexion
+                    await AbrirConexion(cnn); //abrimos la conexion
                     MySqlCommand cmd = new MySqlCommand("SELECT IdCustomer FROM CUSTOMERS", cnn); // CODIGO QUE MUESTRA SOLO EL ID DE LOS CLIENTES
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     adapter.Fill(MostrarClientes);
@@ -33,7 +33,7 @@ namespace TiendaPaula.Gestiones
                 }
                 finally
                 {
-                    cerrarConexion(cnn); // despues de cierra la conexion
+                    await cerrarConexion(cnn); // despues de cierra la conexion
                 }
 
 
@@ -43,7 +43,7 @@ namespace TiendaPaula.Gestiones
 
         }
 
-        public DataTable MostrarEmpleados()
+        public async Task<DataTable> MostrarEmpleados()
         {
             DataTable MostrarEmpleados = new DataTable();
 
@@ -51,7 +51,7 @@ namespace TiendaPaula.Gestiones
             {
                 try
                 {
-                    AbrirConexion(cnn); //abrimos la conexion
+                    await AbrirConexion(cnn); //abrimos la conexion
                     MySqlCommand cmd = new MySqlCommand("SELECT IdEmployee FROM EMPLOYEES", cnn); // CODIGO QUE MUESTRA SOLO EL ID DE LOS EMPLEADOS
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     adapter.Fill(MostrarEmpleados);
@@ -64,7 +64,7 @@ namespace TiendaPaula.Gestiones
                 }
                 finally
                 {
-                    cerrarConexion(cnn); // despues de cierra la conexion
+                    await cerrarConexion(cnn); // despues de cierra la conexion
                 }
 
 
@@ -75,7 +75,7 @@ namespace TiendaPaula.Gestiones
         }
 
 
-        public DataTable MostrarProductos()
+        public async Task< DataTable> MostrarProductos()
         {
             DataTable MostrarProductos = new DataTable();
 
@@ -83,7 +83,7 @@ namespace TiendaPaula.Gestiones
             {
                 try
                 {
-                    AbrirConexion(cnn); //abrimos la conexion
+                    await AbrirConexion(cnn); //abrimos la conexion
                     MySqlCommand cmd = new MySqlCommand("SELECT IDProduct FROM PRODUCTS", cnn); // CODIGO QUE MUESTRA SOLO EL ID DE LOS PRODUCTOS
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     adapter.Fill(MostrarProductos);
@@ -96,7 +96,7 @@ namespace TiendaPaula.Gestiones
                 }
                 finally
                 {
-                    cerrarConexion(cnn); // despues de cierra la conexion
+                    await cerrarConexion(cnn); // despues de cierra la conexion
                 }
 
 
@@ -106,7 +106,7 @@ namespace TiendaPaula.Gestiones
 
         }
 
-        public DataTable MostrarProveedor()
+        public async Task< DataTable> MostrarProveedor()
         {
             DataTable MostrarProveedor = new DataTable();
 
@@ -114,7 +114,7 @@ namespace TiendaPaula.Gestiones
             {
                 try
                 {
-                    AbrirConexion(cnn); //abrimos la conexion
+                    await AbrirConexion(cnn); //abrimos la conexion
                     MySqlCommand cmd = new MySqlCommand("SELECT IdProvider FROM PROVIDERS", cnn); // CODIGO QUE MUESTRA SOLO EL ID DE LOS PRODUCTOS
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     adapter.Fill(MostrarProveedor);
@@ -127,7 +127,7 @@ namespace TiendaPaula.Gestiones
                 }
                 finally
                 {
-                    cerrarConexion(cnn); // despues de cierra la conexion
+                    await cerrarConexion(cnn); // despues de cierra la conexion
                 }
 
 

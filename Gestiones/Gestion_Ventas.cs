@@ -14,7 +14,7 @@ namespace TiendaPaula.Gestiones
     {
 
         //muestra todas las ventas
-        public DataTable MostrarVentasTotales()
+        public async Task<DataTable> MostrarVentasTotales()
         {
             DataTable MostrarVentas = new DataTable();
 
@@ -22,7 +22,7 @@ namespace TiendaPaula.Gestiones
             {
                 try
                 {
-                    AbrirConexion(cnn); //abrimos la conexion
+                    await AbrirConexion(cnn); //abrimos la conexion
                     MySqlCommand cmd = new MySqlCommand("Select * from V_SHOW_SALES", cnn); // agregamos el procedumiento almacenado
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     adapter.Fill(MostrarVentas);
@@ -34,7 +34,7 @@ namespace TiendaPaula.Gestiones
                 }
                 finally
                 {
-                    cerrarConexion(cnn); // despues de cierra la conexion
+                    await cerrarConexion(cnn); // despues de cierra la conexion
                 }
 
 
@@ -48,7 +48,7 @@ namespace TiendaPaula.Gestiones
         /// Retorna el valor del número de la nueva venta
         /// </summary>
         /// <returns></returns>
-        public int NumeroMAX()
+        public async Task<int> NumeroMAX()
         {
             int NumMax = 0;
 
@@ -56,7 +56,7 @@ namespace TiendaPaula.Gestiones
             {
                 try
                 {
-                    AbrirConexion(cnn); // abrimos la conexión
+                    await AbrirConexion(cnn); // abrimos la conexión
                     MySqlCommand cmd = new MySqlCommand("SELECT max(IdSale) from SALES", cnn);
                     object result = cmd.ExecuteScalar(); // ejecutamos la consulta y obtenemos el resultado
 
@@ -72,7 +72,7 @@ namespace TiendaPaula.Gestiones
                 }
                 finally
                 {
-                    cerrarConexion(cnn); // cerramos la conexión en el bloque finally
+                    await cerrarConexion(cnn); // cerramos la conexión en el bloque finally
                 }
             }
 
@@ -80,30 +80,75 @@ namespace TiendaPaula.Gestiones
         }
 
 
-        // aun no retorno el monto
-        public Double Monto_IVA(int Cod_Producto, int Cantidad)
+        // Funcion que da el monto del IVA
+        public async Task<int> Monto_IVA(int Cod_Producto, int Cantidad)
         {
-            double IVA = 0;
+            int IVA = 0;
 
-            DataTable dt = new DataTable();
+            //DataTable dt = new DataTable();
+
             using (MySqlConnection cnn = establecerConexion()) // se establece la conexión
             {
                 try
                 {
-                    AbrirConexion(cnn);
 
-                    string query = $"FN_TOTAL_IVA({Cod_Producto},{Cantidad}";
-                    MySqlCommand cmd = new MySqlCommand(query, cnn);
+                    
+                    await AbrirConexion(cnn);
+                    MySqlCommand cmd = new MySqlCommand("SELECT FN_TOTAL_IVA(@COD_PRODUCTO, @CANT_PRODUCTO)", cnn);
+                    cmd.Parameters.AddWithValue("@COD_PRODUCTO", Cod_Producto);
+                    cmd.Parameters.AddWithValue("@CANT_PRODUCTO", Cantidad);
 
-                    cmd.Parameters.AddWithValue("COD_PRODUCTO", Cod_Producto);
-                    cmd.Parameters.AddWithValue("CANT_PRODUCTO", Cantidad);
+                    object result = cmd.ExecuteScalar();
+                    
+
+                    
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        IVA = Convert.ToInt32(result); // convertimos el resultado a decimal
+                         
+                    }
+
+                    
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}"); // si da un error lo mostramos
+                }
+                finally
+                {
+                    await cerrarConexion(cnn); // cerramos la conexión en el bloque finally
+                }
+            }
+
+            return IVA;
+        }
+
+
+        public async Task<int> Monto_Descuento(string Cod_Producto, int Cantidad, string Descuento)
+        {
+            int Monto = 0;
+
+            //DataTable dt = new DataTable();
+
+            using (MySqlConnection cnn = establecerConexion()) // se establece la conexión
+            {
+                try
+                {
+
+                    await AbrirConexion(cnn);
+                    MySqlCommand cmd = new MySqlCommand("SELECT FN_TOTAL_DESCUENTO(@COD_PRODUCTO, @CANT_PRODUCTO,@DESCUENTO)", cnn);
+                    cmd.Parameters.AddWithValue("@COD_PRODUCTO", Cod_Producto);
+                    cmd.Parameters.AddWithValue("@CANT_PRODUCTO", Cantidad);
+                    cmd.Parameters.AddWithValue("@DESCUENTO", Descuento);
+
 
                     object result = cmd.ExecuteScalar();
 
                     if (result != null && result != DBNull.Value)
                     {
-                        IVA = Convert.ToDouble(result); // convertimos el resultado a decimal
-                         
+                        Monto = Convert.ToInt32(result); // convertimos el resultado a decimal
+                        
                     }
 
 
@@ -114,14 +159,53 @@ namespace TiendaPaula.Gestiones
                 }
                 finally
                 {
-                    cerrarConexion(cnn); // cerramos la conexión en el bloque finally
+                    await cerrarConexion(cnn); // cerramos la conexión en el bloque finally
                 }
             }
 
-            return IVA;
+            return Monto;
         }
 
-        public DataTable obtenerVenta(int Id_Venta)
+
+        public async Task<int> Monto_General(int Cod_Producto, int Cantidad)
+        {
+            int Monto = 0;
+
+            //DataTable dt = new DataTable();
+
+            using (MySqlConnection cnn = establecerConexion()) // se establece la conexión
+            {
+                try
+                {
+
+                    await AbrirConexion(cnn);
+                    MySqlCommand cmd = new MySqlCommand("SELECT FN_TOTAL_GENERAL(@COD_PRODUCTO, @CANT_PRODUCTO)", cnn);
+                    cmd.Parameters.AddWithValue("@COD_PRODUCTO", Cod_Producto);
+                    cmd.Parameters.AddWithValue("@CANT_PRODUCTO", Cantidad);
+
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        Monto = Convert.ToInt32(result); // convertimos el resultado a decimal
+
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}"); // si da un error lo mostramos
+                }
+                finally
+                {
+                    await cerrarConexion(cnn); // cerramos la conexión en el bloque finally
+                }
+            }
+
+            return Monto;
+        }
+
+        public async Task<DataTable> obtenerVenta(int Id_Venta)
         {
             DataTable dtVenta = new DataTable();
 
@@ -129,7 +213,7 @@ namespace TiendaPaula.Gestiones
             {
                 try
                 {
-                    AbrirConexion(connection);
+                    await AbrirConexion(connection);
                     MySqlCommand cmd = new MySqlCommand("SP_SEARCH_SALE", connection); //nombre del procediminto almacenado en BD
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("ID_SALE", Id_Venta); //nombre de parametro que esta en el procedimiento almacenado en BD
@@ -143,6 +227,38 @@ namespace TiendaPaula.Gestiones
                 }
             }
             return dtVenta;
+        }
+
+        public async Task InsertarVentas(Class_Ventas ventas, Class_Detalles_Venta D_Venta, string Estado_Fac) // agregamos la clase de clientes
+        {
+            using (MySqlConnection cnn = establecerConexion())
+            {
+                try
+                {
+                    await AbrirConexion(cnn); // abrimos conección
+                    MySqlCommand mySqlCommand = new MySqlCommand("SP_SALES", cnn);
+                    mySqlCommand.CommandType = CommandType.StoredProcedure;
+                    mySqlCommand.Parameters.AddWithValue("customer_p", ventas.IdCliente_Venta); // los parametros que pedimos en el procedimiento almacenado
+                    mySqlCommand.Parameters.AddWithValue("employee_p", ventas.IdEmpleado_Venta);
+                    mySqlCommand.Parameters.AddWithValue("pay_p", ventas.IdPago_Venta);
+                    mySqlCommand.Parameters.AddWithValue("descuento", ventas.Descuento);
+                    mySqlCommand.Parameters.AddWithValue("amount_p", D_Venta.Cantidad);
+                    mySqlCommand.Parameters.AddWithValue("COD_PRODUCT", D_Venta.Id_Producto);
+                    mySqlCommand.Parameters.AddWithValue("State_p", Estado_Fac);
+
+                    await Console.Out.WriteLineAsync("AQUI");
+                    mySqlCommand.ExecuteNonQuery();
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error Insertar Cliente: {ex.Message}");
+                }
+                finally
+                {
+                    await cerrarConexion(cnn);
+                }
+            }
         }
     }
 }

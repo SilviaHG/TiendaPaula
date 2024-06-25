@@ -8,8 +8,6 @@ namespace TiendaPaula.Clases
 {
     public class Class_Ventas
     {
-        
-
         public int Id_Venta { get; set; }
         public int IdCliente_Venta { get; set; }
         public int IdEmpleado_Venta { get; set; }
