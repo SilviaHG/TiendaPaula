@@ -35,11 +35,11 @@ namespace TiendaPaula.Clases
         /// Abre la conexion con la base de datos
         /// </summary>
         /// <param name="cnn"></param>
-        public void AbrirConexion(MySqlConnection cnn)
+        public async Task AbrirConexion(MySqlConnection cnn)
         {
             try
             {
-                cnn.Open();
+               await cnn.OpenAsync();
                 Console.WriteLine("Conexión establecida correctamente");
             }
             catch (MySqlException ex)
@@ -53,11 +53,11 @@ namespace TiendaPaula.Clases
         /// Cierra la conexion con la base de datos
         /// </summary>
         /// <param name="cnn"></param>
-        public void cerrarConexion(MySqlConnection cnn)
+        public async Task cerrarConexion(MySqlConnection cnn)
         {
             try
             {
-                cnn.Close();
+                await cnn.CloseAsync();
             }
             catch (MySqlException ex)
             {
