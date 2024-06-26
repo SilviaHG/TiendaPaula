@@ -45,6 +45,7 @@
             this.txtProductos = new MaterialSkin.Controls.MaterialButton();
             this.tabFacturacion = new System.Windows.Forms.TabPage();
             this.materialCard3 = new MaterialSkin.Controls.MaterialCard();
+            this.label9 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtCompras = new MaterialSkin.Controls.MaterialButton();
             this.label6 = new System.Windows.Forms.Label();
@@ -56,7 +57,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
-            this.label9 = new System.Windows.Forms.Label();
             this.materialTabControl1.SuspendLayout();
             this.tabPersonas.SuspendLayout();
             this.materialCard1.SuspendLayout();
@@ -89,7 +89,7 @@
             // 
             this.tabInicio.Location = new System.Drawing.Point(4, 22);
             this.tabInicio.Name = "tabInicio";
-            this.tabInicio.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabInicio.Padding = new System.Windows.Forms.Padding(3);
             this.tabInicio.Size = new System.Drawing.Size(368, 357);
             this.tabInicio.TabIndex = 0;
             this.tabInicio.Text = "Inicio";
@@ -100,7 +100,7 @@
             this.tabPersonas.Controls.Add(this.materialCard1);
             this.tabPersonas.Location = new System.Drawing.Point(4, 22);
             this.tabPersonas.Name = "tabPersonas";
-            this.tabPersonas.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPersonas.Padding = new System.Windows.Forms.Padding(3);
             this.tabPersonas.Size = new System.Drawing.Size(368, 357);
             this.tabPersonas.TabIndex = 1;
             this.tabPersonas.Text = "Personas";
@@ -119,10 +119,10 @@
             this.materialCard1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard1.Location = new System.Drawing.Point(3, 3);
-            this.materialCard1.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
-            this.materialCard1.Padding = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard1.Size = new System.Drawing.Size(362, 351);
             this.materialCard1.TabIndex = 5;
             // 
@@ -251,10 +251,10 @@
             this.materialCard2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard2.Location = new System.Drawing.Point(0, 0);
-            this.materialCard2.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.materialCard2.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard2.Name = "materialCard2";
-            this.materialCard2.Padding = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.materialCard2.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard2.Size = new System.Drawing.Size(368, 357);
             this.materialCard2.TabIndex = 0;
             // 
@@ -324,12 +324,22 @@
             this.materialCard3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialCard3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard3.Location = new System.Drawing.Point(0, 0);
-            this.materialCard3.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.materialCard3.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard3.Name = "materialCard3";
-            this.materialCard3.Padding = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.materialCard3.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard3.Size = new System.Drawing.Size(368, 357);
             this.materialCard3.TabIndex = 0;
+            // 
+            // label9
+            // 
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label9.Image = global::TiendaPaula.Properties.Resources.icons8_actualizar;
+            this.label9.Location = new System.Drawing.Point(188, 107);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(100, 77);
+            this.label9.TabIndex = 12;
             // 
             // label5
             // 
@@ -456,10 +466,10 @@
             this.materialCard4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialCard4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard4.Location = new System.Drawing.Point(0, 0);
-            this.materialCard4.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.materialCard4.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard4.Name = "materialCard4";
-            this.materialCard4.Padding = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.materialCard4.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard4.Size = new System.Drawing.Size(368, 357);
             this.materialCard4.TabIndex = 0;
             // 
@@ -505,16 +515,6 @@
             this.materialButton2.UseVisualStyleBackColor = true;
             this.materialButton2.Click += new System.EventHandler(this.materialButton2_Click);
             // 
-            // label9
-            // 
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label9.Image = global::TiendaPaula.Properties.Resources.icons8_actualizar;
-            this.label9.Location = new System.Drawing.Point(188, 107);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(100, 77);
-            this.label9.TabIndex = 12;
-            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -524,7 +524,6 @@
             this.DrawerTabControl = this.materialTabControl1;
             this.Name = "Principal";
             this.Text = "Principal";
-            this.Load += new System.EventHandler(this.Principal_Load);
             this.materialTabControl1.ResumeLayout(false);
             this.tabPersonas.ResumeLayout(false);
             this.materialCard1.ResumeLayout(false);

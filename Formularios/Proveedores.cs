@@ -29,12 +29,10 @@ namespace TiendaPaula.Formularios
 
         private void Proveedores_Load(object sender, EventArgs e)
         {
-            //Mostramos la tabla que esta en la BD
-            dtProveedores.DataSource = gestProveedores.MostrarTodosProveedores();
             LimpiarCampos();
         }
 
-        public void LimpiarCampos()
+        public async void LimpiarCampos()
         {
             txtID_Proveedor.Text = "";
             txtNombreP.Text = "";
@@ -50,6 +48,9 @@ namespace TiendaPaula.Formularios
             btnActualizar.Enabled = false;
             btnEliminar.Enabled = false;
             btnAgregar.Enabled = true;
+
+            //Mostramos la tabla que esta en la BD
+            dtProveedores.DataSource = await gestProveedores.MostrarTodosProveedores();
         }
 
         private void btnClean_Click(object sender, EventArgs e)
@@ -93,12 +94,12 @@ namespace TiendaPaula.Formularios
             }
         }
 
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        private async void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtBuscar.Text))
             {
                 //Mostramos la tabla que esta en la BD
-                dtProveedores.DataSource = gestProveedores.MostrarTodosProveedores();
+                dtProveedores.DataSource = await gestProveedores.MostrarTodosProveedores();
             }
         }
         private bool EmailValido(string email)
@@ -110,7 +111,7 @@ namespace TiendaPaula.Formularios
             return regex.IsMatch(email);
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
+        private async void btnAgregar_Click(object sender, EventArgs e)
         {
             // verificamos que los campos no esten vacios
             if (string.IsNullOrEmpty(txtID_Proveedor.Text) || string.IsNullOrEmpty(txtNombreP.Text)
@@ -125,7 +126,7 @@ namespace TiendaPaula.Formularios
                 // se valida que exista el proveedor o el número de teléfono
                 int cedula = Convert.ToInt32(txtID_Proveedor.Text);
                 int telefono = Convert.ToInt32(txtTelefonoP.Text);
-                if (gestProveedores.BuscarProveedor(cedula) == true || gestProveedores.Verificar_NumTelefono(telefono) )
+                if (await gestProveedores.BuscarProveedor(cedula) == true || await gestProveedores.Verificar_NumTelefono(telefono) )
                 {
                     lblMsj.ForeColor = Color.Red;
                     lblMsj.Text = "Este proveedor y/o número de teléfono ya existe en la BD";
@@ -136,7 +137,7 @@ namespace TiendaPaula.Formularios
                     if ( EmailValido(txtEmailP.Text))
                     {
                         //se abre la conexion
-                        gestProveedores.AbrirConexion(gestProveedores.establecerConexion());
+                        await gestProveedores.AbrirConexion(gestProveedores.establecerConexion());
                         //establecemos los valores agregamos por el usuario a los txt
                         proveedor.Id_Proveedor = Convert.ToInt32(txtID_Proveedor.Text);
                         proveedor.Nombre_Completo = txtNombreP.Text;
@@ -145,9 +146,6 @@ namespace TiendaPaula.Formularios
                         proveedor.Direccion_Proveedor = txtDireccionP.Text;
                         //enviamos los datos a la clase gestion proveedor
                         gestProveedores.InsertarProveedor(proveedor);
-
-                        //volvemos a cargar el datagrid view
-                        dtProveedores.DataSource = gestProveedores.MostrarTodosProveedores();
 
                         //mensaje
                         lblMsj.ForeColor = Color.Green;
@@ -164,18 +162,18 @@ namespace TiendaPaula.Formularios
 
             }
             // cerramos la conexion
-            gestProveedores.cerrarConexion(gestProveedores.establecerConexion());
+            await gestProveedores.cerrarConexion(gestProveedores.establecerConexion());
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private async void btnEliminar_Click(object sender, EventArgs e)
         {
             // se valida que exista el proveedor o el número de teléfono
             int codProveedor = Convert.ToInt32(txtID_Proveedor.Text);
            
             //se abre la conexion
-            gestProveedores.AbrirConexion(gestProveedores.establecerConexion());
+            await gestProveedores.AbrirConexion(gestProveedores.establecerConexion());
 
-            if (gestProveedores.BuscarProveedor(codProveedor) == true)
+            if (await gestProveedores.BuscarProveedor(codProveedor) == true)
             {
                 // mensaje de confirmación
                 DialogResult optUser = MessageBox.Show($"¿Desea eliminar permanentemente al proveedor" +
@@ -184,7 +182,6 @@ namespace TiendaPaula.Formularios
                 {
                     case DialogResult.Yes:
                         gestProveedores.EliminarProveedor(codProveedor);
-                        dtProveedores.DataSource = gestProveedores.MostrarTodosProveedores();
 
                         lblMsj.ForeColor = Color.Green;
                         lblMsj.Text = "Proveedor eliminado correctamente";
@@ -204,7 +201,7 @@ namespace TiendaPaula.Formularios
             }
         }
 
-        private void btnActualizar_Click(object sender, EventArgs e)
+        private async void btnActualizar_Click(object sender, EventArgs e)
         {
             // verificamos que los campos no esten vacios
             if (string.IsNullOrEmpty(txtNombreP.Text) || string.IsNullOrEmpty(txtTelefonoP.Text)
@@ -240,7 +237,7 @@ namespace TiendaPaula.Formularios
                             case DialogResult.Yes:
 
                                 //se abre la conexion
-                                gestProveedores.AbrirConexion(gestProveedores.establecerConexion());
+                                await gestProveedores.AbrirConexion(gestProveedores.establecerConexion());
                                 //establecemos los valores que se actualizan
                                 proveedor.Id_Proveedor = Convert.ToInt32(txtID_Proveedor.Text);
                                 proveedor.Nombre_Completo = txtNombreP.Text;
@@ -249,9 +246,6 @@ namespace TiendaPaula.Formularios
                                 proveedor.Direccion_Proveedor = txtDireccionP.Text;
                                 //enviamos los datos a la clase gestion cliente
                                 gestProveedores.ActualizarProveedor(proveedor);
-
-                                //volvemos a cargar el datagrid view
-                                dtProveedores.DataSource = gestProveedores.MostrarTodosProveedores();
 
                                 //mensaje
                                 lblMsj.ForeColor = Color.Green;
@@ -273,7 +267,7 @@ namespace TiendaPaula.Formularios
                 }
                 else // si actualiza un nuevo núumero
                 {
-                    if (gestProveedores.Verificar_NumTelefono(telefono) == true)
+                    if (await gestProveedores.Verificar_NumTelefono(telefono) == true)
                     {
                         lblMsj.ForeColor = Color.Red;
                         lblMsj.Text = "Este número de teléfono ya existe en la BD";
@@ -292,7 +286,7 @@ namespace TiendaPaula.Formularios
                                 case DialogResult.Yes:
 
                                     //se abre la conexion
-                                    gestProveedores.AbrirConexion(gestProveedores.establecerConexion());
+                                    await gestProveedores.AbrirConexion(gestProveedores.establecerConexion());
                                     //establecemos los valores que se actualizan
                                     proveedor.Id_Proveedor = Convert.ToInt32(txtID_Proveedor.Text);
                                     proveedor.Nombre_Completo = txtNombreP.Text;
@@ -301,9 +295,6 @@ namespace TiendaPaula.Formularios
                                     proveedor.Direccion_Proveedor = txtDireccionP.Text;
                                     //enviamos los datos a la clase gestion cliente
                                     gestProveedores.ActualizarProveedor(proveedor);
-
-                                    //volvemos a cargar el datagrid view
-                                    dtProveedores.DataSource = gestProveedores.MostrarTodosProveedores();
 
                                     //mensaje
                                     lblMsj.ForeColor = Color.Green;
@@ -330,14 +321,14 @@ namespace TiendaPaula.Formularios
 
             }
             // cerramos la conexion
-            gestProveedores.cerrarConexion(gestProveedores.establecerConexion());
+            await gestProveedores.cerrarConexion(gestProveedores.establecerConexion());
 
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+        private async void btnBuscar_Click(object sender, EventArgs e)
         {
             // se busca un proveedor en especifico
-            gestProveedores.AbrirConexion(gestProveedores.establecerConexion());
+            await gestProveedores.AbrirConexion(gestProveedores.establecerConexion());
 
             if (string.IsNullOrEmpty(txtBuscar.Text))
             {
@@ -352,9 +343,9 @@ namespace TiendaPaula.Formularios
                 lblMsj.ForeColor = Color.Green;
                 lblMsj.Text = "Mostrando resultados...";
 
-                dtProveedores.DataSource = gestProveedores.obtenerProovedorEspecifico(Convert.ToInt32(txtBuscar.Text));
+                dtProveedores.DataSource = await gestProveedores.obtenerProovedorEspecifico(Convert.ToInt32(txtBuscar.Text));
                 lblMsj.Text = "";
-                gestProveedores.cerrarConexion(gestProveedores.establecerConexion());
+                await gestProveedores.cerrarConexion(gestProveedores.establecerConexion());
             }
         }
 

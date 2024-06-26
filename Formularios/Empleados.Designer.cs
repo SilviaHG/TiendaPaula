@@ -77,6 +77,7 @@
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnActualizar
             // 
@@ -86,6 +87,7 @@
             this.btnActualizar.TabIndex = 1;
             this.btnActualizar.Text = "Actualiza";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnAgregar
             // 
@@ -259,6 +261,8 @@
             this.cbPosiciones.FormattingEnabled = true;
             this.cbPosiciones.IntegralHeight = false;
             this.cbPosiciones.ItemHeight = 43;
+            this.cbPosiciones.Items.AddRange(new object[] {
+            "Seleccione"});
             this.cbPosiciones.Location = new System.Drawing.Point(7, 387);
             this.cbPosiciones.MaxDropDownItems = 4;
             this.cbPosiciones.MouseState = MaterialSkin.MouseState.OUT;
@@ -275,6 +279,7 @@
             this.btnBuscar.TabIndex = 15;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtBuscar
             // 
@@ -316,6 +321,7 @@
             this.dtEmpleados.ReadOnly = true;
             this.dtEmpleados.Size = new System.Drawing.Size(679, 300);
             this.dtEmpleados.TabIndex = 13;
+            this.dtEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtEmpleados_CellClick);
             // 
             // lblMsj
             // 

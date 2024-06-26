@@ -13,7 +13,7 @@ namespace TiendaPaula.Gestiones
     public class Gestion_Proveedores : Conexion
     {
         //muestra todos los proveedores
-        public DataTable MostrarTodosProveedores()
+        public async Task<DataTable> MostrarTodosProveedores()
         {
             DataTable MostrarProveedores = new DataTable();
 
@@ -21,7 +21,7 @@ namespace TiendaPaula.Gestiones
             {
                 try
                 {
-                    AbrirConexion(cnn); //abrimos la conexion
+                    await AbrirConexion(cnn); //abrimos la conexion
                     MySqlCommand cmd = new MySqlCommand("Select * from V_SHOW_PROVIDERS", cnn); // agregamos el procedumiento almacenado
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     adapter.Fill(MostrarProveedores);
@@ -32,7 +32,7 @@ namespace TiendaPaula.Gestiones
                 }
                 finally
                 {
-                    cerrarConexion(cnn); // despues de cierra la conexion
+                    await cerrarConexion(cnn); // despues de cierra la conexion
                 }
 
 
@@ -43,13 +43,13 @@ namespace TiendaPaula.Gestiones
 
         // Agregamos un proveedor nuevo
 
-        public void InsertarProveedor(Class_Proveedor pro) // agregamos la clase de proveedores
+        public async void InsertarProveedor(Class_Proveedor pro) // agregamos la clase de proveedores
         {
             using (MySqlConnection cnn = establecerConexion())
             {
                 try
                 {
-                    AbrirConexion(cnn); // abrimos conección
+                    await AbrirConexion(cnn); // abrimos conección
                     MySqlCommand mySqlCommand = new MySqlCommand("SP_REGISTER_PROVIDER", cnn);
                     mySqlCommand.CommandType = CommandType.StoredProcedure;
                     mySqlCommand.Parameters.AddWithValue("ID_P", pro.Id_Proveedor); // los parametros que pedimos en el procedimiento almacenado
@@ -67,19 +67,19 @@ namespace TiendaPaula.Gestiones
                 }
                 finally
                 {
-                    cerrarConexion(cnn);
+                    await cerrarConexion(cnn);
                 }
             }
         }
 
         // eliminamos un proveedor
-        public void EliminarProveedor(int cedula_p)
+        public async void EliminarProveedor(int cedula_p)
         {
             using (MySqlConnection cnn = establecerConexion())
             {
                 try
                 {
-                    AbrirConexion(cnn);
+                    await AbrirConexion(cnn);
                     MySqlCommand cmd = new MySqlCommand("SP_DELETE_PROVIDER", cnn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("ID_P", cedula_p);
@@ -91,19 +91,19 @@ namespace TiendaPaula.Gestiones
                 }
                 finally
                 {
-                    cerrarConexion(cnn);
+                    await cerrarConexion(cnn);
                 }
             }
         }
 
         // actualizar un proveedor
-        public void ActualizarProveedor(Class_Proveedor pro)
+        public async void ActualizarProveedor(Class_Proveedor pro)
         {
             using (MySqlConnection cnn = establecerConexion())
             {
                 try
                 {
-                    AbrirConexion(cnn);
+                    await AbrirConexion(cnn);
                     MySqlCommand cmd = new MySqlCommand("SP_UPDATE_PROVIDER", cnn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("ID_P", pro.Id_Proveedor); // los parametros que pedimos en el procedimiento almacenado
@@ -120,13 +120,13 @@ namespace TiendaPaula.Gestiones
                 }
                 finally
                 {
-                    cerrarConexion(cnn);
+                    await cerrarConexion(cnn);
                 }
             }
         }
 
         //buscar un proveedor, devuelve si existe o no
-        public bool BuscarProveedor(int codProveedor)
+        public async Task<bool> BuscarProveedor(int codProveedor)
         {
             bool existe = false;
 
@@ -136,7 +136,7 @@ namespace TiendaPaula.Gestiones
             {
                 try
                 {
-                    AbrirConexion(cnn);
+                    await AbrirConexion(cnn);
                     MySqlCommand cmd = new MySqlCommand("SP_SEARCH_PROVIDER", cnn); //procedimiento almacenado
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("ID_P", codProveedor);
@@ -152,7 +152,7 @@ namespace TiendaPaula.Gestiones
                 }
                 finally //despues de todo que cierre la conexion
                 {
-                    cerrarConexion(cnn);
+                    await cerrarConexion(cnn);
                 }
             }
 
@@ -160,14 +160,14 @@ namespace TiendaPaula.Gestiones
         }
 
         //mostrar proveedores especifico en la tabla
-        public DataTable obtenerProovedorEspecifico(int codProveedor)
+        public async Task<DataTable> obtenerProovedorEspecifico(int codProveedor)
         {
             DataTable dtProveedor = new DataTable();
             using (MySqlConnection cnn = establecerConexion())
             {
                 try
                 {
-                    AbrirConexion(cnn);
+                    await AbrirConexion(cnn);
                     MySqlCommand cmd = new MySqlCommand("SP_SEARCH_PROVIDER", cnn); //procedimiento almacenado
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("ID_P", codProveedor);
@@ -178,12 +178,16 @@ namespace TiendaPaula.Gestiones
                 {
                     Console.WriteLine(ex.Message);
                 }
+                finally //despues de todo que cierre la conexion
+                {
+                    await cerrarConexion(cnn);
+                }
             }
             return dtProveedor;
         }
 
         //verifica si ya existe o no el número de teléfono en la BD
-        public bool Verificar_NumTelefono(int telefono)
+        public async Task<bool> Verificar_NumTelefono(int telefono)
         {
             bool existe = false;
 
@@ -192,7 +196,7 @@ namespace TiendaPaula.Gestiones
             using (MySqlConnection connection = establecerConexion())
                 try
                 {
-                    AbrirConexion(connection);
+                    await AbrirConexion(connection);
 
                     MySqlCommand cmd = new MySqlCommand($"SELECT * FROM PROVIDERS WHERE Telephone = {telefono}", connection);
                     //cmd.Parameters.AddWithValue("Telephone", telefono);
@@ -207,7 +211,7 @@ namespace TiendaPaula.Gestiones
                 }
                 finally
                 {
-                    cerrarConexion(connection);
+                    await cerrarConexion(connection);
                 }
 
             return existe;

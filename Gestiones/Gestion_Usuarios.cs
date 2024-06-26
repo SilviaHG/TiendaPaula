@@ -2,18 +2,19 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TiendaPaula.Clases;
+using TiendaPaula.Formularios;
 
 namespace TiendaPaula.Gestiones
 {
     public class Gestion_Usuarios : Conexion
     {
-        public Gestion_Usuarios() { }
 
-        public bool Verificar_Usuario_Contra(int usuario, string contrasennia)
+        public async Task<bool> Verificar_Usuario_Contra(int usuario, string contrasennia)
         {
             bool existe = false;
 
@@ -22,7 +23,7 @@ namespace TiendaPaula.Gestiones
             using (MySqlConnection connection = establecerConexion())
                 try
                 {
-                    AbrirConexion(connection);
+                    await AbrirConexion(connection);
 
                     MySqlCommand cmd = new MySqlCommand($"SELECT * FROM USERS WHERE IdUser = {usuario} and Password_user = {contrasennia}", connection);
                     cmd.Parameters.AddWithValue("IdUser", usuario);
@@ -45,10 +46,175 @@ namespace TiendaPaula.Gestiones
                 }
                 finally
                 {
-                    cerrarConexion(connection);
+                    await cerrarConexion(connection);
                 }
 
             return existe;
+        }
+
+        public async Task<DataTable> MostrarTodosUsuarios()
+        {
+            DataTable MostrarUsuarios = new DataTable();
+
+            using (MySqlConnection cnn = establecerConexion()) // se establece la conexion
+            {
+                try
+                {
+                    await AbrirConexion(cnn); //abrimos la conexion
+                    MySqlCommand cmd = new MySqlCommand("Select * from V_SHOW_USERS", cnn); // agregamos el procedumiento almacenado
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    adapter.Fill(MostrarUsuarios);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}"); // si da un error lo mostramos
+                }
+                finally
+                {
+                    await cerrarConexion(cnn); // despues de cierra la conexion
+                }
+            }
+
+            return MostrarUsuarios;
+        }
+
+        //Agregamos un nuevo Usuario
+        public async void InsertarUsuario(Class_Usuarios usuarios) // agregamos la clase de proveedores
+        {
+            using (MySqlConnection cnn = establecerConexion())
+            {
+                try
+                {
+                    await AbrirConexion(cnn); // abrimos conección
+                    MySqlCommand mySqlCommand = new MySqlCommand("SP_REGISTER_USER", cnn);
+                    mySqlCommand.CommandType = CommandType.StoredProcedure;
+                    mySqlCommand.Parameters.AddWithValue("ID_U", usuarios.Id_Usuario); // los parametros que pedimos en el procedimiento almacenado
+                    mySqlCommand.Parameters.AddWithValue("PASSWORD_U", usuarios.Contrasennia_Usuario);
+                    mySqlCommand.Parameters.AddWithValue("ESTADO_U", usuarios.Estado_Usuario);
+
+                    mySqlCommand.ExecuteNonQuery();
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error Insertar Usuario: {ex.Message}");
+                }
+                finally
+                {
+                    await cerrarConexion(cnn);
+                }
+            }
+        }
+
+        // eliminamos un usuario
+        public async void EliminarUsuario(int idUsuario)
+        {
+            using (MySqlConnection cnn = establecerConexion())
+            {
+                try
+                {
+                    await AbrirConexion(cnn);
+                    MySqlCommand cmd = new MySqlCommand("SP_DELETE_USER", cnn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("ID_U", idUsuario);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error Eliminar Usuario {ex.Message}");
+                }
+                finally
+                {
+                    await cerrarConexion(cnn);
+                }
+            }
+        }
+
+        public async void ActualizarUsuario(Class_Usuarios usuarios)
+        {
+            using (MySqlConnection cnn = establecerConexion())
+            {
+                try
+                {
+                    await AbrirConexion(cnn);
+                    MySqlCommand cmd = new MySqlCommand("SP_UPDATE_USER", cnn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("ID_U", usuarios.Id_Usuario); // los parametros que pedimos en el procedimiento almacenado
+                    cmd.Parameters.AddWithValue("PASSWORD_U", usuarios.Contrasennia_Usuario);
+                    cmd.Parameters.AddWithValue("ESTADO_U", usuarios.Estado_Usuario);
+
+
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error Actualizar Usuario {ex.Message}");
+                }
+                finally
+                {
+                    await cerrarConexion(cnn);
+                }
+            }
+        }
+
+        //verificar si existe un usuario, devuelve si existe o no
+        public async Task<bool> ExisteUsuario(int idUsuario)
+        {
+            bool existe = false;
+
+            DataTable buscarUsuario = new DataTable();
+
+            using (MySqlConnection cnn = establecerConexion())
+            {
+                try
+                {
+                    await AbrirConexion(cnn);
+                    MySqlCommand cmd = new MySqlCommand("SP_SEARCH_USER", cnn); //procedimiento almacenado
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("ID_U", idUsuario);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    adapter.Fill(buscarUsuario);
+                    existe = buscarUsuario.Rows.Count > 0;
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error Buscar Usuario: {ex.Message}");
+                }
+                finally //despues de todo que cierre la conexion
+                {
+                    await cerrarConexion(cnn);
+                }
+            }
+
+            return existe;
+        }
+
+        //mostrar usuario especifico en la tabla
+        public async Task<DataTable> obtenerUsuarioEspecifico(int idUsuario)
+        {
+            DataTable dtUsuario = new DataTable();
+            using (MySqlConnection cnn = establecerConexion())
+            {
+                try
+                {
+                    await AbrirConexion(cnn);
+                    MySqlCommand cmd = new MySqlCommand("SP_SEARCH_USER", cnn); //procedimiento almacenado
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("ID_U", idUsuario);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    adapter.Fill(dtUsuario);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                finally //despues de todo que cierre la conexion
+                {
+                    await cerrarConexion(cnn);
+                }
+            }
+            return dtUsuario;
         }
     }
 }

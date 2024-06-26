@@ -30,9 +30,17 @@ namespace TiendaPaula.Formularios
 
         private async void Clientes_Load(object sender, EventArgs e)
         {
+            
+            LimpiarCampos();
+            var datos = await gestCliente.MostrarTodosClientes();
+            datos.Columns[0].ColumnName = "Cédula";
+            datos.Columns[1].ColumnName = "Nombre";
+            datos.Columns[2].ColumnName = "Teléfono";
+            datos.Columns[3].ColumnName = "Email";
+            datos.Columns[4].ColumnName = "Dirección";
             //Mostramos la tabla que esta en la BD
             dtClientes.DataSource = await gestCliente.MostrarTodosClientes();
-            LimpiarCampos();
+
         }
 
         public async void LimpiarCampos()
@@ -104,12 +112,12 @@ namespace TiendaPaula.Formularios
             return regex.IsMatch(email);
         }
 
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        private async void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtBuscar.Text))
             {
                 //Mostramos la tabla que esta en la BD
-                dtClientes.DataSource = gestCliente.MostrarTodosClientes();
+                dtClientes.DataSource = await gestCliente.MostrarTodosClientes();
             }
             else
             {
@@ -166,13 +174,15 @@ namespace TiendaPaula.Formularios
                         await gestCliente.AbrirConexion(gestCliente.establecerConexion());
                         await gestCliente.InsertarCliente(cliente);
 
-                        //volvemos a cargar el datagrid view
-                        dtClientes.DataSource = gestCliente.MostrarTodosClientes();
-
                         //mensaje
                         lblMsj.ForeColor = Color.Green;
                         lblMsj.Text = "Cliente creado correctamente";
                         LimpiarCampos();
+
+                        //volvemos a cargar el datagrid view
+                        dtClientes.DataSource = await gestCliente.MostrarTodosClientes();
+
+                        
                     }
                     else
                     {
@@ -204,11 +214,12 @@ namespace TiendaPaula.Formularios
                 {
                     case DialogResult.Yes:
                         await gestCliente.EliminarCliente(num);
-                        dtClientes.DataSource = gestCliente.MostrarTodosClientes();
 
                         lblMsj.ForeColor = Color.Green;
                         lblMsj.Text = "Cliente eliminado correctamente";
                         LimpiarCampos();
+
+                        dtClientes.DataSource = await gestCliente.MostrarTodosClientes();
                         break;
                     case DialogResult.No:
                         lblMsj.ForeColor = Color.Green;
@@ -371,7 +382,7 @@ namespace TiendaPaula.Formularios
                 lblMsj.ForeColor = Color.Green;
                 lblMsj.Text = "Mostrando resultados...";
 
-                dtClientes.DataSource = gestCliente.obtenerListaClientes(cedula, telefono);
+                dtClientes.DataSource = await gestCliente.obtenerListaClientes(cedula, telefono);
                 lblMsj.Text = "";
                 await gestCliente.cerrarConexion(gestCliente.establecerConexion());
             }
