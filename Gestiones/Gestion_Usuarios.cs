@@ -216,5 +216,37 @@ namespace TiendaPaula.Gestiones
             }
             return dtUsuario;
         }
+
+        //generamos el id de la tabla autoincremental
+        public async Task<int> NumeroMaxUsuario()
+        {
+            int NumMax = 0;
+
+            using (MySqlConnection cnn = establecerConexion()) // se establece la conexión
+            {
+                try
+                {
+                    await AbrirConexion(cnn); // abrimos la conexión
+                    MySqlCommand cmd = new MySqlCommand("SELECT max(IdUser_table) from USERS;", cnn);
+                    object result = cmd.ExecuteScalar(); // ejecutamos la consulta y obtenemos el resultado
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        NumMax = Convert.ToInt32(result); // convertimos el resultado a entero
+                        NumMax = NumMax + 1; // sumamos un numero mas para que sea el N° de venta
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}"); // si da un error lo mostramos
+                }
+                finally
+                {
+                    await cerrarConexion(cnn); // cerramos la conexión en el bloque finally
+                }
+            }
+
+            return NumMax;
+        }
     }
 }

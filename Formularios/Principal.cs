@@ -45,6 +45,7 @@ namespace TiendaPaula.Formularios
         private void txtUsuario_Click(object sender, EventArgs e)
         {
             Usuarios user = new Usuarios();
+            user.Text = "Usuarios";
             user.ShowDialog();
         }
 
