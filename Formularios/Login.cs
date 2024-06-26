@@ -30,12 +30,6 @@ namespace TiendaPaula.Formularios
             Color.FromArgb(45, 48, 71),
             TextShade.WHITE);
 
-
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
         }
 
         private async void btnSignIn_Click(object sender, EventArgs e)
@@ -74,12 +68,6 @@ namespace TiendaPaula.Formularios
             Principal Abrir = new Principal();
             Abrir.ShowDialog();
 
-        }
-
-        private void linkCreateAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Usuarios Abrir = new Usuarios();
-            Abrir.ShowDialog();
         }
     }
 }

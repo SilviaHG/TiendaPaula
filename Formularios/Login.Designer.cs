@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.linkCreateAccount = new System.Windows.Forms.LinkLabel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.linkForgotPass = new System.Windows.Forms.LinkLabel();
             this.CheckboxRemember = new MaterialSkin.Controls.MaterialCheckbox();
             this.btnSignIn = new MaterialSkin.Controls.MaterialButton();
@@ -41,43 +38,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // linkCreateAccount
-            // 
-            this.linkCreateAccount.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.linkCreateAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkCreateAccount.LinkColor = System.Drawing.Color.Navy;
-            this.linkCreateAccount.Location = new System.Drawing.Point(248, 502);
-            this.linkCreateAccount.Name = "linkCreateAccount";
-            this.linkCreateAccount.Size = new System.Drawing.Size(97, 23);
-            this.linkCreateAccount.TabIndex = 31;
-            this.linkCreateAccount.TabStop = true;
-            this.linkCreateAccount.Text = "Crear Cuenta";
-            this.linkCreateAccount.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkCreateAccount_LinkClicked);
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(105, 502);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(148, 23);
-            this.label3.TabIndex = 30;
-            this.label3.Text = "¿No tienes cuenta?";
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label2.Location = new System.Drawing.Point(0, 493);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(468, 47);
-            this.label2.TabIndex = 29;
-            // 
             // linkForgotPass
             // 
             this.linkForgotPass.AutoSize = true;
             this.linkForgotPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkForgotPass.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.linkForgotPass.LinkColor = System.Drawing.Color.Navy;
+            this.linkForgotPass.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
             this.linkForgotPass.Location = new System.Drawing.Point(207, 419);
             this.linkForgotPass.Name = "linkForgotPass";
             this.linkForgotPass.Size = new System.Drawing.Size(175, 16);
@@ -185,20 +151,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(465, 540);
+            this.ClientSize = new System.Drawing.Size(465, 467);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.linkCreateAccount);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.linkForgotPass);
             this.Controls.Add(this.CheckboxRemember);
             this.Controls.Add(this.btnSignIn);
             this.Controls.Add(this.materialLabel1);
             this.Name = "Login";
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -206,10 +168,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.LinkLabel linkCreateAccount;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.LinkLabel linkForgotPass;
         private MaterialSkin.Controls.MaterialCheckbox CheckboxRemember;
         private MaterialSkin.Controls.MaterialButton btnSignIn;
