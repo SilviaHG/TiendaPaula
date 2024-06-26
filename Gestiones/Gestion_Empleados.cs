@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.Design.Serialization;
 using System.Data;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using TiendaPaula.Clases;
@@ -14,7 +15,7 @@ namespace TiendaPaula.Gestiones
     {
 
         //muestra todos los empleado
-        public DataTable MostrarTodosEmpleados()
+        public async Task<DataTable> MostrarTodosEmpleados()
         {
             DataTable MostrarEmpleados = new DataTable();
 
@@ -22,7 +23,7 @@ namespace TiendaPaula.Gestiones
             {
                 try
                 {
-                    AbrirConexion(cnn); //abrimos la conexion
+                    await AbrirConexion(cnn); //abrimos la conexion
                     MySqlCommand cmd = new MySqlCommand("Select * from V_SHOW_EMPLOYEES", cnn); // agregamos el procedumiento almacenado
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     adapter.Fill(MostrarEmpleados);
@@ -33,7 +34,7 @@ namespace TiendaPaula.Gestiones
                 }
                 finally
                 {
-                    cerrarConexion(cnn); // despues de cierra la conexion
+                    await cerrarConexion(cnn); // despues de cierra la conexion
                 }
 
             }
@@ -43,13 +44,13 @@ namespace TiendaPaula.Gestiones
 
         // Agregamos un empleado nuevo
 
-        public void InsertarEmpleado(Class_Empleado empleado) // agregamos la clase de proveedores
+        public async void InsertarEmpleado(Class_Empleado empleado) // agregamos la clase de proveedores
         {
             using (MySqlConnection cnn = establecerConexion())
             {
                 try
                 {
-                    AbrirConexion(cnn); // abrimos conección
+                    await AbrirConexion(cnn); // abrimos conección
                     MySqlCommand mySqlCommand = new MySqlCommand("SP_REGISTER_EMPLOYEE", cnn);
                     mySqlCommand.CommandType = CommandType.StoredProcedure;
                     mySqlCommand.Parameters.AddWithValue("ID_P", empleado.Id_Empleado); // los parametros que pedimos en el procedimiento almacenado
@@ -64,23 +65,23 @@ namespace TiendaPaula.Gestiones
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Error Insertar Proveedor: {ex.Message}");
+                    Console.WriteLine($"Error Insertar Empleado: {ex.Message}");
                 }
                 finally
                 {
-                    cerrarConexion(cnn);
+                    await cerrarConexion(cnn);
                 }
             }
         }
 
         // eliminamos un empleado
-        public void EliminarEmpleado(int cedula_p)
+        public async void EliminarEmpleado(int cedula_p)
         {
             using (MySqlConnection cnn = establecerConexion())
             {
                 try
                 {
-                    AbrirConexion(cnn);
+                    await AbrirConexion(cnn);
                     MySqlCommand cmd = new MySqlCommand("SP_DELETE_EMPLOYEE", cnn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("ID_E", cedula_p);
@@ -92,13 +93,13 @@ namespace TiendaPaula.Gestiones
                 }
                 finally
                 {
-                    cerrarConexion(cnn);
+                    await cerrarConexion(cnn);
                 }
             }
         }
 
         // actualizar un empleado
-        public void ActualizarEmpleado(Class_Empleado empleado)
+        public async void ActualizarEmpleado(Class_Empleado empleado)
         {
             
             using (MySqlConnection cnn = establecerConexion())
@@ -106,7 +107,7 @@ namespace TiendaPaula.Gestiones
                 try
                 {
 
-                    AbrirConexion(cnn);
+                    await AbrirConexion(cnn);
                     MySqlCommand cmd = new MySqlCommand("SP_UPDATE_EMPLOYEE", cnn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("ID_P", empleado.Id_Empleado); // los parametros que pedimos en el procedimiento almacenado
@@ -120,11 +121,11 @@ namespace TiendaPaula.Gestiones
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Error Actualizar Proveedor {ex.Message}");
+                    Console.WriteLine($"Error Actualizar Empleado {ex.Message}");
                 }
                 finally
                 {
-                    cerrarConexion(cnn);
+                    await cerrarConexion(cnn);
                 }
 
             }
@@ -133,7 +134,7 @@ namespace TiendaPaula.Gestiones
 
         //buscar si existe un empleado, devuelve si existe o no
         //se llamaba buscarempleado
-        public bool ExisteEmpleado(int codEmpleado)
+        public async Task<bool> ExisteEmpleado(int codEmpleado)
         {
             bool existe = false;
 
@@ -143,7 +144,7 @@ namespace TiendaPaula.Gestiones
             {
                 try
                 {
-                    AbrirConexion(cnn);
+                    await AbrirConexion(cnn);
                     MySqlCommand cmd = new MySqlCommand("SP_SEARCH_EMPLOYEE", cnn); //procedimiento almacenado
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("ID_E", codEmpleado);
@@ -155,11 +156,11 @@ namespace TiendaPaula.Gestiones
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Error Buscar Proveedor: {ex.Message}");
+                    Console.WriteLine($"Error Buscar Empleado: {ex.Message}");
                 }
                 finally //despues de todo que cierre la conexion
                 {
-                    cerrarConexion(cnn);
+                    await cerrarConexion(cnn);
                 }
             }
 
@@ -167,14 +168,14 @@ namespace TiendaPaula.Gestiones
         }
 
         //mostrar empleado especifico en la tabla
-        public DataTable obtenerEmpleadoEspecifico(int codEmpleado)
+        public async Task<DataTable> obtenerEmpleadoEspecifico(int codEmpleado)
         {
             DataTable dtEmpleado = new DataTable();
             using (MySqlConnection cnn = establecerConexion())
             {
                 try
                 {
-                    AbrirConexion(cnn);
+                    await AbrirConexion(cnn);
                     MySqlCommand cmd = new MySqlCommand("SP_SEARCH_EMPLOYEE", cnn); //procedimiento almacenado
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("ID_E", codEmpleado);
@@ -185,11 +186,15 @@ namespace TiendaPaula.Gestiones
                 {
                     Console.WriteLine(ex.Message);
                 }
+                finally //despues de todo que cierre la conexion
+                {
+                    await cerrarConexion(cnn);
+                }
             }
             return dtEmpleado;
         }
 
-        public bool Verificar_NumTelefono(int telefono)
+        public async Task<bool> Verificar_NumTelefono(int telefono)
         {
             bool existe = false;
 
@@ -198,7 +203,7 @@ namespace TiendaPaula.Gestiones
             using (MySqlConnection connection = establecerConexion())
                 try
                 {
-                    AbrirConexion(connection);
+                    await AbrirConexion(connection);
 
                     MySqlCommand cmd = new MySqlCommand($"SELECT * FROM EMPLOYEES WHERE Telephone = {telefono}", connection);
                     //cmd.Parameters.AddWithValue("Telephone", telefono);
@@ -213,7 +218,7 @@ namespace TiendaPaula.Gestiones
                 }
                 finally
                 {
-                    cerrarConexion(connection);
+                    await cerrarConexion(connection);
                 }
 
             return existe;

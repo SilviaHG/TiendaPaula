@@ -30,69 +30,64 @@ namespace TiendaPaula.Formularios
             TextShade.WHITE);
         }
 
-        private void Principal_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtEmpleado_Click(object sender, EventArgs e)
         {
             Empleados emple = new Empleados();
-            emple.Show();
+            emple.ShowDialog();
         }
 
         private void txtClientes_Click(object sender, EventArgs e)
         {
             Clientes clientes = new Clientes();
-            clientes.Show();
+            clientes.ShowDialog();
         }
 
         private void txtUsuario_Click(object sender, EventArgs e)
         {
             Usuarios user = new Usuarios();
-            user.Show();
+            user.ShowDialog();
         }
 
         private void txtProveedores_Click(object sender, EventArgs e)
         {
             Proveedores proveedores = new Proveedores();
-            proveedores.Show();
+            proveedores.ShowDialog();
         }
 
         private void txtProductos_Click(object sender, EventArgs e)
         {
             Productos productos = new Productos();
-            productos.Show();
+            productos.ShowDialog();
         }
 
         private void txtVentas_Click(object sender, EventArgs e)
         {
             Ventas ventas = new Ventas();
-            ventas.Show();
+            ventas.ShowDialog();
         }
 
         private void txtCompras_Click(object sender, EventArgs e)
         {
             Compras compras = new Compras();
-            compras.Show();
+            compras.ShowDialog();
         }
 
         private void txtDetallesVentas_Click(object sender, EventArgs e)
         {
             Detalles_Ventas detalleVenta = new Detalles_Ventas();
-            detalleVenta.Show();
+            detalleVenta.ShowDialog();
         }
 
         private void txtDetallesCompras_Click(object sender, EventArgs e)
         {
             Detalles_Compras detalleCompra = new Detalles_Compras();
-            detalleCompra.Show();
+            detalleCompra.ShowDialog();
         }
 
         private void materialButton2_Click(object sender, EventArgs e)
         {
             Gastos gasto = new Gastos();
-            gasto.Show();
+            gasto.ShowDialog();
         }
     }
 }

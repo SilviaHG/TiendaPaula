@@ -137,5 +137,33 @@ namespace TiendaPaula.Gestiones
 
         }
 
+        public async Task<DataTable> MostrarPosicionesEmpleados()
+        {
+            DataTable MostrarPosiciones = new DataTable();
+
+            using (MySqlConnection cnn = establecerConexion()) // se establece la conexion
+            {
+                try
+                {
+                    await AbrirConexion(cnn); //abrimos la conexion
+                    MySqlCommand cmd = new MySqlCommand("SELECT NamePosition FROM POSITIONS;", cnn); // CODIGO QUE MUESTRA SOLO EL ID DE LOS PRODUCTOS
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    adapter.Fill(MostrarPosiciones);
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}"); // si da un error lo mostramos
+                }
+                finally
+                {
+                    await cerrarConexion(cnn); // despues de cierra la conexion
+                }
+            }
+
+            return MostrarPosiciones;
+
+        }
+
     }
 }
