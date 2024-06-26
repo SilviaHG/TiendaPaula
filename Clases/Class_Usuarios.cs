@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TiendaPaula.Clases
 {
-    internal class Class_Usuarios
+    public class Class_Usuarios
     {
         
         public int IdUsuario_Tabla { get; set; }

@@ -38,11 +38,11 @@ namespace TiendaPaula.Formularios
 
         }
 
-        private void btnSignIn_Click(object sender, EventArgs e)
+        private async void btnSignIn_Click(object sender, EventArgs e)
         {
             Gestion_Usuarios bdUsuario = new Gestion_Usuarios();
-            bdUsuario.AbrirConexion(bdUsuario.establecerConexion());
-
+            await bdUsuario.AbrirConexion(bdUsuario.establecerConexion());
+            /*
             if (string.IsNullOrEmpty(txtUsuario.Text) || string.IsNullOrEmpty(txtPassword.Text))
             {
                 
@@ -69,13 +69,17 @@ namespace TiendaPaula.Formularios
                 }
 
             }
+            */
+
+            Principal Abrir = new Principal();
+            Abrir.ShowDialog();
 
         }
 
         private void linkCreateAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Usuarios Abrir = new Usuarios();
-            Abrir.Show();
+            Abrir.ShowDialog();
         }
     }
 }
