@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.cbTipo_pagos = new MaterialSkin.Controls.MaterialComboBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtDescuento = new MaterialSkin.Controls.MaterialTextBox();
-            this.txtGarantia_venta = new MaterialSkin.Controls.MaterialTextBox();
             this.cbEstado_Venta = new MaterialSkin.Controls.MaterialComboBox();
             this.Fecha_V = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,50 +49,19 @@
             this.cbClientes = new System.Windows.Forms.ComboBox();
             this.Cant_Productos = new MaterialSkin.Controls.MaterialSlider();
             this.btAgregar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtBuscar_Venta = new MaterialSkin.Controls.MaterialTextBox();
             this.dtVentas = new System.Windows.Forms.DataGridView();
             this.Abre_DetallesVentas = new System.Windows.Forms.Button();
             this.lblMsj = new System.Windows.Forms.Label();
             this.btLimpiar = new System.Windows.Forms.Button();
-            this.btEliminar = new System.Windows.Forms.Button();
             this.btBuscar = new System.Windows.Forms.Button();
             this.btActualizar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.materialMaskedTextBox1 = new MaterialSkin.Controls.MaterialMaskedTextBox();
+            this.cbTipo_pagos = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtVentas)).BeginInit();
             this.SuspendLayout();
-            // 
-            // cbTipo_pagos
-            // 
-            this.cbTipo_pagos.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.cbTipo_pagos.AutoResize = false;
-            this.cbTipo_pagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cbTipo_pagos.Depth = 0;
-            this.cbTipo_pagos.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cbTipo_pagos.DropDownHeight = 174;
-            this.cbTipo_pagos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTipo_pagos.DropDownWidth = 121;
-            this.cbTipo_pagos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.cbTipo_pagos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cbTipo_pagos.FormattingEnabled = true;
-            this.cbTipo_pagos.Hint = "Tipo de pago";
-            this.cbTipo_pagos.IntegralHeight = false;
-            this.cbTipo_pagos.ItemHeight = 43;
-            this.cbTipo_pagos.Items.AddRange(new object[] {
-            "",
-            "Efectivo",
-            "SINPE",
-            "Tarjeta"});
-            this.cbTipo_pagos.Location = new System.Drawing.Point(202, 202);
-            this.cbTipo_pagos.Margin = new System.Windows.Forms.Padding(2);
-            this.cbTipo_pagos.MaxDropDownItems = 4;
-            this.cbTipo_pagos.MouseState = MaterialSkin.MouseState.OUT;
-            this.cbTipo_pagos.Name = "cbTipo_pagos";
-            this.cbTipo_pagos.Size = new System.Drawing.Size(168, 49);
-            this.cbTipo_pagos.StartIndex = 0;
-            this.cbTipo_pagos.TabIndex = 3;
             // 
             // txtDescuento
             // 
@@ -117,26 +84,6 @@
             this.txtDescuento.TextChanged += new System.EventHandler(this.txtDescuento_TextChanged);
             this.txtDescuento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescuento_KeyPress);
             // 
-            // txtGarantia_venta
-            // 
-            this.txtGarantia_venta.AnimateReadOnly = false;
-            this.txtGarantia_venta.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtGarantia_venta.Depth = 0;
-            this.txtGarantia_venta.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtGarantia_venta.Hint = "Días de Garantía";
-            this.txtGarantia_venta.LeadingIcon = null;
-            this.txtGarantia_venta.Location = new System.Drawing.Point(202, 128);
-            this.txtGarantia_venta.Margin = new System.Windows.Forms.Padding(2);
-            this.txtGarantia_venta.MaxLength = 50;
-            this.txtGarantia_venta.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtGarantia_venta.Multiline = false;
-            this.txtGarantia_venta.Name = "txtGarantia_venta";
-            this.txtGarantia_venta.Size = new System.Drawing.Size(167, 50);
-            this.txtGarantia_venta.TabIndex = 7;
-            this.txtGarantia_venta.Text = "";
-            this.txtGarantia_venta.TrailingIcon = null;
-            this.txtGarantia_venta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGarantia_venta_KeyPress);
-            // 
             // cbEstado_Venta
             // 
             this.cbEstado_Venta.AutoCompleteCustomSource.AddRange(new string[] {
@@ -158,12 +105,12 @@
             this.cbEstado_Venta.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.cbEstado_Venta.Location = new System.Drawing.Point(13, 389);
+            this.cbEstado_Venta.Location = new System.Drawing.Point(14, 395);
             this.cbEstado_Venta.Margin = new System.Windows.Forms.Padding(2);
             this.cbEstado_Venta.MaxDropDownItems = 4;
             this.cbEstado_Venta.MouseState = MaterialSkin.MouseState.OUT;
             this.cbEstado_Venta.Name = "cbEstado_Venta";
-            this.cbEstado_Venta.Size = new System.Drawing.Size(168, 49);
+            this.cbEstado_Venta.Size = new System.Drawing.Size(187, 49);
             this.cbEstado_Venta.StartIndex = 0;
             this.cbEstado_Venta.TabIndex = 8;
             // 
@@ -193,6 +140,8 @@
             // materialCard1
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Controls.Add(this.label1);
+            this.materialCard1.Controls.Add(this.cbTipo_pagos);
             this.materialCard1.Controls.Add(this.cbEstado_Factura);
             this.materialCard1.Controls.Add(this.txtId_Venta);
             this.materialCard1.Controls.Add(this.txtIVA);
@@ -203,12 +152,10 @@
             this.materialCard1.Controls.Add(this.label4);
             this.materialCard1.Controls.Add(this.label3);
             this.materialCard1.Controls.Add(this.cbProductos);
+            this.materialCard1.Controls.Add(this.cbEstado_Venta);
             this.materialCard1.Controls.Add(this.cbClientes);
             this.materialCard1.Controls.Add(this.Cant_Productos);
             this.materialCard1.Controls.Add(this.btAgregar);
-            this.materialCard1.Controls.Add(this.cbTipo_pagos);
-            this.materialCard1.Controls.Add(this.cbEstado_Venta);
-            this.materialCard1.Controls.Add(this.txtGarantia_venta);
             this.materialCard1.Controls.Add(this.txtDescuento);
             this.materialCard1.Controls.Add(this.Fecha_V);
             this.materialCard1.Depth = 0;
@@ -218,7 +165,7 @@
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
             this.materialCard1.Padding = new System.Windows.Forms.Padding(10, 11, 10, 11);
-            this.materialCard1.Size = new System.Drawing.Size(382, 496);
+            this.materialCard1.Size = new System.Drawing.Size(382, 510);
             this.materialCard1.TabIndex = 20;
             // 
             // cbEstado_Factura
@@ -246,6 +193,7 @@
             this.cbEstado_Factura.Size = new System.Drawing.Size(167, 49);
             this.cbEstado_Factura.StartIndex = 0;
             this.cbEstado_Factura.TabIndex = 51;
+            this.cbEstado_Factura.SelectionChangeCommitted += new System.EventHandler(this.cbEstado_Factura_SelectionChangeCommitted);
             // 
             // txtId_Venta
             // 
@@ -286,7 +234,7 @@
             this.txtIVA.HideSelection = true;
             this.txtIVA.Hint = "IVA";
             this.txtIVA.LeadingIcon = null;
-            this.txtIVA.Location = new System.Drawing.Point(264, 339);
+            this.txtIVA.Location = new System.Drawing.Point(263, 342);
             this.txtIVA.MaxLength = 32767;
             this.txtIVA.MouseState = MaterialSkin.MouseState.OUT;
             this.txtIVA.Name = "txtIVA";
@@ -315,7 +263,7 @@
             this.txtPrecioTotal.HideSelection = true;
             this.txtPrecioTotal.Hint = "Total";
             this.txtPrecioTotal.LeadingIcon = null;
-            this.txtPrecioTotal.Location = new System.Drawing.Point(263, 389);
+            this.txtPrecioTotal.Location = new System.Drawing.Point(263, 396);
             this.txtPrecioTotal.MaxLength = 32767;
             this.txtPrecioTotal.MouseState = MaterialSkin.MouseState.OUT;
             this.txtPrecioTotal.Name = "txtPrecioTotal";
@@ -327,7 +275,7 @@
             this.txtPrecioTotal.SelectionLength = 0;
             this.txtPrecioTotal.SelectionStart = 0;
             this.txtPrecioTotal.ShortcutsEnabled = true;
-            this.txtPrecioTotal.Size = new System.Drawing.Size(109, 48);
+            this.txtPrecioTotal.Size = new System.Drawing.Size(106, 48);
             this.txtPrecioTotal.TabIndex = 48;
             this.txtPrecioTotal.TabStop = false;
             this.txtPrecioTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -337,7 +285,7 @@
             // AbrirClientes
             // 
             this.AbrirClientes.AutoSize = true;
-            this.AbrirClientes.Location = new System.Drawing.Point(115, 171);
+            this.AbrirClientes.Location = new System.Drawing.Point(115, 169);
             this.AbrirClientes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.AbrirClientes.Name = "AbrirClientes";
             this.AbrirClientes.Size = new System.Drawing.Size(74, 13);
@@ -351,7 +299,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label5.Location = new System.Drawing.Point(11, 336);
+            this.label5.Location = new System.Drawing.Point(200, 119);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 17);
             this.label5.TabIndex = 46;
@@ -363,7 +311,7 @@
             this.cbEmpleados.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cbEmpleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cbEmpleados.FormattingEnabled = true;
-            this.cbEmpleados.Location = new System.Drawing.Point(13, 356);
+            this.cbEmpleados.Location = new System.Drawing.Point(205, 139);
             this.cbEmpleados.Name = "cbEmpleados";
             this.cbEmpleados.Size = new System.Drawing.Size(168, 28);
             this.cbEmpleados.TabIndex = 45;
@@ -373,7 +321,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(10, 194);
+            this.label4.Location = new System.Drawing.Point(10, 192);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(98, 17);
             this.label4.TabIndex = 44;
@@ -384,7 +332,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(9, 119);
+            this.label3.Location = new System.Drawing.Point(9, 117);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 17);
             this.label3.TabIndex = 43;
@@ -396,10 +344,11 @@
             this.cbProductos.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cbProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cbProductos.FormattingEnabled = true;
-            this.cbProductos.Location = new System.Drawing.Point(13, 215);
+            this.cbProductos.Location = new System.Drawing.Point(13, 213);
             this.cbProductos.Name = "cbProductos";
             this.cbProductos.Size = new System.Drawing.Size(168, 28);
             this.cbProductos.TabIndex = 42;
+            this.cbProductos.Leave += new System.EventHandler(this.cbProductos_Leave);
             // 
             // cbClientes
             // 
@@ -409,7 +358,7 @@
             this.cbClientes.FormattingEnabled = true;
             this.cbClientes.Items.AddRange(new object[] {
             "Seleccione"});
-            this.cbClientes.Location = new System.Drawing.Point(14, 141);
+            this.cbClientes.Location = new System.Drawing.Point(14, 139);
             this.cbClientes.Name = "cbClientes";
             this.cbClientes.Size = new System.Drawing.Size(168, 28);
             this.cbClientes.TabIndex = 41;
@@ -418,7 +367,7 @@
             // 
             this.Cant_Productos.Depth = 0;
             this.Cant_Productos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Cant_Productos.Location = new System.Drawing.Point(9, 253);
+            this.Cant_Productos.Location = new System.Drawing.Point(11, 246);
             this.Cant_Productos.Margin = new System.Windows.Forms.Padding(2);
             this.Cant_Productos.MouseState = MaterialSkin.MouseState.HOVER;
             this.Cant_Productos.Name = "Cant_Productos";
@@ -426,6 +375,7 @@
             this.Cant_Productos.TabIndex = 40;
             this.Cant_Productos.Text = "Productos";
             this.Cant_Productos.Value = 1;
+            this.Cant_Productos.Leave += new System.EventHandler(this.Cant_Productos_Leave);
             // 
             // btAgregar
             // 
@@ -434,25 +384,14 @@
             this.btAgregar.ForeColor = System.Drawing.Color.White;
             this.btAgregar.Image = global::TiendaPaula.Properties.Resources.icons8_factura_28;
             this.btAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btAgregar.Location = new System.Drawing.Point(32, 440);
+            this.btAgregar.Location = new System.Drawing.Point(10, 459);
             this.btAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btAgregar.Name = "btAgregar";
-            this.btAgregar.Size = new System.Drawing.Size(316, 43);
+            this.btAgregar.Size = new System.Drawing.Size(362, 43);
             this.btAgregar.TabIndex = 13;
             this.btAgregar.Text = "Facturar";
             this.btAgregar.UseVisualStyleBackColor = false;
             this.btAgregar.Click += new System.EventHandler(this.btAgregar_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(996, 572);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "Eliminar";
             // 
             // txtBuscar_Venta
             // 
@@ -476,28 +415,28 @@
             // 
             // dtVentas
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.dtVentas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.dtVentas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle34;
             this.dtVentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtVentas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtVentas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle35;
             this.dtVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtVentas.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle36.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtVentas.DefaultCellStyle = dataGridViewCellStyle36;
             this.dtVentas.Location = new System.Drawing.Point(420, 158);
             this.dtVentas.Margin = new System.Windows.Forms.Padding(2);
             this.dtVentas.Name = "dtVentas";
@@ -505,6 +444,7 @@
             this.dtVentas.RowTemplate.Height = 24;
             this.dtVentas.Size = new System.Drawing.Size(615, 249);
             this.dtVentas.TabIndex = 21;
+            this.dtVentas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtVentas_CellClick);
             // 
             // Abre_DetallesVentas
             // 
@@ -523,7 +463,7 @@
             // 
             // lblMsj
             // 
-            this.lblMsj.Location = new System.Drawing.Point(533, 531);
+            this.lblMsj.Location = new System.Drawing.Point(529, 531);
             this.lblMsj.Name = "lblMsj";
             this.lblMsj.Size = new System.Drawing.Size(395, 41);
             this.lblMsj.TabIndex = 47;
@@ -540,20 +480,6 @@
             this.btLimpiar.TabIndex = 48;
             this.btLimpiar.UseVisualStyleBackColor = true;
             this.btLimpiar.Click += new System.EventHandler(this.btLimpiar_Click);
-            // 
-            // btEliminar
-            // 
-            this.btEliminar.BackColor = System.Drawing.Color.White;
-            this.btEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btEliminar.Image = global::TiendaPaula.Properties.Resources.icons8_eliminar;
-            this.btEliminar.Location = new System.Drawing.Point(986, 516);
-            this.btEliminar.Margin = new System.Windows.Forms.Padding(2);
-            this.btEliminar.Name = "btEliminar";
-            this.btEliminar.Size = new System.Drawing.Size(58, 53);
-            this.btEliminar.TabIndex = 25;
-            this.btEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btEliminar.UseVisualStyleBackColor = false;
             // 
             // btBuscar
             // 
@@ -594,47 +520,31 @@
             this.label6.Text = "Limpiar";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // materialMaskedTextBox1
+            // cbTipo_pagos
             // 
-            this.materialMaskedTextBox1.AllowPromptAsInput = true;
-            this.materialMaskedTextBox1.AnimateReadOnly = false;
-            this.materialMaskedTextBox1.AsciiOnly = false;
-            this.materialMaskedTextBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.materialMaskedTextBox1.BeepOnError = false;
-            this.materialMaskedTextBox1.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.materialMaskedTextBox1.Depth = 0;
-            this.materialMaskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialMaskedTextBox1.HidePromptOnLeave = false;
-            this.materialMaskedTextBox1.HideSelection = true;
-            this.materialMaskedTextBox1.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
-            this.materialMaskedTextBox1.LeadingIcon = null;
-            this.materialMaskedTextBox1.Location = new System.Drawing.Point(410, 531);
-            this.materialMaskedTextBox1.Mask = "##.##";
-            this.materialMaskedTextBox1.MaxLength = 32767;
-            this.materialMaskedTextBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialMaskedTextBox1.Name = "materialMaskedTextBox1";
-            this.materialMaskedTextBox1.PasswordChar = '\0';
-            this.materialMaskedTextBox1.PrefixSuffixText = null;
-            this.materialMaskedTextBox1.PromptChar = '_';
-            this.materialMaskedTextBox1.ReadOnly = false;
-            this.materialMaskedTextBox1.RejectInputOnFirstFailure = false;
-            this.materialMaskedTextBox1.ResetOnPrompt = true;
-            this.materialMaskedTextBox1.ResetOnSpace = true;
-            this.materialMaskedTextBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.materialMaskedTextBox1.SelectedText = "";
-            this.materialMaskedTextBox1.SelectionLength = 0;
-            this.materialMaskedTextBox1.SelectionStart = 0;
-            this.materialMaskedTextBox1.ShortcutsEnabled = true;
-            this.materialMaskedTextBox1.Size = new System.Drawing.Size(250, 48);
-            this.materialMaskedTextBox1.SkipLiterals = true;
-            this.materialMaskedTextBox1.TabIndex = 50;
-            this.materialMaskedTextBox1.TabStop = false;
-            this.materialMaskedTextBox1.Text = "  ,";
-            this.materialMaskedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialMaskedTextBox1.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.materialMaskedTextBox1.TrailingIcon = null;
-            this.materialMaskedTextBox1.UseSystemPasswordChar = false;
-            this.materialMaskedTextBox1.ValidatingType = null;
+            this.cbTipo_pagos.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbTipo_pagos.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.cbTipo_pagos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cbTipo_pagos.FormattingEnabled = true;
+            this.cbTipo_pagos.Items.AddRange(new object[] {
+            "Efectivo",
+            "SINPE",
+            "Tarjeta"});
+            this.cbTipo_pagos.Location = new System.Drawing.Point(205, 213);
+            this.cbTipo_pagos.Name = "cbTipo_pagos";
+            this.cbTipo_pagos.Size = new System.Drawing.Size(168, 28);
+            this.cbTipo_pagos.TabIndex = 52;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(202, 192);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(111, 17);
+            this.label1.TabIndex = 53;
+            this.label1.Text = "Método de pago";
             // 
             // Ventas
             // 
@@ -643,13 +553,10 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1068, 600);
-            this.Controls.Add(this.materialMaskedTextBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btLimpiar);
             this.Controls.Add(this.lblMsj);
             this.Controls.Add(this.Abre_DetallesVentas);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btEliminar);
             this.Controls.Add(this.btBuscar);
             this.Controls.Add(this.btActualizar);
             this.Controls.Add(this.txtBuscar_Venta);
@@ -657,7 +564,7 @@
             this.Controls.Add(this.materialCard1);
             this.Controls.Add(this.label2);
             this.Name = "Ventas";
-            this.Text = "B";
+            this.Text = "Facturación Ventas";
             this.Load += new System.EventHandler(this.Ventas_Load);
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
@@ -668,16 +575,12 @@
         }
 
         #endregion
-        private MaterialSkin.Controls.MaterialComboBox cbTipo_pagos;
         private MaterialSkin.Controls.MaterialTextBox txtDescuento;
-        private MaterialSkin.Controls.MaterialTextBox txtGarantia_venta;
         private MaterialSkin.Controls.MaterialComboBox cbEstado_Venta;
         private System.Windows.Forms.DateTimePicker Fecha_V;
         private System.Windows.Forms.Button btAgregar;
         private System.Windows.Forms.Label label2;
         private MaterialSkin.Controls.MaterialCard materialCard1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btEliminar;
         private System.Windows.Forms.Button btBuscar;
         private System.Windows.Forms.Button btActualizar;
         private MaterialSkin.Controls.MaterialTextBox txtBuscar_Venta;
@@ -698,6 +601,7 @@
         private MaterialSkin.Controls.MaterialTextBox2 txtIVA;
         private MaterialSkin.Controls.MaterialTextBox2 txtId_Venta;
         private MaterialSkin.Controls.MaterialComboBox cbEstado_Factura;
-        private MaterialSkin.Controls.MaterialMaskedTextBox materialMaskedTextBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbTipo_pagos;
     }
 }

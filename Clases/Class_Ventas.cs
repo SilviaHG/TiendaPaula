@@ -13,7 +13,7 @@ namespace TiendaPaula.Clases
         public int IdEmpleado_Venta { get; set; }
         public int IdPago_Venta { get; set; }
         public double IVA { get; set; }
-        public double Descuento { get; set; }
+        public string Descuento { get; set; }
         public double Total_Venta { get; set; }
         public int Garantia_Venta { get; set; }
         public DateTime Fecha_Venta { get; set; }
@@ -23,7 +23,7 @@ namespace TiendaPaula.Clases
         public Class_Ventas() { }
 
         // Constructor con parametros
-        public Class_Ventas(int id_Venta, int idCliente_Venta, int idEmpleado_Venta, int idPago_Venta, double iVA, double descuento, double total_Venta, int garantia_Venta, DateTime fecha_Venta, string estado_Venta)
+        public Class_Ventas(int id_Venta, int idCliente_Venta, int idEmpleado_Venta, int idPago_Venta, double iVA, string descuento, double total_Venta, int garantia_Venta, DateTime fecha_Venta, string estado_Venta)
         {
             Id_Venta = id_Venta;
             IdCliente_Venta = idCliente_Venta;

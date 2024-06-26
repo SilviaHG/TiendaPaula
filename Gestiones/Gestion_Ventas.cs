@@ -26,7 +26,7 @@ namespace TiendaPaula.Gestiones
                     MySqlCommand cmd = new MySqlCommand("Select * from V_SHOW_SALES", cnn); // agregamos el procedumiento almacenado
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     adapter.Fill(MostrarVentas);
-                    //NumeroMAX = MostrarVentas.Rows[0][0];
+                    
                 }
                 catch (Exception ex)
                 {
@@ -246,7 +246,7 @@ namespace TiendaPaula.Gestiones
                     mySqlCommand.Parameters.AddWithValue("COD_PRODUCT", D_Venta.Id_Producto);
                     mySqlCommand.Parameters.AddWithValue("State_p", Estado_Fac);
 
-                    await Console.Out.WriteLineAsync("AQUI");
+                    
                     mySqlCommand.ExecuteNonQuery();
 
                 }
