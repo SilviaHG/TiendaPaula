@@ -45,11 +45,12 @@ namespace TiendaPaula.Formularios
             txtVerificarContra.Text = "";
             txtContra.Text = "";
             txtBuscar.Text = "";
+            cbUsuario.Enabled = true;
             //limpiar el label de mensaje
             lblMsj.Text = "";
 
             //habilitamos los botnes y el campo de texto
-           //txtIdTabla.Enabled = true;
+            //txtIdTabla.Enabled = true;
             btnActualizar.Enabled = false;
             btnEliminar.Enabled = false;
             btnCrear.Enabled = true;
@@ -102,7 +103,7 @@ namespace TiendaPaula.Formularios
         private async void btnCrear_Click(object sender, EventArgs e)
         {
             //verificamos que los campos no esten vacíos
-            if(string.IsNullOrEmpty(cbUsuario.Text) || string.IsNullOrEmpty(txtContra.Text) 
+            if (string.IsNullOrEmpty(cbUsuario.Text) || string.IsNullOrEmpty(txtContra.Text)
                 || string.IsNullOrEmpty(txtVerificarContra.Text) || cbEstado.SelectedIndex == 0)
             {
                 lblMsj.ForeColor = Color.Red;
@@ -110,7 +111,7 @@ namespace TiendaPaula.Formularios
             }
             else
             {
-                if(!(txtContra.Text == txtVerificarContra.Text))
+                if (!(txtContra.Text == txtVerificarContra.Text))
                 {
                     lblMsj.ForeColor = Color.Red;
                     lblMsj.Text = "Las contraseñas no coinciden";
@@ -168,6 +169,7 @@ namespace TiendaPaula.Formularios
                         lblMsj.ForeColor = Color.Green;
                         lblMsj.Text = "Usuario eliminado correctamente";
                         LimpiarCampos();
+                        RefrescarCombox();
 
                         break;
                     case DialogResult.No:
@@ -183,9 +185,48 @@ namespace TiendaPaula.Formularios
 
             }
         }
-        //FALTA EL ACTUALIZAR
+        //Actualizar el usuario
+        private async void btnActualizar_Click(object sender, EventArgs e)
+        {
+            // verificamos que los campos no esten vacios
+            if (string.IsNullOrEmpty(cbUsuario.Text) || string.IsNullOrEmpty(txtContra.Text)
+                || string.IsNullOrEmpty(txtVerificarContra.Text) || cbEstado.SelectedIndex == 0)
+            {
+                lblMsj.ForeColor = Color.Red;
+                lblMsj.Text = "No puede dejar campos vacíos";
+            }
+            else
+            {
+                if (!(txtContra.Text == txtVerificarContra.Text))
+                {
+                    lblMsj.ForeColor = Color.Red;
+                    lblMsj.Text = "Las contraseñas no coinciden";
+                }
+                else
+                {
+                    //se abre la conexion
+                    await gestUsuarios.AbrirConexion(gestUsuarios.establecerConexion());
+                    //establecemos los valores agregamos por el usuario a los txt
+                    usuarios.IdUsuario_Tabla = Convert.ToInt32(txtIdTabla.Text);
+                    usuarios.Id_Usuario = Convert.ToInt32(cbUsuario.SelectedItem.ToString());
+                    usuarios.Contrasennia_Usuario = txtContra.Text;
+                    usuarios.Estado_Usuario = cbEstado.SelectedItem.ToString();
 
-        //actualizamos el usuario
+                    //enviamos los datos a la clase gestion cliente
+                    gestUsuarios.ActualizarUsuario(usuarios);
+
+                    //mensaje
+                    lblMsj.ForeColor = Color.Green;
+                    lblMsj.Text = "Usuario creado correctamente";
+
+                    RefrescarCombox();
+                    LimpiarCampos();
+
+                }
+            }
+        }
+
+        //busca un el usuario
         private async void btnBuscar_Click(object sender, EventArgs e)
         {
 
@@ -216,19 +257,23 @@ namespace TiendaPaula.Formularios
             //se muestran los datos seleccionado en los textbox, ya sea para eliminar o actualizar
 
             DataGridViewRow fila = dtUsuarios.SelectedRows[0];
-            //se deshabilita para que no pueda editar la cédula
-            cbUsuario.Enabled = false;
+
             //habilitamos el boton de actualizar y eliminar y deshabilitamos el de agregar
             btnActualizar.Enabled = true;
             btnEliminar.Enabled = true;
             btnCrear.Enabled = false;
             //pasamos los campos de la fila seleccionada a los textBox
             txtIdTabla.Text = fila.Cells[0].Value.ToString();
-            txtBuscar.Text = fila.Cells[0].Value.ToString();
-            cbUsuario.SelectedItem = fila.Cells[1].Value.ToString();
+
+            txtBuscar.Text = fila.Cells[1].Value.ToString();
+            cbUsuario.SelectedItem = fila.Cells[1].Value;
+
             txtContra.Text = fila.Cells[2].Value.ToString();
             txtVerificarContra.Text = fila.Cells[2].Value.ToString();
+
             cbEstado.SelectedItem = fila.Cells[3].Value.ToString();
+            //se deshabilita para que no pueda editar el id
+            cbUsuario.Enabled = false;
             cbEstado.Refresh();
             cbUsuario.Refresh();
         }
