@@ -165,5 +165,57 @@ namespace TiendaPaula.Gestiones
 
         }
 
+        public async Task<DataTable> MostrarCategoriasProductos()
+        {
+            DataTable MostrarCategorias = new DataTable();
+
+            using (MySqlConnection cnn = establecerConexion()) // se establece la conexion
+            {
+                try
+                {
+                    await AbrirConexion(cnn); //abrimos la conexion
+                    MySqlCommand cmd = new MySqlCommand("SELECT NameCategory FROM CATEGORIES;", cnn); // CODIGO QUE MUESTRA SOLO EL ID DE LOS PRODUCTOS
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    adapter.Fill(MostrarCategorias);
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}"); // si da un error lo mostramos
+                }
+                finally
+                {
+                    await cerrarConexion(cnn); // despues de cierra la conexion
+                }
+            }
+            return MostrarCategorias;
+        }
+
+        public async Task<DataTable> MostrarMarcasProductos()
+        {
+            DataTable MostrarMarcas = new DataTable();
+
+            using (MySqlConnection cnn = establecerConexion()) // se establece la conexion
+            {
+                try
+                {
+                    await AbrirConexion(cnn); //abrimos la conexion
+                    MySqlCommand cmd = new MySqlCommand("SELECT Brand FROM BRANDS;", cnn); // CODIGO QUE MUESTRA SOLO EL ID DE LOS PRODUCTOS
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    adapter.Fill(MostrarMarcas);
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}"); // si da un error lo mostramos
+                }
+                finally
+                {
+                    await cerrarConexion(cnn); // despues de cierra la conexion
+                }
+            }
+            return MostrarMarcas;
+        }
+
     }
 }

@@ -36,10 +36,10 @@ namespace TiendaPaula.Formularios
             datos.Columns[0].ColumnName = "Cédula";
             datos.Columns[1].ColumnName = "Nombre";
             datos.Columns[2].ColumnName = "Teléfono";
-            datos.Columns[3].ColumnName = "Email";
+            datos.Columns[3].ColumnName = "Correo Electrónico";
             datos.Columns[4].ColumnName = "Dirección";
             //Mostramos la tabla que esta en la BD
-            dtClientes.DataSource = await gestCliente.MostrarTodosClientes();
+            dtClientes.DataSource = datos;
 
         }
 

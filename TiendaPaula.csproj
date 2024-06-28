@@ -192,6 +192,7 @@
     <Compile Include="Gestiones\Gestion_Detalles_Ventas.cs" />
     <Compile Include="Gestiones\Gestion_Empleados.cs" />
     <Compile Include="Gestiones\Gestion_Listas.cs" />
+    <Compile Include="Gestiones\Gestion_Productos.cs" />
     <Compile Include="Gestiones\Gestion_Proveedores.cs" />
     <Compile Include="Gestiones\Gestion_Usuarios.cs" />
     <Compile Include="Gestiones\Gestion_Ventas.cs" />
