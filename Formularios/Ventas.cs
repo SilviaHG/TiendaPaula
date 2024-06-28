@@ -43,7 +43,6 @@ namespace TiendaPaula.Formularios
 
             txtId_Venta.Text = Convert.ToString(await GestVentas.NumeroMAX());
 
-
         }
 
         /// <summary>
