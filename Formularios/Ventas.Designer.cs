@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtDescuento = new MaterialSkin.Controls.MaterialTextBox();
             this.cbEstado_Venta = new MaterialSkin.Controls.MaterialComboBox();
             this.Fecha_V = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbTipo_pagos = new System.Windows.Forms.ComboBox();
             this.cbEstado_Factura = new MaterialSkin.Controls.MaterialComboBox();
             this.txtId_Venta = new MaterialSkin.Controls.MaterialTextBox2();
             this.txtIVA = new MaterialSkin.Controls.MaterialTextBox2();
@@ -57,8 +59,6 @@
             this.btBuscar = new System.Windows.Forms.Button();
             this.btActualizar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.cbTipo_pagos = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtVentas)).BeginInit();
             this.SuspendLayout();
@@ -167,6 +167,32 @@
             this.materialCard1.Padding = new System.Windows.Forms.Padding(10, 11, 10, 11);
             this.materialCard1.Size = new System.Drawing.Size(382, 510);
             this.materialCard1.TabIndex = 20;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(202, 192);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(111, 17);
+            this.label1.TabIndex = 53;
+            this.label1.Text = "Método de pago";
+            // 
+            // cbTipo_pagos
+            // 
+            this.cbTipo_pagos.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbTipo_pagos.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.cbTipo_pagos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cbTipo_pagos.FormattingEnabled = true;
+            this.cbTipo_pagos.Items.AddRange(new object[] {
+            "Efectivo",
+            "SINPE",
+            "Tarjeta"});
+            this.cbTipo_pagos.Location = new System.Drawing.Point(205, 213);
+            this.cbTipo_pagos.Name = "cbTipo_pagos";
+            this.cbTipo_pagos.Size = new System.Drawing.Size(168, 28);
+            this.cbTipo_pagos.TabIndex = 52;
             // 
             // cbEstado_Factura
             // 
@@ -415,28 +441,28 @@
             // 
             // dtVentas
             // 
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.dtVentas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.dtVentas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dtVentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtVentas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtVentas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle35.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle36.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle36.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtVentas.DefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtVentas.DefaultCellStyle = dataGridViewCellStyle3;
             this.dtVentas.Location = new System.Drawing.Point(420, 158);
             this.dtVentas.Margin = new System.Windows.Forms.Padding(2);
             this.dtVentas.Name = "dtVentas";
@@ -519,32 +545,6 @@
             this.label6.TabIndex = 49;
             this.label6.Text = "Limpiar";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cbTipo_pagos
-            // 
-            this.cbTipo_pagos.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cbTipo_pagos.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.cbTipo_pagos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cbTipo_pagos.FormattingEnabled = true;
-            this.cbTipo_pagos.Items.AddRange(new object[] {
-            "Efectivo",
-            "SINPE",
-            "Tarjeta"});
-            this.cbTipo_pagos.Location = new System.Drawing.Point(205, 213);
-            this.cbTipo_pagos.Name = "cbTipo_pagos";
-            this.cbTipo_pagos.Size = new System.Drawing.Size(168, 28);
-            this.cbTipo_pagos.TabIndex = 52;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(202, 192);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 17);
-            this.label1.TabIndex = 53;
-            this.label1.Text = "Método de pago";
             // 
             // Ventas
             // 
