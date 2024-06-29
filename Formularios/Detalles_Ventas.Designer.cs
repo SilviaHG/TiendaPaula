@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtDetalles_Venta = new System.Windows.Forms.DataGridView();
             this.btBuscar = new System.Windows.Forms.Button();
             this.txtBuscar_Compra = new MaterialSkin.Controls.MaterialTextBox();
@@ -41,20 +41,20 @@
             // 
             this.dtDetalles_Venta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtDetalles_Venta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtDetalles_Venta.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dtDetalles_Venta.Location = new System.Drawing.Point(74, 141);
-            this.dtDetalles_Venta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtDetalles_Venta.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dtDetalles_Venta.Location = new System.Drawing.Point(99, 174);
+            this.dtDetalles_Venta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtDetalles_Venta.Name = "dtDetalles_Venta";
             this.dtDetalles_Venta.RowHeadersWidth = 51;
             this.dtDetalles_Venta.RowTemplate.Height = 24;
-            this.dtDetalles_Venta.Size = new System.Drawing.Size(654, 204);
+            this.dtDetalles_Venta.Size = new System.Drawing.Size(872, 251);
             this.dtDetalles_Venta.TabIndex = 32;
             // 
             // btBuscar
@@ -64,10 +64,10 @@
             this.btBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btBuscar.Image = global::TiendaPaula.Properties.Resources.icons8_buscar_30__1_;
             this.btBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btBuscar.Location = new System.Drawing.Point(614, 83);
-            this.btBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btBuscar.Location = new System.Drawing.Point(819, 102);
+            this.btBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btBuscar.Name = "btBuscar";
-            this.btBuscar.Size = new System.Drawing.Size(94, 41);
+            this.btBuscar.Size = new System.Drawing.Size(125, 50);
             this.btBuscar.TabIndex = 40;
             this.btBuscar.Text = "Buscar";
             this.btBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -82,13 +82,13 @@
             this.txtBuscar_Compra.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtBuscar_Compra.Hint = "Buscar";
             this.txtBuscar_Compra.LeadingIcon = null;
-            this.txtBuscar_Compra.Location = new System.Drawing.Point(92, 83);
-            this.txtBuscar_Compra.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBuscar_Compra.Location = new System.Drawing.Point(123, 102);
+            this.txtBuscar_Compra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBuscar_Compra.MaxLength = 50;
             this.txtBuscar_Compra.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBuscar_Compra.Multiline = false;
             this.txtBuscar_Compra.Name = "txtBuscar_Compra";
-            this.txtBuscar_Compra.Size = new System.Drawing.Size(497, 50);
+            this.txtBuscar_Compra.Size = new System.Drawing.Size(663, 50);
             this.txtBuscar_Compra.TabIndex = 39;
             this.txtBuscar_Compra.Text = "";
             this.txtBuscar_Compra.TrailingIcon = null;
@@ -96,9 +96,10 @@
             // 
             // lblMsj
             // 
-            this.lblMsj.Location = new System.Drawing.Point(194, 383);
+            this.lblMsj.Location = new System.Drawing.Point(259, 471);
+            this.lblMsj.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMsj.Name = "lblMsj";
-            this.lblMsj.Size = new System.Drawing.Size(395, 41);
+            this.lblMsj.Size = new System.Drawing.Size(527, 50);
             this.lblMsj.TabIndex = 48;
             this.lblMsj.Text = "MENSAJES DE ERROR";
             this.lblMsj.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -106,9 +107,10 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(633, 349);
+            this.linkLabel1.Location = new System.Drawing.Point(844, 430);
+            this.linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(95, 13);
+            this.linkLabel1.Size = new System.Drawing.Size(120, 16);
             this.linkLabel1.TabIndex = 49;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Ver tabla completa";
@@ -117,15 +119,17 @@
             // 
             // Detalles_Ventas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.lblMsj);
             this.Controls.Add(this.btBuscar);
             this.Controls.Add(this.txtBuscar_Compra);
             this.Controls.Add(this.dtDetalles_Venta);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Detalles_Ventas";
+            this.Padding = new System.Windows.Forms.Padding(4, 79, 4, 4);
             this.Text = "Detalles Ventas";
             this.Load += new System.EventHandler(this.Detalles_Ventas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtDetalles_Venta)).EndInit();
