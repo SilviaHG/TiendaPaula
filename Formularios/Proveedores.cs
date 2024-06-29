@@ -49,8 +49,15 @@ namespace TiendaPaula.Formularios
             btnEliminar.Enabled = false;
             btnAgregar.Enabled = true;
 
+            var datos = await gestProveedores.MostrarTodosProveedores();
+            datos.Columns[0].ColumnName = "Código Proveedor";
+            datos.Columns[1].ColumnName = "Empresa";
+            datos.Columns[2].ColumnName = "Teléfono";
+            datos.Columns[3].ColumnName = "Correo Electrónico";
+            datos.Columns[4].ColumnName = "Dirección";
             //Mostramos la tabla que esta en la BD
-            dtProveedores.DataSource = await gestProveedores.MostrarTodosProveedores();
+            dtProveedores.DataSource = datos;
+
         }
 
         private void btnClean_Click(object sender, EventArgs e)

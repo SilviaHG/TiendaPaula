@@ -58,7 +58,15 @@ namespace TiendaPaula.Formularios
             txtIdTabla.Text = Convert.ToString(await gestUsuarios.NumeroMaxUsuario());
 
             //Mostramos la tabla que esta en la BD
-            dtUsuarios.DataSource = await gestUsuarios.MostrarTodosUsuarios();
+
+            var datos = await gestUsuarios.MostrarTodosUsuarios();
+            datos.Columns[0].ColumnName = "N°";
+            datos.Columns[1].ColumnName = "Usuario";
+            datos.Columns[2].ColumnName = "Contraseña";
+            datos.Columns[3].ColumnName = "Estado";
+
+            dtUsuarios.DataSource = datos;
+
         }
 
         public void RefrescarCombox()

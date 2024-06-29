@@ -223,6 +223,16 @@ namespace TiendaPaula.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_más_20 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-más-20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_pagado_28 {
             get {
                 object obj = ResourceManager.GetObject("icons8-pagado-28", resourceCulture);

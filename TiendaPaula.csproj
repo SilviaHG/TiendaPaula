@@ -157,6 +157,12 @@
     <Compile Include="Formularios\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Marcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Marcas.Designer.cs">
+      <DependentUpon>Marcas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +198,7 @@
     <Compile Include="Gestiones\Gestion_Detalles_Ventas.cs" />
     <Compile Include="Gestiones\Gestion_Empleados.cs" />
     <Compile Include="Gestiones\Gestion_Listas.cs" />
+    <Compile Include="Gestiones\Gestion_Marcas.cs" />
     <Compile Include="Gestiones\Gestion_Productos.cs" />
     <Compile Include="Gestiones\Gestion_Proveedores.cs" />
     <Compile Include="Gestiones\Gestion_Usuarios.cs" />
@@ -218,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Marcas.resx">
+      <DependentUpon>Marcas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
@@ -320,6 +330,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-cheque.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-más-20.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

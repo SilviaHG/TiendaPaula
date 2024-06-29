@@ -28,18 +28,10 @@ namespace TiendaPaula.Formularios
             InitializeComponent();
         }
 
-        private async void Clientes_Load(object sender, EventArgs e)
+        private void Clientes_Load(object sender, EventArgs e)
         {
             
             LimpiarCampos();
-            var datos = await gestCliente.MostrarTodosClientes();
-            datos.Columns[0].ColumnName = "Cédula";
-            datos.Columns[1].ColumnName = "Nombre";
-            datos.Columns[2].ColumnName = "Teléfono";
-            datos.Columns[3].ColumnName = "Correo Electrónico";
-            datos.Columns[4].ColumnName = "Dirección";
-            //Mostramos la tabla que esta en la BD
-            dtClientes.DataSource = datos;
 
         }
 
@@ -61,7 +53,16 @@ namespace TiendaPaula.Formularios
             btnAgregar.Enabled = true;
 
             //Mostramos la tabla que esta en la BD
-            dtClientes.DataSource = await gestCliente.MostrarTodosClientes();
+
+            var datos = await gestCliente.MostrarTodosClientes();
+            datos.Columns[0].ColumnName = "Cédula";
+            datos.Columns[1].ColumnName = "Nombre Completo";
+            datos.Columns[2].ColumnName = "Teléfono";
+            datos.Columns[3].ColumnName = "Correo Electrónico";
+            datos.Columns[4].ColumnName = "Dirección";
+            //Mostramos la tabla que esta en la BD
+            dtClientes.DataSource = datos;
+
         }
 
         private void txtCedulaCliente_KeyPress(object sender, KeyPressEventArgs e)
