@@ -36,15 +36,16 @@
             this.cbMarca = new MaterialSkin.Controls.MaterialComboBox();
             this.cbCategoria = new MaterialSkin.Controls.MaterialComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnActualizar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.txtBuscar = new MaterialSkin.Controls.MaterialTextBox2();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dtProductos = new System.Windows.Forms.DataGridView();
             this.lblMsj = new System.Windows.Forms.Label();
             this.txtTallas = new MaterialSkin.Controls.MaterialTextBox2();
+            this.btnAgregarMarca = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtProductos)).BeginInit();
             this.SuspendLayout();
@@ -55,7 +56,7 @@
             this.txtIdProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.txtIdProducto.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtIdProducto.Depth = 0;
-            this.txtIdProducto.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtIdProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtIdProducto.HideSelection = true;
             this.txtIdProducto.Hint = "N°";
             this.txtIdProducto.LeadingIcon = null;
@@ -84,7 +85,7 @@
             this.txtProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.txtProducto.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtProducto.Depth = 0;
-            this.txtProducto.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtProducto.HideSelection = true;
             this.txtProducto.Hint = "Producto";
             this.txtProducto.LeadingIcon = null;
@@ -113,7 +114,7 @@
             this.txtDescripcion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.txtDescripcion.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtDescripcion.Depth = 0;
-            this.txtDescripcion.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtDescripcion.HideSelection = true;
             this.txtDescripcion.Hint = "Descripción";
             this.txtDescripcion.LeadingIcon = null;
@@ -294,30 +295,20 @@
             this.panel1.Controls.Add(this.btnEliminar);
             this.panel1.Controls.Add(this.btnActualizar);
             this.panel1.Controls.Add(this.btnAgregar);
-            this.panel1.Location = new System.Drawing.Point(17, 441);
+            this.panel1.Location = new System.Drawing.Point(17, 451);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(375, 100);
             this.panel1.TabIndex = 11;
             // 
-            // btnAgregar
+            // btnLimpiar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(13, 24);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 46);
-            this.btnAgregar.TabIndex = 0;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.Location = new System.Drawing.Point(104, 24);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 46);
-            this.btnActualizar.TabIndex = 1;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            this.btnLimpiar.Location = new System.Drawing.Point(287, 24);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(75, 46);
+            this.btnLimpiar.TabIndex = 3;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnEliminar
             // 
@@ -329,15 +320,25 @@
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // btnLimpiar
+            // btnActualizar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(287, 24);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(75, 46);
-            this.btnLimpiar.TabIndex = 3;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.UseVisualStyleBackColor = true;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            this.btnActualizar.Location = new System.Drawing.Point(104, 24);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(75, 46);
+            this.btnActualizar.TabIndex = 1;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(13, 24);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 46);
+            this.btnAgregar.TabIndex = 0;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtBuscar
             // 
@@ -404,7 +405,7 @@
             this.txtTallas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.txtTallas.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtTallas.Depth = 0;
-            this.txtTallas.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtTallas.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtTallas.HideSelection = true;
             this.txtTallas.Hint = "Tallas";
             this.txtTallas.LeadingIcon = null;
@@ -427,11 +428,22 @@
             this.txtTallas.TrailingIcon = null;
             this.txtTallas.UseSystemPasswordChar = false;
             // 
+            // btnAgregarMarca
+            // 
+            this.btnAgregarMarca.Image = global::TiendaPaula.Properties.Resources.icons8_más_20;
+            this.btnAgregarMarca.Location = new System.Drawing.Point(237, 422);
+            this.btnAgregarMarca.Name = "btnAgregarMarca";
+            this.btnAgregarMarca.Size = new System.Drawing.Size(28, 24);
+            this.btnAgregarMarca.TabIndex = 16;
+            this.btnAgregarMarca.UseVisualStyleBackColor = true;
+            this.btnAgregarMarca.Click += new System.EventHandler(this.btnAgregarMarca_Click);
+            // 
             // Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1278, 564);
+            this.Controls.Add(this.btnAgregarMarca);
             this.Controls.Add(this.txtTallas);
             this.Controls.Add(this.lblMsj);
             this.Controls.Add(this.dtProductos);
@@ -460,7 +472,6 @@
         private MaterialSkin.Controls.MaterialTextBox2 txtDescripcion;
         private MaterialSkin.Controls.MaterialTextBox2 txtPrecio;
         private MaterialSkin.Controls.MaterialComboBox cbStock;
-        private MaterialSkin.Controls.MaterialComboBox cbMarca;
         private MaterialSkin.Controls.MaterialComboBox cbCategoria;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnLimpiar;
@@ -472,5 +483,7 @@
         private System.Windows.Forms.DataGridView dtProductos;
         private System.Windows.Forms.Label lblMsj;
         private MaterialSkin.Controls.MaterialTextBox2 txtTallas;
+        private System.Windows.Forms.Button btnAgregarMarca;
+        public MaterialSkin.Controls.MaterialComboBox cbMarca;
     }
 }

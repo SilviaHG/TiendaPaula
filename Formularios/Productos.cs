@@ -262,7 +262,7 @@ namespace TiendaPaula.Formularios
                         productos.Precio_P = Convert.ToDouble(txtPrecio.Text);
 
                         //enviamos los datos a la clase gestion productos
-                        gestProductos.InsertarProducto(productos);
+                        gestProductos.ActualizarProducto(productos);
 
                         //mensaje
                         Limpiar();
@@ -327,6 +327,12 @@ namespace TiendaPaula.Formularios
             cbMarca.Refresh();
             cbStock.Refresh();
 
+        }
+
+        private void btnAgregarMarca_Click(object sender, EventArgs e)
+        {
+            Marcas marca = new Marcas();
+            marca.ShowDialog();
         }
     }
 }

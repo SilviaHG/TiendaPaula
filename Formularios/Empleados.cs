@@ -27,9 +27,8 @@ namespace TiendaPaula.Formularios
             InitializeComponent();
         }
 
-        private async void Empleados_Load(object sender, EventArgs e)
+        private void Empleados_Load(object sender, EventArgs e)
         {
-            dtEmpleados.DataSource = await gestEmpleados.MostrarTodosEmpleados();
             LimpiarCampos();
             AgregarPosiciones();
 
@@ -62,8 +61,16 @@ namespace TiendaPaula.Formularios
             RefrescarCombo();
 
             //mostramos el datagridview
-            dtEmpleados.DataSource = await gestEmpleados.MostrarTodosEmpleados();
 
+            var datos = await gestEmpleados.MostrarTodosEmpleados();
+            datos.Columns[0].ColumnName = "Código Empleado";
+            datos.Columns[1].ColumnName = "Nombre Completo";
+            datos.Columns[2].ColumnName = "Teléfono";
+            datos.Columns[3].ColumnName = "Correo Electrónico";
+            datos.Columns[4].ColumnName = "Dirección";
+            datos.Columns[5].ColumnName = "Puesto";
+
+            dtEmpleados.DataSource = datos;
 
         }
 
