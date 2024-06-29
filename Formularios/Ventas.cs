@@ -71,15 +71,14 @@ namespace TiendaPaula.Formularios
             txtDescuento.Text = "";
             txtIVA.Text = "";
             txtPrecioTotal.Text = "";
-            Cant_Productos.Value = 0 ;
+            Cant_Productos.Value = 0;
             Fecha_V.Value = DateTime.Now;
             //limpiar el label de mensaje
             lblMsj.Text = "";
 
             txtId_Venta.Text = GestVentas.NumeroMAX().ToString(); //actualiza el nuevo numero de factura de venta
-            //habilitamos los botnes y el campo de texto
+            //habilitamos los botnes 
 
-            btActualizar.Enabled = false; // desabilita el botón ya que empezara a crear una venta, hasta que seleccione una fila de la tabla cambia a true
             btAgregar.Enabled = true;
 
             dtVentas.DataSource = await GestVentas.MostrarVentasTotales(); // muestra la tabla actualizada
@@ -150,13 +149,13 @@ namespace TiendaPaula.Formularios
             Abrir.Show();
         }
 
-        private  void txtDescuento_TextChanged(object sender, EventArgs e)
+        private void txtDescuento_TextChanged(object sender, EventArgs e)
         {
 
-             Monto_IVA_Total();
+            Montos_IVA_Total();
         }
 
-        public async void Monto_IVA_Total()
+        public async void Montos_IVA_Total()
         {
             int Codigo_p = Convert.ToInt32(cbProductos.SelectedItem.ToString());
             int Cantidad = Convert.ToInt32(Cant_Productos.Value.ToString());
@@ -248,29 +247,39 @@ namespace TiendaPaula.Formularios
                 await GestVentas.AbrirConexion(GestVentas.establecerConexion());
                 await GestVentas.InsertarVentas(Class_Ventas, Class_Detalle_V, E_Factura);
 
-                //volvemos a cargar el datagrid view
-                // dtVentas.DataSource = await GestVentas.MostrarVentasTotales();
 
                 //mensaje
                 lblMsj.ForeColor = Color.Green;
-                lblMsj.Text = "Cliente creado correctamente";
+                lblMsj.Text = "Venta realizada correctamente";
                 //LimpiarCampos();
 
                 dtVentas.DataSource = await GestVentas.MostrarVentasTotales(); // muestra la tabla actualizada
 
+                // en caso que desea agregar varios productos a una misma factura
+                DialogResult result = MessageBox.Show("¿Desea agregar otro cod de producto?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    cbEstado_Factura.SelectedIndex = 1;
+                }
+                else if (result == DialogResult.No)
+                {
+
+                }
+                // cerramos la conexion
+                await GestVentas.cerrarConexion(GestVentas.establecerConexion());
             }
-            // cerramos la conexion
-            await GestVentas.cerrarConexion(GestVentas.establecerConexion());
         }
 
         //Habilita el boton de actualizar el estado de la venta
         private void dtVentas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            btActualizar.Enabled = true;
+
             btAgregar.Enabled = false;
 
         }
 
+        //Habilita los botones según el estado de la factura
         private async void cbEstado_Factura_SelectionChangeCommitted(object sender, EventArgs e)
         {
             //Le da un valor a la opción que seleccione en el comboBox de factura
@@ -288,7 +297,7 @@ namespace TiendaPaula.Formularios
                     txtDescuento.Enabled = false;
                     cbClientes.Enabled = false;
                     cbEmpleados.Enabled = false;
-                    cbTipo_pagos.Enabled = false;   
+                    cbTipo_pagos.Enabled = false;
                     cbEstado_Venta.Enabled = false;
                     dtVentas.DataSource = await GestVentas.MostrarVentasTotales(); // muestra la tabla actualizada
                     break;
@@ -298,18 +307,44 @@ namespace TiendaPaula.Formularios
 
         private void Cant_Productos_TabStopChanged(object sender, EventArgs e)
         {
-            Monto_IVA_Total();
+            Montos_IVA_Total();
         }
 
         private void Cant_Productos_Leave(object sender, EventArgs e)
         {
-            Monto_IVA_Total();
+            Montos_IVA_Total();
         }
 
 
         private void cbProductos_Leave(object sender, EventArgs e)
         {
-            Monto_IVA_Total();
+            Montos_IVA_Total();
         }
-    }
+
+        //Habilita los botones en case que cambien lo que se esta seleccionando, en caso de que quiera add otro producto
+        private async void cbEstado_Factura_SelectedValueChanged(object sender, EventArgs e)
+        {
+            //Le da un valor a la opción que seleccione en el comboBox de factura
+
+            switch (cbEstado_Factura.SelectedItem.ToString())
+            {
+                case "Nueva factura":
+                    E_Factura = "NEW";
+
+                    //LimpiarCampos();
+                    break;
+                case "Agregar otro producto":
+                    E_Factura = "ADD";
+                    //txtId_Venta.Enabled = false;
+                    txtDescuento.Enabled = false;
+                    cbClientes.Enabled = false;
+                    cbEmpleados.Enabled = false;
+                    cbTipo_pagos.Enabled = false;
+                    cbEstado_Venta.Enabled = false;
+                    dtVentas.DataSource = await GestVentas.MostrarVentasTotales(); // muestra la tabla actualizada
+                    break;
+            }
+        }
+
+    } 
 }

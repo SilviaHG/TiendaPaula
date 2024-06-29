@@ -21,7 +21,7 @@ namespace TiendaPaula.Gestiones
                 try
                 {
                     await AbrirConexion(cnn); //abrimos la conexion
-                    MySqlCommand cmd = new MySqlCommand("SELECT IdCustomer FROM CUSTOMERS", cnn); // CODIGO QUE MUESTRA SOLO EL ID DE LOS CLIENTES
+                    MySqlCommand cmd = new MySqlCommand("SELECT IdCustomer FROM CUSTOMERS ORDER BY  IdCustomer ASC", cnn); // CODIGO QUE MUESTRA SOLO EL ID DE LOS CLIENTES
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     adapter.Fill(MostrarClientes);
 
@@ -52,7 +52,7 @@ namespace TiendaPaula.Gestiones
                 try
                 {
                     await AbrirConexion(cnn); //abrimos la conexion
-                    MySqlCommand cmd = new MySqlCommand("SELECT IdEmployee FROM EMPLOYEES", cnn); // CODIGO QUE MUESTRA SOLO EL ID DE LOS EMPLEADOS
+                    MySqlCommand cmd = new MySqlCommand("SELECT IdEmployee FROM EMPLOYEES ORDER BY IdEmployee ASC", cnn); // CODIGO QUE MUESTRA SOLO EL ID DE LOS EMPLEADOS
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     adapter.Fill(MostrarEmpleados);
 
@@ -84,7 +84,7 @@ namespace TiendaPaula.Gestiones
                 try
                 {
                     await AbrirConexion(cnn); //abrimos la conexion
-                    MySqlCommand cmd = new MySqlCommand("SELECT IDProduct FROM PRODUCTS", cnn); // CODIGO QUE MUESTRA SOLO EL ID DE LOS PRODUCTOS
+                    MySqlCommand cmd = new MySqlCommand("SELECT IDProduct FROM PRODUCTS ORDER BY IDProduct ASC", cnn); // CODIGO QUE MUESTRA SOLO EL ID DE LOS PRODUCTOS
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     adapter.Fill(MostrarProductos);
 
@@ -115,7 +115,7 @@ namespace TiendaPaula.Gestiones
                 try
                 {
                     await AbrirConexion(cnn); //abrimos la conexion
-                    MySqlCommand cmd = new MySqlCommand("SELECT IdProvider FROM PROVIDERS", cnn); // CODIGO QUE MUESTRA SOLO EL ID DE LOS PRODUCTOS
+                    MySqlCommand cmd = new MySqlCommand("SELECT IdProvider FROM PROVIDERS ORDER BY IdProvider ASC", cnn); // CODIGO QUE MUESTRA SOLO EL ID DE LOS PRODUCTOS
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     adapter.Fill(MostrarProveedor);
 

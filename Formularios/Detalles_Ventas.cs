@@ -47,6 +47,8 @@ namespace TiendaPaula.Formularios
                 dtDetalles_Venta.DataSource = await Gest_Detalles.Buscar_DetallesVenta(cod);
                 lblMsj.Text = "";
 
+                txtBuscar_Compra.Text = "";
+
             }
         }
 
