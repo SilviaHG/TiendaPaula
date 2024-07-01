@@ -61,9 +61,6 @@ namespace TiendaPaula.Formularios
             txtId_compra.Text = Convert.ToString( await GestCompras.NumeroMAX()); // muestra el num maximo de compra
             dtCompras.DataSource = await GestCompras.MostrarComprasTotales(); // Muestra la tabla de todas las compras realizadas
 
-            btActualizar.Enabled = false;
-            btEliminar.Enabled = false;
-
             Fecha_Compra.Value = DateTime.Now;
 
             lblMsj.Text = ""; // Label que muestra los mensajes de errores
@@ -103,8 +100,6 @@ namespace TiendaPaula.Formularios
 
         private void dtCompras_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            btActualizar.Visible = true;
-            btEliminar.Visible = true;
 
         }
 

@@ -22,7 +22,7 @@ namespace TiendaPaula.Formularios
         private async void Detalles_Ventas_Load(object sender, EventArgs e)
         {
             dtDetalles_Venta.DataSource = await Gest_Detalles.Mostrar_DetallesVentasTotales();
-
+            lblMsj.Text = "";
 
         }
 

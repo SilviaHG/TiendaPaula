@@ -28,16 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtDetalles_Compras = new System.Windows.Forms.DataGridView();
-            this.Id_detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.compra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id_Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio_Unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Garantia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btBuscar = new System.Windows.Forms.Button();
             this.txtBuscar_Compra = new MaterialSkin.Controls.MaterialTextBox();
+            this.lblMsj = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dtDetalles_Compras)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,21 +41,14 @@
             // 
             this.dtDetalles_Compras.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtDetalles_Compras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtDetalles_Compras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id_detalle,
-            this.compra,
-            this.Id_Producto,
-            this.Cantidad,
-            this.Precio_Unidad,
-            this.Garantia});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtDetalles_Compras.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtDetalles_Compras.DefaultCellStyle = dataGridViewCellStyle2;
             this.dtDetalles_Compras.Location = new System.Drawing.Point(92, 162);
             this.dtDetalles_Compras.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtDetalles_Compras.Name = "dtDetalles_Compras";
@@ -67,42 +56,6 @@
             this.dtDetalles_Compras.RowTemplate.Height = 24;
             this.dtDetalles_Compras.Size = new System.Drawing.Size(872, 251);
             this.dtDetalles_Compras.TabIndex = 31;
-            // 
-            // Id_detalle
-            // 
-            this.Id_detalle.HeaderText = "ID detalle";
-            this.Id_detalle.MinimumWidth = 6;
-            this.Id_detalle.Name = "Id_detalle";
-            // 
-            // compra
-            // 
-            this.compra.HeaderText = "N° compra";
-            this.compra.MinimumWidth = 6;
-            this.compra.Name = "compra";
-            // 
-            // Id_Producto
-            // 
-            this.Id_Producto.HeaderText = "Producto";
-            this.Id_Producto.MinimumWidth = 6;
-            this.Id_Producto.Name = "Id_Producto";
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad compra";
-            this.Cantidad.MinimumWidth = 6;
-            this.Cantidad.Name = "Cantidad";
-            // 
-            // Precio_Unidad
-            // 
-            this.Precio_Unidad.HeaderText = "Precio unidad";
-            this.Precio_Unidad.MinimumWidth = 6;
-            this.Precio_Unidad.Name = "Precio_Unidad";
-            // 
-            // Garantia
-            // 
-            this.Garantia.HeaderText = "Garantia";
-            this.Garantia.MinimumWidth = 6;
-            this.Garantia.Name = "Garantia";
             // 
             // btBuscar
             // 
@@ -119,13 +72,14 @@
             this.btBuscar.Text = "Buscar";
             this.btBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btBuscar.UseVisualStyleBackColor = false;
+            this.btBuscar.Click += new System.EventHandler(this.btBuscar_Click);
             // 
             // txtBuscar_Compra
             // 
             this.txtBuscar_Compra.AnimateReadOnly = false;
             this.txtBuscar_Compra.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBuscar_Compra.Depth = 0;
-            this.txtBuscar_Compra.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtBuscar_Compra.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtBuscar_Compra.Hint = "Buscar";
             this.txtBuscar_Compra.LeadingIcon = null;
             this.txtBuscar_Compra.Location = new System.Drawing.Point(120, 95);
@@ -138,12 +92,39 @@
             this.txtBuscar_Compra.TabIndex = 37;
             this.txtBuscar_Compra.Text = "";
             this.txtBuscar_Compra.TrailingIcon = null;
+            this.txtBuscar_Compra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_Compra_KeyPress);
+            // 
+            // lblMsj
+            // 
+            this.lblMsj.Location = new System.Drawing.Point(279, 474);
+            this.lblMsj.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMsj.Name = "lblMsj";
+            this.lblMsj.Size = new System.Drawing.Size(527, 50);
+            this.lblMsj.TabIndex = 49;
+            this.lblMsj.Text = "MENSAJES DE ERROR";
+            this.lblMsj.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(45)))), ((int)(((byte)(71)))));
+            this.linkLabel1.Location = new System.Drawing.Point(844, 418);
+            this.linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(120, 16);
+            this.linkLabel1.TabIndex = 50;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Ver tabla completa";
+            this.linkLabel1.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // Detalles_Compras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.lblMsj);
             this.Controls.Add(this.btBuscar);
             this.Controls.Add(this.txtBuscar_Compra);
             this.Controls.Add(this.dtDetalles_Compras);
@@ -154,19 +135,16 @@
             this.Load += new System.EventHandler(this.Detalles_Compras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtDetalles_Compras)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView dtDetalles_Compras;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id_detalle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn compra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id_Producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio_Unidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Garantia;
         private System.Windows.Forms.Button btBuscar;
         private MaterialSkin.Controls.MaterialTextBox txtBuscar_Compra;
+        private System.Windows.Forms.Label lblMsj;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
