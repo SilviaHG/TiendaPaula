@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtDescuento = new MaterialSkin.Controls.MaterialTextBox();
             this.cbEstado_Venta = new MaterialSkin.Controls.MaterialComboBox();
             this.Fecha_V = new System.Windows.Forms.DateTimePicker();
@@ -177,7 +177,7 @@
             "SINPE",
             "Tarjeta"});
             this.cbTipo_pagos.Location = new System.Drawing.Point(273, 262);
-            this.cbTipo_pagos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbTipo_pagos.Margin = new System.Windows.Forms.Padding(4);
             this.cbTipo_pagos.Name = "cbTipo_pagos";
             this.cbTipo_pagos.Size = new System.Drawing.Size(223, 33);
             this.cbTipo_pagos.TabIndex = 52;
@@ -201,7 +201,7 @@
             "Nueva factura",
             "Agregar otro producto"});
             this.cbEstado_Factura.Location = new System.Drawing.Point(273, 48);
-            this.cbEstado_Factura.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbEstado_Factura.Margin = new System.Windows.Forms.Padding(4);
             this.cbEstado_Factura.MaxDropDownItems = 4;
             this.cbEstado_Factura.MouseState = MaterialSkin.MouseState.OUT;
             this.cbEstado_Factura.Name = "cbEstado_Factura";
@@ -222,7 +222,7 @@
             this.txtId_Venta.Hint = "N° Venta";
             this.txtId_Venta.LeadingIcon = null;
             this.txtId_Venta.Location = new System.Drawing.Point(16, 48);
-            this.txtId_Venta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtId_Venta.Margin = new System.Windows.Forms.Padding(4);
             this.txtId_Venta.MaxLength = 32767;
             this.txtId_Venta.MouseState = MaterialSkin.MouseState.OUT;
             this.txtId_Venta.Name = "txtId_Venta";
@@ -252,7 +252,7 @@
             this.txtIVA.Hint = "IVA";
             this.txtIVA.LeadingIcon = null;
             this.txtIVA.Location = new System.Drawing.Point(351, 421);
-            this.txtIVA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIVA.Margin = new System.Windows.Forms.Padding(4);
             this.txtIVA.MaxLength = 32767;
             this.txtIVA.MouseState = MaterialSkin.MouseState.OUT;
             this.txtIVA.Name = "txtIVA";
@@ -282,7 +282,7 @@
             this.txtPrecioTotal.Hint = "Total";
             this.txtPrecioTotal.LeadingIcon = null;
             this.txtPrecioTotal.Location = new System.Drawing.Point(351, 487);
-            this.txtPrecioTotal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPrecioTotal.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrecioTotal.MaxLength = 32767;
             this.txtPrecioTotal.MouseState = MaterialSkin.MouseState.OUT;
             this.txtPrecioTotal.Name = "txtPrecioTotal";
@@ -333,7 +333,7 @@
             this.cbEmpleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cbEmpleados.FormattingEnabled = true;
             this.cbEmpleados.Location = new System.Drawing.Point(273, 171);
-            this.cbEmpleados.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbEmpleados.Margin = new System.Windows.Forms.Padding(4);
             this.cbEmpleados.Name = "cbEmpleados";
             this.cbEmpleados.Size = new System.Drawing.Size(223, 33);
             this.cbEmpleados.TabIndex = 45;
@@ -369,7 +369,7 @@
             this.cbProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cbProductos.FormattingEnabled = true;
             this.cbProductos.Location = new System.Drawing.Point(17, 262);
-            this.cbProductos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbProductos.Margin = new System.Windows.Forms.Padding(4);
             this.cbProductos.Name = "cbProductos";
             this.cbProductos.Size = new System.Drawing.Size(223, 33);
             this.cbProductos.TabIndex = 42;
@@ -384,7 +384,7 @@
             this.cbClientes.Items.AddRange(new object[] {
             "Seleccione"});
             this.cbClientes.Location = new System.Drawing.Point(19, 171);
-            this.cbClientes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbClientes.Margin = new System.Windows.Forms.Padding(4);
             this.cbClientes.Name = "cbClientes";
             this.cbClientes.Size = new System.Drawing.Size(223, 33);
             this.cbClientes.TabIndex = 41;
@@ -441,28 +441,28 @@
             // 
             // dtVentas
             // 
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.dtVentas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.dtVentas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dtVentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtVentas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtVentas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtVentas.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtVentas.DefaultCellStyle = dataGridViewCellStyle3;
             this.dtVentas.Location = new System.Drawing.Point(560, 194);
             this.dtVentas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtVentas.Name = "dtVentas";
@@ -551,7 +551,7 @@
             this.Controls.Add(this.txtBuscar_Venta);
             this.Controls.Add(this.dtVentas);
             this.Controls.Add(this.materialCard1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Ventas";
             this.Padding = new System.Windows.Forms.Padding(4, 79, 4, 4);
             this.Text = "Facturación Ventas";

@@ -107,6 +107,7 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
+            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(45)))), ((int)(((byte)(71)))));
             this.linkLabel1.Location = new System.Drawing.Point(844, 430);
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel1.Name = "linkLabel1";
@@ -127,7 +128,7 @@
             this.Controls.Add(this.btBuscar);
             this.Controls.Add(this.txtBuscar_Compra);
             this.Controls.Add(this.dtDetalles_Venta);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Detalles_Ventas";
             this.Padding = new System.Windows.Forms.Padding(4, 79, 4, 4);
             this.Text = "Detalles Ventas";

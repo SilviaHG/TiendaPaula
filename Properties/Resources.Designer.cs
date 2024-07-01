@@ -123,9 +123,29 @@ namespace TiendaPaula.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_carrito_de_compras {
+            get {
+                object obj = ResourceManager.GetObject("icons8-carrito-de-compras", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_cheque {
             get {
                 object obj = ResourceManager.GetObject("icons8-cheque", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_dólar_estadounidense_en_círculo {
+            get {
+                object obj = ResourceManager.GetObject("icons8-dólar-estadounidense-en-círculo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,6 +233,26 @@ namespace TiendaPaula.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_libro {
+            get {
+                object obj = ResourceManager.GetObject("icons8-libro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_libro__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-libro (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_libro_mayor_80 {
             get {
                 object obj = ResourceManager.GetObject("icons8-libro-mayor-80", resourceCulture);
@@ -246,6 +286,16 @@ namespace TiendaPaula.Properties {
         internal static System.Drawing.Bitmap icons8_paquete_28 {
             get {
                 object obj = ResourceManager.GetObject("icons8-paquete-28", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_pedido_completado {
+            get {
+                object obj = ResourceManager.GetObject("icons8-pedido-completado", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
