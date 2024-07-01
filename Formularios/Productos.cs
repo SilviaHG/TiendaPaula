@@ -24,7 +24,7 @@ namespace TiendaPaula.Formularios
             InitializeComponent();
         }
 
-        private void Productos_Load(object sender, EventArgs e)
+        public void Productos_Load(object sender, EventArgs e)
         {
 
             Limpiar();
@@ -333,6 +333,13 @@ namespace TiendaPaula.Formularios
         {
             Marcas marca = new Marcas();
             marca.ShowDialog();
+        }
+
+        private async void cbMarca_Click(object sender, EventArgs e)
+        {
+            //AgregarMarcas_Categorias();
+            cbMarca.DataSource = (await gestListas.MostrarMarcasProductos()).AsEnumerable().ToList().Select(p => p[0]).ToList();
+
         }
     }
 }

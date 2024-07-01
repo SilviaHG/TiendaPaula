@@ -264,6 +264,7 @@
             this.cbMarca.Size = new System.Drawing.Size(121, 49);
             this.cbMarca.StartIndex = 0;
             this.cbMarca.TabIndex = 9;
+            this.cbMarca.Click += new System.EventHandler(this.cbMarca_Click);
             // 
             // cbCategoria
             // 

@@ -65,7 +65,7 @@ namespace TiendaPaula.Gestiones
         }
 
         // eliminamos una marca
-        public async void EliminarMarca(int marca)
+        public async void EliminarMarca(string marca)
         {
             using (MySqlConnection cnn = establecerConexion())
             {
@@ -74,7 +74,7 @@ namespace TiendaPaula.Gestiones
                     await AbrirConexion(cnn);
                     MySqlCommand cmd = new MySqlCommand("SP_DELETE_BRAND", cnn);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("ID_p", marca);
+                    cmd.Parameters.AddWithValue("Brand_p", marca);
                     cmd.ExecuteNonQuery();
                 }
                 catch (Exception ex)
