@@ -1,4 +1,5 @@
 ﻿using MaterialSkin.Controls;
+using MySqlX.XDevAPI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TiendaPaula.Clases;
 using TiendaPaula.Gestiones;
 
 namespace TiendaPaula.Formularios
@@ -15,6 +17,7 @@ namespace TiendaPaula.Formularios
     public partial class Gastos : MaterialForm
     {
         Gestion_Gastos Gest_Gastos = new Gestion_Gastos();
+        Class_Gastos Gastos_C = new Class_Gastos(); 
         public Gastos()
         {
             InitializeComponent();
@@ -58,7 +61,7 @@ namespace TiendaPaula.Formularios
 
         private void btLimpiar_Click(object sender, EventArgs e)
         {
-
+            LimpiarCampos();
         }
 
         public async void LimpiarCampos()
@@ -74,6 +77,8 @@ namespace TiendaPaula.Formularios
 
             btActualizar.Enabled = false;
             btEliminar.Enabled = false;
+            txtTipoGasto.Visible = false;
+            GuardaTipo.Visible = false;
 
             dtGastos.DataSource = await Gest_Gastos.MostrarGastosTotales();// muestra la tabla actualizada
             lblMsj.Text = "";
@@ -108,6 +113,65 @@ namespace TiendaPaula.Formularios
             btActualizar.Enabled = true;
             btEliminar.Enabled = true;
 
+        }
+
+        private async void btGuardar_Gasto_Click(object sender, EventArgs e)
+        {
+            // verificamos que los campos no esten vacios
+            if (string.IsNullOrEmpty(txtNombre_Gasto.Text) || string.IsNullOrEmpty(cbTipo_pagos.Text)
+                || string.IsNullOrEmpty(txtPrecioTotal.Text) )
+            {
+
+                lblMsj.ForeColor = Color.Red;
+                lblMsj.Text = "No puede dejar campos vacíos";
+            }
+            else
+            {
+                //Le da un valor a la opción que seleccione en el comboBox tipo de gasto
+                int Tipo_gasto = 0;
+                switch (cbTipo_pagos.SelectedItem.ToString())
+                {
+                    case "Agua":
+                        Tipo_gasto = 1;
+                        break;
+                    case "Luz":
+                        Tipo_gasto = 2;
+                        break;
+                    case "Internet":
+                        Tipo_gasto = 3;
+                        break;
+                    case "Alquiler":
+                        Tipo_gasto = 4;
+                        break;
+                }
+                
+
+
+                await Gest_Gastos.AbrirConexion(Gest_Gastos.establecerConexion());
+                //establecemos los valores agregamos por el usuario a los txt
+                Gastos_C.Nombre_Gasto = txtNombre_Gasto.Text;
+                Gastos_C.Tipo_Gasto = Tipo_gasto;
+                Gastos_C.Total_Gasto = Convert.ToDouble(txtPrecioTotal.Text);
+                
+                //enviamos los datos a la clase gestion cliente
+                await Gest_Gastos.AbrirConexion(Gest_Gastos.establecerConexion());
+                await Gest_Gastos.GuardarGasto(Gastos_C);
+
+                //mensaje
+                lblMsj.ForeColor = Color.Green;
+                lblMsj.Text = "Cliente creado correctamente";
+                LimpiarCampos();
+
+                //volvemos a cargar el datagrid view
+                dtGastos.DataSource = await Gest_Gastos.MostrarGastosTotales();// muestra la tabla actualizada
+
+            }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            txtTipoGasto.Visible = true;
+            GuardaTipo.Visible = true;
         }
     }
 
