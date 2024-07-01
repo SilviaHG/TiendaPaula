@@ -46,10 +46,11 @@
             // dtMarcas
             // 
             this.dtMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtMarcas.Location = new System.Drawing.Point(57, 255);
+            this.dtMarcas.Location = new System.Drawing.Point(57, 270);
             this.dtMarcas.Name = "dtMarcas";
             this.dtMarcas.Size = new System.Drawing.Size(282, 151);
             this.dtMarcas.TabIndex = 18;
+            this.dtMarcas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtMarcas_CellClick);
             // 
             // txtBuscar
             // 
@@ -61,7 +62,7 @@
             this.txtBuscar.HideSelection = true;
             this.txtBuscar.Hint = "Buscar";
             this.txtBuscar.LeadingIcon = null;
-            this.txtBuscar.Location = new System.Drawing.Point(30, 189);
+            this.txtBuscar.Location = new System.Drawing.Point(30, 204);
             this.txtBuscar.MaxLength = 32767;
             this.txtBuscar.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBuscar.Name = "txtBuscar";
@@ -80,6 +81,7 @@
             this.txtBuscar.TrailingIcon = null;
             this.txtBuscar.UseSystemPasswordChar = false;
             this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // panel1
             // 
@@ -101,6 +103,7 @@
             this.btnLimpiar.TabIndex = 3;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnEliminar
             // 
@@ -110,6 +113,7 @@
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnActualizar
             // 
@@ -119,6 +123,7 @@
             this.btnActualizar.TabIndex = 1;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnAgregar
             // 
@@ -138,7 +143,7 @@
             this.txtMarca.Depth = 0;
             this.txtMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtMarca.HideSelection = true;
-            this.txtMarca.Hint = "Producto";
+            this.txtMarca.Hint = "Marca";
             this.txtMarca.LeadingIcon = null;
             this.txtMarca.Location = new System.Drawing.Point(30, 127);
             this.txtMarca.MaxLength = 32767;
@@ -191,7 +196,7 @@
             // 
             // lblMsj
             // 
-            this.lblMsj.Location = new System.Drawing.Point(27, 423);
+            this.lblMsj.Location = new System.Drawing.Point(27, 438);
             this.lblMsj.Name = "lblMsj";
             this.lblMsj.Size = new System.Drawing.Size(332, 57);
             this.lblMsj.TabIndex = 20;
@@ -200,12 +205,13 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(284, 191);
+            this.btnBuscar.Location = new System.Drawing.Point(284, 206);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 46);
             this.btnBuscar.TabIndex = 19;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // Marcas
             // 
