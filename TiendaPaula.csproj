@@ -195,8 +195,10 @@
     </Compile>
     <Compile Include="Gestiones\Gestion_Clientes.cs" />
     <Compile Include="Gestiones\Gestion_Compras.cs" />
+    <Compile Include="Gestiones\Gestion_Detalles_Compras.cs" />
     <Compile Include="Gestiones\Gestion_Detalles_Ventas.cs" />
     <Compile Include="Gestiones\Gestion_Empleados.cs" />
+    <Compile Include="Gestiones\Gestion_Gastos.cs" />
     <Compile Include="Gestiones\Gestion_Listas.cs" />
     <Compile Include="Gestiones\Gestion_Marcas.cs" />
     <Compile Include="Gestiones\Gestion_Productos.cs" />
@@ -333,6 +335,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-más-20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-carrito-de-compras.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-pedido-completado.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-libro.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-libro %281%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-dólar-estadounidense-en-círculo.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
