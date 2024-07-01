@@ -95,5 +95,33 @@ namespace TiendaPaula.Gestiones
             }
             return dtGasto;
         }
+
+        public async Task GuardarGasto(Class_Gastos Gastos) // agregamos la clase de clientes
+        {
+            using (MySqlConnection cnn = establecerConexion())
+            {
+                try
+                {
+                    await AbrirConexion(cnn); // abrimos conección
+                    MySqlCommand mySqlCommand = new MySqlCommand("SP_REGISTER_EXPENSE", cnn);
+                    mySqlCommand.CommandType = CommandType.StoredProcedure;
+                    mySqlCommand.Parameters.AddWithValue("name_expense", Gastos.Nombre_Gasto); // los parametros que pedimos en el procedimiento almacenado
+                    mySqlCommand.Parameters.AddWithValue("expense_type", Gastos.Tipo_Gasto);
+                    mySqlCommand.Parameters.AddWithValue("total", Gastos.Total_Gasto);
+                   
+
+                    mySqlCommand.ExecuteNonQuery();
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error Insertar Cliente: {ex.Message}");
+                }
+                finally
+                {
+                    await cerrarConexion(cnn);
+                }
+            }
+        }
     }
 }
