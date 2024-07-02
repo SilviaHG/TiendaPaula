@@ -116,6 +116,12 @@ namespace TiendaPaula.Formularios
             btActualizar.Enabled = true;
             btEliminar.Enabled = true;
 
+            DataGridViewRow fila = dtGastos.SelectedRows[0];
+            txtId_Gasto.Text = Convert.ToString(fila.Cells[0].Value); //Almacena el ID del gasto 
+            txtNombre_Gasto.Text = Convert.ToString(fila.Cells[1].Value);
+            txtPrecioTotal.Text = Convert.ToString(fila.Cells[3].Value);
+            txtCambios.Visible = true; //label que muestra un mensaje
+            btGuardar_Gasto.Enabled = false; //La opción de actualizar se desabilita
         }
 
         private async void btGuardar_Gasto_Click(object sender, EventArgs e)
@@ -187,7 +193,7 @@ namespace TiendaPaula.Formularios
                     await Gest_Gastos.EliminarGasto(IdEliminar);
 
                     lblMsj.ForeColor = Color.Green;
-                    lblMsj.Text = "Gasto eliminado correctamente";
+                    lblMsj.Text = "¡Gasto eliminado correctamente!";
 
                     LimpiarCampos();
                     break;
@@ -204,8 +210,6 @@ namespace TiendaPaula.Formularios
             DataGridViewRow fila = dtGastos.SelectedRows[0];
             int IdActualizar = Convert.ToInt32(fila.Cells[0].Value); //Almacena el ID del gasto que se va a actualizar
 
-            //Hacer que automaticamente aparesca el id de gasto y que tenga que ingresar los datos a actualizar- puede ser por medio de un evento
-
             // verificamos que los campos no esten vacios
             if (string.IsNullOrEmpty(txtNombre_Gasto.Text) || string.IsNullOrEmpty(cbTipo_pagos.Text)
                 || string.IsNullOrEmpty(txtPrecioTotal.Text))
@@ -219,6 +223,7 @@ namespace TiendaPaula.Formularios
                 //Aqui va a actualizar
                 await Gest_Gastos.AbrirConexion(Gest_Gastos.establecerConexion());
                 //establecemos los valores agregamos por el usuario a los txt
+                Gastos_C.Id_Gasto = Convert.ToInt32(txtId_Gasto.Text);
                 Gastos_C.Nombre_Gasto = txtNombre_Gasto.Text;
                 Gastos_C.Tipo_Gasto = await Gest_Gastos.Numero_TipoGasto(cbTipo_pagos.SelectedItem.ToString());  // SP que retorna el id del tipo de gasto seleccionado
                 Gastos_C.Total_Gasto = Convert.ToDouble(txtPrecioTotal.Text);
@@ -226,6 +231,9 @@ namespace TiendaPaula.Formularios
                 //enviamos los datos a la clase gestion Gastos
                 await Gest_Gastos.ActualizarGasto(Gastos_C);
 
+                lblMsj.ForeColor = Color.Green;
+                lblMsj.Text = "¡Gasto eliminado correctamente!";
+                LimpiarCampos();
             }
 
         }
