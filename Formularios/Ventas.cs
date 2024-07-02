@@ -43,6 +43,10 @@ namespace TiendaPaula.Formularios
 
             txtId_Venta.Text = Convert.ToString(await GestVentas.NumeroMAX());
 
+            //autosize de la tabla
+            dtVentas.AutoSizeColumnsMode =
+            DataGridViewAutoSizeColumnsMode.Fill;
+
         }
 
         /// <summary>
@@ -157,17 +161,25 @@ namespace TiendaPaula.Formularios
 
         public async void Montos_IVA_Total()
         {
-            int Codigo_p = Convert.ToInt32(cbProductos.SelectedItem.ToString());
-            int Cantidad = Convert.ToInt32(Cant_Productos.Value.ToString());
-            string Descue = txtDescuento.Text;
-            int Total_General = await GestVentas.Monto_General(Codigo_p, Cantidad);
-            int Descuento_V = await GestVentas.Monto_Descuento(Codigo_p.ToString(), Cantidad, Descue); //
+            if (string.IsNullOrEmpty(cbProductos.Text))
+            {
+                //No retorna nada
+            }
+            else
+            {
+                int Codigo_p = Convert.ToInt32(cbProductos.SelectedItem.ToString());
+                int Cantidad = Convert.ToInt32(Cant_Productos.Value.ToString());
+                string Descue = txtDescuento.Text;
+                int Total_General = await GestVentas.Monto_General(Codigo_p, Cantidad);
+                int Descuento_V = await GestVentas.Monto_Descuento(Codigo_p.ToString(), Cantidad, Descue); //
 
-            Iva_V = await GestVentas.Monto_IVA(Codigo_p, Cantidad);
-            txtIVA.Text = Iva_V.ToString();
+                Iva_V = await GestVentas.Monto_IVA(Codigo_p, Cantidad);
+                txtIVA.Text = Iva_V.ToString();
 
-            Total_V = (Total_General + Iva_V) - Descuento_V;
-            txtPrecioTotal.Text = Total_V.ToString();
+                Total_V = (Total_General + Iva_V) - Descuento_V;
+                txtPrecioTotal.Text = Total_V.ToString();
+            }
+            
 
         }
 

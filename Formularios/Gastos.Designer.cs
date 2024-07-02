@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.GuardaTipo = new MaterialSkin.Controls.MaterialButton();
             this.txtId_Gasto = new MaterialSkin.Controls.MaterialTextBox2();
             this.label5 = new System.Windows.Forms.Label();
             this.cbTipo_pagos = new System.Windows.Forms.ComboBox();
@@ -47,8 +48,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btLimpiar = new System.Windows.Forms.Button();
             this.lblMsj = new System.Windows.Forms.Label();
+            this.txtCambios = new System.Windows.Forms.Label();
             this.txtTipoGasto = new MaterialSkin.Controls.MaterialTextBox();
-            this.GuardaTipo = new MaterialSkin.Controls.MaterialButton();
             this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGastos)).BeginInit();
             this.SuspendLayout();
@@ -56,8 +57,9 @@
             // materialCard1
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard1.Controls.Add(this.GuardaTipo);
             this.materialCard1.Controls.Add(this.txtTipoGasto);
+            this.materialCard1.Controls.Add(this.txtCambios);
+            this.materialCard1.Controls.Add(this.GuardaTipo);
             this.materialCard1.Controls.Add(this.txtId_Gasto);
             this.materialCard1.Controls.Add(this.label5);
             this.materialCard1.Controls.Add(this.cbTipo_pagos);
@@ -76,6 +78,28 @@
             this.materialCard1.Size = new System.Drawing.Size(364, 496);
             this.materialCard1.TabIndex = 21;
             // 
+            // GuardaTipo
+            // 
+            this.GuardaTipo.AutoSize = false;
+            this.GuardaTipo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.GuardaTipo.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.GuardaTipo.Depth = 0;
+            this.GuardaTipo.HighEmphasis = true;
+            this.GuardaTipo.Icon = null;
+            this.GuardaTipo.Location = new System.Drawing.Point(23, 336);
+            this.GuardaTipo.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.GuardaTipo.MouseState = MaterialSkin.MouseState.HOVER;
+            this.GuardaTipo.Name = "GuardaTipo";
+            this.GuardaTipo.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.GuardaTipo.Size = new System.Drawing.Size(200, 26);
+            this.GuardaTipo.TabIndex = 57;
+            this.GuardaTipo.Text = "Guardar tipo gasto";
+            this.GuardaTipo.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.GuardaTipo.UseAccentColor = false;
+            this.GuardaTipo.UseVisualStyleBackColor = true;
+            this.GuardaTipo.Visible = false;
+            this.GuardaTipo.Click += new System.EventHandler(this.GuardaTipo_Click);
+            // 
             // txtId_Gasto
             // 
             this.txtId_Gasto.AnimateReadOnly = false;
@@ -87,7 +111,7 @@
             this.txtId_Gasto.Hint = "N° Gasto";
             this.txtId_Gasto.LeadingIcon = null;
             this.txtId_Gasto.Location = new System.Drawing.Point(12, 53);
-            this.txtId_Gasto.Margin = new System.Windows.Forms.Padding(2);
+            this.txtId_Gasto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtId_Gasto.MaxLength = 32767;
             this.txtId_Gasto.MouseState = MaterialSkin.MouseState.OUT;
             this.txtId_Gasto.Name = "txtId_Gasto";
@@ -123,11 +147,6 @@
             this.cbTipo_pagos.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cbTipo_pagos.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTipo_pagos.FormattingEnabled = true;
-            this.cbTipo_pagos.Items.AddRange(new object[] {
-            "Agua",
-            "Luz",
-            "Internet",
-            "Alquiler"});
             this.cbTipo_pagos.Location = new System.Drawing.Point(80, 197);
             this.cbTipo_pagos.Name = "cbTipo_pagos";
             this.cbTipo_pagos.Size = new System.Drawing.Size(196, 30);
@@ -136,6 +155,7 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
+            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
             this.linkLabel1.Location = new System.Drawing.Point(179, 231);
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel1.Name = "linkLabel1";
@@ -153,7 +173,7 @@
             this.btGuardar_Gasto.Image = global::TiendaPaula.Properties.Resources.icons8_expenses_34;
             this.btGuardar_Gasto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btGuardar_Gasto.Location = new System.Drawing.Point(23, 440);
-            this.btGuardar_Gasto.Margin = new System.Windows.Forms.Padding(2);
+            this.btGuardar_Gasto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btGuardar_Gasto.Name = "btGuardar_Gasto";
             this.btGuardar_Gasto.Size = new System.Drawing.Size(316, 43);
             this.btGuardar_Gasto.TabIndex = 13;
@@ -170,7 +190,7 @@
             this.txtNombre_Gasto.Hint = "Descripción";
             this.txtNombre_Gasto.LeadingIcon = null;
             this.txtNombre_Gasto.Location = new System.Drawing.Point(80, 125);
-            this.txtNombre_Gasto.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNombre_Gasto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNombre_Gasto.MaxLength = 50;
             this.txtNombre_Gasto.MouseState = MaterialSkin.MouseState.OUT;
             this.txtNombre_Gasto.Multiline = false;
@@ -186,7 +206,7 @@
             this.Fecha_V.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Fecha_V.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Fecha_V.Location = new System.Drawing.Point(10, 11);
-            this.Fecha_V.Margin = new System.Windows.Forms.Padding(2);
+            this.Fecha_V.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Fecha_V.Name = "Fecha_V";
             this.Fecha_V.Size = new System.Drawing.Size(344, 23);
             this.Fecha_V.TabIndex = 9;
@@ -201,7 +221,7 @@
             this.txtPrecioTotal.Hint = "Total";
             this.txtPrecioTotal.LeadingIcon = null;
             this.txtPrecioTotal.Location = new System.Drawing.Point(242, 353);
-            this.txtPrecioTotal.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPrecioTotal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPrecioTotal.MaxLength = 50;
             this.txtPrecioTotal.MouseState = MaterialSkin.MouseState.OUT;
             this.txtPrecioTotal.Multiline = false;
@@ -217,7 +237,7 @@
             this.dtGastos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtGastos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGastos.Location = new System.Drawing.Point(412, 150);
-            this.dtGastos.Margin = new System.Windows.Forms.Padding(2);
+            this.dtGastos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtGastos.Name = "dtGastos";
             this.dtGastos.RowHeadersWidth = 51;
             this.dtGastos.RowTemplate.Height = 24;
@@ -234,7 +254,7 @@
             this.txtBuscar_Gasto.Hint = "Buscar por num. de mes o año";
             this.txtBuscar_Gasto.LeadingIcon = null;
             this.txtBuscar_Gasto.Location = new System.Drawing.Point(412, 99);
-            this.txtBuscar_Gasto.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBuscar_Gasto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtBuscar_Gasto.MaxLength = 50;
             this.txtBuscar_Gasto.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBuscar_Gasto.Multiline = false;
@@ -274,22 +294,24 @@
             this.btEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btEliminar.Image = global::TiendaPaula.Properties.Resources.icons8_eliminar;
             this.btEliminar.Location = new System.Drawing.Point(837, 416);
-            this.btEliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.btEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btEliminar.Name = "btEliminar";
             this.btEliminar.Size = new System.Drawing.Size(58, 53);
             this.btEliminar.TabIndex = 39;
             this.btEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btEliminar.UseVisualStyleBackColor = false;
+            this.btEliminar.Click += new System.EventHandler(this.btEliminar_Click);
             // 
             // btActualizar
             // 
             this.btActualizar.Image = global::TiendaPaula.Properties.Resources.icons8_actualizar;
             this.btActualizar.Location = new System.Drawing.Point(756, 417);
-            this.btActualizar.Margin = new System.Windows.Forms.Padding(2);
+            this.btActualizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btActualizar.Name = "btActualizar";
             this.btActualizar.Size = new System.Drawing.Size(58, 53);
             this.btActualizar.TabIndex = 38;
             this.btActualizar.UseVisualStyleBackColor = true;
+            this.btActualizar.Click += new System.EventHandler(this.btActualizar_Click);
             // 
             // btBuscar
             // 
@@ -299,7 +321,7 @@
             this.btBuscar.Image = global::TiendaPaula.Properties.Resources.icons8_buscar_30__1_;
             this.btBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btBuscar.Location = new System.Drawing.Point(803, 101);
-            this.btBuscar.Margin = new System.Windows.Forms.Padding(2);
+            this.btBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btBuscar.Name = "btBuscar";
             this.btBuscar.Size = new System.Drawing.Size(94, 41);
             this.btBuscar.TabIndex = 36;
@@ -324,7 +346,7 @@
             // 
             this.btLimpiar.Image = global::TiendaPaula.Properties.Resources.icons8_cheque;
             this.btLimpiar.Location = new System.Drawing.Point(412, 417);
-            this.btLimpiar.Margin = new System.Windows.Forms.Padding(2);
+            this.btLimpiar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btLimpiar.Name = "btLimpiar";
             this.btLimpiar.Size = new System.Drawing.Size(58, 53);
             this.btLimpiar.TabIndex = 50;
@@ -340,6 +362,17 @@
             this.lblMsj.Text = "MENSAJES DE ERROR";
             this.lblMsj.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // txtCambios
+            // 
+            this.txtCambios.AutoSize = true;
+            this.txtCambios.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.txtCambios.Location = new System.Drawing.Point(13, 249);
+            this.txtCambios.Name = "txtCambios";
+            this.txtCambios.Size = new System.Drawing.Size(291, 50);
+            this.txtCambios.TabIndex = 58;
+            this.txtCambios.Text = "Realiza los cambios que deseas\r\n(Click en Actualizar o Eliminar)";
+            this.txtCambios.Visible = false;
+            // 
             // txtTipoGasto
             // 
             this.txtTipoGasto.AnimateReadOnly = false;
@@ -348,38 +381,17 @@
             this.txtTipoGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtTipoGasto.Hint = "Nombre del tipo de gasto";
             this.txtTipoGasto.LeadingIcon = null;
-            this.txtTipoGasto.Location = new System.Drawing.Point(12, 278);
+            this.txtTipoGasto.Location = new System.Drawing.Point(8, 278);
             this.txtTipoGasto.Margin = new System.Windows.Forms.Padding(2);
             this.txtTipoGasto.MaxLength = 50;
             this.txtTipoGasto.MouseState = MaterialSkin.MouseState.OUT;
             this.txtTipoGasto.Multiline = false;
             this.txtTipoGasto.Name = "txtTipoGasto";
             this.txtTipoGasto.Size = new System.Drawing.Size(229, 50);
-            this.txtTipoGasto.TabIndex = 56;
+            this.txtTipoGasto.TabIndex = 59;
             this.txtTipoGasto.Text = "";
             this.txtTipoGasto.TrailingIcon = null;
             this.txtTipoGasto.Visible = false;
-            // 
-            // GuardaTipo
-            // 
-            this.GuardaTipo.AutoSize = false;
-            this.GuardaTipo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.GuardaTipo.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.GuardaTipo.Depth = 0;
-            this.GuardaTipo.HighEmphasis = true;
-            this.GuardaTipo.Icon = null;
-            this.GuardaTipo.Location = new System.Drawing.Point(23, 336);
-            this.GuardaTipo.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.GuardaTipo.MouseState = MaterialSkin.MouseState.HOVER;
-            this.GuardaTipo.Name = "GuardaTipo";
-            this.GuardaTipo.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.GuardaTipo.Size = new System.Drawing.Size(200, 26);
-            this.GuardaTipo.TabIndex = 57;
-            this.GuardaTipo.Text = "Guardar tipo gasto";
-            this.GuardaTipo.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.GuardaTipo.UseAccentColor = false;
-            this.GuardaTipo.UseVisualStyleBackColor = true;
-            this.GuardaTipo.Visible = false;
             // 
             // Gastos
             // 
@@ -430,6 +442,7 @@
         private System.Windows.Forms.Label label5;
         private MaterialSkin.Controls.MaterialTextBox2 txtId_Gasto;
         private MaterialSkin.Controls.MaterialButton GuardaTipo;
+        private System.Windows.Forms.Label txtCambios;
         private MaterialSkin.Controls.MaterialTextBox txtTipoGasto;
     }
 }
