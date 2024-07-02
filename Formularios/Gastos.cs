@@ -1,4 +1,5 @@
-﻿using MaterialSkin.Controls;
+﻿using Google.Protobuf.WellKnownTypes;
+using MaterialSkin.Controls;
 using MySqlX.XDevAPI;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,7 @@ namespace TiendaPaula.Formularios
     {
         Gestion_Gastos Gest_Gastos = new Gestion_Gastos();
         Class_Gastos Gastos_C = new Class_Gastos(); 
+        Gestion_Listas Gestion_Listas = new Gestion_Listas();
         public Gastos()
         {
             InitializeComponent();
@@ -81,6 +83,7 @@ namespace TiendaPaula.Formularios
             GuardaTipo.Visible = false;
 
             dtGastos.DataSource = await Gest_Gastos.MostrarGastosTotales();// muestra la tabla actualizada
+            cbTipo_pagos.DataSource = (await Gestion_Listas.Mostrar_TiposGastos()).AsEnumerable().ToList().Select(p => p[0]).ToList();
             lblMsj.Text = "";
         }
 
@@ -127,44 +130,23 @@ namespace TiendaPaula.Formularios
             }
             else
             {
-                //Le da un valor a la opción que seleccione en el comboBox tipo de gasto
-                int Tipo_gasto = 0;
-                switch (cbTipo_pagos.SelectedItem.ToString())
-                {
-                    case "Agua":
-                        Tipo_gasto = 1;
-                        break;
-                    case "Luz":
-                        Tipo_gasto = 2;
-                        break;
-                    case "Internet":
-                        Tipo_gasto = 3;
-                        break;
-                    case "Alquiler":
-                        Tipo_gasto = 4;
-                        break;
-                }
                 
-
 
                 await Gest_Gastos.AbrirConexion(Gest_Gastos.establecerConexion());
                 //establecemos los valores agregamos por el usuario a los txt
                 Gastos_C.Nombre_Gasto = txtNombre_Gasto.Text;
-                Gastos_C.Tipo_Gasto = Tipo_gasto;
+                Gastos_C.Tipo_Gasto = await Gest_Gastos.Numero_TipoGasto(cbTipo_pagos.SelectedItem.ToString());  // SP que retorna el id del tipo de gasto seleccionado
                 Gastos_C.Total_Gasto = Convert.ToDouble(txtPrecioTotal.Text);
                 
-                //enviamos los datos a la clase gestion cliente
-                await Gest_Gastos.AbrirConexion(Gest_Gastos.establecerConexion());
+                //enviamos los datos a la clase gestion Gastos
                 await Gest_Gastos.GuardarGasto(Gastos_C);
 
                 //mensaje
                 lblMsj.ForeColor = Color.Green;
-                lblMsj.Text = "Cliente creado correctamente";
+                lblMsj.Text = "¡Registro de gasto guardado correctamente!";
+
+                //volvemos a cargar todos los datos actualizados
                 LimpiarCampos();
-
-                //volvemos a cargar el datagrid view
-                dtGastos.DataSource = await Gest_Gastos.MostrarGastosTotales();// muestra la tabla actualizada
-
             }
         }
 
@@ -172,6 +154,80 @@ namespace TiendaPaula.Formularios
         {
             txtTipoGasto.Visible = true;
             GuardaTipo.Visible = true;
+        }
+
+        private async void GuardaTipo_Click(object sender, EventArgs e)
+        {
+            // verificamos que los campos no esten vacios
+            if (string.IsNullOrEmpty(txtTipoGasto.Text))
+            {
+
+                lblMsj.ForeColor = Color.Red;
+                lblMsj.Text = "No puede dejar campos vacíos";
+            }
+            else
+            {
+                await Gest_Gastos.Guardar_TipoGasto(txtTipoGasto.Text);
+                LimpiarCampos();
+            }
+        }
+
+        private async void btEliminar_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow fila = dtGastos.SelectedRows[0];
+            int IdEliminar = Convert.ToInt32(fila.Cells[0].Value); //Almacena el ID del gasto que se va a eliminar
+
+
+            // mensaje de confirmación
+            DialogResult optUser = MessageBox.Show($"¿Desea eliminar permanentemente el gastor registrado" +
+                $" con el ID {IdEliminar}?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            switch (optUser)
+            {
+                case DialogResult.Yes:
+                    await Gest_Gastos.EliminarGasto(IdEliminar);
+
+                    lblMsj.ForeColor = Color.Green;
+                    lblMsj.Text = "Gasto eliminado correctamente";
+
+                    LimpiarCampos();
+                    break;
+                case DialogResult.No:
+                    lblMsj.ForeColor = Color.Green;
+                    lblMsj.Text = "No se realizaron cambios en la BD";
+                    break;
+            }
+
+        }
+
+        private async void btActualizar_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow fila = dtGastos.SelectedRows[0];
+            int IdActualizar = Convert.ToInt32(fila.Cells[0].Value); //Almacena el ID del gasto que se va a actualizar
+
+            //Hacer que automaticamente aparesca el id de gasto y que tenga que ingresar los datos a actualizar- puede ser por medio de un evento
+
+            // verificamos que los campos no esten vacios
+            if (string.IsNullOrEmpty(txtNombre_Gasto.Text) || string.IsNullOrEmpty(cbTipo_pagos.Text)
+                || string.IsNullOrEmpty(txtPrecioTotal.Text))
+            {
+
+                lblMsj.ForeColor = Color.Red;
+                lblMsj.Text = "No puede dejar campos vacíos";
+            }
+            else
+            {
+                //Aqui va a actualizar
+                await Gest_Gastos.AbrirConexion(Gest_Gastos.establecerConexion());
+                //establecemos los valores agregamos por el usuario a los txt
+                Gastos_C.Nombre_Gasto = txtNombre_Gasto.Text;
+                Gastos_C.Tipo_Gasto = await Gest_Gastos.Numero_TipoGasto(cbTipo_pagos.SelectedItem.ToString());  // SP que retorna el id del tipo de gasto seleccionado
+                Gastos_C.Total_Gasto = Convert.ToDouble(txtPrecioTotal.Text);
+
+                //enviamos los datos a la clase gestion Gastos
+                await Gest_Gastos.ActualizarGasto(Gastos_C);
+
+            }
+
         }
     }
 
