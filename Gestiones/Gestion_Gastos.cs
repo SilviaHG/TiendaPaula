@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TiendaPaula.Clases;
+using TiendaPaula.Formularios;
 
 namespace TiendaPaula.Gestiones
 {
@@ -123,5 +124,116 @@ namespace TiendaPaula.Gestiones
                 }
             }
         }
+
+        public async Task Guardar_TipoGasto(String Gasto) // agregamos la clase de clientes
+        {
+            using (MySqlConnection cnn = establecerConexion())
+            {
+                try
+                {
+                    await AbrirConexion(cnn); // abrimos conección
+                    MySqlCommand mySqlCommand = new MySqlCommand("SP_REGISTER_type_expense", cnn);
+                    mySqlCommand.CommandType = CommandType.StoredProcedure;
+                    mySqlCommand.Parameters.AddWithValue("tipo_gasto", Gasto); // los parametros que pedimos en el procedimiento almacenado
+
+                    mySqlCommand.ExecuteNonQuery();
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error Insertar Cliente: {ex.Message}");
+                }
+                finally
+                {
+                    await cerrarConexion(cnn);
+                }
+            }
+        }
+
+        //Procedimiento que retorna el ID del tipo de gasto segÚn el nombre del tipo, que llegue a digitar o seleccionar
+        public async Task<int> Numero_TipoGasto(string TipoGasto)
+        {
+            int IDTipo = 0;
+
+            using (MySqlConnection cnn = establecerConexion()) // se establece la conexión
+            {
+                try
+                {
+                    await AbrirConexion(cnn); // abrimos la conexión
+                    MySqlCommand mySqlCommand = new MySqlCommand("SP_SEARCH_TypeExpense_ByName", cnn);
+                    mySqlCommand.CommandType = CommandType.StoredProcedure;
+                    mySqlCommand.Parameters.AddWithValue("Nombre", TipoGasto);
+                    mySqlCommand.ExecuteNonQuery();
+
+                    object result = mySqlCommand.ExecuteScalar(); // ejecutamos la consulta y obtenemos el resultado
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        IDTipo = Convert.ToInt32(result); // convertimos el resultado a entero
+                       
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}"); // si da un error lo mostramos
+                }
+                finally
+                {
+                    await cerrarConexion(cnn); // cerramos la conexión en el bloque finally
+                }
+            }
+
+            return IDTipo;
+        }
+
+        public async Task EliminarGasto(int ID_E)
+        {
+            using (MySqlConnection cnn = establecerConexion())
+            {
+                try
+                {
+                    await AbrirConexion(cnn);
+                    MySqlCommand cmd = new MySqlCommand("SP_DELETE_EXPENSE", cnn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("EXPENSE", ID_E);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error Eliminar Cliente {ex.Message}");
+                }
+                finally
+                {
+                    await cerrarConexion(cnn);
+                }
+            }
+        }
+
+        public async Task ActualizarGasto(Class_Gastos Gastos)
+        {
+            using (MySqlConnection cnn = establecerConexion())
+            {
+                try
+                {
+                    await AbrirConexion(cnn);
+                    MySqlCommand cmd = new MySqlCommand("SP_UPDATE_EXPENSE", cnn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("ID", Gastos.Id_Gasto);
+                    cmd.Parameters.AddWithValue("name_expense", Gastos.Nombre_Gasto);
+                    cmd.Parameters.AddWithValue("expense_type", Gastos.Tipo_Gasto);
+                    cmd.Parameters.AddWithValue("total", Gastos.Total_Gasto);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error Eliminar Cliente {ex.Message}");
+                }
+                finally
+                {
+                    await cerrarConexion(cnn);
+                }
+            }
+        }
+
     }
 }

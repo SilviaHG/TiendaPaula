@@ -61,13 +61,13 @@
             this.txtBuscar_Compra.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtBuscar_Compra.Hint = "Buscar Cod. Compra";
             this.txtBuscar_Compra.LeadingIcon = null;
-            this.txtBuscar_Compra.Location = new System.Drawing.Point(42, 486);
-            this.txtBuscar_Compra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBuscar_Compra.Location = new System.Drawing.Point(32, 395);
+            this.txtBuscar_Compra.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscar_Compra.MaxLength = 50;
             this.txtBuscar_Compra.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBuscar_Compra.Multiline = false;
             this.txtBuscar_Compra.Name = "txtBuscar_Compra";
-            this.txtBuscar_Compra.Size = new System.Drawing.Size(581, 50);
+            this.txtBuscar_Compra.Size = new System.Drawing.Size(436, 50);
             this.txtBuscar_Compra.TabIndex = 31;
             this.txtBuscar_Compra.Text = "";
             this.txtBuscar_Compra.TrailingIcon = null;
@@ -85,12 +85,12 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtCompras.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dtCompras.Location = new System.Drawing.Point(42, 549);
-            this.dtCompras.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtCompras.Location = new System.Drawing.Point(32, 446);
+            this.dtCompras.Margin = new System.Windows.Forms.Padding(2);
             this.dtCompras.Name = "dtCompras";
             this.dtCompras.RowHeadersWidth = 51;
             this.dtCompras.RowTemplate.Height = 24;
-            this.dtCompras.Size = new System.Drawing.Size(872, 251);
+            this.dtCompras.Size = new System.Drawing.Size(654, 204);
             this.dtCompras.TabIndex = 30;
             this.dtCompras.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtCompras_CellClick);
             // 
@@ -98,10 +98,10 @@
             // 
             this.Fecha_Compra.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Fecha_Compra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Fecha_Compra.Location = new System.Drawing.Point(13, 14);
-            this.Fecha_Compra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Fecha_Compra.Location = new System.Drawing.Point(10, 11);
+            this.Fecha_Compra.Margin = new System.Windows.Forms.Padding(2);
             this.Fecha_Compra.Name = "Fecha_Compra";
-            this.Fecha_Compra.Size = new System.Drawing.Size(1000, 27);
+            this.Fecha_Compra.Size = new System.Drawing.Size(750, 23);
             this.Fecha_Compra.TabIndex = 29;
             this.Fecha_Compra.Value = new System.DateTime(2024, 6, 21, 19, 59, 23, 0);
             // 
@@ -124,21 +124,22 @@
             this.materialCard1.Controls.Add(this.Fecha_Compra);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard1.Location = new System.Drawing.Point(42, 89);
-            this.materialCard1.Margin = new System.Windows.Forms.Padding(13, 14, 13, 14);
+            this.materialCard1.Location = new System.Drawing.Point(32, 72);
+            this.materialCard1.Margin = new System.Windows.Forms.Padding(10, 11, 10, 11);
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
-            this.materialCard1.Padding = new System.Windows.Forms.Padding(13, 14, 13, 14);
-            this.materialCard1.Size = new System.Drawing.Size(1026, 289);
+            this.materialCard1.Padding = new System.Windows.Forms.Padding(10, 11, 10, 11);
+            this.materialCard1.Size = new System.Drawing.Size(770, 235);
             this.materialCard1.TabIndex = 38;
             // 
             // AbrirProductos
             // 
             this.AbrirProductos.AutoSize = true;
             this.AbrirProductos.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(45)))), ((int)(((byte)(71)))));
-            this.AbrirProductos.Location = new System.Drawing.Point(583, 199);
+            this.AbrirProductos.Location = new System.Drawing.Point(437, 162);
+            this.AbrirProductos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.AbrirProductos.Name = "AbrirProductos";
-            this.AbrirProductos.Size = new System.Drawing.Size(104, 16);
+            this.AbrirProductos.Size = new System.Drawing.Size(85, 13);
             this.AbrirProductos.TabIndex = 62;
             this.AbrirProductos.TabStop = true;
             this.AbrirProductos.Text = "Nuevo Producto";
@@ -162,12 +163,11 @@
             this.cbEstado_Compra.Items.AddRange(new object[] {
             "Nueva Compra",
             "Agregar otro cod. producto"});
-            this.cbEstado_Compra.Location = new System.Drawing.Point(741, 69);
-            this.cbEstado_Compra.Margin = new System.Windows.Forms.Padding(4);
+            this.cbEstado_Compra.Location = new System.Drawing.Point(556, 56);
             this.cbEstado_Compra.MaxDropDownItems = 4;
             this.cbEstado_Compra.MouseState = MaterialSkin.MouseState.OUT;
             this.cbEstado_Compra.Name = "cbEstado_Compra";
-            this.cbEstado_Compra.Size = new System.Drawing.Size(260, 49);
+            this.cbEstado_Compra.Size = new System.Drawing.Size(196, 49);
             this.cbEstado_Compra.StartIndex = 0;
             this.cbEstado_Compra.TabIndex = 61;
             this.cbEstado_Compra.SelectionChangeCommitted += new System.EventHandler(this.cbEstado_Compra_SelectionChangeCommitted);
@@ -183,7 +183,8 @@
             this.txtTotal_Compra.HideSelection = true;
             this.txtTotal_Compra.Hint = "Total ";
             this.txtTotal_Compra.LeadingIcon = null;
-            this.txtTotal_Compra.Location = new System.Drawing.Point(556, 226);
+            this.txtTotal_Compra.Location = new System.Drawing.Point(417, 184);
+            this.txtTotal_Compra.Margin = new System.Windows.Forms.Padding(2);
             this.txtTotal_Compra.MaxLength = 32767;
             this.txtTotal_Compra.MouseState = MaterialSkin.MouseState.OUT;
             this.txtTotal_Compra.Name = "txtTotal_Compra";
@@ -195,7 +196,7 @@
             this.txtTotal_Compra.SelectionLength = 0;
             this.txtTotal_Compra.SelectionStart = 0;
             this.txtTotal_Compra.ShortcutsEnabled = true;
-            this.txtTotal_Compra.Size = new System.Drawing.Size(131, 48);
+            this.txtTotal_Compra.Size = new System.Drawing.Size(98, 48);
             this.txtTotal_Compra.TabIndex = 60;
             this.txtTotal_Compra.TabStop = false;
             this.txtTotal_Compra.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -212,7 +213,8 @@
             this.txtIVA.HideSelection = true;
             this.txtIVA.Hint = "IVA";
             this.txtIVA.LeadingIcon = null;
-            this.txtIVA.Location = new System.Drawing.Point(317, 224);
+            this.txtIVA.Location = new System.Drawing.Point(238, 182);
+            this.txtIVA.Margin = new System.Windows.Forms.Padding(2);
             this.txtIVA.MaxLength = 32767;
             this.txtIVA.MouseState = MaterialSkin.MouseState.OUT;
             this.txtIVA.Name = "txtIVA";
@@ -224,7 +226,7 @@
             this.txtIVA.SelectionLength = 0;
             this.txtIVA.SelectionStart = 0;
             this.txtIVA.ShortcutsEnabled = true;
-            this.txtIVA.Size = new System.Drawing.Size(131, 48);
+            this.txtIVA.Size = new System.Drawing.Size(98, 48);
             this.txtIVA.TabIndex = 59;
             this.txtIVA.TabStop = false;
             this.txtIVA.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -241,7 +243,8 @@
             this.txtId_compra.HideSelection = true;
             this.txtId_compra.Hint = "N° Compra";
             this.txtId_compra.LeadingIcon = null;
-            this.txtId_compra.Location = new System.Drawing.Point(65, 69);
+            this.txtId_compra.Location = new System.Drawing.Point(49, 56);
+            this.txtId_compra.Margin = new System.Windows.Forms.Padding(2);
             this.txtId_compra.MaxLength = 32767;
             this.txtId_compra.MouseState = MaterialSkin.MouseState.OUT;
             this.txtId_compra.Name = "txtId_compra";
@@ -253,7 +256,7 @@
             this.txtId_compra.SelectionLength = 0;
             this.txtId_compra.SelectionStart = 0;
             this.txtId_compra.ShortcutsEnabled = true;
-            this.txtId_compra.Size = new System.Drawing.Size(110, 48);
+            this.txtId_compra.Size = new System.Drawing.Size(82, 48);
             this.txtId_compra.TabIndex = 58;
             this.txtId_compra.TabStop = false;
             this.txtId_compra.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -265,10 +268,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(60, 214);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(45, 174);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 20);
+            this.label3.Size = new System.Drawing.Size(74, 17);
             this.label3.TabIndex = 57;
             this.label3.Text = "Proveedor";
             // 
@@ -278,10 +280,9 @@
             this.cbProveedor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cbProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cbProveedor.FormattingEnabled = true;
-            this.cbProveedor.Location = new System.Drawing.Point(64, 238);
-            this.cbProveedor.Margin = new System.Windows.Forms.Padding(4);
+            this.cbProveedor.Location = new System.Drawing.Point(48, 193);
             this.cbProveedor.Name = "cbProveedor";
-            this.cbProveedor.Size = new System.Drawing.Size(223, 33);
+            this.cbProveedor.Size = new System.Drawing.Size(168, 28);
             this.cbProveedor.TabIndex = 56;
             // 
             // label4
@@ -289,10 +290,9 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(312, 130);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(234, 106);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 20);
+            this.label4.Size = new System.Drawing.Size(98, 17);
             this.label4.TabIndex = 55;
             this.label4.Text = "Cod. Producto";
             // 
@@ -302,10 +302,9 @@
             this.cbProductos.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cbProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cbProductos.FormattingEnabled = true;
-            this.cbProductos.Location = new System.Drawing.Point(316, 155);
-            this.cbProductos.Margin = new System.Windows.Forms.Padding(4);
+            this.cbProductos.Location = new System.Drawing.Point(237, 126);
             this.cbProductos.Name = "cbProductos";
-            this.cbProductos.Size = new System.Drawing.Size(370, 33);
+            this.cbProductos.Size = new System.Drawing.Size(278, 28);
             this.cbProductos.TabIndex = 54;
             this.cbProductos.Leave += new System.EventHandler(this.cbProductos_Leave);
             // 
@@ -314,10 +313,9 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label5.Location = new System.Drawing.Point(61, 130);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(46, 106);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 20);
+            this.label5.Size = new System.Drawing.Size(71, 17);
             this.label5.TabIndex = 53;
             this.label5.Text = "Empleado";
             // 
@@ -327,21 +325,20 @@
             this.cbEmpleados.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cbEmpleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cbEmpleados.FormattingEnabled = true;
-            this.cbEmpleados.Location = new System.Drawing.Point(64, 155);
-            this.cbEmpleados.Margin = new System.Windows.Forms.Padding(4);
+            this.cbEmpleados.Location = new System.Drawing.Point(48, 126);
             this.cbEmpleados.Name = "cbEmpleados";
-            this.cbEmpleados.Size = new System.Drawing.Size(223, 33);
+            this.cbEmpleados.Size = new System.Drawing.Size(168, 28);
             this.cbEmpleados.TabIndex = 52;
             // 
             // Cant_Productos
             // 
             this.Cant_Productos.Depth = 0;
             this.Cant_Productos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Cant_Productos.Location = new System.Drawing.Point(317, 69);
-            this.Cant_Productos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Cant_Productos.Location = new System.Drawing.Point(238, 56);
+            this.Cant_Productos.Margin = new System.Windows.Forms.Padding(2);
             this.Cant_Productos.MouseState = MaterialSkin.MouseState.HOVER;
             this.Cant_Productos.Name = "Cant_Productos";
-            this.Cant_Productos.Size = new System.Drawing.Size(370, 40);
+            this.Cant_Productos.Size = new System.Drawing.Size(278, 40);
             this.Cant_Productos.TabIndex = 49;
             this.Cant_Productos.Text = "Productos";
             this.Cant_Productos.Value = 1;
@@ -355,10 +352,10 @@
             this.btGuardar.ForeColor = System.Drawing.Color.White;
             this.btGuardar.Image = global::TiendaPaula.Properties.Resources.icons8_pagado_28;
             this.btGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btGuardar.Location = new System.Drawing.Point(740, 201);
-            this.btGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btGuardar.Location = new System.Drawing.Point(555, 163);
+            this.btGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btGuardar.Name = "btGuardar";
-            this.btGuardar.Size = new System.Drawing.Size(261, 71);
+            this.btGuardar.Size = new System.Drawing.Size(196, 58);
             this.btGuardar.TabIndex = 48;
             this.btGuardar.Text = "Guardar";
             this.btGuardar.UseVisualStyleBackColor = false;
@@ -370,10 +367,10 @@
             this.Abre_DetallesCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Abre_DetallesCompra.ForeColor = System.Drawing.Color.White;
             this.Abre_DetallesCompra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Abre_DetallesCompra.Location = new System.Drawing.Point(933, 652);
-            this.Abre_DetallesCompra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Abre_DetallesCompra.Location = new System.Drawing.Point(700, 530);
+            this.Abre_DetallesCompra.Margin = new System.Windows.Forms.Padding(2);
             this.Abre_DetallesCompra.Name = "Abre_DetallesCompra";
-            this.Abre_DetallesCompra.Size = new System.Drawing.Size(148, 53);
+            this.Abre_DetallesCompra.Size = new System.Drawing.Size(111, 43);
             this.Abre_DetallesCompra.TabIndex = 39;
             this.Abre_DetallesCompra.Text = "Detalles compras";
             this.Abre_DetallesCompra.UseVisualStyleBackColor = false;
@@ -386,10 +383,10 @@
             this.btBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btBuscar.Image = global::TiendaPaula.Properties.Resources.icons8_buscar_30__1_;
             this.btBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btBuscar.Location = new System.Drawing.Point(642, 486);
-            this.btBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btBuscar.Location = new System.Drawing.Point(482, 395);
+            this.btBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btBuscar.Name = "btBuscar";
-            this.btBuscar.Size = new System.Drawing.Size(125, 50);
+            this.btBuscar.Size = new System.Drawing.Size(94, 41);
             this.btBuscar.TabIndex = 34;
             this.btBuscar.Text = "Buscar";
             this.btBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -398,28 +395,25 @@
             // 
             // lblMsj
             // 
-            this.lblMsj.Location = new System.Drawing.Point(301, 392);
-            this.lblMsj.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMsj.Location = new System.Drawing.Point(226, 318);
             this.lblMsj.Name = "lblMsj";
-            this.lblMsj.Size = new System.Drawing.Size(527, 50);
+            this.lblMsj.Size = new System.Drawing.Size(395, 41);
             this.lblMsj.TabIndex = 48;
             this.lblMsj.Text = "MENSAJES DE ERROR";
             this.lblMsj.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Compras
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1107, 829);
+            this.ClientSize = new System.Drawing.Size(830, 674);
             this.Controls.Add(this.lblMsj);
             this.Controls.Add(this.Abre_DetallesCompra);
             this.Controls.Add(this.materialCard1);
             this.Controls.Add(this.btBuscar);
             this.Controls.Add(this.txtBuscar_Compra);
             this.Controls.Add(this.dtCompras);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Compras";
-            this.Padding = new System.Windows.Forms.Padding(4, 79, 4, 4);
             this.Text = "Compras";
             this.Load += new System.EventHandler(this.Compras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtCompras)).EndInit();
