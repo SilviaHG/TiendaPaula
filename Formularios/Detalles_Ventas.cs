@@ -24,6 +24,9 @@ namespace TiendaPaula.Formularios
             dtDetalles_Venta.DataSource = await Gest_Detalles.Mostrar_DetallesVentasTotales();
             lblMsj.Text = "";
 
+            //autosize de la tabla
+            dtDetalles_Venta.AutoSizeColumnsMode =
+            DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private async void btBuscar_Click(object sender, EventArgs e)

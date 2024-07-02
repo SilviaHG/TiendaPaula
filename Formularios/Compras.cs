@@ -37,6 +37,10 @@ namespace TiendaPaula.Formularios
 
             LimpiarCampos();
 
+            //autosize de la tabla
+            dtCompras.AutoSizeColumnsMode =
+            DataGridViewAutoSizeColumnsMode.Fill;
+
         }
 
         public async void AgregarComboBoxs()
@@ -115,20 +119,22 @@ namespace TiendaPaula.Formularios
 
         public async void Montos_IVA_Total()
         {
-            int Codigo_p = Convert.ToInt32(cbProductos.SelectedItem.ToString());
-            int Cantidad = Convert.ToInt32(Cant_Productos.Value.ToString());
+            if(! string.IsNullOrEmpty(cbProductos.Text)) 
+            {
+                int Codigo_p = Convert.ToInt32(cbProductos.SelectedItem.ToString());
+                int Cantidad = Convert.ToInt32(Cant_Productos.Value.ToString());
 
-            //Damos valores a las variables
-            Total_General = await GestCompras.Monto_General(Codigo_p, Cantidad); //Total sin el impuesto agregado
-            Iva_C = await GestCompras.Monto_IVA(Codigo_p, Cantidad);
-            int Total_Pago = Total_General + Iva_C;
+                //Damos valores a las variables
+                Total_General = await GestCompras.Monto_General(Codigo_p, Cantidad); //Total sin el impuesto agregado
+                Iva_C = await GestCompras.Monto_IVA(Codigo_p, Cantidad);
+                int Total_Pago = Total_General + Iva_C;
 
-            //Mostramos el IVA y el Total a pagar 
-            txtIVA.Text = Iva_C.ToString();
+                //Mostramos el IVA y el Total a pagar 
+                txtIVA.Text = Iva_C.ToString();
 
-            txtTotal_Compra.Text = Total_Pago.ToString();            
+                txtTotal_Compra.Text = Total_Pago.ToString();
 
-
+            }
         }
 
         //Habilita ciertos botones automaticamente 

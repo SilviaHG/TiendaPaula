@@ -25,6 +25,10 @@ namespace TiendaPaula.Formularios
         {
             dtDetalles_Compras.DataSource = await Det_Compras.Mostrar_DetallesComprasTotales();
             lblMsj.Text = "";
+
+            //autosize de la tabla
+            dtDetalles_Compras.AutoSizeColumnsMode =
+            DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void txtBuscar_Compra_KeyPress(object sender, KeyPressEventArgs e)

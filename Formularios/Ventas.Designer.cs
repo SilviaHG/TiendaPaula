@@ -70,7 +70,7 @@
             this.txtDescuento.Hint = "Descuento";
             this.txtDescuento.LeadingIcon = null;
             this.txtDescuento.Location = new System.Drawing.Point(263, 288);
-            this.txtDescuento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescuento.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescuento.MaxLength = 50;
             this.txtDescuento.MouseState = MaterialSkin.MouseState.OUT;
             this.txtDescuento.Multiline = false;
@@ -104,7 +104,7 @@
             "Activo",
             "Inactivo"});
             this.cbEstado_Venta.Location = new System.Drawing.Point(14, 395);
-            this.cbEstado_Venta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbEstado_Venta.Margin = new System.Windows.Forms.Padding(2);
             this.cbEstado_Venta.MaxDropDownItems = 4;
             this.cbEstado_Venta.MouseState = MaterialSkin.MouseState.OUT;
             this.cbEstado_Venta.Name = "cbEstado_Venta";
@@ -117,7 +117,7 @@
             this.Fecha_V.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Fecha_V.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Fecha_V.Location = new System.Drawing.Point(10, 11);
-            this.Fecha_V.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Fecha_V.Margin = new System.Windows.Forms.Padding(2);
             this.Fecha_V.Name = "Fecha_V";
             this.Fecha_V.Size = new System.Drawing.Size(362, 23);
             this.Fecha_V.TabIndex = 9;
@@ -383,7 +383,7 @@
             this.Cant_Productos.Depth = 0;
             this.Cant_Productos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Cant_Productos.Location = new System.Drawing.Point(11, 246);
-            this.Cant_Productos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Cant_Productos.Margin = new System.Windows.Forms.Padding(2);
             this.Cant_Productos.MouseState = MaterialSkin.MouseState.HOVER;
             this.Cant_Productos.Name = "Cant_Productos";
             this.Cant_Productos.Size = new System.Drawing.Size(361, 40);
@@ -400,7 +400,7 @@
             this.btAgregar.Image = global::TiendaPaula.Properties.Resources.icons8_factura_28;
             this.btAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btAgregar.Location = new System.Drawing.Point(10, 459);
-            this.btAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btAgregar.Name = "btAgregar";
             this.btAgregar.Size = new System.Drawing.Size(362, 43);
             this.btAgregar.TabIndex = 13;
@@ -417,7 +417,7 @@
             this.txtBuscar_Venta.Hint = "Buscar por N° de venta";
             this.txtBuscar_Venta.LeadingIcon = null;
             this.txtBuscar_Venta.Location = new System.Drawing.Point(420, 102);
-            this.txtBuscar_Venta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBuscar_Venta.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscar_Venta.MaxLength = 50;
             this.txtBuscar_Venta.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBuscar_Venta.Multiline = false;
@@ -453,7 +453,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtVentas.DefaultCellStyle = dataGridViewCellStyle3;
             this.dtVentas.Location = new System.Drawing.Point(420, 158);
-            this.dtVentas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtVentas.Margin = new System.Windows.Forms.Padding(2);
             this.dtVentas.Name = "dtVentas";
             this.dtVentas.RowHeadersWidth = 51;
             this.dtVentas.RowTemplate.Height = 24;
@@ -468,7 +468,7 @@
             this.Abre_DetallesVentas.ForeColor = System.Drawing.Color.White;
             this.Abre_DetallesVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Abre_DetallesVentas.Location = new System.Drawing.Point(881, 427);
-            this.Abre_DetallesVentas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Abre_DetallesVentas.Margin = new System.Windows.Forms.Padding(2);
             this.Abre_DetallesVentas.Name = "Abre_DetallesVentas";
             this.Abre_DetallesVentas.Size = new System.Drawing.Size(120, 43);
             this.Abre_DetallesVentas.TabIndex = 15;
@@ -489,7 +489,7 @@
             // 
             this.btLimpiar.Image = global::TiendaPaula.Properties.Resources.icons8_cheque;
             this.btLimpiar.Location = new System.Drawing.Point(463, 418);
-            this.btLimpiar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btLimpiar.Margin = new System.Windows.Forms.Padding(2);
             this.btLimpiar.Name = "btLimpiar";
             this.btLimpiar.Size = new System.Drawing.Size(58, 53);
             this.btLimpiar.TabIndex = 48;
@@ -504,7 +504,7 @@
             this.btBuscar.Image = global::TiendaPaula.Properties.Resources.icons8_buscar_30__1_;
             this.btBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btBuscar.Location = new System.Drawing.Point(896, 105);
-            this.btBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btBuscar.Name = "btBuscar";
             this.btBuscar.Size = new System.Drawing.Size(94, 41);
             this.btBuscar.TabIndex = 24;

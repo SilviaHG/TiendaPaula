@@ -31,6 +31,11 @@ namespace TiendaPaula.Formularios
             lblMsj.Text = "";
 
             LimpiarCampos();
+
+
+            //autosize de la tabla
+            dtGastos.AutoSizeColumnsMode =
+            DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void txtNombre_Gasto_KeyPress(object sender, KeyPressEventArgs e)
@@ -116,10 +121,9 @@ namespace TiendaPaula.Formularios
             btActualizar.Enabled = true;
             btEliminar.Enabled = true;
 
-            DataGridViewRow fila = dtGastos.SelectedRows[0];
-            txtId_Gasto.Text = Convert.ToString(fila.Cells[0].Value); //Almacena el ID del gasto 
-            txtNombre_Gasto.Text = Convert.ToString(fila.Cells[1].Value);
-            txtPrecioTotal.Text = Convert.ToString(fila.Cells[3].Value);
+            txtId_Gasto.Text = dtGastos[0, e.RowIndex].Value.ToString(); //Almacena el ID del gasto 
+            txtNombre_Gasto.Text = dtGastos[1, e.RowIndex].Value.ToString();
+            txtPrecioTotal.Text = dtGastos[3, e.RowIndex].Value.ToString();
             txtCambios.Visible = true; //label que muestra un mensaje
             btGuardar_Gasto.Enabled = false; //La opción de actualizar se desabilita
         }
@@ -180,9 +184,8 @@ namespace TiendaPaula.Formularios
 
         private async void btEliminar_Click(object sender, EventArgs e)
         {
-            DataGridViewRow fila = dtGastos.SelectedRows[0];
-            int IdEliminar = Convert.ToInt32(fila.Cells[0].Value); //Almacena el ID del gasto que se va a eliminar
-
+            int IdEliminar =  Convert.ToInt32(txtId_Gasto.Text);
+           
 
             // mensaje de confirmación
             DialogResult optUser = MessageBox.Show($"¿Desea eliminar permanentemente el gastor registrado" +
@@ -207,8 +210,7 @@ namespace TiendaPaula.Formularios
 
         private async void btActualizar_Click(object sender, EventArgs e)
         {
-            DataGridViewRow fila = dtGastos.SelectedRows[0];
-            int IdActualizar = Convert.ToInt32(fila.Cells[0].Value); //Almacena el ID del gasto que se va a actualizar
+            int IdActualizar = Convert.ToInt32(txtId_Gasto.Text); //Almacena el ID del gasto que se va a actualizar
 
             // verificamos que los campos no esten vacios
             if (string.IsNullOrEmpty(txtNombre_Gasto.Text) || string.IsNullOrEmpty(cbTipo_pagos.Text)
