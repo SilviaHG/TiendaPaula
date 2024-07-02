@@ -72,6 +72,9 @@ namespace TiendaPaula.Formularios
 
             dtEmpleados.DataSource = datos;
 
+            dtEmpleados.AutoSizeColumnsMode =
+            DataGridViewAutoSizeColumnsMode.Fill;
+
         }
 
         public async void AgregarPosiciones()
@@ -402,7 +405,7 @@ namespace TiendaPaula.Formularios
         {
             //se muestran los datos seleccionado en los textbox, ya sea para eliminar o actualizar
 
-            DataGridViewRow fila = dtEmpleados.SelectedRows[0];
+            //DataGridViewRow fila = dtEmpleados.SelectedRows[0];
             //se deshabilita para que no pueda editar la cédula
             txtCedulaE.Enabled = false;
             //habilitamos el boton de actualizar y eliminar y deshabilitamos el de agregar
@@ -410,13 +413,13 @@ namespace TiendaPaula.Formularios
             btnEliminar.Enabled = true;
             btnAgregar.Enabled = false;
             //pasamos los campos de la fila seleccionada a los textBox
-            txtCedulaE.Text = fila.Cells[0].Value.ToString();
-            txtBuscar.Text = fila.Cells[0].Value.ToString();
-            txtNombreE.Text = fila.Cells[1].Value.ToString();
-            txtTelefonoE.Text = fila.Cells[2].Value.ToString();
-            txtEmailE.Text = fila.Cells[3].Value.ToString();
-            txtDireccionE.Text = fila.Cells[4].Value.ToString();
-            cbPosiciones.SelectedItem = fila.Cells[5].Value.ToString();
+            txtCedulaE.Text = dtEmpleados[0, e.RowIndex].Value.ToString();
+            txtBuscar.Text = dtEmpleados[0, e.RowIndex].Value.ToString();
+            txtNombreE.Text = dtEmpleados[1, e.RowIndex].Value.ToString();
+            txtTelefonoE.Text = dtEmpleados[2, e.RowIndex].Value.ToString();
+            txtEmailE.Text = dtEmpleados[4, e.RowIndex].Value.ToString();
+            txtDireccionE.Text = dtEmpleados[4, e.RowIndex].Value.ToString();
+            cbPosiciones.SelectedItem = dtEmpleados[5, e.RowIndex].Value.ToString();
             cbPosiciones.Refresh();
         }
     }
