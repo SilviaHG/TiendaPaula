@@ -44,8 +44,11 @@ namespace TiendaPaula.Formularios
 
             dtMarcas.DataSource = datos;
 
+            dtMarcas.AutoSizeColumnsMode =
+            DataGridViewAutoSizeColumnsMode.Fill;
+
             //asignamos el número consecutivo del producto
-           txtIdMarca.Text = Convert.ToString(await gestMarcas.NumeroMAXMarca());
+            txtIdMarca.Text = Convert.ToString(await gestMarcas.NumeroMAXMarca());
 
         }
 
@@ -232,15 +235,15 @@ namespace TiendaPaula.Formularios
         {
             //se muestran los datos seleccionado en los textbox, ya sea para eliminar o actualizar
 
-            DataGridViewRow fila = dtMarcas.SelectedRows[0];
+            //DataGridViewRow fila = dtMarcas.SelectedRows[0];
             //habilitamos el boton de actualizar y eliminar y deshabilitamos el de agregar
             btnActualizar.Enabled = true;
             btnEliminar.Enabled = true;
             btnAgregar.Enabled = false;
             //pasamos los campos de la fila seleccionada a los textBox
-            txtIdMarca.Text = fila.Cells[0].Value.ToString();
-            txtBuscar.Text = fila.Cells[1].Value.ToString();
-            txtMarca.Text = fila.Cells[1].Value.ToString();
+            txtIdMarca.Text = dtMarcas[0, e.RowIndex].Value.ToString();
+            txtBuscar.Text = dtMarcas[1, e.RowIndex].Value.ToString();
+            txtMarca.Text = dtMarcas[1, e.RowIndex].Value.ToString();
         }
 
         

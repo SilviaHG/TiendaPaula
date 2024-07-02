@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,6 +16,7 @@ namespace TiendaPaula.Formularios
 {
     public partial class Login : MaterialForm
     {
+        Gestion_Usuarios bdUsuario = new Gestion_Usuarios();
         public Login()
         {
             InitializeComponent();
@@ -29,18 +31,17 @@ namespace TiendaPaula.Formularios
             Color.FromArgb(255, 224, 92),//tiene queser parecido al primero
             Color.FromArgb(45, 48, 71),
             TextShade.WHITE);
-
         }
 
         private async void btnSignIn_Click(object sender, EventArgs e)
         {
-            Gestion_Usuarios bdUsuario = new Gestion_Usuarios();
+
             await bdUsuario.AbrirConexion(bdUsuario.establecerConexion());
-            /*
+
             if (string.IsNullOrEmpty(txtUsuario.Text) || string.IsNullOrEmpty(txtPassword.Text))
             {
-                
-               
+
+
                 MessageBox.Show("Usuario y/o contraseña tienen campos vacios",
                 "Error de acceso",
 
@@ -50,24 +51,64 @@ namespace TiendaPaula.Formularios
             }
             else
             {
-                if (bdUsuario.Verificar_Usuario_Contra(Convert.ToInt32(txtUsuario.Text), txtPassword.Text) == true)
+
+
+                if (await bdUsuario.Verificar_Usuario_Contra(Convert.ToInt32(txtUsuario.Text), txtPassword.Text) == true)
                 {
 
-                    Principal Abrir = new Principal();
-                    Abrir.Show();
+                    if (CheckboxRemember.Checked)
+                    {
+                        bdUsuario.RecordarUsuario(new Clases.Class_Recordar_Usuario(txtUsuario.Text, txtPassword.Text));
+
+                        Principal Abrir = new Principal();
+                        Abrir.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        bdUsuario.OlvidarUsuario();
+                        Principal Abrir = new Principal();
+                        Abrir.Show();
+                        this.Hide();
+                    }
 
                 }
                 else
                 {
                     MessageBox.Show("Usuario y/o contraseña no existen, intenta de nuevo");
                 }
-
             }
-            */
+        }
 
-            Principal Abrir = new Principal();
-            Abrir.ShowDialog();
-
+        private async void Login_Load(object sender, EventArgs e)
+        {
+            txtUsuario.Text = await bdUsuario.UsuarioRecordado();
+            txtPassword.Text = await bdUsuario.ContrasenniaRecordada();
+            await bdUsuario.cerrarConexion(bdUsuario.establecerConexion());
+            Console.WriteLine(txtUsuario.Text);
+            if (txtUsuario.Text == "")
+            {
+                CheckboxRemember.Checked = false;
+                
+            }
+            else
+            {
+                CheckboxRemember.Checked = true;
+            }
+        }
+        private async void CheckboxRemember_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CheckboxRemember.Checked)
+            {
+                txtUsuario.Text = await bdUsuario.UsuarioRecordado();
+                txtPassword.Text = await bdUsuario.ContrasenniaRecordada();
+                await bdUsuario.cerrarConexion(bdUsuario.establecerConexion());
+            }
+            else
+            {
+                txtUsuario.Text = "";
+                txtPassword.Text = "";
+            }
         }
     }
 }
