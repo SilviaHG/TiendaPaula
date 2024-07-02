@@ -73,6 +73,16 @@ namespace TiendaPaula.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_bolsa_de_compras {
+            get {
+                object obj = ResourceManager.GetObject("icons8-bolsa-de-compras", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_buscar_28 {
             get {
                 object obj = ResourceManager.GetObject("icons8-buscar-28", resourceCulture);
@@ -136,6 +146,16 @@ namespace TiendaPaula.Properties {
         internal static System.Drawing.Bitmap icons8_cheque {
             get {
                 object obj = ResourceManager.GetObject("icons8-cheque", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_clientes {
+            get {
+                object obj = ResourceManager.GetObject("icons8-clientes", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

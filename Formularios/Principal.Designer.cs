@@ -77,22 +77,20 @@
             this.materialTabControl1.Controls.Add(this.tabGestion);
             this.materialTabControl1.Depth = 0;
             this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialTabControl1.Location = new System.Drawing.Point(4, 79);
-            this.materialTabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.materialTabControl1.Location = new System.Drawing.Point(3, 64);
             this.materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabControl1.Multiline = true;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(501, 471);
+            this.materialTabControl1.Size = new System.Drawing.Size(376, 383);
             this.materialTabControl1.TabIndex = 0;
             // 
             // tabInicio
             // 
-            this.tabInicio.Location = new System.Drawing.Point(4, 25);
-            this.tabInicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabInicio.Location = new System.Drawing.Point(4, 22);
             this.tabInicio.Name = "tabInicio";
-            this.tabInicio.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabInicio.Size = new System.Drawing.Size(493, 442);
+            this.tabInicio.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabInicio.Size = new System.Drawing.Size(368, 357);
             this.tabInicio.TabIndex = 0;
             this.tabInicio.Text = "Inicio";
             this.tabInicio.UseVisualStyleBackColor = true;
@@ -100,11 +98,10 @@
             // tabPersonas
             // 
             this.tabPersonas.Controls.Add(this.materialCard1);
-            this.tabPersonas.Location = new System.Drawing.Point(4, 25);
-            this.tabPersonas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPersonas.Location = new System.Drawing.Point(4, 22);
             this.tabPersonas.Name = "tabPersonas";
-            this.tabPersonas.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPersonas.Size = new System.Drawing.Size(493, 442);
+            this.tabPersonas.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPersonas.Size = new System.Drawing.Size(368, 357);
             this.tabPersonas.TabIndex = 1;
             this.tabPersonas.Text = "Personas";
             this.tabPersonas.UseVisualStyleBackColor = true;
@@ -121,22 +118,21 @@
             this.materialCard1.Depth = 0;
             this.materialCard1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard1.Location = new System.Drawing.Point(4, 4);
-            this.materialCard1.Margin = new System.Windows.Forms.Padding(19, 17, 19, 17);
+            this.materialCard1.Location = new System.Drawing.Point(3, 3);
+            this.materialCard1.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
-            this.materialCard1.Padding = new System.Windows.Forms.Padding(19, 17, 19, 17);
-            this.materialCard1.Size = new System.Drawing.Size(485, 434);
+            this.materialCard1.Padding = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.materialCard1.Size = new System.Drawing.Size(362, 351);
             this.materialCard1.TabIndex = 5;
             // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(148)))), ((int)(((byte)(32)))));
-            this.label2.Location = new System.Drawing.Point(109, 20);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(82, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(261, 50);
+            this.label2.Size = new System.Drawing.Size(196, 41);
             this.label2.TabIndex = 5;
             this.label2.Text = "Personas";
             // 
@@ -148,12 +144,12 @@
             this.txtClientes.Depth = 0;
             this.txtClientes.HighEmphasis = true;
             this.txtClientes.Icon = null;
-            this.txtClientes.Location = new System.Drawing.Point(249, 207);
-            this.txtClientes.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.txtClientes.Location = new System.Drawing.Point(213, 170);
+            this.txtClientes.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtClientes.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtClientes.Name = "txtClientes";
             this.txtClientes.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.txtClientes.Size = new System.Drawing.Size(132, 44);
+            this.txtClientes.Size = new System.Drawing.Size(99, 36);
             this.txtClientes.TabIndex = 1;
             this.txtClientes.Text = "Clientes";
             this.txtClientes.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -170,12 +166,12 @@
             this.txtEmpleado.ForeColor = System.Drawing.Color.Transparent;
             this.txtEmpleado.HighEmphasis = true;
             this.txtEmpleado.Icon = null;
-            this.txtEmpleado.Location = new System.Drawing.Point(84, 207);
-            this.txtEmpleado.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.txtEmpleado.Location = new System.Drawing.Point(57, 170);
+            this.txtEmpleado.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtEmpleado.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtEmpleado.Name = "txtEmpleado";
             this.txtEmpleado.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.txtEmpleado.Size = new System.Drawing.Size(133, 44);
+            this.txtEmpleado.Size = new System.Drawing.Size(100, 36);
             this.txtEmpleado.TabIndex = 0;
             this.txtEmpleado.Text = "Empleados";
             this.txtEmpleado.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -191,12 +187,12 @@
             this.txtProveedores.Depth = 0;
             this.txtProveedores.HighEmphasis = true;
             this.txtProveedores.Icon = null;
-            this.txtProveedores.Location = new System.Drawing.Point(249, 266);
-            this.txtProveedores.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.txtProveedores.Location = new System.Drawing.Point(213, 240);
+            this.txtProveedores.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtProveedores.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtProveedores.Name = "txtProveedores";
             this.txtProveedores.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.txtProveedores.Size = new System.Drawing.Size(132, 44);
+            this.txtProveedores.Size = new System.Drawing.Size(99, 36);
             this.txtProveedores.TabIndex = 3;
             this.txtProveedores.Text = "Proveedores";
             this.txtProveedores.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -212,12 +208,12 @@
             this.txtUsuario.Depth = 0;
             this.txtUsuario.HighEmphasis = true;
             this.txtUsuario.Icon = null;
-            this.txtUsuario.Location = new System.Drawing.Point(84, 266);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.txtUsuario.Location = new System.Drawing.Point(57, 240);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtUsuario.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.txtUsuario.Size = new System.Drawing.Size(133, 44);
+            this.txtUsuario.Size = new System.Drawing.Size(100, 36);
             this.txtUsuario.TabIndex = 2;
             this.txtUsuario.Text = "Usuarios";
             this.txtUsuario.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -228,10 +224,9 @@
             // tabProductos
             // 
             this.tabProductos.Controls.Add(this.materialCard2);
-            this.tabProductos.Location = new System.Drawing.Point(4, 25);
-            this.tabProductos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabProductos.Location = new System.Drawing.Point(4, 22);
             this.tabProductos.Name = "tabProductos";
-            this.tabProductos.Size = new System.Drawing.Size(493, 442);
+            this.tabProductos.Size = new System.Drawing.Size(368, 357);
             this.tabProductos.TabIndex = 2;
             this.tabProductos.Text = "Productos";
             this.tabProductos.UseVisualStyleBackColor = true;
@@ -246,21 +241,20 @@
             this.materialCard2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard2.Location = new System.Drawing.Point(0, 0);
-            this.materialCard2.Margin = new System.Windows.Forms.Padding(19, 17, 19, 17);
+            this.materialCard2.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
             this.materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard2.Name = "materialCard2";
-            this.materialCard2.Padding = new System.Windows.Forms.Padding(19, 17, 19, 17);
-            this.materialCard2.Size = new System.Drawing.Size(493, 442);
+            this.materialCard2.Padding = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.materialCard2.Size = new System.Drawing.Size(368, 357);
             this.materialCard2.TabIndex = 0;
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(148)))), ((int)(((byte)(32)))));
-            this.label3.Location = new System.Drawing.Point(105, 58);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(79, 47);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(261, 50);
+            this.label3.Size = new System.Drawing.Size(196, 41);
             this.label3.TabIndex = 11;
             this.label3.Text = "Productos";
             // 
@@ -273,12 +267,12 @@
             this.txtProductos.ForeColor = System.Drawing.Color.Transparent;
             this.txtProductos.HighEmphasis = true;
             this.txtProductos.Icon = null;
-            this.txtProductos.Location = new System.Drawing.Point(161, 255);
-            this.txtProductos.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.txtProductos.Location = new System.Drawing.Point(124, 207);
+            this.txtProductos.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtProductos.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtProductos.Name = "txtProductos";
             this.txtProductos.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.txtProductos.Size = new System.Drawing.Size(161, 63);
+            this.txtProductos.Size = new System.Drawing.Size(121, 51);
             this.txtProductos.TabIndex = 6;
             this.txtProductos.Text = "Productos";
             this.txtProductos.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -289,10 +283,9 @@
             // tabFacturacion
             // 
             this.tabFacturacion.Controls.Add(this.materialCard3);
-            this.tabFacturacion.Location = new System.Drawing.Point(4, 25);
-            this.tabFacturacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabFacturacion.Location = new System.Drawing.Point(4, 22);
             this.tabFacturacion.Name = "tabFacturacion";
-            this.tabFacturacion.Size = new System.Drawing.Size(493, 442);
+            this.tabFacturacion.Size = new System.Drawing.Size(368, 357);
             this.tabFacturacion.TabIndex = 3;
             this.tabFacturacion.Text = "Facturación";
             this.tabFacturacion.UseVisualStyleBackColor = true;
@@ -311,21 +304,20 @@
             this.materialCard3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialCard3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard3.Location = new System.Drawing.Point(0, 0);
-            this.materialCard3.Margin = new System.Windows.Forms.Padding(19, 17, 19, 17);
+            this.materialCard3.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
             this.materialCard3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard3.Name = "materialCard3";
-            this.materialCard3.Padding = new System.Windows.Forms.Padding(19, 17, 19, 17);
-            this.materialCard3.Size = new System.Drawing.Size(493, 442);
+            this.materialCard3.Padding = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.materialCard3.Size = new System.Drawing.Size(368, 357);
             this.materialCard3.TabIndex = 0;
             // 
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(148)))), ((int)(((byte)(32)))));
-            this.label5.Location = new System.Drawing.Point(105, 47);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(79, 38);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(285, 50);
+            this.label5.Size = new System.Drawing.Size(214, 41);
             this.label5.TabIndex = 11;
             this.label5.Text = "Facturación";
             // 
@@ -337,12 +329,12 @@
             this.txtCompras.Depth = 0;
             this.txtCompras.HighEmphasis = true;
             this.txtCompras.Icon = null;
-            this.txtCompras.Location = new System.Drawing.Point(264, 237);
-            this.txtCompras.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.txtCompras.Location = new System.Drawing.Point(198, 193);
+            this.txtCompras.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtCompras.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtCompras.Name = "txtCompras";
             this.txtCompras.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.txtCompras.Size = new System.Drawing.Size(132, 44);
+            this.txtCompras.Size = new System.Drawing.Size(99, 36);
             this.txtCompras.TabIndex = 7;
             this.txtCompras.Text = "Compras";
             this.txtCompras.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -359,12 +351,12 @@
             this.txtVentas.ForeColor = System.Drawing.Color.Transparent;
             this.txtVentas.HighEmphasis = true;
             this.txtVentas.Icon = null;
-            this.txtVentas.Location = new System.Drawing.Point(99, 237);
-            this.txtVentas.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.txtVentas.Location = new System.Drawing.Point(74, 193);
+            this.txtVentas.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtVentas.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtVentas.Name = "txtVentas";
             this.txtVentas.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.txtVentas.Size = new System.Drawing.Size(133, 44);
+            this.txtVentas.Size = new System.Drawing.Size(100, 36);
             this.txtVentas.TabIndex = 6;
             this.txtVentas.Text = "Ventas";
             this.txtVentas.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -380,12 +372,12 @@
             this.txtDetallesCompras.Depth = 0;
             this.txtDetallesCompras.HighEmphasis = true;
             this.txtDetallesCompras.Icon = null;
-            this.txtDetallesCompras.Location = new System.Drawing.Point(266, 319);
-            this.txtDetallesCompras.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.txtDetallesCompras.Location = new System.Drawing.Point(200, 259);
+            this.txtDetallesCompras.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtDetallesCompras.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtDetallesCompras.Name = "txtDetallesCompras";
             this.txtDetallesCompras.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.txtDetallesCompras.Size = new System.Drawing.Size(132, 44);
+            this.txtDetallesCompras.Size = new System.Drawing.Size(99, 36);
             this.txtDetallesCompras.TabIndex = 9;
             this.txtDetallesCompras.Text = "Detalles Compras";
             this.txtDetallesCompras.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -401,12 +393,12 @@
             this.txtDetallesVentas.Depth = 0;
             this.txtDetallesVentas.HighEmphasis = true;
             this.txtDetallesVentas.Icon = null;
-            this.txtDetallesVentas.Location = new System.Drawing.Point(100, 319);
-            this.txtDetallesVentas.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.txtDetallesVentas.Location = new System.Drawing.Point(75, 259);
+            this.txtDetallesVentas.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtDetallesVentas.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtDetallesVentas.Name = "txtDetallesVentas";
             this.txtDetallesVentas.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.txtDetallesVentas.Size = new System.Drawing.Size(133, 44);
+            this.txtDetallesVentas.Size = new System.Drawing.Size(100, 36);
             this.txtDetallesVentas.TabIndex = 8;
             this.txtDetallesVentas.Text = "Detalles Ventas";
             this.txtDetallesVentas.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -417,10 +409,9 @@
             // tabGestion
             // 
             this.tabGestion.Controls.Add(this.materialCard4);
-            this.tabGestion.Location = new System.Drawing.Point(4, 25);
-            this.tabGestion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabGestion.Location = new System.Drawing.Point(4, 22);
             this.tabGestion.Name = "tabGestion";
-            this.tabGestion.Size = new System.Drawing.Size(493, 442);
+            this.tabGestion.Size = new System.Drawing.Size(368, 357);
             this.tabGestion.TabIndex = 4;
             this.tabGestion.Text = "Gestión de gastos";
             this.tabGestion.UseVisualStyleBackColor = true;
@@ -435,21 +426,20 @@
             this.materialCard4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialCard4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard4.Location = new System.Drawing.Point(0, 0);
-            this.materialCard4.Margin = new System.Windows.Forms.Padding(19, 17, 19, 17);
+            this.materialCard4.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
             this.materialCard4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard4.Name = "materialCard4";
-            this.materialCard4.Padding = new System.Windows.Forms.Padding(19, 17, 19, 17);
-            this.materialCard4.Size = new System.Drawing.Size(493, 442);
+            this.materialCard4.Padding = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.materialCard4.Size = new System.Drawing.Size(368, 357);
             this.materialCard4.TabIndex = 0;
             // 
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(148)))), ((int)(((byte)(32)))));
-            this.label7.Location = new System.Drawing.Point(145, 41);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(109, 33);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(199, 50);
+            this.label7.Size = new System.Drawing.Size(149, 41);
             this.label7.TabIndex = 17;
             this.label7.Text = "Gastos";
             // 
@@ -462,12 +452,12 @@
             this.materialButton2.ForeColor = System.Drawing.Color.Transparent;
             this.materialButton2.HighEmphasis = true;
             this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(139, 277);
-            this.materialButton2.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.materialButton2.Location = new System.Drawing.Point(104, 225);
+            this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton2.Name = "materialButton2";
             this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton2.Size = new System.Drawing.Size(205, 44);
+            this.materialButton2.Size = new System.Drawing.Size(154, 36);
             this.materialButton2.TabIndex = 12;
             this.materialButton2.Text = "Gastos";
             this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -479,22 +469,20 @@
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label1.Image = global::TiendaPaula.Properties.Resources.icons8_empleado_80__1_;
-            this.label1.Location = new System.Drawing.Point(83, 111);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Image = global::TiendaPaula.Properties.Resources.icons8_clientes;
+            this.label1.Location = new System.Drawing.Point(136, 83);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 95);
+            this.label1.Size = new System.Drawing.Size(101, 81);
             this.label1.TabIndex = 4;
             // 
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label4.Image = global::TiendaPaula.Properties.Resources.icons8_tienda_galaxia_80;
-            this.label4.Location = new System.Drawing.Point(148, 124);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Image = global::TiendaPaula.Properties.Resources.icons8_bolsa_de_compras;
+            this.label4.Location = new System.Drawing.Point(111, 101);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(192, 123);
+            this.label4.Size = new System.Drawing.Size(144, 100);
             this.label4.TabIndex = 10;
             // 
             // label9
@@ -502,10 +490,9 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label9.Image = global::TiendaPaula.Properties.Resources.icons8_carrito_de_compras;
-            this.label9.Location = new System.Drawing.Point(263, 135);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(197, 110);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(133, 95);
+            this.label9.Size = new System.Drawing.Size(100, 77);
             this.label9.TabIndex = 12;
             // 
             // label6
@@ -513,10 +500,9 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label6.Image = global::TiendaPaula.Properties.Resources.icons8_pedido_completado;
-            this.label6.Location = new System.Drawing.Point(97, 141);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(73, 115);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(133, 95);
+            this.label6.Size = new System.Drawing.Size(100, 77);
             this.label6.TabIndex = 10;
             // 
             // label8
@@ -524,22 +510,19 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label8.Image = global::TiendaPaula.Properties.Resources.icons8_dólar_estadounidense_en_círculo;
-            this.label8.Location = new System.Drawing.Point(135, 116);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(101, 94);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(209, 161);
+            this.label8.Size = new System.Drawing.Size(157, 131);
             this.label8.TabIndex = 16;
             // 
             // Principal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(509, 554);
+            this.ClientSize = new System.Drawing.Size(382, 450);
             this.Controls.Add(this.materialTabControl1);
             this.DrawerTabControl = this.materialTabControl1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Principal";
-            this.Padding = new System.Windows.Forms.Padding(4, 79, 4, 4);
             this.Text = "Principal";
             this.materialTabControl1.ResumeLayout(false);
             this.tabPersonas.ResumeLayout(false);

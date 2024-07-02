@@ -352,5 +352,11 @@
   <ItemGroup>
     <None Include="Resources\icons8-dólar-estadounidense-en-círculo.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-clientes.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-bolsa-de-compras.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
