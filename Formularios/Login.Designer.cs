@@ -66,6 +66,7 @@
             this.CheckboxRemember.TabIndex = 27;
             this.CheckboxRemember.Text = "Recordarme";
             this.CheckboxRemember.UseVisualStyleBackColor = true;
+            this.CheckboxRemember.CheckedChanged += new System.EventHandler(this.CheckboxRemember_CheckedChanged);
             // 
             // btnSignIn
             // 
@@ -161,6 +162,7 @@
             this.Controls.Add(this.materialLabel1);
             this.Name = "Login";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

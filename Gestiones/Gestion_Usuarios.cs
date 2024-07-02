@@ -35,10 +35,6 @@ namespace TiendaPaula.Gestiones
                     existe = dt.Rows.Count > 0;
 
 
-                    //Muestra datos que solo el desarrollador ve
-                    int cantidFilasAfectadas = cmd.ExecuteNonQuery();
-                    Console.WriteLine($"Filas afectadas: {cantidFilasAfectadas}");
-
                 }
                 catch (MySqlException err)
                 {
@@ -247,6 +243,133 @@ namespace TiendaPaula.Gestiones
             }
 
             return NumMax;
+        }
+
+        //Se configuro para recordar este usuario
+
+        public async void RecordarUsuario(Class_Recordar_Usuario user)
+        {
+
+            using (MySqlConnection connection = establecerConexion())
+            {
+                try
+                {
+                    await AbrirConexion(connection);
+                    MySqlCommand cmd = new MySqlCommand("SP_REMEMBER_USER", connection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("usuario_p", user.NombreUsuario);
+                    cmd.Parameters.AddWithValue("passwd_p", user.Passwd);
+                    cmd.ExecuteNonQuery();
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Ocurrio un error " + ex.Message);
+                }
+                finally
+                {
+                   await cerrarConexion(connection);
+                }
+            }
+
+        }
+
+        // Se configuro para olvidar este usuario
+        public async void OlvidarUsuario()
+        {
+
+            using (MySqlConnection connection = establecerConexion())
+            {
+                try
+                {
+                    await AbrirConexion(connection);
+                    MySqlCommand cmd = new MySqlCommand("SP_FORGET_USER", connection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.ExecuteNonQuery();
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Ocurrio un error " + ex.Message);
+                }
+                finally
+                {
+                    await cerrarConexion(connection);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Obtiene el usuario que se recordo del último ingreso
+        /// </summary>
+        /// <returns>String</returns>
+        public async Task<string> UsuarioRecordado()
+        {
+            string Usuario = "";
+
+            DataTable dataTable = new DataTable();
+            using (MySqlConnection connection = establecerConexion())
+            {
+                try
+                {
+                    await AbrirConexion(connection);
+                    MySqlCommand cmd = new MySqlCommand("SP_GET_USER_REMEMBERED", connection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    adapter.Fill(dataTable);
+
+                    if (dataTable.Rows.Count > 0)
+                    {
+                        Usuario = dataTable.Rows[0][0].ToString();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Ocurrio un error " + ex.Message);
+                }
+                finally
+                {
+                    await cerrarConexion(connection);
+                }
+            }
+
+            return Usuario;
+        }
+
+        public async Task<string> ContrasenniaRecordada()
+        {
+            string Pass = "";
+
+            DataTable dataTable = new DataTable();
+            using (MySqlConnection connection = establecerConexion())
+            {
+                try
+                {
+                    await AbrirConexion(connection);
+                    MySqlCommand cmd = new MySqlCommand("sp_GET_PASSWORD_REMEMBERED", connection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    adapter.Fill(dataTable);
+
+                    if (dataTable.Rows.Count > 0)
+                    {
+                        Pass = dataTable.Rows[0][0].ToString();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Ocurrio un error " + ex.Message);
+                }
+                finally
+                {
+                    await cerrarConexion(connection);
+                }
+            }
+
+            return Pass;
         }
     }
 }

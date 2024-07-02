@@ -111,6 +111,7 @@
     <Compile Include="Clases\Class_Posicion.cs" />
     <Compile Include="Clases\Class_Productos.cs" />
     <Compile Include="Clases\Class_Proveedor.cs" />
+    <Compile Include="Clases\Class_Recordar_Usuario.cs" />
     <Compile Include="Clases\Class_TipoGastos.cs" />
     <Compile Include="Clases\Class_Usuarios.cs" />
     <Compile Include="Clases\Class_Ventas.cs" />

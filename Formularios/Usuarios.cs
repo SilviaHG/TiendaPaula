@@ -67,6 +67,10 @@ namespace TiendaPaula.Formularios
 
             dtUsuarios.DataSource = datos;
 
+            //autosize de la tabla
+            dtUsuarios.AutoSizeColumnsMode =
+            DataGridViewAutoSizeColumnsMode.Fill;
+
         }
 
         public void RefrescarCombox()
@@ -264,22 +268,22 @@ namespace TiendaPaula.Formularios
         {
             //se muestran los datos seleccionado en los textbox, ya sea para eliminar o actualizar
 
-            DataGridViewRow fila = dtUsuarios.SelectedRows[0];
+           // DataGridViewRow fila = dtUsuarios.SelectedRows[0];
 
             //habilitamos el boton de actualizar y eliminar y deshabilitamos el de agregar
             btnActualizar.Enabled = true;
             btnEliminar.Enabled = true;
             btnCrear.Enabled = false;
             //pasamos los campos de la fila seleccionada a los textBox
-            txtIdTabla.Text = fila.Cells[0].Value.ToString();
+            txtIdTabla.Text = dtUsuarios[0, e.RowIndex].Value.ToString();
 
-            txtBuscar.Text = fila.Cells[1].Value.ToString();
-            cbUsuario.SelectedItem = fila.Cells[1].Value;
+            txtBuscar.Text = dtUsuarios[1, e.RowIndex].Value.ToString();
+            cbUsuario.SelectedItem = dtUsuarios[1, e.RowIndex].Value;
 
-            txtContra.Text = fila.Cells[2].Value.ToString();
-            txtVerificarContra.Text = fila.Cells[2].Value.ToString();
+            txtContra.Text = dtUsuarios[2, e.RowIndex].Value.ToString();
+            txtVerificarContra.Text = dtUsuarios[2, e.RowIndex].Value.ToString();
 
-            cbEstado.SelectedItem = fila.Cells[3].Value.ToString();
+            cbEstado.SelectedItem = dtUsuarios[3, e.RowIndex].Value.ToString();
             //se deshabilita para que no pueda editar el id
             cbUsuario.Enabled = false;
             cbEstado.Refresh();

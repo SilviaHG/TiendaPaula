@@ -63,6 +63,9 @@ namespace TiendaPaula.Formularios
             //Mostramos la tabla que esta en la BD
             dtClientes.DataSource = datos;
 
+            dtClientes.AutoSizeColumnsMode =
+            DataGridViewAutoSizeColumnsMode.Fill;
+
         }
 
         private void txtCedulaCliente_KeyPress(object sender, KeyPressEventArgs e)
@@ -401,7 +404,7 @@ namespace TiendaPaula.Formularios
         {
             //se muestran los datos seleccionado en los textbox, ya sea para eliminar o actualizar
 
-            DataGridViewRow fila = dtClientes.SelectedRows[0];
+            //DataGridViewRow fila = dtClientes.SelectedRows[0];
             //se deshabilita para que no pueda editar la cédula
             txtCedulaCliente.Enabled = false;
             //habilitamos el boton de actualizar y eliminar y deshabilitamos el de agregar
@@ -409,12 +412,12 @@ namespace TiendaPaula.Formularios
             btnEliminar.Enabled = true;
             btnAgregar.Enabled = false;
             //pasamos los campos de la fila seleccionada a los textBox
-            txtCedulaCliente.Text = fila.Cells[0].Value.ToString();
-            txtBuscar.Text = fila.Cells[0].Value.ToString();
-            txtNombreCompletoCliente.Text = fila.Cells[1].Value.ToString();
-            txtTelefonoCliente.Text = fila.Cells[2].Value.ToString();
-            txtEmailCliente.Text = fila.Cells[3].Value.ToString();
-            txtDireccionCliente.Text = fila.Cells[4].Value.ToString();
+            txtCedulaCliente.Text = dtClientes[0, e.RowIndex].Value.ToString();
+            txtBuscar.Text = dtClientes[0, e.RowIndex].Value.ToString();
+            txtNombreCompletoCliente.Text = dtClientes[1, e.RowIndex].Value.ToString();
+            txtTelefonoCliente.Text = dtClientes[2, e.RowIndex].Value.ToString();
+            txtEmailCliente.Text = dtClientes[3, e.RowIndex].Value.ToString();
+            txtDireccionCliente.Text = dtClientes[4, e.RowIndex].Value.ToString();
 
         }
     }

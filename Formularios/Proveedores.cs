@@ -58,6 +58,10 @@ namespace TiendaPaula.Formularios
             //Mostramos la tabla que esta en la BD
             dtProveedores.DataSource = datos;
 
+            //autosize de la tabla
+            dtProveedores.AutoSizeColumnsMode =
+            DataGridViewAutoSizeColumnsMode.Fill;
+
         }
 
         private void btnClean_Click(object sender, EventArgs e)
@@ -359,8 +363,6 @@ namespace TiendaPaula.Formularios
         private void dtProveedores_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //se muestran los datos selccionados e
-
-            DataGridViewRow fila = dtProveedores.SelectedRows[0];
             // para que no pueda editar la cédula
             txtID_Proveedor.Enabled = false;
             //habilitamos el boton de actualizar y eliminar y deshabilitamos el de agregar
@@ -368,12 +370,12 @@ namespace TiendaPaula.Formularios
             btnEliminar.Enabled = true;
             btnAgregar.Enabled = false;
             //pasamos los campos de la fila seleccionada a los textBox
-            txtID_Proveedor.Text = fila.Cells[0].Value.ToString();
-            txtBuscar.Text = fila.Cells[0].Value.ToString();
-            txtNombreP.Text = fila.Cells[1].Value.ToString();
-            txtTelefonoP.Text = fila.Cells[2].Value.ToString();
-            txtEmailP.Text = fila.Cells[3].Value.ToString();
-            txtDireccionP.Text = fila.Cells[4].Value.ToString();
+            txtID_Proveedor.Text = dtProveedores[0, e.RowIndex].Value.ToString();
+            txtBuscar.Text = dtProveedores[0, e.RowIndex].Value.ToString();
+            txtNombreP.Text = dtProveedores[1, e.RowIndex].Value.ToString();
+            txtTelefonoP.Text = dtProveedores[2, e.RowIndex].Value.ToString();
+            txtEmailP.Text = dtProveedores[3, e.RowIndex].Value.ToString();
+            txtDireccionP.Text = dtProveedores[4, e.RowIndex].Value.ToString();
         }
     }
 }

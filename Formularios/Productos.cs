@@ -59,6 +59,9 @@ namespace TiendaPaula.Formularios
 
             dtProductos.DataSource = datos;
 
+            dtProductos.AutoSizeColumnsMode =
+            DataGridViewAutoSizeColumnsMode.Fill;
+
             //asignamos el número consecutivo del producto
             txtIdProducto.Text = Convert.ToString(await gestProductos.NumeroMAXProducto());
 
@@ -307,21 +310,21 @@ namespace TiendaPaula.Formularios
         {
             //se muestran los datos seleccionado en los textbox, ya sea para eliminar o actualizar
 
-            DataGridViewRow fila = dtProductos.SelectedRows[0];
+           // DataGridViewRow fila = dtProductos.SelectedRows[0];
             //habilitamos el boton de actualizar y eliminar y deshabilitamos el de agregar
             btnActualizar.Enabled = true;
             btnEliminar.Enabled = true;
             btnAgregar.Enabled = false;
             //pasamos los campos de la fila seleccionada a los textBox
-            txtIdProducto.Text = fila.Cells[0].Value.ToString();
-            txtBuscar.Text = fila.Cells[0].Value.ToString();
-            cbCategoria.SelectedItem = fila.Cells[1].Value.ToString();
-            txtProducto.Text = fila.Cells[2].Value.ToString();
-            txtDescripcion.Text = fila.Cells[3].Value.ToString();
-            cbMarca.SelectedItem = fila.Cells[4].Value.ToString();
-            txtTallas.Text = fila.Cells[5].Value.ToString();
-            cbStock.SelectedItem = fila.Cells[6].Value.ToString();
-            txtPrecio.Text = fila.Cells[7].Value.ToString();
+            txtIdProducto.Text = dtProductos[0, e.RowIndex].Value.ToString();
+            txtBuscar.Text = dtProductos[0, e.RowIndex].Value.ToString();
+            cbCategoria.SelectedItem = dtProductos[1, e.RowIndex].Value.ToString();
+            txtProducto.Text = dtProductos[2, e.RowIndex].Value.ToString();
+            txtDescripcion.Text = dtProductos[3, e.RowIndex].Value.ToString();
+            cbMarca.SelectedItem = dtProductos[4, e.RowIndex].Value.ToString();
+            txtTallas.Text = dtProductos[5, e.RowIndex].Value.ToString();
+            cbStock.SelectedItem = dtProductos[6, e.RowIndex].Value.ToString();
+            txtPrecio.Text = dtProductos[7, e.RowIndex].Value.ToString();
 
             cbCategoria.Refresh();
             cbMarca.Refresh();

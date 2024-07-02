@@ -48,6 +48,7 @@
             this.dtMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtMarcas.Location = new System.Drawing.Point(57, 270);
             this.dtMarcas.Name = "dtMarcas";
+            this.dtMarcas.ReadOnly = true;
             this.dtMarcas.Size = new System.Drawing.Size(282, 151);
             this.dtMarcas.TabIndex = 18;
             this.dtMarcas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtMarcas_CellClick);
