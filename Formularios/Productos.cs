@@ -47,6 +47,15 @@ namespace TiendaPaula.Formularios
             txtBuscar.Text = "";
             lblMsj.Text = "";
 
+
+            //asignamos el número consecutivo del producto
+            txtIdProducto.Text = Convert.ToString(await gestProductos.NumeroMAXProducto());
+            CambiarColumnas();
+        }
+
+        public async void CambiarColumnas()
+        {
+            //Mostramos la tabla que esta en la BD
             var datos = await gestProductos.MostrarTodosProductos();
             datos.Columns[0].ColumnName = "N°";
             datos.Columns[1].ColumnName = "Categoría";
@@ -61,9 +70,6 @@ namespace TiendaPaula.Formularios
 
             dtProductos.AutoSizeColumnsMode =
             DataGridViewAutoSizeColumnsMode.Fill;
-
-            //asignamos el número consecutivo del producto
-            txtIdProducto.Text = Convert.ToString(await gestProductos.NumeroMAXProducto());
 
         }
 
@@ -130,7 +136,7 @@ namespace TiendaPaula.Formularios
             if (string.IsNullOrEmpty(txtBuscar.Text))
             {
                 //Mostramos la tabla que esta en la BD
-                dtProductos.DataSource = await gestProductos.MostrarTodosProductos();
+                CambiarColumnas();
             }
         }
 
@@ -300,7 +306,22 @@ namespace TiendaPaula.Formularios
                 lblMsj.ForeColor = Color.Green;
                 lblMsj.Text = "Mostrando resultados...";
 
-                dtProductos.DataSource = await gestProductos.obtenerProductoEspecifico(codProducto);
+                //Mostramos la tabla que esta en la BD
+                var datos = await gestProductos.obtenerProductoEspecifico(codProducto);
+                datos.Columns[0].ColumnName = "N°";
+                datos.Columns[1].ColumnName = "Categoría";
+                datos.Columns[2].ColumnName = "Producto";
+                datos.Columns[3].ColumnName = "Descripción";
+                datos.Columns[4].ColumnName = "Marca";
+                datos.Columns[5].ColumnName = "Tallas";
+                datos.Columns[6].ColumnName = "Cantidad";
+                datos.Columns[7].ColumnName = "Precio";
+
+                dtProductos.DataSource = datos;
+
+                dtProductos.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+
                 lblMsj.Text = "";
                 await gestProductos.cerrarConexion(gestProductos.establecerConexion());
             }

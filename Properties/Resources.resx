@@ -118,8 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="icons8-bolsa-de-compras" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-bolsa-de-compras.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-expenses-34" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-expenses-34.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-guardar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-guardar1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-eliminar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-eliminar.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -150,6 +156,9 @@
   </data>
   <data name="icons8-buscar-30 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-buscar-30 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-guardar-como" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-guardar-como.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-factura-28" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-factura-28.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,6 +193,9 @@
   <data name="icons8-más-20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-más-20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-guardar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-guardar.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-cheque" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-cheque.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -202,7 +214,7 @@
   <data name="icons8-usuario-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-usuario-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-bolsa-de-compras" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-bolsa-de-compras.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-guardar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-guardar2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

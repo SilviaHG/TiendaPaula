@@ -89,7 +89,7 @@
             // 
             this.tabInicio.Location = new System.Drawing.Point(4, 22);
             this.tabInicio.Name = "tabInicio";
-            this.tabInicio.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabInicio.Padding = new System.Windows.Forms.Padding(3);
             this.tabInicio.Size = new System.Drawing.Size(368, 357);
             this.tabInicio.TabIndex = 0;
             this.tabInicio.Text = "Inicio";
@@ -100,7 +100,7 @@
             this.tabPersonas.Controls.Add(this.materialCard1);
             this.tabPersonas.Location = new System.Drawing.Point(4, 22);
             this.tabPersonas.Name = "tabPersonas";
-            this.tabPersonas.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPersonas.Padding = new System.Windows.Forms.Padding(3);
             this.tabPersonas.Size = new System.Drawing.Size(368, 357);
             this.tabPersonas.TabIndex = 1;
             this.tabPersonas.Text = "Personas";
@@ -119,10 +119,10 @@
             this.materialCard1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard1.Location = new System.Drawing.Point(3, 3);
-            this.materialCard1.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
-            this.materialCard1.Padding = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard1.Size = new System.Drawing.Size(362, 351);
             this.materialCard1.TabIndex = 5;
             // 
@@ -241,10 +241,10 @@
             this.materialCard2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard2.Location = new System.Drawing.Point(0, 0);
-            this.materialCard2.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.materialCard2.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard2.Name = "materialCard2";
-            this.materialCard2.Padding = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.materialCard2.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard2.Size = new System.Drawing.Size(368, 357);
             this.materialCard2.TabIndex = 0;
             // 
@@ -304,10 +304,10 @@
             this.materialCard3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialCard3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard3.Location = new System.Drawing.Point(0, 0);
-            this.materialCard3.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.materialCard3.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard3.Name = "materialCard3";
-            this.materialCard3.Padding = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.materialCard3.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard3.Size = new System.Drawing.Size(368, 357);
             this.materialCard3.TabIndex = 0;
             // 
@@ -315,9 +315,9 @@
             // 
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(148)))), ((int)(((byte)(32)))));
-            this.label5.Location = new System.Drawing.Point(79, 38);
+            this.label5.Location = new System.Drawing.Point(69, 41);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(214, 41);
+            this.label5.Size = new System.Drawing.Size(233, 41);
             this.label5.TabIndex = 11;
             this.label5.Text = "Facturación";
             // 
@@ -426,10 +426,10 @@
             this.materialCard4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialCard4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard4.Location = new System.Drawing.Point(0, 0);
-            this.materialCard4.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.materialCard4.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard4.Name = "materialCard4";
-            this.materialCard4.Padding = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.materialCard4.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard4.Size = new System.Drawing.Size(368, 357);
             this.materialCard4.TabIndex = 0;
             // 
@@ -523,7 +523,9 @@
             this.Controls.Add(this.materialTabControl1);
             this.DrawerTabControl = this.materialTabControl1;
             this.Name = "Principal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
+            this.Load += new System.EventHandler(this.Principal_Load);
             this.materialTabControl1.ResumeLayout(false);
             this.tabPersonas.ResumeLayout(false);
             this.materialCard1.ResumeLayout(false);

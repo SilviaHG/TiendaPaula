@@ -48,6 +48,13 @@ namespace TiendaPaula.Formularios
             btnActualizar.Enabled = false;
             btnEliminar.Enabled = false;
             btnAgregar.Enabled = true;
+            CambiarColumnas();
+
+        }
+
+        public async void CambiarColumnas()
+        {
+            //Mostramos la tabla que esta en la BD
 
             var datos = await gestProveedores.MostrarTodosProveedores();
             datos.Columns[0].ColumnName = "Código Proveedor";
@@ -105,12 +112,12 @@ namespace TiendaPaula.Formularios
             }
         }
 
-        private async void txtBuscar_TextChanged(object sender, EventArgs e)
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtBuscar.Text))
             {
                 //Mostramos la tabla que esta en la BD
-                dtProveedores.DataSource = await gestProveedores.MostrarTodosProveedores();
+                CambiarColumnas();
             }
         }
         private bool EmailValido(string email)
@@ -354,7 +361,19 @@ namespace TiendaPaula.Formularios
                 lblMsj.ForeColor = Color.Green;
                 lblMsj.Text = "Mostrando resultados...";
 
-                dtProveedores.DataSource = await gestProveedores.obtenerProovedorEspecifico(Convert.ToInt32(txtBuscar.Text));
+                var datos = await gestProveedores.obtenerProovedorEspecifico(Convert.ToInt32(txtBuscar.Text));
+                datos.Columns[0].ColumnName = "Código Proveedor";
+                datos.Columns[1].ColumnName = "Empresa";
+                datos.Columns[2].ColumnName = "Teléfono";
+                datos.Columns[3].ColumnName = "Correo Electrónico";
+                datos.Columns[4].ColumnName = "Dirección";
+                //Mostramos la tabla que esta en la BD
+                dtProveedores.DataSource = datos;
+
+                //autosize de la tabla
+                dtProveedores.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+
                 lblMsj.Text = "";
                 await gestProveedores.cerrarConexion(gestProveedores.establecerConexion());
             }
