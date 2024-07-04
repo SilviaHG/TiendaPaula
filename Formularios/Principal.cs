@@ -28,6 +28,27 @@ namespace TiendaPaula.Formularios
             Color.FromArgb(255, 224, 92),//tiene que ser parecido al primero
             Color.FromArgb(45, 48, 71),
             TextShade.WHITE);
+            timer1.Start();
+        }
+
+        //variable que almacena el numero de imagen que se irá mostrando
+        int NumImagen = 1;
+
+        private void CarruselImagenes()
+        {
+            if (NumImagen == 12)
+            {
+                NumImagen = 1;
+            }
+
+            pbImagenes.ImageLocation = string.Format(@"Resources/Imagenes/{0}.jpg", NumImagen);
+            Console.WriteLine( NumImagen);
+            NumImagen++;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            CarruselImagenes();
         }
 
         private void txtEmpleado_Click(object sender, EventArgs e)
@@ -118,5 +139,9 @@ namespace TiendaPaula.Formularios
             label7.TextAlign = ContentAlignment.TopCenter;
 
         }
+
+
+        
+        
     }
 }
