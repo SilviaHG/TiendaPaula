@@ -164,6 +164,7 @@ namespace TiendaPaula.Formularios
         {
             txtTipoGasto.Visible = true;
             GuardaTipo.Visible = true;
+            txtCambios.Visible = false;
         }
 
         private async void GuardaTipo_Click(object sender, EventArgs e)
@@ -237,6 +238,11 @@ namespace TiendaPaula.Formularios
                 lblMsj.Text = "¡Gasto eliminado correctamente!";
                 LimpiarCampos();
             }
+
+        }
+
+        private void txtBuscar_Gasto_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

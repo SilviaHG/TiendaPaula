@@ -541,6 +541,7 @@
             this.Controls.Add(this.dtVentas);
             this.Controls.Add(this.materialCard1);
             this.Name = "Ventas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Facturación Ventas";
             this.Load += new System.EventHandler(this.Ventas_Load);
             this.materialCard1.ResumeLayout(false);

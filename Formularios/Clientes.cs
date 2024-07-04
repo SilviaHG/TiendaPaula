@@ -52,6 +52,12 @@ namespace TiendaPaula.Formularios
             btnEliminar.Enabled = false;
             btnAgregar.Enabled = true;
 
+            CambiarColumnas();
+
+        }
+
+        public async void CambiarColumnas()
+        {
             //Mostramos la tabla que esta en la BD
 
             var datos = await gestCliente.MostrarTodosClientes();
@@ -116,12 +122,12 @@ namespace TiendaPaula.Formularios
             return regex.IsMatch(email);
         }
 
-        private async void txtBuscar_TextChanged(object sender, EventArgs e)
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtBuscar.Text))
             {
-                //Mostramos la tabla que esta en la BD
-                dtClientes.DataSource = await gestCliente.MostrarTodosClientes();
+                //Muestra de nuevo la tabla
+                CambiarColumnas();
             }
             else
             {
@@ -386,9 +392,24 @@ namespace TiendaPaula.Formularios
                 lblMsj.ForeColor = Color.Green;
                 lblMsj.Text = "Mostrando resultados...";
 
-                dtClientes.DataSource = await gestCliente.obtenerListaClientes(cedula, telefono);
+                //Mostramos la tabla que esta en la BD
+
+                var datos = await gestCliente.obtenerListaClientes(cedula, telefono);
+                datos.Columns[0].ColumnName = "Cédula";
+                datos.Columns[1].ColumnName = "Nombre Completo";
+                datos.Columns[2].ColumnName = "Teléfono";
+                datos.Columns[3].ColumnName = "Correo Electrónico";
+                datos.Columns[4].ColumnName = "Dirección";
+                //Mostramos la tabla que esta en la BD
+                dtClientes.DataSource = datos;
+
+                dtClientes.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+
                 lblMsj.Text = "";
                 await gestCliente.cerrarConexion(gestCliente.establecerConexion());
+
+
             }
 
 

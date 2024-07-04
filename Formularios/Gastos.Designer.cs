@@ -44,12 +44,12 @@
             this.txtBuscar_Gasto = new MaterialSkin.Controls.MaterialTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblMsj = new System.Windows.Forms.Label();
+            this.btLimpiar = new System.Windows.Forms.Button();
             this.btEliminar = new System.Windows.Forms.Button();
             this.btActualizar = new System.Windows.Forms.Button();
             this.btBuscar = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btLimpiar = new System.Windows.Forms.Button();
-            this.lblMsj = new System.Windows.Forms.Label();
             this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGastos)).BeginInit();
             this.SuspendLayout();
@@ -294,6 +294,7 @@
             this.txtBuscar_Gasto.TabIndex = 35;
             this.txtBuscar_Gasto.Text = "";
             this.txtBuscar_Gasto.TrailingIcon = null;
+            this.txtBuscar_Gasto.TextChanged += new System.EventHandler(this.txtBuscar_Gasto_TextChanged);
             this.txtBuscar_Gasto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_Compra_KeyPress);
             // 
             // label2
@@ -317,6 +318,38 @@
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 40;
             this.label1.Text = "Eliminar";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label6.Location = new System.Drawing.Point(421, 473);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(40, 13);
+            this.label6.TabIndex = 51;
+            this.label6.Text = "Limpiar";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblMsj
+            // 
+            this.lblMsj.Location = new System.Drawing.Point(459, 531);
+            this.lblMsj.Name = "lblMsj";
+            this.lblMsj.Size = new System.Drawing.Size(395, 41);
+            this.lblMsj.TabIndex = 52;
+            this.lblMsj.Text = "MENSAJES DE ERROR";
+            this.lblMsj.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btLimpiar
+            // 
+            this.btLimpiar.Image = global::TiendaPaula.Properties.Resources.icons8_cheque;
+            this.btLimpiar.Location = new System.Drawing.Point(412, 417);
+            this.btLimpiar.Margin = new System.Windows.Forms.Padding(2);
+            this.btLimpiar.Name = "btLimpiar";
+            this.btLimpiar.Size = new System.Drawing.Size(58, 53);
+            this.btLimpiar.TabIndex = 50;
+            this.btLimpiar.UseVisualStyleBackColor = true;
+            this.btLimpiar.Click += new System.EventHandler(this.btLimpiar_Click);
             // 
             // btEliminar
             // 
@@ -361,38 +394,6 @@
             this.btBuscar.UseVisualStyleBackColor = false;
             this.btBuscar.Click += new System.EventHandler(this.btBuscar_Click);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label6.Location = new System.Drawing.Point(421, 473);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 13);
-            this.label6.TabIndex = 51;
-            this.label6.Text = "Limpiar";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btLimpiar
-            // 
-            this.btLimpiar.Image = global::TiendaPaula.Properties.Resources.icons8_cheque;
-            this.btLimpiar.Location = new System.Drawing.Point(412, 417);
-            this.btLimpiar.Margin = new System.Windows.Forms.Padding(2);
-            this.btLimpiar.Name = "btLimpiar";
-            this.btLimpiar.Size = new System.Drawing.Size(58, 53);
-            this.btLimpiar.TabIndex = 50;
-            this.btLimpiar.UseVisualStyleBackColor = true;
-            this.btLimpiar.Click += new System.EventHandler(this.btLimpiar_Click);
-            // 
-            // lblMsj
-            // 
-            this.lblMsj.Location = new System.Drawing.Point(459, 531);
-            this.lblMsj.Name = "lblMsj";
-            this.lblMsj.Size = new System.Drawing.Size(395, 41);
-            this.lblMsj.TabIndex = 52;
-            this.lblMsj.Text = "MENSAJES DE ERROR";
-            this.lblMsj.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // Gastos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -410,6 +411,7 @@
             this.Controls.Add(this.dtGastos);
             this.Controls.Add(this.materialCard1);
             this.Name = "Gastos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gastos";
             this.Load += new System.EventHandler(this.Gastos_Load);
             this.materialCard1.ResumeLayout(false);

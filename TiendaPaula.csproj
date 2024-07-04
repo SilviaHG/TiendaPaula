@@ -352,5 +352,23 @@
   <ItemGroup>
     <None Include="Resources\icons8-dólar-estadounidense-en-círculo.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-clientes.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-bolsa-de-compras.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-guardar-como.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-guardar.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-guardar1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-guardar2.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

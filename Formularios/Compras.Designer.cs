@@ -414,6 +414,7 @@
             this.Controls.Add(this.txtBuscar_Compra);
             this.Controls.Add(this.dtCompras);
             this.Name = "Compras";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Compras";
             this.Load += new System.EventHandler(this.Compras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtCompras)).EndInit();

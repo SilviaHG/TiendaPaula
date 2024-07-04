@@ -25,7 +25,7 @@ namespace TiendaPaula.Formularios
             materialSkinManager.ColorScheme = new ColorScheme(
             Color.FromArgb(242, 148, 32),
             Color.FromArgb(45, 48, 71),
-            Color.FromArgb(255, 224, 92),//tiene queser parecido al primero
+            Color.FromArgb(255, 224, 92),//tiene que ser parecido al primero
             Color.FromArgb(45, 48, 71),
             TextShade.WHITE);
         }
@@ -89,6 +89,34 @@ namespace TiendaPaula.Formularios
         {
             Gastos gasto = new Gastos();
             gasto.ShowDialog();
+        }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+            // personas
+            label2.ForeColor = Color.FromArgb(242, 148, 32);
+            Font FUENTE2 =   new Font(label2.Font.FontFamily, 25);
+            label2.Font = FUENTE2;
+            label2.TextAlign = ContentAlignment.TopCenter;
+
+            //productos
+            label3.ForeColor = Color.FromArgb(242, 148, 32);
+            Font FUENTE3 = new Font(label3.Font.FontFamily, 25);
+            label3.Font = FUENTE2;
+            label3.TextAlign = ContentAlignment.TopCenter;
+
+            //facturación
+            label5.ForeColor = Color.FromArgb(242, 148, 32);
+            Font FUENTE5 = new Font(label5.Font.FontFamily, 25);
+            label5.Font = FUENTE5;
+            label5.TextAlign = ContentAlignment.TopCenter;
+
+            //gastos
+            label7.ForeColor = Color.FromArgb(242, 148, 32);
+            Font FUENTE7 = new Font(label7.Font.FontFamily, 25);
+            label7.Font = FUENTE7;
+            label7.TextAlign = ContentAlignment.TopCenter;
+
         }
     }
 }
