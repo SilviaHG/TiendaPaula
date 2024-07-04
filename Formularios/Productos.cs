@@ -131,7 +131,7 @@ namespace TiendaPaula.Formularios
                 e.Handled = true;
             }
         }
-        private async void txtBuscar_TextChanged(object sender, EventArgs e)
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtBuscar.Text))
             {
@@ -363,6 +363,16 @@ namespace TiendaPaula.Formularios
         {
             //AgregarMarcas_Categorias();
             cbMarca.DataSource = (await gestListas.MostrarMarcasProductos()).AsEnumerable().ToList().Select(p => p[0]).ToList();
+
+        }
+
+        private void txtInforme_Click(object sender, EventArgs e)
+        {
+  
+            Informe_Producto infoPro = new Informe_Producto();
+
+            infoPro.ShowDialog();
+
 
         }
     }
