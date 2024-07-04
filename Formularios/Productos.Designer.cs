@@ -50,6 +50,7 @@
             this.lblMsj = new System.Windows.Forms.Label();
             this.txtTallas = new MaterialSkin.Controls.MaterialTextBox2();
             this.btnAgregarMarca = new System.Windows.Forms.Button();
+            this.txtInforme = new MaterialSkin.Controls.MaterialButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtProductos)).BeginInit();
             this.SuspendLayout();
@@ -499,11 +500,33 @@
             this.btnAgregarMarca.UseVisualStyleBackColor = true;
             this.btnAgregarMarca.Click += new System.EventHandler(this.btnAgregarMarca_Click);
             // 
+            // txtInforme
+            // 
+            this.txtInforme.AutoSize = false;
+            this.txtInforme.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.txtInforme.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.txtInforme.Depth = 0;
+            this.txtInforme.HighEmphasis = true;
+            this.txtInforme.Icon = null;
+            this.txtInforme.Location = new System.Drawing.Point(1164, 78);
+            this.txtInforme.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtInforme.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtInforme.Name = "txtInforme";
+            this.txtInforme.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.txtInforme.Size = new System.Drawing.Size(86, 36);
+            this.txtInforme.TabIndex = 17;
+            this.txtInforme.Text = "Informe";
+            this.txtInforme.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.txtInforme.UseAccentColor = false;
+            this.txtInforme.UseVisualStyleBackColor = true;
+            this.txtInforme.Click += new System.EventHandler(this.txtInforme_Click);
+            // 
             // Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1278, 564);
+            this.Controls.Add(this.txtInforme);
             this.Controls.Add(this.btnAgregarMarca);
             this.Controls.Add(this.txtTallas);
             this.Controls.Add(this.lblMsj);
@@ -552,5 +575,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
+        private MaterialSkin.Controls.MaterialButton txtInforme;
     }
 }
