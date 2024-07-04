@@ -34,6 +34,9 @@
             this.btnCrear = new MaterialSkin.Controls.MaterialButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -170,52 +173,95 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.btnActualizar);
             this.panel2.Controls.Add(this.btnLimpiar);
             this.panel2.Controls.Add(this.btnEliminar);
             this.panel2.Location = new System.Drawing.Point(448, 104);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(109, 179);
+            this.panel2.Size = new System.Drawing.Size(109, 228);
             this.panel2.TabIndex = 19;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label3.Location = new System.Drawing.Point(37, 202);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 13);
+            this.label3.TabIndex = 60;
+            this.label3.Text = "Limpiar";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label4.Location = new System.Drawing.Point(31, 131);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 13);
+            this.label4.TabIndex = 59;
+            this.label4.Text = "Actualizar";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label5.Location = new System.Drawing.Point(37, 59);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(43, 13);
+            this.label5.TabIndex = 58;
+            this.label5.Text = "Eliminar";
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(17, 64);
+            this.btnActualizar.Image = global::TiendaPaula.Properties.Resources.icons8_actualizar;
+            this.btnActualizar.Location = new System.Drawing.Point(28, 75);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 48);
+            this.btnActualizar.Size = new System.Drawing.Size(58, 53);
             this.btnActualizar.TabIndex = 8;
-            this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(17, 126);
+            this.btnLimpiar.Image = global::TiendaPaula.Properties.Resources.icons8_cheque;
+            this.btnLimpiar.Location = new System.Drawing.Point(28, 147);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(75, 48);
+            this.btnLimpiar.Size = new System.Drawing.Size(58, 53);
             this.btnLimpiar.TabIndex = 13;
-            this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(17, 5);
+            this.btnEliminar.Image = global::TiendaPaula.Properties.Resources.icons8_eliminar;
+            this.btnEliminar.Location = new System.Drawing.Point(28, 3);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 48);
+            this.btnEliminar.Size = new System.Drawing.Size(58, 53);
             this.btnEliminar.TabIndex = 7;
-            this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(366, 29);
+            this.btnBuscar.BackColor = System.Drawing.Color.White;
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnBuscar.Image = global::TiendaPaula.Properties.Resources.icons8_buscar_30__1_;
+            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscar.Location = new System.Drawing.Point(365, 33);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 47);
+            this.btnBuscar.Size = new System.Drawing.Size(94, 41);
             this.btnBuscar.TabIndex = 18;
             this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtBuscar
@@ -329,10 +375,12 @@
             this.Controls.Add(this.txtContra);
             this.Controls.Add(this.txtIdTabla);
             this.Name = "Usuarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuarios";
             this.Load += new System.EventHandler(this.Usuarios_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtUsuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -355,5 +403,8 @@
         public MaterialSkin.Controls.MaterialTextBox2 txtIdTabla;
         private MaterialSkin.Controls.MaterialComboBox cbUsuario;
         private MaterialSkin.Controls.MaterialComboBox cbEstado;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
     }
 }

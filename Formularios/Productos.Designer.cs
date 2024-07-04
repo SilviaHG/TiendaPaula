@@ -36,6 +36,10 @@
             this.cbMarca = new MaterialSkin.Controls.MaterialComboBox();
             this.cbCategoria = new MaterialSkin.Controls.MaterialComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Agregar = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
@@ -292,6 +296,10 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.Agregar);
             this.panel1.Controls.Add(this.btnLimpiar);
             this.panel1.Controls.Add(this.btnEliminar);
             this.panel1.Controls.Add(this.btnActualizar);
@@ -301,43 +309,89 @@
             this.panel1.Size = new System.Drawing.Size(375, 100);
             this.panel1.TabIndex = 11;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label3.Location = new System.Drawing.Point(296, 79);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 13);
+            this.label3.TabIndex = 60;
+            this.label3.Text = "Limpiar";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label5.Location = new System.Drawing.Point(203, 79);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(43, 13);
+            this.label5.TabIndex = 59;
+            this.label5.Text = "Eliminar";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label4.Location = new System.Drawing.Point(107, 79);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 13);
+            this.label4.TabIndex = 58;
+            this.label4.Text = "Actualizar";
+            // 
+            // Agregar
+            // 
+            this.Agregar.AutoSize = true;
+            this.Agregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Agregar.Location = new System.Drawing.Point(20, 79);
+            this.Agregar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Agregar.Name = "Agregar";
+            this.Agregar.Size = new System.Drawing.Size(44, 13);
+            this.Agregar.TabIndex = 54;
+            this.Agregar.Text = "Agregar";
+            this.Agregar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // btnLimpiar
             // 
+            this.btnLimpiar.Image = global::TiendaPaula.Properties.Resources.icons8_cheque;
             this.btnLimpiar.Location = new System.Drawing.Point(287, 24);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(75, 46);
+            this.btnLimpiar.Size = new System.Drawing.Size(58, 53);
             this.btnLimpiar.TabIndex = 3;
-            this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnEliminar
             // 
+            this.btnEliminar.Image = global::TiendaPaula.Properties.Resources.icons8_eliminar;
             this.btnEliminar.Location = new System.Drawing.Point(196, 24);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 46);
+            this.btnEliminar.Size = new System.Drawing.Size(58, 53);
             this.btnEliminar.TabIndex = 2;
-            this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnActualizar
             // 
+            this.btnActualizar.Image = global::TiendaPaula.Properties.Resources.icons8_actualizar;
             this.btnActualizar.Location = new System.Drawing.Point(104, 24);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 46);
+            this.btnActualizar.Size = new System.Drawing.Size(58, 53);
             this.btnActualizar.TabIndex = 1;
-            this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnAgregar
             // 
+            this.btnAgregar.Image = global::TiendaPaula.Properties.Resources.icons8_guardar;
             this.btnAgregar.Location = new System.Drawing.Point(13, 24);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 46);
+            this.btnAgregar.Size = new System.Drawing.Size(58, 53);
             this.btnAgregar.TabIndex = 0;
-            this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
@@ -374,12 +428,18 @@
             // 
             // btnBuscar
             // 
+            this.btnBuscar.BackColor = System.Drawing.Color.White;
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnBuscar.Image = global::TiendaPaula.Properties.Resources.icons8_buscar_30__1_;
+            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBuscar.Location = new System.Drawing.Point(964, 75);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 46);
+            this.btnBuscar.Size = new System.Drawing.Size(94, 41);
             this.btnBuscar.TabIndex = 4;
             this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // dtProductos
@@ -459,8 +519,10 @@
             this.Controls.Add(this.txtProducto);
             this.Controls.Add(this.txtIdProducto);
             this.Name = "Productos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Productos_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtProductos)).EndInit();
             this.ResumeLayout(false);
 
@@ -486,5 +548,9 @@
         private MaterialSkin.Controls.MaterialTextBox2 txtTallas;
         private System.Windows.Forms.Button btnAgregarMarca;
         public MaterialSkin.Controls.MaterialComboBox cbMarca;
+        private System.Windows.Forms.Label Agregar;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label3;
     }
 }

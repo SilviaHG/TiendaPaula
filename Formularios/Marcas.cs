@@ -35,21 +35,23 @@ namespace TiendaPaula.Formularios
             //habilitamos los botones 
             btnActualizar.Enabled = false;
             btnEliminar.Enabled = false;
-            btnAgregar.Enabled = true;
+            btnAgregar.Enabled = true;           
 
+            //asignamos el número consecutivo del producto
+            txtIdMarca.Text = Convert.ToString(await gestMarcas.NumeroMAXMarca());
+            CambiarColumnas();
+        }
 
+        public async void CambiarColumnas()
+        {
+            //Mostramos la tabla que esta en la BD
             var datos = await gestMarcas.MostrarTodasMarcas();
             datos.Columns[0].ColumnName = "N°";
             datos.Columns[1].ColumnName = "Marca";
-
             dtMarcas.DataSource = datos;
 
             dtMarcas.AutoSizeColumnsMode =
             DataGridViewAutoSizeColumnsMode.Fill;
-
-            //asignamos el número consecutivo del producto
-            txtIdMarca.Text = Convert.ToString(await gestMarcas.NumeroMAXMarca());
-
         }
 
         private void txtMarca_KeyPress(object sender, KeyPressEventArgs e)
@@ -69,12 +71,12 @@ namespace TiendaPaula.Formularios
                 e.Handled = true;
             }
         }
-        private async void txtBuscar_TextChanged(object sender, EventArgs e)
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtBuscar.Text))
             {
                 //Mostramos la tabla que esta en la BD
-                dtMarcas.DataSource = await gestMarcas.MostrarTodasMarcas();
+                CambiarColumnas();
             }
         }
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -225,7 +227,15 @@ namespace TiendaPaula.Formularios
                 lblMsj.ForeColor = Color.Green;
                 lblMsj.Text = "Mostrando resultados...";
 
-                dtMarcas.DataSource = await gestMarcas.obtenerMarcaEspecifico(marca);
+                //Mostramos la tabla que esta en la BD
+                var datos = await gestMarcas.obtenerMarcaEspecifico(marca);
+                datos.Columns[0].ColumnName = "N°";
+                datos.Columns[1].ColumnName = "Marca";
+                dtMarcas.DataSource = datos;
+
+                dtMarcas.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+
                 lblMsj.Text = "";
                 await gestMarcas.cerrarConexion(gestMarcas.establecerConexion());
             }

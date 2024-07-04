@@ -57,8 +57,13 @@ namespace TiendaPaula.Formularios
 
             txtIdTabla.Text = Convert.ToString(await gestUsuarios.NumeroMaxUsuario());
 
-            //Mostramos la tabla que esta en la BD
+            CambiarColumnas();
 
+        }
+
+        public async void CambiarColumnas()
+        {
+            //Mostramos la tabla que esta en la BD
             var datos = await gestUsuarios.MostrarTodosUsuarios();
             datos.Columns[0].ColumnName = "N°";
             datos.Columns[1].ColumnName = "Usuario";
@@ -98,12 +103,12 @@ namespace TiendaPaula.Formularios
             }
         }
 
-        private async void txtBuscar_TextChanged(object sender, EventArgs e)
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtBuscar.Text))
             {
                 //Mostramos la tabla que esta en la BD
-                dtUsuarios.DataSource = await gestUsuarios.MostrarTodosUsuarios();
+                CambiarColumnas();
             }
         }
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -258,7 +263,19 @@ namespace TiendaPaula.Formularios
                 lblMsj.ForeColor = Color.Green;
                 lblMsj.Text = "Mostrando resultados...";
 
-                dtUsuarios.DataSource = await gestUsuarios.obtenerUsuarioEspecifico(num);
+                //Mostramos la tabla que esta en la BD
+                var datos = await gestUsuarios.obtenerUsuarioEspecifico(num);
+                datos.Columns[0].ColumnName = "N°";
+                datos.Columns[1].ColumnName = "Usuario";
+                datos.Columns[2].ColumnName = "Contraseña";
+                datos.Columns[3].ColumnName = "Estado";
+
+                dtUsuarios.DataSource = datos;
+
+                //autosize de la tabla
+                dtUsuarios.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+
                 lblMsj.Text = "";
                 await gestUsuarios.cerrarConexion(gestUsuarios.establecerConexion());
             }

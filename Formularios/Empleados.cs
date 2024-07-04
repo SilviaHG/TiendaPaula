@@ -60,6 +60,12 @@ namespace TiendaPaula.Formularios
 
             RefrescarCombo();
 
+            CambiarColumnas();
+
+        }
+
+        public async void CambiarColumnas()
+        {
             //mostramos el datagridview
 
             var datos = await gestEmpleados.MostrarTodosEmpleados();
@@ -74,9 +80,7 @@ namespace TiendaPaula.Formularios
 
             dtEmpleados.AutoSizeColumnsMode =
             DataGridViewAutoSizeColumnsMode.Fill;
-
         }
-
         public async void AgregarPosiciones()
         {
             cbPosiciones.DataSource = (await gestListas.MostrarPosicionesEmpleados()).AsEnumerable().ToList().Select(p => p[0]).ToList();
@@ -131,8 +135,7 @@ namespace TiendaPaula.Formularios
         {
             if (string.IsNullOrEmpty(txtBuscar.Text))
             {
-                //Mostramos la tabla que esta en la BD
-                dtEmpleados.DataSource = await gestEmpleados.MostrarTodosEmpleados();
+                CambiarColumnas();
             }
         }
         private bool EmailValido(string email)
@@ -396,7 +399,20 @@ namespace TiendaPaula.Formularios
                 lblMsj.ForeColor = Color.Green;
                 lblMsj.Text = "Mostrando resultados...";
 
-                dtEmpleados.DataSource = await gestEmpleados.obtenerEmpleadoEspecifico(cedula);
+                //mostramos el datagridview
+                var datos = await gestEmpleados.obtenerEmpleadoEspecifico(cedula);
+                datos.Columns[0].ColumnName = "Código Empleado";
+                datos.Columns[1].ColumnName = "Nombre Completo";
+                datos.Columns[2].ColumnName = "Teléfono";
+                datos.Columns[3].ColumnName = "Correo Electrónico";
+                datos.Columns[4].ColumnName = "Dirección";
+                datos.Columns[5].ColumnName = "Puesto";
+
+                dtEmpleados.DataSource = datos;
+
+                dtEmpleados.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+
                 lblMsj.Text = "";
                 await gestEmpleados.cerrarConexion(gestEmpleados.establecerConexion());
             }

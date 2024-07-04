@@ -73,6 +73,16 @@ namespace TiendaPaula.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_bolsa_de_compras {
+            get {
+                object obj = ResourceManager.GetObject("icons8-bolsa-de-compras", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_buscar_28 {
             get {
                 object obj = ResourceManager.GetObject("icons8-buscar-28", resourceCulture);
@@ -136,6 +146,16 @@ namespace TiendaPaula.Properties {
         internal static System.Drawing.Bitmap icons8_cheque {
             get {
                 object obj = ResourceManager.GetObject("icons8-cheque", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_clientes {
+            get {
+                object obj = ResourceManager.GetObject("icons8-clientes", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -226,6 +246,46 @@ namespace TiendaPaula.Properties {
         internal static System.Drawing.Bitmap icons8_factura_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-factura-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_guardar {
+            get {
+                object obj = ResourceManager.GetObject("icons8-guardar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_guardar_como {
+            get {
+                object obj = ResourceManager.GetObject("icons8-guardar-como", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_guardar1 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-guardar1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_guardar2 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-guardar2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

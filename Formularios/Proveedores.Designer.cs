@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Agregar = new System.Windows.Forms.Label();
             this.btnClean = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
@@ -49,52 +53,102 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.Agregar);
             this.panel1.Controls.Add(this.btnClean);
             this.panel1.Controls.Add(this.btnEliminar);
             this.panel1.Controls.Add(this.btnActualizar);
             this.panel1.Controls.Add(this.btnAgregar);
             this.panel1.Location = new System.Drawing.Point(17, 397);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(250, 100);
+            this.panel1.Size = new System.Drawing.Size(250, 163);
             this.panel1.TabIndex = 18;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label3.Location = new System.Drawing.Point(158, 143);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 13);
+            this.label3.TabIndex = 56;
+            this.label3.Text = "Limpiar";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label5.Location = new System.Drawing.Point(44, 142);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(43, 13);
+            this.label5.TabIndex = 57;
+            this.label5.Text = "Eliminar";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label4.Location = new System.Drawing.Point(154, 62);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 13);
+            this.label4.TabIndex = 57;
+            this.label4.Text = "Actualizar";
+            // 
+            // Agregar
+            // 
+            this.Agregar.AutoSize = true;
+            this.Agregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Agregar.Location = new System.Drawing.Point(44, 60);
+            this.Agregar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Agregar.Name = "Agregar";
+            this.Agregar.Size = new System.Drawing.Size(44, 13);
+            this.Agregar.TabIndex = 53;
+            this.Agregar.Text = "Agregar";
+            this.Agregar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnClean
             // 
-            this.btnClean.Location = new System.Drawing.Point(128, 57);
+            this.btnClean.Image = global::TiendaPaula.Properties.Resources.icons8_cheque;
+            this.btnClean.Location = new System.Drawing.Point(151, 83);
             this.btnClean.Name = "btnClean";
-            this.btnClean.Size = new System.Drawing.Size(84, 35);
+            this.btnClean.Size = new System.Drawing.Size(58, 57);
             this.btnClean.TabIndex = 3;
-            this.btnClean.Text = "Limpiar";
             this.btnClean.UseVisualStyleBackColor = true;
             this.btnClean.Click += new System.EventHandler(this.btnClean_Click);
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(22, 45);
+            this.btnEliminar.Image = global::TiendaPaula.Properties.Resources.icons8_eliminar;
+            this.btnEliminar.Location = new System.Drawing.Point(36, 83);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(70, 46);
+            this.btnEliminar.Size = new System.Drawing.Size(58, 57);
             this.btnEliminar.TabIndex = 2;
-            this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(141, 3);
+            this.btnActualizar.Image = global::TiendaPaula.Properties.Resources.icons8_actualizar;
+            this.btnActualizar.Location = new System.Drawing.Point(151, 3);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(71, 37);
+            this.btnActualizar.Size = new System.Drawing.Size(58, 57);
             this.btnActualizar.TabIndex = 1;
-            this.btnActualizar.Text = "Actualiza";
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(26, 3);
+            this.btnAgregar.Image = global::TiendaPaula.Properties.Resources.icons8_guardar;
+            this.btnAgregar.Location = new System.Drawing.Point(36, 3);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(66, 37);
+            this.btnAgregar.Size = new System.Drawing.Size(58, 57);
             this.btnAgregar.TabIndex = 0;
-            this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
@@ -248,12 +302,18 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(895, 78);
+            this.btnBuscar.BackColor = System.Drawing.Color.White;
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnBuscar.Image = global::TiendaPaula.Properties.Resources.icons8_buscar_30__1_;
+            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscar.Location = new System.Drawing.Point(873, 82);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 48);
+            this.btnBuscar.Size = new System.Drawing.Size(94, 41);
             this.btnBuscar.TabIndex = 21;
             this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtBuscar
@@ -300,7 +360,7 @@
             // 
             // lblMsj
             // 
-            this.lblMsj.Location = new System.Drawing.Point(432, 456);
+            this.lblMsj.Location = new System.Drawing.Point(426, 513);
             this.lblMsj.Name = "lblMsj";
             this.lblMsj.Size = new System.Drawing.Size(395, 41);
             this.lblMsj.TabIndex = 22;
@@ -311,7 +371,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(998, 524);
+            this.ClientSize = new System.Drawing.Size(998, 580);
             this.Controls.Add(this.lblMsj);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtBuscar);
@@ -323,9 +383,11 @@
             this.Controls.Add(this.txtNombreP);
             this.Controls.Add(this.txtID_Proveedor);
             this.Name = "Proveedores";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Proveedores";
             this.Load += new System.EventHandler(this.Proveedores_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtProveedores)).EndInit();
             this.ResumeLayout(false);
 
@@ -347,5 +409,9 @@
         private MaterialSkin.Controls.MaterialTextBox2 txtBuscar;
         private System.Windows.Forms.DataGridView dtProveedores;
         private System.Windows.Forms.Label lblMsj;
+        private System.Windows.Forms.Label Agregar;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label3;
     }
 }
