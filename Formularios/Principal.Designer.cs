@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabInicio = new System.Windows.Forms.TabPage();
             this.tabPersonas = new System.Windows.Forms.TabPage();
@@ -52,12 +53,17 @@
             this.materialCard4 = new MaterialSkin.Controls.MaterialCard();
             this.label7 = new System.Windows.Forms.Label();
             this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbImagenes = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.materialTabControl1.SuspendLayout();
+            this.tabInicio.SuspendLayout();
             this.tabPersonas.SuspendLayout();
             this.materialCard1.SuspendLayout();
             this.tabProductos.SuspendLayout();
@@ -66,6 +72,9 @@
             this.materialCard3.SuspendLayout();
             this.tabGestion.SuspendLayout();
             this.materialCard4.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenes)).BeginInit();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -87,6 +96,8 @@
             // 
             // tabInicio
             // 
+            this.tabInicio.Controls.Add(this.panel1);
+            this.tabInicio.Controls.Add(this.pbImagenes);
             this.tabInicio.Location = new System.Drawing.Point(4, 22);
             this.tabInicio.Name = "tabInicio";
             this.tabInicio.Padding = new System.Windows.Forms.Padding(3);
@@ -465,6 +476,40 @@
             this.materialButton2.UseVisualStyleBackColor = true;
             this.materialButton2.Click += new System.EventHandler(this.materialButton2_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(362, 47);
+            this.panel1.TabIndex = 1;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 2000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::TiendaPaula.Properties.Resources.Black_And_Gold_Elegant_Business_Name_Facebook_Cover;
+            this.pictureBox1.Location = new System.Drawing.Point(64, -1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(236, 128);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pbImagenes
+            // 
+            this.pbImagenes.Image = global::TiendaPaula.Properties.Resources._1;
+            this.pbImagenes.Location = new System.Drawing.Point(3, 57);
+            this.pbImagenes.Name = "pbImagenes";
+            this.pbImagenes.Size = new System.Drawing.Size(368, 288);
+            this.pbImagenes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbImagenes.TabIndex = 0;
+            this.pbImagenes.TabStop = false;
+            // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
@@ -527,6 +572,7 @@
             this.Text = "Principal";
             this.Load += new System.EventHandler(this.Principal_Load);
             this.materialTabControl1.ResumeLayout(false);
+            this.tabInicio.ResumeLayout(false);
             this.tabPersonas.ResumeLayout(false);
             this.materialCard1.ResumeLayout(false);
             this.tabProductos.ResumeLayout(false);
@@ -535,6 +581,9 @@
             this.materialCard3.ResumeLayout(false);
             this.tabGestion.ResumeLayout(false);
             this.materialCard4.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -570,5 +619,9 @@
         private System.Windows.Forms.Label label8;
         private MaterialSkin.Controls.MaterialButton materialButton2;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pbImagenes;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
