@@ -32,7 +32,7 @@ namespace TiendaPaula.Formularios
             LimpiarCampos();
         }
 
-        public async void LimpiarCampos()
+        public void LimpiarCampos()
         {
             txtID_Proveedor.Text = "";
             txtNombreP.Text = "";

@@ -40,7 +40,7 @@ namespace TiendaPaula.Formularios
             cbPosiciones.Refresh();
         }
 
-        public async void LimpiarCampos()
+        public void LimpiarCampos()
         {
 
             txtCedulaE.Text = "";
@@ -131,7 +131,7 @@ namespace TiendaPaula.Formularios
             }
         }
 
-        private async void txtBuscar_TextChanged(object sender, EventArgs e)
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtBuscar.Text))
             {

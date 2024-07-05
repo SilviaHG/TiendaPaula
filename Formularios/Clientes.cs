@@ -35,7 +35,7 @@ namespace TiendaPaula.Formularios
 
         }
 
-        public async void LimpiarCampos()
+        public void LimpiarCampos()
         {
             txtCedulaCliente.Text = "";
             txtNombreCompletoCliente.Text = "";
