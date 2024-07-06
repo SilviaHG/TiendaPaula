@@ -26,6 +26,7 @@ namespace TiendaPaula.Formularios
 
         private async void Informe_Producto_Load(object sender, EventArgs e)
         {
+            //mostramos el informe con los datos especificos
            await info.Informe_Stck_Productos(rptProductos);
 
         }

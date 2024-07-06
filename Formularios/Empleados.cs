@@ -33,13 +33,18 @@ namespace TiendaPaula.Formularios
             AgregarPosiciones();
 
         }
+        /// <summary>
+        /// Represcar los comboBox para que se actualizen en el momento de realizar un cambio
+        /// </summary>
         public void RefrescarCombo()
         {
 
             cbPosiciones.SelectedIndex = 0;
             cbPosiciones.Refresh();
         }
-
+        /// <summary>
+        /// Limpiar los campos de textos
+        /// </summary>
         public void LimpiarCampos()
         {
 
@@ -81,6 +86,9 @@ namespace TiendaPaula.Formularios
             dtEmpleados.AutoSizeColumnsMode =
             DataGridViewAutoSizeColumnsMode.Fill;
         }
+        /// <summary>
+        /// Se agregan las posiciones de los empleados a un comboBox
+        /// </summary>
         public async void AgregarPosiciones()
         {
             cbPosiciones.DataSource = (await gestListas.MostrarPosicionesEmpleados()).AsEnumerable().ToList().Select(p => p[0]).ToList();
@@ -89,7 +97,9 @@ namespace TiendaPaula.Formularios
                (await gestListas.MostrarPosicionesEmpleados()).AsEnumerable().ToList().Select(p => p[0].ToString()).ToList().ToArray());
 
         }
-
+        /// <summary>
+        /// Limpiar los campos
+        /// </summary>
         private void btnClean_Click(object sender, EventArgs e)
         {
             LimpiarCampos();
@@ -146,7 +156,7 @@ namespace TiendaPaula.Formularios
             Regex regex = new Regex(formato);
             return regex.IsMatch(email);
         }
-
+        // crear un empleado
         private async void btnAgregar_Click(object sender, EventArgs e)
         {
             int idPosicion = cbPosiciones.SelectedIndex + 1; // para que agregue el número del ID de las posiciones
@@ -162,7 +172,7 @@ namespace TiendaPaula.Formularios
             }
             else
             {
-                // se valida que exista el proveedor o el número de teléfono
+                // se valida que exista el empleado o el número de teléfono
                 int cedula = Convert.ToInt32(txtCedulaE.Text);
                 int telefono = Convert.ToInt32(txtTelefonoE.Text);
                 if (await gestEmpleados.ExisteEmpleado(cedula) == true)
@@ -252,7 +262,7 @@ namespace TiendaPaula.Formularios
 
             }
         }
-
+        //actualizar empleado
         private async void btnActualizar_Click(object sender, EventArgs e)
         {
             int idPosicion = cbPosiciones.SelectedIndex + 1; // para que agregue el número del ID de las posiciones
@@ -261,7 +271,6 @@ namespace TiendaPaula.Formularios
             if (string.IsNullOrEmpty(txtNombreE.Text) || string.IsNullOrEmpty(txtDireccionE.Text)
                 || string.IsNullOrEmpty(txtEmailE.Text) || string.IsNullOrEmpty(txtTelefonoE.Text))
             {
-
                 lblMsj.ForeColor = Color.Red;
                 lblMsj.Text = "No puede dejar campos vacíos";
             }
@@ -300,13 +309,14 @@ namespace TiendaPaula.Formularios
                                 empleado.Telefono = Convert.ToInt32(txtTelefonoE.Text);
                                 empleado.Direccion = txtDireccionE.Text;
                                 empleado.Posicion = idPosicion.ToString();
-                                //enviamos los datos a la clase gestion cliente
+                                //enviamos los datos a la clase gestion empleado
                                 gestEmpleados.ActualizarEmpleado(empleado);
 
+                                LimpiarCampos();
                                 //mensaje
                                 lblMsj.ForeColor = Color.Green;
                                 lblMsj.Text = $"Empleado con la cédula {cedula} actualizado correctamente";
-                                LimpiarCampos();
+                                
                                 
                                 break;
                             case DialogResult.No:
@@ -351,15 +361,14 @@ namespace TiendaPaula.Formularios
                                 empleado.Telefono = Convert.ToInt32(txtTelefonoE.Text);
                                 empleado.Direccion = txtDireccionE.Text;
                                 empleado.Posicion = idPosicion.ToString();
-                                //enviamos los datos a la clase gestion cliente
-                                gestEmpleados.ActualizarEmpleado(empleado);
-                                //enviamos los datos a la clase gestion cliente
+                                //enviamos los datos a la clase gestion empleado
                                 gestEmpleados.ActualizarEmpleado(empleado);
 
+                                LimpiarCampos();
                                 //mensaje
                                 lblMsj.ForeColor = Color.Green;
                                 lblMsj.Text = $"Cliente con la cédula {cedula} actualizado correctamente";
-                                LimpiarCampos();
+                                
                                 break;
                             case DialogResult.No:
                                 lblMsj.ForeColor = Color.Red;
@@ -380,7 +389,7 @@ namespace TiendaPaula.Formularios
             await gestEmpleados.cerrarConexion(gestEmpleados.establecerConexion());
 
         }
-
+        //buscar un empleado por la cédula
         private async void btnBuscar_Click(object sender, EventArgs e)
         {
             // se busca un empleado en especifico
@@ -421,7 +430,6 @@ namespace TiendaPaula.Formularios
         {
             //se muestran los datos seleccionado en los textbox, ya sea para eliminar o actualizar
 
-            //DataGridViewRow fila = dtEmpleados.SelectedRows[0];
             //se deshabilita para que no pueda editar la cédula
             txtCedulaE.Enabled = false;
             //habilitamos el boton de actualizar y eliminar y deshabilitamos el de agregar

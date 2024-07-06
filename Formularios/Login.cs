@@ -16,6 +16,10 @@ namespace TiendaPaula.Formularios
 {
     public partial class Login : MaterialForm
     {
+        //variable estaticas para acceder al nombre y posicion con el cual se loguea
+        //el usuario
+        public static string posicion;
+        public static string namePosicion;
         Gestion_Usuarios bdUsuario = new Gestion_Usuarios();
         public Login()
         {
