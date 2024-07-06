@@ -85,7 +85,6 @@ namespace TiendaPaula.Formularios
             txtUsuario.Text = await bdUsuario.UsuarioRecordado();
             txtPassword.Text = await bdUsuario.ContrasenniaRecordada();
             await bdUsuario.cerrarConexion(bdUsuario.establecerConexion());
-            Console.WriteLine(txtUsuario.Text);
             if (txtUsuario.Text == "")
             {
                 CheckboxRemember.Checked = false;
