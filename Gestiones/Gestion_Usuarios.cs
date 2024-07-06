@@ -371,5 +371,36 @@ namespace TiendaPaula.Gestiones
 
             return Pass;
         }
+
+        //generamos el id de la tabla autoincremental
+        public async Task<int> MostrarUsuarioIngresado(string idU)
+        {
+            int Num = 0;
+
+            using (MySqlConnection cnn = establecerConexion()) // se establece la conexión
+            {
+                try
+                {
+                    await AbrirConexion(cnn); // abrimos la conexión
+                    MySqlCommand cmd = new MySqlCommand($"select p.`NamePosition`, " +
+                        "`FullName` from EMPLOYEES e inner join POSITIONS p on p." +
+                        "`IdPosition` = e.`IdPosition` where `IdEmployee`= {idU};", cnn);
+                    cmd.Parameters.AddWithValue("ID_U", idU);
+                    cmd.ExecuteNonQuery();
+                    
+                    
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}"); // si da un error lo mostramos
+                }
+                finally
+                {
+                    await cerrarConexion(cnn); // cerramos la conexión en el bloque finally
+                }
+            }
+
+            return Num;
+        }
     }
 }

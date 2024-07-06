@@ -143,7 +143,6 @@ namespace TiendaPaula.Gestiones
                     adapter.Fill(buscarCliente);
                     existe = buscarCliente.Rows.Count > 0;
 
-                    Console.WriteLine(buscarCliente.Rows.Count);
                 }
                 catch (Exception ex)
                 {

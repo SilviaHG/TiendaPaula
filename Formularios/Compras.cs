@@ -25,7 +25,6 @@ namespace TiendaPaula.Formularios
         int Iva_C = 0;
         int Total_General = 0;
 
-
         public Compras()
         {
             InitializeComponent();
@@ -42,7 +41,8 @@ namespace TiendaPaula.Formularios
             DataGridViewAutoSizeColumnsMode.Fill;
 
         }
-
+        // se agrega los proveedores, empleados y productos existentes
+        //a los combo boxs
         public async void AgregarComboBoxs()
         {
             cbProveedor.DataSource = (await G_Listas.MostrarProveedor()).AsEnumerable().ToList().Select(p => p[0]).ToList();
@@ -58,7 +58,7 @@ namespace TiendaPaula.Formularios
             cbEmpleados.AutoCompleteCustomSource.AddRange(
                ( await G_Listas.MostrarProductos()).AsEnumerable().ToList().Select(p => p[0].ToString()).ToList().ToArray());
         }
-
+        //limpiar los campos
         public async void LimpiarCampos()
         {
 
@@ -69,6 +69,7 @@ namespace TiendaPaula.Formularios
 
             lblMsj.Text = ""; // Label que muestra los mensajes de errores
         }
+        //boton para mostrar todos los detalles de las compras
         private void Abre_DetallesCompra_Click(object sender, EventArgs e)
         {
             Detalles_Compras Abrir = new Detalles_Compras();
@@ -100,21 +101,6 @@ namespace TiendaPaula.Formularios
             {
                 e.Handled = true;
             }
-        }
-
-        private void dtCompras_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void txtGarantia_venta_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUnidad_Precio_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         public async void Montos_IVA_Total()

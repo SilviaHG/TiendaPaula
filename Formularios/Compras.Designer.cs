@@ -92,7 +92,6 @@
             this.dtCompras.RowTemplate.Height = 24;
             this.dtCompras.Size = new System.Drawing.Size(654, 204);
             this.dtCompras.TabIndex = 30;
-            this.dtCompras.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtCompras_CellClick);
             // 
             // Fecha_Compra
             // 

@@ -41,7 +41,6 @@ namespace TiendaPaula.Formularios
 
         public async void LimpiarCampos()
         {
-            //cbEstado.SelectedIndex = 0;
             txtVerificarContra.Text = "";
             txtContra.Text = "";
             txtBuscar.Text = "";
@@ -153,12 +152,11 @@ namespace TiendaPaula.Formularios
                         //enviamos los datos a la clase gestion cliente
                         gestUsuarios.InsertarUsuario(usuarios);
 
+                        RefrescarCombox();
+                        LimpiarCampos();
                         //mensaje
                         lblMsj.ForeColor = Color.Green;
                         lblMsj.Text = "Usuario creado correctamente";
-
-                        RefrescarCombox();
-                        LimpiarCampos();
 
                         //volvemos a cargar el datagrid view
                         dtUsuarios.DataSource = await gestUsuarios.MostrarTodosUsuarios();
@@ -182,11 +180,11 @@ namespace TiendaPaula.Formularios
                 {
                     case DialogResult.Yes:
                         gestUsuarios.EliminarUsuario(num);
-
-                        lblMsj.ForeColor = Color.Green;
-                        lblMsj.Text = "Usuario eliminado correctamente";
+                        
                         LimpiarCampos();
                         RefrescarCombox();
+                        lblMsj.ForeColor = Color.Green;
+                        lblMsj.Text = "Usuario eliminado correctamente";
 
                         break;
                     case DialogResult.No:
@@ -232,12 +230,12 @@ namespace TiendaPaula.Formularios
                     //enviamos los datos a la clase gestion cliente
                     gestUsuarios.ActualizarUsuario(usuarios);
 
+                    RefrescarCombox();
+                    LimpiarCampos();
+
                     //mensaje
                     lblMsj.ForeColor = Color.Green;
                     lblMsj.Text = "Usuario creado correctamente";
-
-                    RefrescarCombox();
-                    LimpiarCampos();
 
                 }
             }
@@ -284,8 +282,6 @@ namespace TiendaPaula.Formularios
         private void dtUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //se muestran los datos seleccionado en los textbox, ya sea para eliminar o actualizar
-
-           // DataGridViewRow fila = dtUsuarios.SelectedRows[0];
 
             //habilitamos el boton de actualizar y eliminar y deshabilitamos el de agregar
             btnActualizar.Enabled = true;

@@ -67,7 +67,7 @@ namespace TiendaPaula.Formularios
             datos.Columns[7].ColumnName = "Precio";
 
             dtProductos.DataSource = datos;
-
+            //auto size del datagridview
             dtProductos.AutoSizeColumnsMode =
             DataGridViewAutoSizeColumnsMode.Fill;
 
@@ -212,9 +212,10 @@ namespace TiendaPaula.Formularios
                     case DialogResult.Yes:
                         gestProductos.EliminarProducto(codProducto);
 
-                        lblMsj.ForeColor = Color.Green;
+                        
                         Limpiar();
                         RefrescarCombos();
+                        lblMsj.ForeColor = Color.Green;
                         lblMsj.Text = "Producto eliminado correctamente";
 
                         break;
@@ -291,7 +292,7 @@ namespace TiendaPaula.Formularios
 
         private async void btnBuscar_Click(object sender, EventArgs e)
         {
-            // se busca un empleado en especifico
+            // se busca un producto en especifico
             await gestProductos.AbrirConexion(gestProductos.establecerConexion());
 
             if (string.IsNullOrEmpty(txtBuscar.Text))
@@ -331,7 +332,6 @@ namespace TiendaPaula.Formularios
         {
             //se muestran los datos seleccionado en los textbox, ya sea para eliminar o actualizar
 
-           // DataGridViewRow fila = dtProductos.SelectedRows[0];
             //habilitamos el boton de actualizar y eliminar y deshabilitamos el de agregar
             btnActualizar.Enabled = true;
             btnEliminar.Enabled = true;
@@ -352,7 +352,7 @@ namespace TiendaPaula.Formularios
             cbStock.Refresh();
 
         }
-
+        //boton que lo dirige al formulario para agregar una marca nueva
         private void btnAgregarMarca_Click(object sender, EventArgs e)
         {
             Marcas marca = new Marcas();
@@ -365,7 +365,7 @@ namespace TiendaPaula.Formularios
             cbMarca.DataSource = (await gestListas.MostrarMarcasProductos()).AsEnumerable().ToList().Select(p => p[0]).ToList();
 
         }
-
+        //boton que muestra un informe de los productos que se necesitan comprar
         private void txtInforme_Click(object sender, EventArgs e)
         {
   
