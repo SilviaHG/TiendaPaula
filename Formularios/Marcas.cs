@@ -37,7 +37,7 @@ namespace TiendaPaula.Formularios
             btnEliminar.Enabled = false;
             btnAgregar.Enabled = true;           
 
-            //asignamos el número consecutivo del producto
+            //asignamos el número consecutivo de la marca
             txtIdMarca.Text = Convert.ToString(await gestMarcas.NumeroMAXMarca());
             CambiarColumnas();
         }
@@ -50,6 +50,7 @@ namespace TiendaPaula.Formularios
             datos.Columns[1].ColumnName = "Marca";
             dtMarcas.DataSource = datos;
 
+            //auto size del datagridview
             dtMarcas.AutoSizeColumnsMode =
             DataGridViewAutoSizeColumnsMode.Fill;
         }
@@ -105,7 +106,7 @@ namespace TiendaPaula.Formularios
                 }
                 else
                 {
-                    // se agrega el producto
+                    // se agrega la marca
                     //se abre la conexion
                     await gestMarcas.AbrirConexion(gestMarcas.establecerConexion());
                     //establecemos los valores agregamos por el usuario a los txt
@@ -188,14 +189,14 @@ namespace TiendaPaula.Formularios
                 }
                 else
                 {
-                    // se agrega el producto
+                    // se actualiza la marca
                     //se abre la conexion
                     await gestMarcas.AbrirConexion(gestMarcas.establecerConexion());
                     //establecemos los valores agregamos por el usuario a los txt
                     marcas.Id_marca = Convert.ToInt32(txtIdMarca.Text);
                     marcas.Marca = txtMarca.Text;
 
-                    //enviamos los datos a la clase gestion productos
+                    //enviamos los datos a la clase gestion marca
                     gestMarcas.ActualizarMarca(marcas);
 
                     //mensaje
@@ -233,6 +234,7 @@ namespace TiendaPaula.Formularios
                 datos.Columns[1].ColumnName = "Marca";
                 dtMarcas.DataSource = datos;
 
+                //auti size del datagridview
                 dtMarcas.AutoSizeColumnsMode =
                 DataGridViewAutoSizeColumnsMode.Fill;
 
@@ -245,7 +247,6 @@ namespace TiendaPaula.Formularios
         {
             //se muestran los datos seleccionado en los textbox, ya sea para eliminar o actualizar
 
-            //DataGridViewRow fila = dtMarcas.SelectedRows[0];
             //habilitamos el boton de actualizar y eliminar y deshabilitamos el de agregar
             btnActualizar.Enabled = true;
             btnEliminar.Enabled = true;

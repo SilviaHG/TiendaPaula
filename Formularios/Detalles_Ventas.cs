@@ -37,7 +37,8 @@ namespace TiendaPaula.Formularios
 
             AgregarFacturas();
         }
-
+        //ingresamos todas las facturas existentes al combo box
+        //para poder crear una facturacion de ventas
         public async void AgregarFacturas()
         {
             cbFacturas.DataSource = (await gestListas.MostrarFacturas()).AsEnumerable().ToList().Select(p => p[0]).ToList();

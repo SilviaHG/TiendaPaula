@@ -165,10 +165,11 @@ namespace TiendaPaula.Formularios
                         //enviamos los datos a la clase gestion proveedor
                         gestProveedores.InsertarProveedor(proveedor);
 
+                        LimpiarCampos();
                         //mensaje
                         lblMsj.ForeColor = Color.Green;
                         lblMsj.Text = "Cliente creado correctamente";
-                        LimpiarCampos();
+                        
                     }
                     else
                     {
@@ -201,9 +202,9 @@ namespace TiendaPaula.Formularios
                     case DialogResult.Yes:
                         gestProveedores.EliminarProveedor(codProveedor);
 
+                        LimpiarCampos();
                         lblMsj.ForeColor = Color.Green;
                         lblMsj.Text = "Proveedor eliminado correctamente";
-                        LimpiarCampos();
                         break;
                     case DialogResult.No:
                         lblMsj.ForeColor = Color.Green;
@@ -265,10 +266,11 @@ namespace TiendaPaula.Formularios
                                 //enviamos los datos a la clase gestion cliente
                                 gestProveedores.ActualizarProveedor(proveedor);
 
+                                LimpiarCampos();
                                 //mensaje
                                 lblMsj.ForeColor = Color.Green;
                                 lblMsj.Text = $"Proveedor con el código {codProveedor} actualizado correctamente";
-                                LimpiarCampos();
+                               
                                 break;
                             case DialogResult.No:
                                 lblMsj.ForeColor = Color.Red;
@@ -314,10 +316,11 @@ namespace TiendaPaula.Formularios
                                     //enviamos los datos a la clase gestion cliente
                                     gestProveedores.ActualizarProveedor(proveedor);
 
+                                    LimpiarCampos();
                                     //mensaje
                                     lblMsj.ForeColor = Color.Green;
                                     lblMsj.Text = $"Proveedor con el código {codProveedor} actualizado correctamente";
-                                    LimpiarCampos();
+                                    
                                     break;
                                 case DialogResult.No:
                                     lblMsj.ForeColor = Color.Red;

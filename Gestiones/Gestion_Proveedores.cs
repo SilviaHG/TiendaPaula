@@ -144,7 +144,6 @@ namespace TiendaPaula.Gestiones
                     adapter.Fill(buscarProveedor);
                     existe = buscarProveedor.Rows.Count > 0;
 
-                    Console.WriteLine(buscarProveedor.Rows.Count);
                 }
                 catch (Exception ex)
                 {

@@ -42,7 +42,6 @@ namespace TiendaPaula.Formularios
             }
 
             pbImagenes.ImageLocation = string.Format(@"Resources/Carrusel/{0}.png", NumImagen);
-            Console.WriteLine( NumImagen);
             NumImagen++;
         }
 

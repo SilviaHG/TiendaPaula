@@ -252,7 +252,7 @@ namespace TiendaPaula.Gestiones
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Error Insertar Cliente: {ex.Message}");
+                    Console.WriteLine($"Error Insertar Venta: {ex.Message}");
                 }
                 finally
                 {

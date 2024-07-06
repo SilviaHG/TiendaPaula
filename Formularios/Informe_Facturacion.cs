@@ -23,6 +23,7 @@ namespace TiendaPaula.Formularios
 
         private async void Informe_Facturacion_Load(object sender, EventArgs e)
         {
+            //mostramos el informe con los datos especificos
             this.rptFacturacion.RefreshReport();
             await info.Informe_Facturacion(rptFacturacion, Detalles_Ventas.numFactura);
             

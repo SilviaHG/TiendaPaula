@@ -57,7 +57,6 @@ namespace TiendaPaula.Gestiones
                         NumMax = Convert.ToInt32(result); // convertimos el resultado a entero
                         NumMax = NumMax + 1; // sumamos un numero mas para que sea el N° de Compra
                     }
-                    Console.WriteLine("Numero maximo "+NumMax);
                 }
                 catch (Exception ex)
                 {

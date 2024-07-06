@@ -184,15 +184,12 @@ namespace TiendaPaula.Formularios
                         await gestCliente.AbrirConexion(gestCliente.establecerConexion());
                         await gestCliente.InsertarCliente(cliente);
 
+                        //limpiamos los campos yvolvemos a cargar el datagrid view
+                        LimpiarCampos();
                         //mensaje
                         lblMsj.ForeColor = Color.Green;
                         lblMsj.Text = "Cliente creado correctamente";
-                        LimpiarCampos();
 
-                        //volvemos a cargar el datagrid view
-                        dtClientes.DataSource = await gestCliente.MostrarTodosClientes();
-
-                        
                     }
                     else
                     {
@@ -207,7 +204,7 @@ namespace TiendaPaula.Formularios
             await gestCliente.cerrarConexion(gestCliente.establecerConexion());
 
         }
-        // hacerlo con que toque la tabla
+        // eliminamos un cliente
         private async void btnEliminar_Click(object sender, EventArgs e)
         {
             int num = Convert.ToInt32(txtCedulaCliente.Text);
@@ -223,13 +220,15 @@ namespace TiendaPaula.Formularios
                 switch (optUser)
                 {
                     case DialogResult.Yes:
+                        //eliminamos un cliente
                         await gestCliente.EliminarCliente(num);
 
+                        //limpiamos los campos yvolvemos a cargar el datagrid view
+                        LimpiarCampos();
+                        //mensaje
                         lblMsj.ForeColor = Color.Green;
                         lblMsj.Text = "Cliente eliminado correctamente";
-                        LimpiarCampos();
 
-                        dtClientes.DataSource = await gestCliente.MostrarTodosClientes();
                         break;
                     case DialogResult.No:
                         lblMsj.ForeColor = Color.Green;
@@ -251,7 +250,7 @@ namespace TiendaPaula.Formularios
             if (string.IsNullOrEmpty(txtNombreCompletoCliente.Text) || string.IsNullOrEmpty(txtTelefonoCliente.Text)
                 || string.IsNullOrEmpty(txtEmailCliente.Text) || string.IsNullOrEmpty(txtDireccionCliente.Text))
             {
-
+                //mensaje
                 lblMsj.ForeColor = Color.Red;
                 lblMsj.Text = "No puede dejar campos vacíos";
             }
@@ -271,7 +270,6 @@ namespace TiendaPaula.Formularios
                     if (EmailValido(txtEmailCliente.Text))
                     {
 
-                        lblMsj.ForeColor = Color.Red;// mensaje de confirmación
                         DialogResult optUser = MessageBox.Show($"¿Desea actualizar al clientes" +
                             $" con la cédula {cedula}?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -290,14 +288,12 @@ namespace TiendaPaula.Formularios
                                 //enviamos los datos a la clase gestion cliente
                                 await gestCliente.ActualizarCliente(cliente);
 
-                                Console.WriteLine("Se actualizó");
-                                //volvemos a cargar el datagrid view
-                                dtClientes.DataSource = await gestCliente.MostrarTodosClientes();
-
+                                //limpiamos los campos y volvemos a cargar el datagrid view
+                                LimpiarCampos();
                                 //mensaje
                                 lblMsj.ForeColor = Color.Green;
                                 lblMsj.Text = $"Cliente con la cédula {cedula} actualizado correctamente";
-                                LimpiarCampos();
+                                
                                 break;
                             case DialogResult.No:
                                 lblMsj.ForeColor = Color.Red;
@@ -324,7 +320,6 @@ namespace TiendaPaula.Formularios
                     if (EmailValido(txtEmailCliente.Text))
                     {
 
-                        lblMsj.ForeColor = Color.Red;// mensaje de confirmación
                         DialogResult optUser = MessageBox.Show($"¿Desea actualizar al clientes" +
                             $" con la cédula {cedula}?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -343,14 +338,12 @@ namespace TiendaPaula.Formularios
                                 //enviamos los datos a la clase gestion cliente
                                 await gestCliente.ActualizarCliente(cliente);
 
-                                Console.WriteLine("Se actualizó");
-                                //volvemos a cargar el datagrid view
-                                dtClientes.DataSource = await gestCliente.MostrarTodosClientes();
-
+                                //limpiamos los campos y volvemos a cargar el datagrid view
+                                LimpiarCampos();
                                 //mensaje
                                 lblMsj.ForeColor = Color.Green;
                                 lblMsj.Text = $"Cliente con la cédula {cedula} actualizado correctamente";
-                                LimpiarCampos();
+                                
                                 break;
                             case DialogResult.No:
                                 lblMsj.ForeColor = Color.Red;
@@ -371,7 +364,7 @@ namespace TiendaPaula.Formularios
             await gestCliente.cerrarConexion(gestCliente.establecerConexion());
 
         }
-
+        // buscamos un cliente por número de cédulaS
         private async void btnBuscar_Click(object sender, EventArgs e)
         {
 
@@ -392,7 +385,7 @@ namespace TiendaPaula.Formularios
                 lblMsj.ForeColor = Color.Green;
                 lblMsj.Text = "Mostrando resultados...";
 
-                //Mostramos la tabla que esta en la BD
+                //Mostramos la tabla que esta en la BD con las columnas respectivas
 
                 var datos = await gestCliente.obtenerListaClientes(cedula, telefono);
                 datos.Columns[0].ColumnName = "Cédula";
@@ -415,7 +408,7 @@ namespace TiendaPaula.Formularios
 
 
         }
-
+        //limpiamos los campos
         private void btnClean_Click(object sender, EventArgs e)
         {
             LimpiarCampos();
@@ -423,9 +416,9 @@ namespace TiendaPaula.Formularios
 
         private void dtClientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //se muestran los datos seleccionado en los textbox, ya sea para eliminar o actualizar
+            //se muestran los datos seleccionado en los textbox,
+            //ya sea para eliminar o actualizar
 
-            //DataGridViewRow fila = dtClientes.SelectedRows[0];
             //se deshabilita para que no pueda editar la cédula
             txtCedulaCliente.Enabled = false;
             //habilitamos el boton de actualizar y eliminar y deshabilitamos el de agregar
