@@ -1,6 +1,6 @@
 ﻿namespace TiendaPaula.Formularios
 {
-    partial class Informe_Producto
+    partial class Informe_Facturacion
     {
         /// <summary>
         /// Required designer variable.
@@ -28,35 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.rptProductos = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.rptFacturacion = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
-            // rptProductos
+            // rptFacturacion
             // 
-            this.rptProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rptProductos.Location = new System.Drawing.Point(3, 64);
-            this.rptProductos.Name = "rptProductos";
-            this.rptProductos.ServerReport.BearerToken = null;
-            this.rptProductos.Size = new System.Drawing.Size(794, 510);
-            this.rptProductos.TabIndex = 0;
+            this.rptFacturacion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rptFacturacion.Location = new System.Drawing.Point(3, 64);
+            this.rptFacturacion.Name = "rptFacturacion";
+            this.rptFacturacion.ServerReport.BearerToken = null;
+            this.rptFacturacion.Size = new System.Drawing.Size(794, 383);
+            this.rptFacturacion.TabIndex = 0;
             // 
-            // Informe_Producto
+            // Informe_Facturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 577);
-            this.Controls.Add(this.rptProductos);
-            this.Name = "Informe_Producto";
-            this.Text = "Stock Productos";
-            this.Load += new System.EventHandler(this.Informe_Producto_Load);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.rptFacturacion);
+            this.Name = "Informe_Facturacion";
+            this.Text = "Informe Facturación";
+            this.Load += new System.EventHandler(this.Informe_Facturacion_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        public Microsoft.Reporting.WinForms.ReportViewer rptProductos;
+        public Microsoft.Reporting.WinForms.ReportViewer rptFacturacion;
     }
 }

@@ -248,5 +248,36 @@ namespace TiendaPaula.Gestiones
             return Mostrar;
 
         }
+
+        public async Task<DataTable> MostrarFacturas()
+        {
+            DataTable MostrarFacturas = new DataTable();
+
+            using (MySqlConnection cnn = establecerConexion()) // se establece la conexion
+            {
+                try
+                {
+                    await AbrirConexion(cnn); //abrimos la conexion
+                    MySqlCommand cmd = new MySqlCommand("SELECT IdSale FROM SALES ORDER BY IdSale ASC;", cnn); // CODIGO QUE MUESTRA SOLO EL ID DE LOS EMPLEADOS
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    adapter.Fill(MostrarFacturas);
+
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}"); // si da un error lo mostramos
+                }
+                finally
+                {
+                    await cerrarConexion(cnn); // despues de cierra la conexion
+                }
+
+
+            }
+
+            return MostrarFacturas;
+
+        }
     }
 }

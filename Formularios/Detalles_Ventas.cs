@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,6 +16,12 @@ namespace TiendaPaula.Formularios
     public partial class Detalles_Ventas : MaterialForm
     {
         Gestion_Detalles_Ventas Gest_Detalles = new Gestion_Detalles_Ventas();
+
+        Gestion_Listas gestListas = new Gestion_Listas();
+
+        // variable global para poder crear el reporte de facturación
+        public static int numFactura;
+
         public Detalles_Ventas()
         {
             InitializeComponent();
@@ -27,6 +34,17 @@ namespace TiendaPaula.Formularios
             //autosize de la tabla
             dtDetalles_Venta.AutoSizeColumnsMode =
             DataGridViewAutoSizeColumnsMode.Fill;
+
+            AgregarFacturas();
+        }
+
+        public async void AgregarFacturas()
+        {
+            cbFacturas.DataSource = (await gestListas.MostrarFacturas()).AsEnumerable().ToList().Select(p => p[0]).ToList();
+
+            cbFacturas.AutoCompleteCustomSource.AddRange(
+               (await gestListas.MostrarFacturas()).AsEnumerable().ToList().Select(p => p[0].ToString()).ToList().ToArray());
+
         }
 
         private async void btBuscar_Click(object sender, EventArgs e)
@@ -67,6 +85,13 @@ namespace TiendaPaula.Formularios
         private async void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             dtDetalles_Venta.DataSource = await Gest_Detalles.Mostrar_DetallesVentasTotales();
+        }
+
+        public void btnInforme_Click(object sender, EventArgs e)
+        {
+            Informe_Facturacion infoFact = new Informe_Facturacion();
+            numFactura = Convert.ToInt32(cbFacturas.SelectedItem);
+            infoFact.ShowDialog();
         }
     }
 }

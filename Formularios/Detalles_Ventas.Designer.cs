@@ -35,6 +35,7 @@
             this.lblMsj = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.btnInforme = new MaterialSkin.Controls.MaterialButton();
+            this.cbFacturas = new MaterialSkin.Controls.MaterialComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtDetalles_Venta)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,9 +98,9 @@
             // 
             // lblMsj
             // 
-            this.lblMsj.Location = new System.Drawing.Point(194, 383);
+            this.lblMsj.Location = new System.Drawing.Point(71, 383);
             this.lblMsj.Name = "lblMsj";
-            this.lblMsj.Size = new System.Drawing.Size(395, 41);
+            this.lblMsj.Size = new System.Drawing.Size(297, 41);
             this.lblMsj.TabIndex = 48;
             this.lblMsj.Text = "MENSAJES DE ERROR";
             this.lblMsj.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -125,23 +126,48 @@
             this.btnInforme.Depth = 0;
             this.btnInforme.HighEmphasis = true;
             this.btnInforme.Icon = null;
-            this.btnInforme.Location = new System.Drawing.Point(636, 388);
+            this.btnInforme.Location = new System.Drawing.Point(636, 375);
             this.btnInforme.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnInforme.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnInforme.Name = "btnInforme";
             this.btnInforme.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnInforme.Size = new System.Drawing.Size(92, 36);
+            this.btnInforme.Size = new System.Drawing.Size(92, 49);
             this.btnInforme.TabIndex = 50;
             this.btnInforme.Text = "Informe";
             this.btnInforme.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnInforme.UseAccentColor = false;
             this.btnInforme.UseVisualStyleBackColor = true;
+            this.btnInforme.Click += new System.EventHandler(this.btnInforme_Click);
+            // 
+            // cbFacturas
+            // 
+            this.cbFacturas.AutoResize = false;
+            this.cbFacturas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbFacturas.Depth = 0;
+            this.cbFacturas.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbFacturas.DropDownHeight = 174;
+            this.cbFacturas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFacturas.DropDownWidth = 121;
+            this.cbFacturas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbFacturas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbFacturas.FormattingEnabled = true;
+            this.cbFacturas.Hint = "Número de Factura";
+            this.cbFacturas.IntegralHeight = false;
+            this.cbFacturas.ItemHeight = 43;
+            this.cbFacturas.Location = new System.Drawing.Point(418, 375);
+            this.cbFacturas.MaxDropDownItems = 4;
+            this.cbFacturas.MouseState = MaterialSkin.MouseState.OUT;
+            this.cbFacturas.Name = "cbFacturas";
+            this.cbFacturas.Size = new System.Drawing.Size(211, 49);
+            this.cbFacturas.StartIndex = 0;
+            this.cbFacturas.TabIndex = 51;
             // 
             // Detalles_Ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(841, 450);
+            this.Controls.Add(this.cbFacturas);
             this.Controls.Add(this.btnInforme);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.lblMsj);
@@ -165,6 +191,7 @@
         private MaterialSkin.Controls.MaterialTextBox txtBuscar_Compra;
         private System.Windows.Forms.Label lblMsj;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private MaterialSkin.Controls.MaterialButton btnInforme;
+        public MaterialSkin.Controls.MaterialComboBox cbFacturas;
+        public MaterialSkin.Controls.MaterialButton btnInforme;
     }
 }
