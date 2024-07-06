@@ -170,6 +170,12 @@
     <Compile Include="Formularios\Gastos.Designer.cs">
       <DependentUpon>Gastos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Informe_Facturacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Informe_Facturacion.Designer.cs">
+      <DependentUpon>Informe_Facturacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Informe_Producto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,6 +237,9 @@
     <Compile Include="Gestiones\Gestion_Proveedores.cs" />
     <Compile Include="Gestiones\Gestion_Usuarios.cs" />
     <Compile Include="Gestiones\Gestion_Ventas.cs" />
+    <Compile Include="Informes\DataSetProductos.cs">
+      <DependentUpon>DataSetProductos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Informes\DataSetProductos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -257,6 +266,9 @@
     <EmbeddedResource Include="Formularios\Gastos.resx">
       <DependentUpon>Gastos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Informe_Facturacion.resx">
+      <DependentUpon>Informe_Facturacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Informe_Producto.resx">
       <DependentUpon>Informe_Producto.cs</DependentUpon>
     </EmbeddedResource>
@@ -281,6 +293,7 @@
     <EmbeddedResource Include="Formularios\Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Informes\ReporteFactura.rdlc" />
     <EmbeddedResource Include="Informes\ReporteProductos.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -417,7 +430,6 @@
     <None Include="Resources\icons8-guardar2.gif" />
   </ItemGroup>
   <ItemGroup>
-
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -430,7 +442,6 @@
     </Content>
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
