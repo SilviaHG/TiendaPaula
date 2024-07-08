@@ -26,9 +26,9 @@ namespace TiendaPaula.Formularios
         {
             InitializeComponent();
         }
-        private async void Detalles_Ventas_Load(object sender, EventArgs e)
+        private void Detalles_Ventas_Load(object sender, EventArgs e)
         {
-            dtDetalles_Venta.DataSource = await Gest_Detalles.Mostrar_DetallesVentasTotales();
+            CambiarColumnas(); //Muestra la tabla de detalles
             lblMsj.Text = "";
 
             //autosize de la tabla
@@ -37,6 +37,25 @@ namespace TiendaPaula.Formularios
 
             AgregarFacturas();
         }
+
+        public async void CambiarColumnas()
+        {
+            //Mostramos la tabla que esta en la BD
+            var datos = await Gest_Detalles.Mostrar_DetallesVentasTotales();
+            datos.Columns[0].ColumnName = "N° detalle";
+            datos.Columns[1].ColumnName = "N° Venta";
+            datos.Columns[2].ColumnName = "Cod. Producto";
+            datos.Columns[3].ColumnName = "Precio unidad";
+            datos.Columns[4].ColumnName = "Cant. Comprada";
+
+            //Mostramos la tabla que esta en la BD
+            dtDetalles_Venta.DataSource = datos;
+
+            dtDetalles_Venta.AutoSizeColumnsMode =
+            DataGridViewAutoSizeColumnsMode.Fill;
+
+        }
+
         //ingresamos todas las facturas existentes al combo box
         //para poder crear una facturacion de ventas
         public async void AgregarFacturas()
@@ -66,10 +85,21 @@ namespace TiendaPaula.Formularios
                 lblMsj.ForeColor = Color.Green;
                 lblMsj.Text = "Mostrando resultados...";
 
-                dtDetalles_Venta.DataSource = await Gest_Detalles.Buscar_DetallesVenta(cod);
-                lblMsj.Text = "";
+                //Mostramos la tabla que esta en la BD
+                var datos = await Gest_Detalles.Buscar_DetallesVenta(cod);
+                datos.Columns[0].ColumnName = "N° detalle";
+                datos.Columns[1].ColumnName = "N° Venta";
+                datos.Columns[2].ColumnName = "Cod. Producto";
+                datos.Columns[3].ColumnName = "Precio unidad";
+                datos.Columns[4].ColumnName = "Cant. Comprada";
 
-                txtBuscar_Compra.Text = "";
+                //Mostramos la tabla que esta en la BD
+                dtDetalles_Venta.DataSource = datos;
+
+                dtDetalles_Venta.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+
+                lblMsj.Text = "";
 
             }
         }
@@ -82,17 +112,20 @@ namespace TiendaPaula.Formularios
                 e.Handled = true;
             }
         }
-
-        private async void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            dtDetalles_Venta.DataSource = await Gest_Detalles.Mostrar_DetallesVentasTotales();
-        }
-
         public void btnInforme_Click(object sender, EventArgs e)
         {
             Informe_Facturacion infoFact = new Informe_Facturacion();
             numFactura = Convert.ToInt32(cbFacturas.SelectedItem);
             infoFact.ShowDialog();
+        }
+
+        private void txtBuscar_Compra_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtBuscar_Compra.Text))
+            {
+                //Muestra de nuevo la tabla
+                CambiarColumnas();
+            }
         }
     }
 }

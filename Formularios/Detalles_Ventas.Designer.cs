@@ -33,7 +33,6 @@
             this.btBuscar = new System.Windows.Forms.Button();
             this.txtBuscar_Compra = new MaterialSkin.Controls.MaterialTextBox();
             this.lblMsj = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.btnInforme = new MaterialSkin.Controls.MaterialButton();
             this.cbFacturas = new MaterialSkin.Controls.MaterialComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtDetalles_Venta)).BeginInit();
@@ -51,12 +50,13 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtDetalles_Venta.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dtDetalles_Venta.Location = new System.Drawing.Point(74, 141);
-            this.dtDetalles_Venta.Margin = new System.Windows.Forms.Padding(2);
+            this.dtDetalles_Venta.Location = new System.Drawing.Point(99, 174);
+            this.dtDetalles_Venta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtDetalles_Venta.Name = "dtDetalles_Venta";
+            this.dtDetalles_Venta.ReadOnly = true;
             this.dtDetalles_Venta.RowHeadersWidth = 51;
             this.dtDetalles_Venta.RowTemplate.Height = 24;
-            this.dtDetalles_Venta.Size = new System.Drawing.Size(654, 204);
+            this.dtDetalles_Venta.Size = new System.Drawing.Size(872, 251);
             this.dtDetalles_Venta.TabIndex = 32;
             // 
             // btBuscar
@@ -66,10 +66,10 @@
             this.btBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btBuscar.Image = global::TiendaPaula.Properties.Resources.icons8_buscar_30__1_;
             this.btBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btBuscar.Location = new System.Drawing.Point(614, 83);
-            this.btBuscar.Margin = new System.Windows.Forms.Padding(2);
+            this.btBuscar.Location = new System.Drawing.Point(819, 102);
+            this.btBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btBuscar.Name = "btBuscar";
-            this.btBuscar.Size = new System.Drawing.Size(94, 41);
+            this.btBuscar.Size = new System.Drawing.Size(125, 50);
             this.btBuscar.TabIndex = 40;
             this.btBuscar.Text = "Buscar";
             this.btBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -82,41 +82,30 @@
             this.txtBuscar_Compra.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBuscar_Compra.Depth = 0;
             this.txtBuscar_Compra.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtBuscar_Compra.Hint = "Buscar";
+            this.txtBuscar_Compra.Hint = "Buscar por N° Venta";
             this.txtBuscar_Compra.LeadingIcon = null;
-            this.txtBuscar_Compra.Location = new System.Drawing.Point(92, 83);
-            this.txtBuscar_Compra.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBuscar_Compra.Location = new System.Drawing.Point(123, 102);
+            this.txtBuscar_Compra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBuscar_Compra.MaxLength = 50;
             this.txtBuscar_Compra.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBuscar_Compra.Multiline = false;
             this.txtBuscar_Compra.Name = "txtBuscar_Compra";
-            this.txtBuscar_Compra.Size = new System.Drawing.Size(497, 50);
+            this.txtBuscar_Compra.Size = new System.Drawing.Size(663, 50);
             this.txtBuscar_Compra.TabIndex = 39;
             this.txtBuscar_Compra.Text = "";
             this.txtBuscar_Compra.TrailingIcon = null;
+            this.txtBuscar_Compra.TextChanged += new System.EventHandler(this.txtBuscar_Compra_TextChanged);
             this.txtBuscar_Compra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_Compra_KeyPress);
             // 
             // lblMsj
             // 
-            this.lblMsj.Location = new System.Drawing.Point(71, 383);
+            this.lblMsj.Location = new System.Drawing.Point(95, 471);
+            this.lblMsj.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMsj.Name = "lblMsj";
-            this.lblMsj.Size = new System.Drawing.Size(297, 41);
+            this.lblMsj.Size = new System.Drawing.Size(396, 50);
             this.lblMsj.TabIndex = 48;
             this.lblMsj.Text = "MENSAJES DE ERROR";
             this.lblMsj.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(45)))), ((int)(((byte)(71)))));
-            this.linkLabel1.Location = new System.Drawing.Point(633, 349);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(95, 13);
-            this.linkLabel1.TabIndex = 49;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Ver tabla completa";
-            this.linkLabel1.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(48)))), ((int)(((byte)(71)))));
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // btnInforme
             // 
@@ -126,12 +115,12 @@
             this.btnInforme.Depth = 0;
             this.btnInforme.HighEmphasis = true;
             this.btnInforme.Icon = null;
-            this.btnInforme.Location = new System.Drawing.Point(636, 375);
-            this.btnInforme.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnInforme.Location = new System.Drawing.Point(848, 462);
+            this.btnInforme.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.btnInforme.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnInforme.Name = "btnInforme";
             this.btnInforme.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnInforme.Size = new System.Drawing.Size(92, 49);
+            this.btnInforme.Size = new System.Drawing.Size(123, 60);
             this.btnInforme.TabIndex = 50;
             this.btnInforme.Text = "Informe";
             this.btnInforme.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -154,33 +143,34 @@
             this.cbFacturas.Hint = "Número de Factura";
             this.cbFacturas.IntegralHeight = false;
             this.cbFacturas.ItemHeight = 43;
-            this.cbFacturas.Location = new System.Drawing.Point(418, 375);
+            this.cbFacturas.Location = new System.Drawing.Point(557, 462);
+            this.cbFacturas.Margin = new System.Windows.Forms.Padding(4);
             this.cbFacturas.MaxDropDownItems = 4;
             this.cbFacturas.MouseState = MaterialSkin.MouseState.OUT;
             this.cbFacturas.Name = "cbFacturas";
-            this.cbFacturas.Size = new System.Drawing.Size(211, 49);
+            this.cbFacturas.Size = new System.Drawing.Size(280, 49);
             this.cbFacturas.StartIndex = 0;
             this.cbFacturas.TabIndex = 51;
             // 
             // Detalles_Ventas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(841, 450);
+            this.ClientSize = new System.Drawing.Size(1121, 554);
             this.Controls.Add(this.cbFacturas);
             this.Controls.Add(this.btnInforme);
-            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.lblMsj);
             this.Controls.Add(this.btBuscar);
             this.Controls.Add(this.txtBuscar_Compra);
             this.Controls.Add(this.dtDetalles_Venta);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Detalles_Ventas";
+            this.Padding = new System.Windows.Forms.Padding(4, 79, 4, 4);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalles Ventas";
             this.Load += new System.EventHandler(this.Detalles_Ventas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtDetalles_Venta)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -190,7 +180,6 @@
         private System.Windows.Forms.Button btBuscar;
         private MaterialSkin.Controls.MaterialTextBox txtBuscar_Compra;
         private System.Windows.Forms.Label lblMsj;
-        private System.Windows.Forms.LinkLabel linkLabel1;
         public MaterialSkin.Controls.MaterialComboBox cbFacturas;
         public MaterialSkin.Controls.MaterialButton btnInforme;
     }

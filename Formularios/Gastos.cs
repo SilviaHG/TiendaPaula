@@ -87,9 +87,25 @@ namespace TiendaPaula.Formularios
             txtTipoGasto.Visible = false;
             GuardaTipo.Visible = false;
 
-            dtGastos.DataSource = await Gest_Gastos.MostrarGastosTotales();// muestra la tabla actualizada
+            CambiarColumnas();// muestra la tabla actualizada
             cbTipo_pagos.DataSource = (await Gestion_Listas.Mostrar_TiposGastos()).AsEnumerable().ToList().Select(p => p[0]).ToList();
             lblMsj.Text = "";
+        }
+        public async void CambiarColumnas()
+        {
+            //Mostramos la tabla que esta en la BD
+            var datos = await Gest_Gastos.MostrarGastosTotales();
+            datos.Columns[0].ColumnName = "ID Gasto";
+            datos.Columns[1].ColumnName = "Descripción";
+            datos.Columns[2].ColumnName = "Tipo de gasto";
+            datos.Columns[3].ColumnName = "Total";
+            datos.Columns[4].ColumnName = "Fecha";
+            //Mostramos la tabla que esta en la BD
+            dtGastos.DataSource = datos;
+
+            dtGastos.AutoSizeColumnsMode =
+            DataGridViewAutoSizeColumnsMode.Fill;
+
         }
 
         private async void btBuscar_Click(object sender, EventArgs e)
@@ -110,7 +126,19 @@ namespace TiendaPaula.Formularios
                 lblMsj.ForeColor = Color.Green;
                 lblMsj.Text = "Mostrando resultados...";
 
-                dtGastos.DataSource = await Gest_Gastos.BuscarGasto(Mes_Annio);
+                //Mostramos la tabla que esta en la BD
+                var datos = await Gest_Gastos.BuscarGasto(Mes_Annio);
+                datos.Columns[0].ColumnName = "ID Gasto";
+                datos.Columns[1].ColumnName = "Descripción";
+                datos.Columns[2].ColumnName = "Tipo de gasto";
+                datos.Columns[3].ColumnName = "Total";
+                datos.Columns[4].ColumnName = "Fecha";
+                //Mostramos la tabla que esta en la BD
+                dtGastos.DataSource = datos;
+
+                dtGastos.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+
                 lblMsj.Text = "";
             }
                 
@@ -243,7 +271,11 @@ namespace TiendaPaula.Formularios
 
         private void txtBuscar_Gasto_TextChanged(object sender, EventArgs e)
         {
-
+            if(string.IsNullOrEmpty(txtBuscar_Gasto.Text))
+            {
+                //Muestra de nuevo la tabla
+                CambiarColumnas();
+            }
         }
     }
 
