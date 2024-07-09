@@ -63,12 +63,33 @@ namespace TiendaPaula.Formularios
         {
 
             txtId_compra.Text = Convert.ToString( await GestCompras.NumeroMAX()); // muestra el num maximo de compra
-            dtCompras.DataSource = await GestCompras.MostrarComprasTotales(); // Muestra la tabla de todas las compras realizadas
+            CambiarColumnas(); // Muestra la tabla de todas las compras realizadas
 
             Fecha_Compra.Value = DateTime.Now;
 
             lblMsj.Text = ""; // Label que muestra los mensajes de errores
         }
+
+        public async void CambiarColumnas()
+        {
+            //Mostramos la tabla que esta en la BD
+            var datos = await GestCompras.MostrarComprasTotales();
+            datos.Columns[0].ColumnName = "N° compra";
+            datos.Columns[1].ColumnName = "Proveedor";
+            datos.Columns[2].ColumnName = "Empleado";
+            datos.Columns[3].ColumnName = "Fecha";
+            datos.Columns[4].ColumnName = "Cant. comprada";
+            datos.Columns[5].ColumnName = "IVA";
+            datos.Columns[6].ColumnName = "Total";
+            datos.Columns[7].ColumnName = "Estado";
+
+            //Mostramos la tabla que esta en la BD
+            dtCompras.DataSource = datos;
+
+            dtCompras.AutoSizeColumnsMode =
+            DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
         //boton para mostrar todos los detalles de las compras
         private void Abre_DetallesCompra_Click(object sender, EventArgs e)
         {
@@ -261,9 +282,34 @@ namespace TiendaPaula.Formularios
                 lblMsj.ForeColor = Color.Green;
                 lblMsj.Text = "Mostrando resultados...";
 
-                dtCompras.DataSource = await GestCompras.obtenerCompra(cod);
+                //Mostramos la tabla que esta en la BD
+                var datos = await GestCompras.obtenerCompra(cod);
+                datos.Columns[0].ColumnName = "N° compra";
+                datos.Columns[1].ColumnName = "Proveedor";
+                datos.Columns[2].ColumnName = "Empleado";
+                datos.Columns[3].ColumnName = "Fecha";
+                datos.Columns[4].ColumnName = "Cant. comprada";
+                datos.Columns[5].ColumnName = "IVA";
+                datos.Columns[6].ColumnName = "Total";
+                datos.Columns[7].ColumnName = "Estado";
+
+                //Mostramos la tabla que esta en la BD
+                dtCompras.DataSource = datos;
+
+                dtCompras.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+
                 lblMsj.Text = "";
 
+            }
+        }
+
+        private void txtBuscar_Compra_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtBuscar_Compra.Text))
+            {
+                //Muestra de nuevo la tabla
+                CambiarColumnas();
             }
         }
     }

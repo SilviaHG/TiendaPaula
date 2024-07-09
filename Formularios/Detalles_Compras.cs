@@ -21,14 +21,30 @@ namespace TiendaPaula.Formularios
             InitializeComponent();
         }
 
-        private async void Detalles_Compras_Load(object sender, EventArgs e)
+        private void Detalles_Compras_Load(object sender, EventArgs e)
         {
-            dtDetalles_Compras.DataSource = await Det_Compras.Mostrar_DetallesComprasTotales();
+            CambiarColumnas();
             lblMsj.Text = "";
 
-            //autosize de la tabla
+        }
+
+        public async void CambiarColumnas()
+        {
+            //Mostramos la tabla que esta en la BD
+            var datos = await Det_Compras.Mostrar_DetallesComprasTotales();
+            datos.Columns[0].ColumnName = "N° detalle";
+            datos.Columns[1].ColumnName = "N° Compra";
+            datos.Columns[2].ColumnName = "Cod. Producto";
+            datos.Columns[3].ColumnName = "Cant. Comprada";
+            datos.Columns[4].ColumnName = "Precio unidad";
+            datos.Columns[5].ColumnName = "Días de garantía";
+
+            //Mostramos la tabla que esta en la BD
+            dtDetalles_Compras.DataSource = datos;
+
             dtDetalles_Compras.AutoSizeColumnsMode =
             DataGridViewAutoSizeColumnsMode.Fill;
+
         }
 
         private void txtBuscar_Compra_KeyPress(object sender, KeyPressEventArgs e)
@@ -58,18 +74,34 @@ namespace TiendaPaula.Formularios
                 lblMsj.ForeColor = Color.Green;
                 lblMsj.Text = "Mostrando resultados...";
 
-                dtDetalles_Compras.DataSource = await Det_Compras.Buscar_DetallesCompra(cod);
+                //Mostramos la tabla que esta en la BD
+                var datos = await Det_Compras.Buscar_DetallesCompra(cod);
+                datos.Columns[0].ColumnName = "N° detalle";
+                datos.Columns[1].ColumnName = "N° Compra";
+                datos.Columns[2].ColumnName = "Cod. Producto";
+                datos.Columns[3].ColumnName = "Cant. Comprada";
+                datos.Columns[4].ColumnName = "Precio unidad";
+                datos.Columns[5].ColumnName = "Días de garantía";
+
+                //Mostramos la tabla que esta en la BD
+                dtDetalles_Compras.DataSource = datos;
+
+                dtDetalles_Compras.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+
                 lblMsj.Text = "";
 
-                txtBuscar_Compra.Text = "";
 
             }
         }
 
-        private async void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void txtBuscar_Compra_TextChanged(object sender, EventArgs e)
         {
-            dtDetalles_Compras.DataSource = await Det_Compras.Mostrar_DetallesComprasTotales();
-
+            if (string.IsNullOrEmpty(txtBuscar_Compra.Text))
+            {
+                //Muestra de nuevo la tabla
+                CambiarColumnas();
+            }
         }
     }
 }

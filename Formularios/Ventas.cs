@@ -69,7 +69,7 @@ namespace TiendaPaula.Formularios
               (await G_Listas.MostrarEmpleados()).AsEnumerable().ToList().Select(p => p[0].ToString()).ToList().ToArray());
         }
 
-        public async void LimpiarCampos()
+        public void LimpiarCampos()
         {
             txtId_Venta.Text = "";
             txtDescuento.Text = "";
@@ -85,10 +85,31 @@ namespace TiendaPaula.Formularios
 
             btAgregar.Enabled = true;
 
-            dtVentas.DataSource = await GestVentas.MostrarVentasTotales(); // muestra la tabla actualizada
+            CambiarColumnas(); // muestra la tabla actualizada
         }
 
+        public async void CambiarColumnas()
+        {
+            //Mostramos la tabla que esta en la BD
+            var datos = await GestVentas.MostrarVentasTotales();
+            datos.Columns[0].ColumnName = "N° Venta";
+            datos.Columns[1].ColumnName = "Cliente";
+            datos.Columns[2].ColumnName = "Empleado";
+            datos.Columns[3].ColumnName = "Método pago";
+            datos.Columns[4].ColumnName = "IVA";
+            datos.Columns[5].ColumnName = "Descuento";
+            datos.Columns[6].ColumnName = "Total";
+            datos.Columns[7].ColumnName = "Días de garantía";
+            datos.Columns[8].ColumnName = "Fecha";
+            datos.Columns[9].ColumnName = "Estado";
 
+            //Mostramos la tabla que esta en la BD
+            dtVentas.DataSource = datos;
+
+            dtVentas.AutoSizeColumnsMode =
+            DataGridViewAutoSizeColumnsMode.Fill;
+
+        }
         private void Abre_DetallesVentas_Click(object sender, EventArgs e)
         {
             Detalles_Ventas Abrir = new Detalles_Ventas();
@@ -205,7 +226,25 @@ namespace TiendaPaula.Formularios
                 lblMsj.ForeColor = Color.Green;
                 lblMsj.Text = "Mostrando resultados...";
 
-                dtVentas.DataSource = await GestVentas.obtenerVenta(cod);
+                //Mostramos la tabla que esta en la BD
+                var datos = await GestVentas.obtenerVenta(cod);
+                datos.Columns[0].ColumnName = "N° Venta";
+                datos.Columns[1].ColumnName = "Cliente";
+                datos.Columns[2].ColumnName = "Empleado";
+                datos.Columns[3].ColumnName = "Método pago";
+                datos.Columns[4].ColumnName = "IVA";
+                datos.Columns[5].ColumnName = "Descuento";
+                datos.Columns[6].ColumnName = "Total";
+                datos.Columns[7].ColumnName = "Días de garantía";
+                datos.Columns[8].ColumnName = "Fecha";
+                datos.Columns[9].ColumnName = "Estado";
+
+                //Mostramos la tabla que esta en la BD
+                dtVentas.DataSource = datos;
+
+                dtVentas.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+
                 lblMsj.Text = "";
 
             }
@@ -358,5 +397,13 @@ namespace TiendaPaula.Formularios
             }
         }
 
+        private void txtBuscar_Venta_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtBuscar_Venta.Text))
+            {
+                //Muestra de nuevo la tabla
+                CambiarColumnas();
+            }
+        }
     } 
 }
