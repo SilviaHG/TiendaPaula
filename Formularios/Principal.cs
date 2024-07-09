@@ -137,6 +137,26 @@ namespace TiendaPaula.Formularios
             label7.Font = FUENTE7;
             label7.TextAlign = ContentAlignment.TopCenter;
 
+            //Mostrar usuario ingresado
+            lblPuesto.Text = Login.NombrePosicion + ": " + Login.NombreUsuario+".";
+            lblPuesto1.Text = Login.NombrePosicion + ": " + Login.NombreUsuario + ".";
+            lblPuesto2.Text = Login.NombrePosicion + ": " + Login.NombreUsuario + ".";
+            lblPuesto3.Text = Login.NombrePosicion + ": " + Login.NombreUsuario + ".";
+
+            lblPuesto.ForeColor = Color.FromArgb(45, 48, 71);
+            Font fuentePuesto = new Font(lblPuesto.Font.FontFamily, 12);
+            lblPuesto.Font = fuentePuesto;
+            lblPuesto1.Font = fuentePuesto;
+            lblPuesto2.Font = fuentePuesto;
+            lblPuesto3.Font = fuentePuesto;
+
+        }
+
+        public void colorPuesto(Label l)
+        {
+            l.ForeColor = Color.FromArgb(45, 48, 71);
+            Font fuentePuesto = new Font(l.Font.FontFamily, 12);
+            l.Font = fuentePuesto;
         }
 
 

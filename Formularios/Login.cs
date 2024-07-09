@@ -18,9 +18,10 @@ namespace TiendaPaula.Formularios
     {
         //variable estaticas para acceder al nombre y posicion con el cual se loguea
         //el usuario
-        public static string posicion;
-        public static string namePosicion;
+        public static string NombrePosicion;
+        public static string NombreUsuario;
         Gestion_Usuarios bdUsuario = new Gestion_Usuarios();
+       Gestion_Usuarios user = new Gestion_Usuarios();
         public Login()
         {
             InitializeComponent();
@@ -64,12 +65,18 @@ namespace TiendaPaula.Formularios
                     {
                         bdUsuario.RecordarUsuario(new Clases.Class_Recordar_Usuario(txtUsuario.Text, txtPassword.Text));
 
+                        NombrePosicion = await user.MostrarUsuarioIngresadoPosicion(Convert.ToInt32(txtUsuario.Text));
+                        NombreUsuario = await user.MostrarUsuarioIngresadoNombre(Convert.ToInt32(txtUsuario.Text));
+                       
                         Principal Abrir = new Principal();
                         Abrir.Show();
                         this.Hide();
                     }
                     else
                     {
+                        NombrePosicion = await user.MostrarUsuarioIngresadoPosicion(Convert.ToInt32(txtUsuario.Text));
+                        NombreUsuario = await user.MostrarUsuarioIngresadoNombre(Convert.ToInt32(txtUsuario.Text));
+                       
                         bdUsuario.OlvidarUsuario();
                         Principal Abrir = new Principal();
                         Abrir.Show();

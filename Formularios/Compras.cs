@@ -19,6 +19,7 @@ namespace TiendaPaula.Formularios
         Class_Compra_Proveedor Class_Compra = new Class_Compra_Proveedor();
         Gestion_Listas G_Listas = new Gestion_Listas();
         Class_Detalles_Compra Class_Detalle_C = new Class_Detalles_Compra();
+        Principal prin = new Principal();
 
         //Variables globales
         string E_Compra = "New"; // estado que tendrá la compra
@@ -68,6 +69,10 @@ namespace TiendaPaula.Formularios
             Fecha_Compra.Value = DateTime.Now;
 
             lblMsj.Text = ""; // Label que muestra los mensajes de errores
+
+            //agregar el usuario que acaba de ingresar a la app
+            label1.Text = Login.NombrePosicion + ": " + Login.NombreUsuario + ".";
+            prin.colorPuesto(label1);
         }
 
         public async void CambiarColumnas()

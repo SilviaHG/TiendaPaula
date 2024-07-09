@@ -16,6 +16,7 @@ namespace TiendaPaula.Formularios
     {
 
         Gestion_Detalles_Compras Det_Compras = new Gestion_Detalles_Compras();
+        Principal principal = new Principal();
         public Detalles_Compras()
         {
             InitializeComponent();
@@ -25,6 +26,11 @@ namespace TiendaPaula.Formularios
         {
             CambiarColumnas();
             lblMsj.Text = "";
+
+
+            //agregar el usuario que acaba de ingresar a la app
+            label1.Text = Login.NombrePosicion + ": " + Login.NombreUsuario + ".";
+            principal.colorPuesto(label1);
 
         }
 

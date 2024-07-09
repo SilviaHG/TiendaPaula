@@ -23,6 +23,8 @@ namespace TiendaPaula.Formularios
         Gestion_Clientes gestCliente = new Gestion_Clientes();
         //creamos una instancia de la clase de cliemtes
         Class_Cliente cliente = new Class_Cliente();
+        //creamos una instancia del formulario principal
+        Principal principal = new Principal();
         public Clientes()
         {
             InitializeComponent();
@@ -32,6 +34,7 @@ namespace TiendaPaula.Formularios
         {
             
             LimpiarCampos();
+           
 
         }
 
@@ -53,6 +56,10 @@ namespace TiendaPaula.Formularios
             btnAgregar.Enabled = true;
 
             CambiarColumnas();
+
+            //agregar el usuario que acaba de ingresar a la app
+            label1.Text = Login.NombrePosicion + ": " + Login.NombreUsuario + ".";
+            principal.colorPuesto(label1);
 
         }
 

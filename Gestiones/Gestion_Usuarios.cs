@@ -373,22 +373,24 @@ namespace TiendaPaula.Gestiones
         }
 
         //generamos el id de la tabla autoincremental
-        public async Task<int> MostrarUsuarioIngresado(string idU)
+        public async Task<string> MostrarUsuarioIngresadoPosicion(int idU)
         {
-            int Num = 0;
+            string position ="";
 
             using (MySqlConnection cnn = establecerConexion()) // se establece la conexión
             {
                 try
                 {
                     await AbrirConexion(cnn); // abrimos la conexión
-                    MySqlCommand cmd = new MySqlCommand($"select p.`NamePosition`, " +
-                        "`FullName` from EMPLOYEES e inner join POSITIONS p on p." +
-                        "`IdPosition` = e.`IdPosition` where `IdEmployee`= {idU};", cnn);
-                    cmd.Parameters.AddWithValue("ID_U", idU);
-                    cmd.ExecuteNonQuery();
+                    MySqlCommand cmd = new MySqlCommand($"select p.NamePosition " +
+                        $"from EMPLOYEES e inner join POSITIONS p " +
+                        $"on e.IdPosition = p.IdPosition where IdEmployee = {idU}", cnn);
                     
-                    
+                    object result = await cmd.ExecuteScalarAsync();
+
+                    //devolvemos la posicion del usuario
+                    position = result.ToString();
+
                 }
                 catch (Exception ex)
                 {
@@ -399,8 +401,37 @@ namespace TiendaPaula.Gestiones
                     await cerrarConexion(cnn); // cerramos la conexión en el bloque finally
                 }
             }
+            return position;
+        }
+        public async Task<string> MostrarUsuarioIngresadoNombre(int idU)
+        {
+            string nombreUsuario = "";
 
-            return Num;
+            using (MySqlConnection cnn = establecerConexion()) // se establece la conexión
+            {
+                try
+                {
+                    await AbrirConexion(cnn); // abrimos la conexión
+                    MySqlCommand cmd = new MySqlCommand($"select `FullName`" +
+                        $" from EMPLOYEES where IdEmployee= {idU}", cnn);
+
+                    object result = await cmd.ExecuteScalarAsync();
+
+                    //devolvemos la posicion del usuario
+                    nombreUsuario = result.ToString();
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}"); // si da un error lo mostramos
+                }
+                finally
+                {
+                    await cerrarConexion(cnn); // cerramos la conexión en el bloque finally
+                }
+            }
+            return nombreUsuario;
         }
     }
 }
+

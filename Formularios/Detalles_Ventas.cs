@@ -18,6 +18,7 @@ namespace TiendaPaula.Formularios
         Gestion_Detalles_Ventas Gest_Detalles = new Gestion_Detalles_Ventas();
 
         Gestion_Listas gestListas = new Gestion_Listas();
+        Principal principal = new Principal();
 
         // variable global para poder crear el reporte de facturación
         public static int numFactura;
@@ -30,6 +31,10 @@ namespace TiendaPaula.Formularios
         {
             CambiarColumnas(); //Muestra la tabla de detalles
             lblMsj.Text = "";
+
+            //agregar el usuario que acaba de ingresar a la app
+            label1.Text = Login.NombrePosicion + ": " + Login.NombreUsuario + ".";
+            principal.colorPuesto(label1);
 
             //autosize de la tabla
             dtDetalles_Venta.AutoSizeColumnsMode =
@@ -126,6 +131,12 @@ namespace TiendaPaula.Formularios
                 //Muestra de nuevo la tabla
                 CambiarColumnas();
             }
+        }
+        private void dtDetalles_Venta_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //pasamos los campos de la fila seleccionada del combo box
+            cbFacturas.SelectedItem = dtDetalles_Venta[1, e.RowIndex].Value.ToString();
+            cbFacturas.Refresh();
         }
     }
 }

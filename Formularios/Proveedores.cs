@@ -22,6 +22,7 @@ namespace TiendaPaula.Formularios
         Gestion_Proveedores gestProveedores = new Gestion_Proveedores();
         //creamos una instancia de la clase de cliemtes
         Class_Proveedor proveedor = new Class_Proveedor();
+        Principal principal = new Principal();
         public Proveedores()
         {
             InitializeComponent();
@@ -49,6 +50,10 @@ namespace TiendaPaula.Formularios
             btnEliminar.Enabled = false;
             btnAgregar.Enabled = true;
             CambiarColumnas();
+
+            //agregar el usuario que acaba de ingresar a la app
+            label1.Text = Login.NombrePosicion + ": " + Login.NombreUsuario + ".";
+            principal.colorPuesto(label1);
 
         }
 

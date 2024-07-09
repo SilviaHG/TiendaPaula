@@ -46,6 +46,7 @@
             this.dtUsuarios = new System.Windows.Forms.DataGridView();
             this.cbUsuario = new MaterialSkin.Controls.MaterialComboBox();
             this.cbEstado = new MaterialSkin.Controls.MaterialComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtUsuarios)).BeginInit();
@@ -61,7 +62,7 @@
             this.txtIdTabla.HideSelection = true;
             this.txtIdTabla.Hint = "N° ";
             this.txtIdTabla.LeadingIcon = null;
-            this.txtIdTabla.Location = new System.Drawing.Point(57, 83);
+            this.txtIdTabla.Location = new System.Drawing.Point(57, 125);
             this.txtIdTabla.MaxLength = 32767;
             this.txtIdTabla.MouseState = MaterialSkin.MouseState.OUT;
             this.txtIdTabla.Name = "txtIdTabla";
@@ -90,7 +91,7 @@
             this.txtContra.HideSelection = true;
             this.txtContra.Hint = "Contraseña";
             this.txtContra.LeadingIcon = null;
-            this.txtContra.Location = new System.Drawing.Point(57, 221);
+            this.txtContra.Location = new System.Drawing.Point(57, 263);
             this.txtContra.MaxLength = 32767;
             this.txtContra.MouseState = MaterialSkin.MouseState.OUT;
             this.txtContra.Name = "txtContra";
@@ -119,7 +120,7 @@
             this.txtVerificarContra.HideSelection = true;
             this.txtVerificarContra.Hint = "Confirmar contraseña";
             this.txtVerificarContra.LeadingIcon = null;
-            this.txtVerificarContra.Location = new System.Drawing.Point(57, 289);
+            this.txtVerificarContra.Location = new System.Drawing.Point(57, 331);
             this.txtVerificarContra.MaxLength = 32767;
             this.txtVerificarContra.MouseState = MaterialSkin.MouseState.OUT;
             this.txtVerificarContra.Name = "txtVerificarContra";
@@ -145,7 +146,7 @@
             this.btnCrear.Depth = 0;
             this.btnCrear.HighEmphasis = true;
             this.btnCrear.Icon = null;
-            this.btnCrear.Location = new System.Drawing.Point(106, 427);
+            this.btnCrear.Location = new System.Drawing.Point(106, 469);
             this.btnCrear.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnCrear.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCrear.Name = "btnCrear";
@@ -165,7 +166,7 @@
             this.panel1.Controls.Add(this.txtBuscar);
             this.panel1.Controls.Add(this.lblMsj);
             this.panel1.Controls.Add(this.dtUsuarios);
-            this.panel1.Location = new System.Drawing.Point(324, 67);
+            this.panel1.Location = new System.Drawing.Point(324, 109);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(566, 396);
             this.panel1.TabIndex = 6;
@@ -328,7 +329,7 @@
             this.cbUsuario.FormattingEnabled = true;
             this.cbUsuario.IntegralHeight = false;
             this.cbUsuario.ItemHeight = 43;
-            this.cbUsuario.Location = new System.Drawing.Point(57, 155);
+            this.cbUsuario.Location = new System.Drawing.Point(57, 197);
             this.cbUsuario.MaxDropDownItems = 4;
             this.cbUsuario.MouseState = MaterialSkin.MouseState.OUT;
             this.cbUsuario.Name = "cbUsuario";
@@ -354,7 +355,7 @@
             "Seleccion",
             "ACTIVO",
             "INACTIVO"});
-            this.cbEstado.Location = new System.Drawing.Point(57, 350);
+            this.cbEstado.Location = new System.Drawing.Point(57, 392);
             this.cbEstado.MaxDropDownItems = 4;
             this.cbEstado.MouseState = MaterialSkin.MouseState.OUT;
             this.cbEstado.Name = "cbEstado";
@@ -362,11 +363,20 @@
             this.cbEstado.StartIndex = 0;
             this.cbEstado.TabIndex = 8;
             // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(57, 75);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(288, 23);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "label1";
+            // 
             // Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(901, 488);
+            this.ClientSize = new System.Drawing.Size(901, 538);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.cbEstado);
             this.Controls.Add(this.cbUsuario);
             this.Controls.Add(this.panel1);
@@ -406,5 +416,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
     }
 }
