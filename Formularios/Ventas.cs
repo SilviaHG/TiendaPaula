@@ -22,6 +22,7 @@ namespace TiendaPaula.Formularios
         Class_Ventas Class_Ventas = new Class_Ventas();
         Gestion_Listas G_Listas = new Gestion_Listas();
         Class_Detalles_Venta Class_Detalle_V = new Class_Detalles_Venta();
+        Principal principal = new Principal();
 
         int Iva_V = 0;
         int Total_V = 0;
@@ -86,6 +87,11 @@ namespace TiendaPaula.Formularios
             btAgregar.Enabled = true;
 
             CambiarColumnas(); // muestra la tabla actualizada
+
+
+            //agregar el usuario que acaba de ingresar a la app
+            label2.Text = Login.NombrePosicion + ": " + Login.NombreUsuario + ".";
+            principal.colorPuesto(label2);
         }
 
         public async void CambiarColumnas()

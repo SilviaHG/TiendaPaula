@@ -51,6 +51,7 @@
             this.txtTallas = new MaterialSkin.Controls.MaterialTextBox2();
             this.btnAgregarMarca = new System.Windows.Forms.Button();
             this.txtInforme = new MaterialSkin.Controls.MaterialButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtProductos)).BeginInit();
             this.SuspendLayout();
@@ -65,7 +66,7 @@
             this.txtIdProducto.HideSelection = true;
             this.txtIdProducto.Hint = "N°";
             this.txtIdProducto.LeadingIcon = null;
-            this.txtIdProducto.Location = new System.Drawing.Point(17, 72);
+            this.txtIdProducto.Location = new System.Drawing.Point(17, 122);
             this.txtIdProducto.MaxLength = 32767;
             this.txtIdProducto.MouseState = MaterialSkin.MouseState.OUT;
             this.txtIdProducto.Name = "txtIdProducto";
@@ -94,7 +95,7 @@
             this.txtProducto.HideSelection = true;
             this.txtProducto.Hint = "Producto";
             this.txtProducto.LeadingIcon = null;
-            this.txtProducto.Location = new System.Drawing.Point(17, 126);
+            this.txtProducto.Location = new System.Drawing.Point(17, 176);
             this.txtProducto.MaxLength = 32767;
             this.txtProducto.MouseState = MaterialSkin.MouseState.OUT;
             this.txtProducto.Name = "txtProducto";
@@ -123,7 +124,7 @@
             this.txtDescripcion.HideSelection = true;
             this.txtDescripcion.Hint = "Descripción";
             this.txtDescripcion.LeadingIcon = null;
-            this.txtDescripcion.Location = new System.Drawing.Point(17, 190);
+            this.txtDescripcion.Location = new System.Drawing.Point(17, 240);
             this.txtDescripcion.MaxLength = 32767;
             this.txtDescripcion.MouseState = MaterialSkin.MouseState.OUT;
             this.txtDescripcion.Name = "txtDescripcion";
@@ -152,7 +153,7 @@
             this.txtPrecio.HideSelection = true;
             this.txtPrecio.Hint = "Precio";
             this.txtPrecio.LeadingIcon = null;
-            this.txtPrecio.Location = new System.Drawing.Point(17, 307);
+            this.txtPrecio.Location = new System.Drawing.Point(17, 357);
             this.txtPrecio.MaxLength = 32767;
             this.txtPrecio.MouseState = MaterialSkin.MouseState.OUT;
             this.txtPrecio.Name = "txtPrecio";
@@ -239,7 +240,7 @@
             "48",
             "49",
             "50"});
-            this.cbStock.Location = new System.Drawing.Point(271, 373);
+            this.cbStock.Location = new System.Drawing.Point(271, 423);
             this.cbStock.MaxDropDownItems = 4;
             this.cbStock.MouseState = MaterialSkin.MouseState.OUT;
             this.cbStock.Name = "cbStock";
@@ -262,7 +263,7 @@
             this.cbMarca.Hint = "Marca";
             this.cbMarca.IntegralHeight = false;
             this.cbMarca.ItemHeight = 43;
-            this.cbMarca.Location = new System.Drawing.Point(144, 373);
+            this.cbMarca.Location = new System.Drawing.Point(144, 423);
             this.cbMarca.MaxDropDownItems = 4;
             this.cbMarca.MouseState = MaterialSkin.MouseState.OUT;
             this.cbMarca.Name = "cbMarca";
@@ -286,7 +287,7 @@
             this.cbCategoria.Hint = "Categorías";
             this.cbCategoria.IntegralHeight = false;
             this.cbCategoria.ItemHeight = 43;
-            this.cbCategoria.Location = new System.Drawing.Point(17, 373);
+            this.cbCategoria.Location = new System.Drawing.Point(17, 423);
             this.cbCategoria.MaxDropDownItems = 4;
             this.cbCategoria.MouseState = MaterialSkin.MouseState.OUT;
             this.cbCategoria.Name = "cbCategoria";
@@ -305,7 +306,7 @@
             this.panel1.Controls.Add(this.btnEliminar);
             this.panel1.Controls.Add(this.btnActualizar);
             this.panel1.Controls.Add(this.btnAgregar);
-            this.panel1.Location = new System.Drawing.Point(17, 451);
+            this.panel1.Location = new System.Drawing.Point(17, 501);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(375, 100);
             this.panel1.TabIndex = 11;
@@ -406,7 +407,7 @@
             this.txtBuscar.HideSelection = true;
             this.txtBuscar.Hint = "Buscar";
             this.txtBuscar.LeadingIcon = null;
-            this.txtBuscar.Location = new System.Drawing.Point(411, 72);
+            this.txtBuscar.Location = new System.Drawing.Point(411, 122);
             this.txtBuscar.MaxLength = 32767;
             this.txtBuscar.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBuscar.Name = "txtBuscar";
@@ -434,7 +435,7 @@
             this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnBuscar.Image = global::TiendaPaula.Properties.Resources.icons8_buscar_30__1_;
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(964, 75);
+            this.btnBuscar.Location = new System.Drawing.Point(964, 125);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(94, 41);
             this.btnBuscar.TabIndex = 4;
@@ -446,7 +447,7 @@
             // dtProductos
             // 
             this.dtProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtProductos.Location = new System.Drawing.Point(411, 127);
+            this.dtProductos.Location = new System.Drawing.Point(411, 177);
             this.dtProductos.Name = "dtProductos";
             this.dtProductos.Size = new System.Drawing.Size(839, 295);
             this.dtProductos.TabIndex = 13;
@@ -454,7 +455,7 @@
             // 
             // lblMsj
             // 
-            this.lblMsj.Location = new System.Drawing.Point(602, 441);
+            this.lblMsj.Location = new System.Drawing.Point(602, 491);
             this.lblMsj.Name = "lblMsj";
             this.lblMsj.Size = new System.Drawing.Size(489, 57);
             this.lblMsj.TabIndex = 14;
@@ -471,7 +472,7 @@
             this.txtTallas.HideSelection = true;
             this.txtTallas.Hint = "Tallas";
             this.txtTallas.LeadingIcon = null;
-            this.txtTallas.Location = new System.Drawing.Point(17, 244);
+            this.txtTallas.Location = new System.Drawing.Point(17, 294);
             this.txtTallas.MaxLength = 32767;
             this.txtTallas.MouseState = MaterialSkin.MouseState.OUT;
             this.txtTallas.Name = "txtTallas";
@@ -493,7 +494,7 @@
             // btnAgregarMarca
             // 
             this.btnAgregarMarca.Image = global::TiendaPaula.Properties.Resources.icons8_más_20;
-            this.btnAgregarMarca.Location = new System.Drawing.Point(237, 422);
+            this.btnAgregarMarca.Location = new System.Drawing.Point(237, 472);
             this.btnAgregarMarca.Name = "btnAgregarMarca";
             this.btnAgregarMarca.Size = new System.Drawing.Size(28, 24);
             this.btnAgregarMarca.TabIndex = 16;
@@ -521,11 +522,20 @@
             this.txtInforme.UseVisualStyleBackColor = true;
             this.txtInforme.Click += new System.EventHandler(this.txtInforme_Click);
             // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(29, 78);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(382, 23);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "label1";
+            // 
             // Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1278, 564);
+            this.ClientSize = new System.Drawing.Size(1278, 633);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtInforme);
             this.Controls.Add(this.btnAgregarMarca);
             this.Controls.Add(this.txtTallas);
@@ -576,5 +586,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private MaterialSkin.Controls.MaterialButton txtInforme;
+        private System.Windows.Forms.Label label1;
     }
 }

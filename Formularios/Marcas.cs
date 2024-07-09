@@ -17,6 +17,7 @@ namespace TiendaPaula.Formularios
     {
         Class_Marca marcas = new Class_Marca();
         Gestion_Marcas gestMarcas = new Gestion_Marcas();
+        Principal prin = new Principal();
         public Marcas()
         {
             InitializeComponent();
@@ -40,6 +41,10 @@ namespace TiendaPaula.Formularios
             //asignamos el número consecutivo de la marca
             txtIdMarca.Text = Convert.ToString(await gestMarcas.NumeroMAXMarca());
             CambiarColumnas();
+
+            //agregar el usuario que acaba de ingresar a la app
+            label1.Text = Login.NombrePosicion + ": " + Login.NombreUsuario + ".";
+            prin.colorPuesto(label1);
         }
 
         public async void CambiarColumnas()
