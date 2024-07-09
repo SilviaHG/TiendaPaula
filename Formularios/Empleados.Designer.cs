@@ -47,6 +47,7 @@
             this.txtBuscar = new MaterialSkin.Controls.MaterialTextBox2();
             this.dtEmpleados = new System.Windows.Forms.DataGridView();
             this.lblMsj = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtEmpleados)).BeginInit();
             this.SuspendLayout();
@@ -62,7 +63,7 @@
             this.panel1.Controls.Add(this.btnEliminar);
             this.panel1.Controls.Add(this.btnActualizar);
             this.panel1.Controls.Add(this.btnAgregar);
-            this.panel1.Location = new System.Drawing.Point(6, 444);
+            this.panel1.Location = new System.Drawing.Point(6, 483);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(250, 163);
             this.panel1.TabIndex = 11;
@@ -163,7 +164,7 @@
             this.txtDireccionE.HideSelection = true;
             this.txtDireccionE.Hint = "Dirección";
             this.txtDireccionE.LeadingIcon = null;
-            this.txtDireccionE.Location = new System.Drawing.Point(6, 332);
+            this.txtDireccionE.Location = new System.Drawing.Point(6, 371);
             this.txtDireccionE.MaxLength = 32767;
             this.txtDireccionE.MouseState = MaterialSkin.MouseState.OUT;
             this.txtDireccionE.Name = "txtDireccionE";
@@ -192,7 +193,7 @@
             this.txtEmailE.HideSelection = true;
             this.txtEmailE.Hint = "Email";
             this.txtEmailE.LeadingIcon = null;
-            this.txtEmailE.Location = new System.Drawing.Point(6, 265);
+            this.txtEmailE.Location = new System.Drawing.Point(6, 304);
             this.txtEmailE.MaxLength = 32767;
             this.txtEmailE.MouseState = MaterialSkin.MouseState.OUT;
             this.txtEmailE.Name = "txtEmailE";
@@ -221,7 +222,7 @@
             this.txtTelefonoE.HideSelection = true;
             this.txtTelefonoE.Hint = "Teléfono";
             this.txtTelefonoE.LeadingIcon = null;
-            this.txtTelefonoE.Location = new System.Drawing.Point(6, 199);
+            this.txtTelefonoE.Location = new System.Drawing.Point(6, 238);
             this.txtTelefonoE.MaxLength = 32767;
             this.txtTelefonoE.MouseState = MaterialSkin.MouseState.OUT;
             this.txtTelefonoE.Name = "txtTelefonoE";
@@ -251,7 +252,7 @@
             this.txtNombreE.HideSelection = true;
             this.txtNombreE.Hint = "Nombre Completo";
             this.txtNombreE.LeadingIcon = null;
-            this.txtNombreE.Location = new System.Drawing.Point(6, 139);
+            this.txtNombreE.Location = new System.Drawing.Point(6, 178);
             this.txtNombreE.MaxLength = 32767;
             this.txtNombreE.MouseState = MaterialSkin.MouseState.OUT;
             this.txtNombreE.Name = "txtNombreE";
@@ -281,7 +282,7 @@
             this.txtCedulaE.HideSelection = true;
             this.txtCedulaE.Hint = "Cédula";
             this.txtCedulaE.LeadingIcon = null;
-            this.txtCedulaE.Location = new System.Drawing.Point(6, 80);
+            this.txtCedulaE.Location = new System.Drawing.Point(6, 119);
             this.txtCedulaE.MaxLength = 32767;
             this.txtCedulaE.MouseState = MaterialSkin.MouseState.OUT;
             this.txtCedulaE.Name = "txtCedulaE";
@@ -317,7 +318,7 @@
             this.cbPosiciones.ItemHeight = 43;
             this.cbPosiciones.Items.AddRange(new object[] {
             "Seleccione"});
-            this.cbPosiciones.Location = new System.Drawing.Point(7, 387);
+            this.cbPosiciones.Location = new System.Drawing.Point(7, 426);
             this.cbPosiciones.MaxDropDownItems = 4;
             this.cbPosiciones.MouseState = MaterialSkin.MouseState.OUT;
             this.cbPosiciones.Name = "cbPosiciones";
@@ -332,7 +333,7 @@
             this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnBuscar.Image = global::TiendaPaula.Properties.Resources.icons8_buscar_30__1_;
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(865, 83);
+            this.btnBuscar.Location = new System.Drawing.Point(865, 122);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(94, 41);
             this.btnBuscar.TabIndex = 15;
@@ -351,7 +352,7 @@
             this.txtBuscar.HideSelection = true;
             this.txtBuscar.Hint = "Buscar por número de cédula";
             this.txtBuscar.LeadingIcon = null;
-            this.txtBuscar.Location = new System.Drawing.Point(280, 80);
+            this.txtBuscar.Location = new System.Drawing.Point(280, 119);
             this.txtBuscar.MaxLength = 32767;
             this.txtBuscar.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBuscar.Name = "txtBuscar";
@@ -376,7 +377,7 @@
             // 
             this.dtEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtEmpleados.Location = new System.Drawing.Point(280, 139);
+            this.dtEmpleados.Location = new System.Drawing.Point(280, 178);
             this.dtEmpleados.Name = "dtEmpleados";
             this.dtEmpleados.ReadOnly = true;
             this.dtEmpleados.Size = new System.Drawing.Size(679, 352);
@@ -385,18 +386,27 @@
             // 
             // lblMsj
             // 
-            this.lblMsj.Location = new System.Drawing.Point(441, 558);
+            this.lblMsj.Location = new System.Drawing.Point(441, 597);
             this.lblMsj.Name = "lblMsj";
             this.lblMsj.Size = new System.Drawing.Size(395, 41);
             this.lblMsj.TabIndex = 16;
             this.lblMsj.Text = "MENSAJES DE ERROR";
             this.lblMsj.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(7, 78);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(398, 23);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "label1";
+            // 
             // Empleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(979, 627);
+            this.ClientSize = new System.Drawing.Size(979, 665);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblMsj);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtBuscar);
@@ -440,5 +450,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
     }
 }

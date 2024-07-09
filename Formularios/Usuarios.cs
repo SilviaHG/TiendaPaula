@@ -19,6 +19,7 @@ namespace TiendaPaula.Formularios
         Class_Usuarios usuarios = new Class_Usuarios();
         Gestion_Usuarios gestUsuarios = new Gestion_Usuarios();
         Gestion_Listas gestListas = new Gestion_Listas();
+        Principal principal = new Principal();
 
         public Usuarios()
         {
@@ -57,6 +58,11 @@ namespace TiendaPaula.Formularios
             txtIdTabla.Text = Convert.ToString(await gestUsuarios.NumeroMaxUsuario());
 
             CambiarColumnas();
+
+
+            //agregar el usuario que acaba de ingresar a la app
+            label1.Text = Login.NombrePosicion + ": " + Login.NombreUsuario + ".";
+            principal.colorPuesto(label1);
 
         }
 

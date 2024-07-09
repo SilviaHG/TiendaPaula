@@ -43,6 +43,7 @@
             this.txtIdMarca = new MaterialSkin.Controls.MaterialTextBox2();
             this.lblMsj = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtMarcas)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -50,7 +51,7 @@
             // dtMarcas
             // 
             this.dtMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtMarcas.Location = new System.Drawing.Point(57, 270);
+            this.dtMarcas.Location = new System.Drawing.Point(57, 313);
             this.dtMarcas.Name = "dtMarcas";
             this.dtMarcas.ReadOnly = true;
             this.dtMarcas.Size = new System.Drawing.Size(282, 151);
@@ -67,7 +68,7 @@
             this.txtBuscar.HideSelection = true;
             this.txtBuscar.Hint = "Buscar";
             this.txtBuscar.LeadingIcon = null;
-            this.txtBuscar.Location = new System.Drawing.Point(30, 204);
+            this.txtBuscar.Location = new System.Drawing.Point(30, 247);
             this.txtBuscar.MaxLength = 32767;
             this.txtBuscar.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBuscar.Name = "txtBuscar";
@@ -99,7 +100,7 @@
             this.panel1.Controls.Add(this.btnActualizar);
             this.panel1.Controls.Add(this.btnEliminar);
             this.panel1.Controls.Add(this.btnAgregar);
-            this.panel1.Location = new System.Drawing.Point(385, 73);
+            this.panel1.Location = new System.Drawing.Point(385, 116);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(115, 308);
             this.panel1.TabIndex = 16;
@@ -200,7 +201,7 @@
             this.txtMarca.HideSelection = true;
             this.txtMarca.Hint = "Marca";
             this.txtMarca.LeadingIcon = null;
-            this.txtMarca.Location = new System.Drawing.Point(30, 127);
+            this.txtMarca.Location = new System.Drawing.Point(30, 170);
             this.txtMarca.MaxLength = 32767;
             this.txtMarca.MouseState = MaterialSkin.MouseState.OUT;
             this.txtMarca.Name = "txtMarca";
@@ -230,7 +231,7 @@
             this.txtIdMarca.HideSelection = true;
             this.txtIdMarca.Hint = "N°";
             this.txtIdMarca.LeadingIcon = null;
-            this.txtIdMarca.Location = new System.Drawing.Point(30, 73);
+            this.txtIdMarca.Location = new System.Drawing.Point(30, 116);
             this.txtIdMarca.MaxLength = 32767;
             this.txtIdMarca.MouseState = MaterialSkin.MouseState.OUT;
             this.txtIdMarca.Name = "txtIdMarca";
@@ -251,7 +252,7 @@
             // 
             // lblMsj
             // 
-            this.lblMsj.Location = new System.Drawing.Point(27, 438);
+            this.lblMsj.Location = new System.Drawing.Point(27, 481);
             this.lblMsj.Name = "lblMsj";
             this.lblMsj.Size = new System.Drawing.Size(332, 57);
             this.lblMsj.TabIndex = 20;
@@ -265,7 +266,7 @@
             this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnBuscar.Image = global::TiendaPaula.Properties.Resources.icons8_buscar_30__1_;
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(269, 206);
+            this.btnBuscar.Location = new System.Drawing.Point(269, 249);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(94, 41);
             this.btnBuscar.TabIndex = 19;
@@ -274,11 +275,20 @@
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(57, 77);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(302, 23);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "label1";
+            // 
             // Marcas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(506, 504);
+            this.ClientSize = new System.Drawing.Size(506, 545);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblMsj);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.dtMarcas);
@@ -314,5 +324,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
     }
 }

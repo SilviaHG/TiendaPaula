@@ -46,6 +46,7 @@
             this.txtBuscar = new MaterialSkin.Controls.MaterialTextBox2();
             this.dtProveedores = new System.Windows.Forms.DataGridView();
             this.lblMsj = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtProveedores)).BeginInit();
             this.SuspendLayout();
@@ -61,7 +62,7 @@
             this.panel1.Controls.Add(this.btnEliminar);
             this.panel1.Controls.Add(this.btnActualizar);
             this.panel1.Controls.Add(this.btnAgregar);
-            this.panel1.Location = new System.Drawing.Point(17, 397);
+            this.panel1.Location = new System.Drawing.Point(17, 441);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(250, 163);
             this.panel1.TabIndex = 18;
@@ -162,7 +163,7 @@
             this.txtDireccionP.HideSelection = true;
             this.txtDireccionP.Hint = "Dirección";
             this.txtDireccionP.LeadingIcon = null;
-            this.txtDireccionP.Location = new System.Drawing.Point(17, 330);
+            this.txtDireccionP.Location = new System.Drawing.Point(17, 374);
             this.txtDireccionP.MaxLength = 32767;
             this.txtDireccionP.MouseState = MaterialSkin.MouseState.OUT;
             this.txtDireccionP.Name = "txtDireccionP";
@@ -191,7 +192,7 @@
             this.txtEmailP.HideSelection = true;
             this.txtEmailP.Hint = "Email";
             this.txtEmailP.LeadingIcon = null;
-            this.txtEmailP.Location = new System.Drawing.Point(17, 263);
+            this.txtEmailP.Location = new System.Drawing.Point(17, 307);
             this.txtEmailP.MaxLength = 32767;
             this.txtEmailP.MouseState = MaterialSkin.MouseState.OUT;
             this.txtEmailP.Name = "txtEmailP";
@@ -220,7 +221,7 @@
             this.txtTelefonoP.HideSelection = true;
             this.txtTelefonoP.Hint = "Teléfono";
             this.txtTelefonoP.LeadingIcon = null;
-            this.txtTelefonoP.Location = new System.Drawing.Point(17, 197);
+            this.txtTelefonoP.Location = new System.Drawing.Point(17, 241);
             this.txtTelefonoP.MaxLength = 32767;
             this.txtTelefonoP.MouseState = MaterialSkin.MouseState.OUT;
             this.txtTelefonoP.Name = "txtTelefonoP";
@@ -250,7 +251,7 @@
             this.txtNombreP.HideSelection = true;
             this.txtNombreP.Hint = "Nombre Completo";
             this.txtNombreP.LeadingIcon = null;
-            this.txtNombreP.Location = new System.Drawing.Point(17, 137);
+            this.txtNombreP.Location = new System.Drawing.Point(17, 181);
             this.txtNombreP.MaxLength = 32767;
             this.txtNombreP.MouseState = MaterialSkin.MouseState.OUT;
             this.txtNombreP.Name = "txtNombreP";
@@ -280,7 +281,7 @@
             this.txtID_Proveedor.HideSelection = true;
             this.txtID_Proveedor.Hint = "Identificador";
             this.txtID_Proveedor.LeadingIcon = null;
-            this.txtID_Proveedor.Location = new System.Drawing.Point(17, 78);
+            this.txtID_Proveedor.Location = new System.Drawing.Point(17, 122);
             this.txtID_Proveedor.MaxLength = 32767;
             this.txtID_Proveedor.MouseState = MaterialSkin.MouseState.OUT;
             this.txtID_Proveedor.Name = "txtID_Proveedor";
@@ -307,7 +308,7 @@
             this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnBuscar.Image = global::TiendaPaula.Properties.Resources.icons8_buscar_30__1_;
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(873, 82);
+            this.btnBuscar.Location = new System.Drawing.Point(873, 126);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(94, 41);
             this.btnBuscar.TabIndex = 21;
@@ -326,7 +327,7 @@
             this.txtBuscar.HideSelection = true;
             this.txtBuscar.Hint = "Buscar por código del proveedor";
             this.txtBuscar.LeadingIcon = null;
-            this.txtBuscar.Location = new System.Drawing.Point(291, 78);
+            this.txtBuscar.Location = new System.Drawing.Point(291, 122);
             this.txtBuscar.MaxLength = 32767;
             this.txtBuscar.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBuscar.Name = "txtBuscar";
@@ -351,7 +352,7 @@
             // 
             this.dtProveedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtProveedores.Location = new System.Drawing.Point(291, 137);
+            this.dtProveedores.Location = new System.Drawing.Point(291, 181);
             this.dtProveedores.Name = "dtProveedores";
             this.dtProveedores.ReadOnly = true;
             this.dtProveedores.Size = new System.Drawing.Size(679, 300);
@@ -360,18 +361,27 @@
             // 
             // lblMsj
             // 
-            this.lblMsj.Location = new System.Drawing.Point(426, 513);
+            this.lblMsj.Location = new System.Drawing.Point(493, 534);
             this.lblMsj.Name = "lblMsj";
             this.lblMsj.Size = new System.Drawing.Size(395, 41);
             this.lblMsj.TabIndex = 22;
             this.lblMsj.Text = "MENSAJES DE ERROR";
             this.lblMsj.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(23, 81);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(363, 23);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "label1";
+            // 
             // Proveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(998, 580);
+            this.ClientSize = new System.Drawing.Size(998, 619);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblMsj);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtBuscar);
@@ -413,5 +423,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
     }
 }

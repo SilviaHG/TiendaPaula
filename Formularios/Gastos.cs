@@ -20,6 +20,7 @@ namespace TiendaPaula.Formularios
         Gestion_Gastos Gest_Gastos = new Gestion_Gastos();
         Class_Gastos Gastos_C = new Class_Gastos(); 
         Gestion_Listas Gestion_Listas = new Gestion_Listas();
+        Principal prin = new Principal();
         public Gastos()
         {
             InitializeComponent();
@@ -90,6 +91,10 @@ namespace TiendaPaula.Formularios
             CambiarColumnas();// muestra la tabla actualizada
             cbTipo_pagos.DataSource = (await Gestion_Listas.Mostrar_TiposGastos()).AsEnumerable().ToList().Select(p => p[0]).ToList();
             lblMsj.Text = "";
+
+            //agregar el usuario que acaba de ingresar a la app
+            label3.Text = Login.NombrePosicion + ": " + Login.NombreUsuario + ".";
+            prin.colorPuesto(label3);
         }
         public async void CambiarColumnas()
         {

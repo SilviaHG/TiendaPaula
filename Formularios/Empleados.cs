@@ -22,6 +22,7 @@ namespace TiendaPaula.Formularios
         Class_Empleado empleado = new Class_Empleado();
         //creamos una instancia de la gestion de listas para llenar el comboBox de Posiciones
         Gestion_Listas gestListas = new Gestion_Listas();
+        Principal prin = new Principal();
         public Empleados()
         {
             InitializeComponent();
@@ -66,6 +67,10 @@ namespace TiendaPaula.Formularios
             RefrescarCombo();
 
             CambiarColumnas();
+
+            //agregar el usuario que acaba de ingresar a la app
+            label1.Text = Login.NombrePosicion + ": " + Login.NombreUsuario + ".";
+            prin.colorPuesto(label1);
 
         }
 

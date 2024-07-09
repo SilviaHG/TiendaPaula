@@ -46,6 +46,7 @@
             this.lblMsj = new System.Windows.Forms.Label();
             this.txtBuscar = new MaterialSkin.Controls.MaterialTextBox2();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtClientes)).BeginInit();
             this.SuspendLayout();
@@ -60,7 +61,7 @@
             this.txtCedulaCliente.HideSelection = true;
             this.txtCedulaCliente.Hint = "Cédula";
             this.txtCedulaCliente.LeadingIcon = null;
-            this.txtCedulaCliente.Location = new System.Drawing.Point(38, 90);
+            this.txtCedulaCliente.Location = new System.Drawing.Point(38, 116);
             this.txtCedulaCliente.MaxLength = 32767;
             this.txtCedulaCliente.MouseState = MaterialSkin.MouseState.OUT;
             this.txtCedulaCliente.Name = "txtCedulaCliente";
@@ -90,7 +91,7 @@
             this.txtNombreCompletoCliente.HideSelection = true;
             this.txtNombreCompletoCliente.Hint = "Nombre Completo";
             this.txtNombreCompletoCliente.LeadingIcon = null;
-            this.txtNombreCompletoCliente.Location = new System.Drawing.Point(38, 149);
+            this.txtNombreCompletoCliente.Location = new System.Drawing.Point(38, 175);
             this.txtNombreCompletoCliente.MaxLength = 32767;
             this.txtNombreCompletoCliente.MouseState = MaterialSkin.MouseState.OUT;
             this.txtNombreCompletoCliente.Name = "txtNombreCompletoCliente";
@@ -120,7 +121,7 @@
             this.txtTelefonoCliente.HideSelection = true;
             this.txtTelefonoCliente.Hint = "Teléfono";
             this.txtTelefonoCliente.LeadingIcon = null;
-            this.txtTelefonoCliente.Location = new System.Drawing.Point(38, 209);
+            this.txtTelefonoCliente.Location = new System.Drawing.Point(38, 235);
             this.txtTelefonoCliente.MaxLength = 32767;
             this.txtTelefonoCliente.MouseState = MaterialSkin.MouseState.OUT;
             this.txtTelefonoCliente.Name = "txtTelefonoCliente";
@@ -150,7 +151,7 @@
             this.txtEmailCliente.HideSelection = true;
             this.txtEmailCliente.Hint = "Email";
             this.txtEmailCliente.LeadingIcon = null;
-            this.txtEmailCliente.Location = new System.Drawing.Point(38, 275);
+            this.txtEmailCliente.Location = new System.Drawing.Point(38, 301);
             this.txtEmailCliente.MaxLength = 32767;
             this.txtEmailCliente.MouseState = MaterialSkin.MouseState.OUT;
             this.txtEmailCliente.Name = "txtEmailCliente";
@@ -179,7 +180,7 @@
             this.txtDireccionCliente.HideSelection = true;
             this.txtDireccionCliente.Hint = "Dirección";
             this.txtDireccionCliente.LeadingIcon = null;
-            this.txtDireccionCliente.Location = new System.Drawing.Point(38, 342);
+            this.txtDireccionCliente.Location = new System.Drawing.Point(38, 368);
             this.txtDireccionCliente.MaxLength = 32767;
             this.txtDireccionCliente.MouseState = MaterialSkin.MouseState.OUT;
             this.txtDireccionCliente.Name = "txtDireccionCliente";
@@ -209,7 +210,7 @@
             this.panel1.Controls.Add(this.btnEliminar);
             this.panel1.Controls.Add(this.btnActualiza);
             this.panel1.Controls.Add(this.btnAgregar);
-            this.panel1.Location = new System.Drawing.Point(37, 397);
+            this.panel1.Location = new System.Drawing.Point(37, 423);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(250, 163);
             this.panel1.TabIndex = 5;
@@ -304,7 +305,7 @@
             // 
             this.dtClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtClientes.Location = new System.Drawing.Point(318, 149);
+            this.dtClientes.Location = new System.Drawing.Point(318, 175);
             this.dtClientes.Name = "dtClientes";
             this.dtClientes.ReadOnly = true;
             this.dtClientes.Size = new System.Drawing.Size(679, 300);
@@ -313,7 +314,7 @@
             // 
             // lblMsj
             // 
-            this.lblMsj.Location = new System.Drawing.Point(419, 512);
+            this.lblMsj.Location = new System.Drawing.Point(419, 538);
             this.lblMsj.Name = "lblMsj";
             this.lblMsj.Size = new System.Drawing.Size(395, 41);
             this.lblMsj.TabIndex = 7;
@@ -330,7 +331,7 @@
             this.txtBuscar.HideSelection = true;
             this.txtBuscar.Hint = "Buscar por número de cédula";
             this.txtBuscar.LeadingIcon = null;
-            this.txtBuscar.Location = new System.Drawing.Point(318, 90);
+            this.txtBuscar.Location = new System.Drawing.Point(318, 116);
             this.txtBuscar.MaxLength = 32767;
             this.txtBuscar.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBuscar.Name = "txtBuscar";
@@ -358,7 +359,7 @@
             this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnBuscar.Image = global::TiendaPaula.Properties.Resources.icons8_buscar_30__1_;
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(784, 90);
+            this.btnBuscar.Location = new System.Drawing.Point(784, 116);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(94, 41);
             this.btnBuscar.TabIndex = 9;
@@ -367,11 +368,20 @@
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(38, 79);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(450, 23);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "label1";
+            // 
             // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1003, 591);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.lblMsj);
@@ -413,5 +423,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label1;
     }
 }

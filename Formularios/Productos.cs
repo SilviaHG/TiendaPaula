@@ -18,6 +18,7 @@ namespace TiendaPaula.Formularios
         Gestion_Listas gestListas = new Gestion_Listas();
         Gestion_Productos gestProductos = new Gestion_Productos();
         Class_Productos productos = new Class_Productos();
+        Principal principal = new Principal();
 
         public Productos()
         {
@@ -51,6 +52,10 @@ namespace TiendaPaula.Formularios
             //asignamos el número consecutivo del producto
             txtIdProducto.Text = Convert.ToString(await gestProductos.NumeroMAXProducto());
             CambiarColumnas();
+
+            //agregar el usuario que acaba de ingresar a la app
+            label1.Text = Login.NombrePosicion + ": " + Login.NombreUsuario + ".";
+            principal.colorPuesto(label1);
         }
 
         public async void CambiarColumnas()
