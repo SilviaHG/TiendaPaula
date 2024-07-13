@@ -134,9 +134,19 @@ namespace TiendaPaula.Formularios
         }
         private void dtDetalles_Venta_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //pasamos los campos de la fila seleccionada del combo box
-            cbFacturas.SelectedItem = dtDetalles_Venta[1, e.RowIndex].Value.ToString();
-            cbFacturas.Refresh();
+            if(dtDetalles_Venta.SelectedRows.Count == 1 || dtDetalles_Venta.SelectedCells.Count == 1)
+            {
+                //pasamos los campos de la fila seleccionada del combo box
+                cbFacturas.SelectedItem = dtDetalles_Venta[1, e.RowIndex].Value.ToString();
+                cbFacturas.Refresh();
+                lblMsj.Text = ""; //Limpiamos el label de errores
+            }
+            else
+            {
+                lblMsj.ForeColor = Color.Red;
+                lblMsj.Text = "Tienes muchas filas seleccionadas";
+            }
+            
         }
     }
 }

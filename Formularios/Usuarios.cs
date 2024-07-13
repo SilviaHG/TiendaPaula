@@ -287,26 +287,38 @@ namespace TiendaPaula.Formularios
 
         private void dtUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //se muestran los datos seleccionado en los textbox, ya sea para eliminar o actualizar
 
-            //habilitamos el boton de actualizar y eliminar y deshabilitamos el de agregar
-            btnActualizar.Enabled = true;
-            btnEliminar.Enabled = true;
-            btnCrear.Enabled = false;
-            //pasamos los campos de la fila seleccionada a los textBox
-            txtIdTabla.Text = dtUsuarios[0, e.RowIndex].Value.ToString();
+            if (dtUsuarios.SelectedRows.Count == 1 || dtUsuarios.SelectedCells.Count == 1)
+            {
+                //se muestran los datos seleccionado en los textbox, ya sea para eliminar o actualizar
 
-            txtBuscar.Text = dtUsuarios[1, e.RowIndex].Value.ToString();
-            cbUsuario.SelectedItem = dtUsuarios[1, e.RowIndex].Value;
+                //habilitamos el boton de actualizar y eliminar y deshabilitamos el de agregar
+                btnActualizar.Enabled = true;
+                btnEliminar.Enabled = true;
+                btnCrear.Enabled = false;
+                //pasamos los campos de la fila seleccionada a los textBox
+                txtIdTabla.Text = dtUsuarios[0, e.RowIndex].Value.ToString();
 
-            txtContra.Text = dtUsuarios[2, e.RowIndex].Value.ToString();
-            txtVerificarContra.Text = dtUsuarios[2, e.RowIndex].Value.ToString();
+                txtBuscar.Text = dtUsuarios[1, e.RowIndex].Value.ToString();
+                cbUsuario.SelectedItem = dtUsuarios[1, e.RowIndex].Value;
 
-            cbEstado.SelectedItem = dtUsuarios[3, e.RowIndex].Value.ToString();
-            //se deshabilita para que no pueda editar el id
-            cbUsuario.Enabled = false;
-            cbEstado.Refresh();
-            cbUsuario.Refresh();
+                txtContra.Text = dtUsuarios[2, e.RowIndex].Value.ToString();
+                txtVerificarContra.Text = dtUsuarios[2, e.RowIndex].Value.ToString();
+
+                cbEstado.SelectedItem = dtUsuarios[3, e.RowIndex].Value.ToString();
+                //se deshabilita para que no pueda editar el id
+                cbUsuario.Enabled = false;
+                cbEstado.Refresh();
+                cbUsuario.Refresh();
+
+                lblMsj.Text = ""; //Limpiamos el label de errores
+            }
+            else
+            {
+                lblMsj.ForeColor = Color.Red;
+                lblMsj.Text = "Tienes muchas filas seleccionadas";
+            }
+            
         }
     }
 }

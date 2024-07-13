@@ -250,16 +250,27 @@ namespace TiendaPaula.Formularios
 
         private void dtMarcas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //se muestran los datos seleccionado en los textbox, ya sea para eliminar o actualizar
+            if (dtMarcas.SelectedRows.Count == 1 || dtMarcas.SelectedCells.Count == 1)
+            {
+                //se muestran los datos seleccionado en los textbox, ya sea para eliminar o actualizar
 
-            //habilitamos el boton de actualizar y eliminar y deshabilitamos el de agregar
-            btnActualizar.Enabled = true;
-            btnEliminar.Enabled = true;
-            btnAgregar.Enabled = false;
-            //pasamos los campos de la fila seleccionada a los textBox
-            txtIdMarca.Text = dtMarcas[0, e.RowIndex].Value.ToString();
-            txtBuscar.Text = dtMarcas[1, e.RowIndex].Value.ToString();
-            txtMarca.Text = dtMarcas[1, e.RowIndex].Value.ToString();
+                //habilitamos el boton de actualizar y eliminar y deshabilitamos el de agregar
+                btnActualizar.Enabled = true;
+                btnEliminar.Enabled = true;
+                btnAgregar.Enabled = false;
+                //pasamos los campos de la fila seleccionada a los textBox
+                txtIdMarca.Text = dtMarcas[0, e.RowIndex].Value.ToString();
+                txtBuscar.Text = dtMarcas[1, e.RowIndex].Value.ToString();
+                txtMarca.Text = dtMarcas[1, e.RowIndex].Value.ToString();
+
+                lblMsj.Text = ""; //Limpiamos el label de errores
+            }
+            else
+            {
+                lblMsj.ForeColor = Color.Red;
+                lblMsj.Text = "Tienes muchas filas seleccionadas";
+            }
+            
         }
 
         

@@ -389,20 +389,32 @@ namespace TiendaPaula.Formularios
 
         private void dtProveedores_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //se muestran los datos selccionados e
-            // para que no pueda editar la cédula
-            txtID_Proveedor.Enabled = false;
-            //habilitamos el boton de actualizar y eliminar y deshabilitamos el de agregar
-            btnActualizar.Enabled = true;
-            btnEliminar.Enabled = true;
-            btnAgregar.Enabled = false;
-            //pasamos los campos de la fila seleccionada a los textBox
-            txtID_Proveedor.Text = dtProveedores[0, e.RowIndex].Value.ToString();
-            txtBuscar.Text = dtProveedores[0, e.RowIndex].Value.ToString();
-            txtNombreP.Text = dtProveedores[1, e.RowIndex].Value.ToString();
-            txtTelefonoP.Text = dtProveedores[2, e.RowIndex].Value.ToString();
-            txtEmailP.Text = dtProveedores[3, e.RowIndex].Value.ToString();
-            txtDireccionP.Text = dtProveedores[4, e.RowIndex].Value.ToString();
+
+            if (dtProveedores.SelectedRows.Count == 1 || dtProveedores.SelectedCells.Count == 1)
+            {
+                //se muestran los datos selccionados e
+                // para que no pueda editar la cédula
+                txtID_Proveedor.Enabled = false;
+                //habilitamos el boton de actualizar y eliminar y deshabilitamos el de agregar
+                btnActualizar.Enabled = true;
+                btnEliminar.Enabled = true;
+                btnAgregar.Enabled = false;
+                //pasamos los campos de la fila seleccionada a los textBox
+                txtID_Proveedor.Text = dtProveedores[0, e.RowIndex].Value.ToString();
+                txtBuscar.Text = dtProveedores[0, e.RowIndex].Value.ToString();
+                txtNombreP.Text = dtProveedores[1, e.RowIndex].Value.ToString();
+                txtTelefonoP.Text = dtProveedores[2, e.RowIndex].Value.ToString();
+                txtEmailP.Text = dtProveedores[3, e.RowIndex].Value.ToString();
+                txtDireccionP.Text = dtProveedores[4, e.RowIndex].Value.ToString();
+
+                lblMsj.Text = ""; //Limpiamos el label de errores
+            }
+            else
+            {
+                lblMsj.ForeColor = Color.Red;
+                lblMsj.Text = "Tienes muchas filas seleccionadas";
+            }
+            
         }
     }
 }
