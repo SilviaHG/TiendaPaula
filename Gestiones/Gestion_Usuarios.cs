@@ -25,9 +25,9 @@ namespace TiendaPaula.Gestiones
                 {
                     await AbrirConexion(connection);
 
-                    MySqlCommand cmd = new MySqlCommand($"SELECT * FROM USERS WHERE IdUser = {usuario} and Password_user = {contrasennia}", connection);
-                    cmd.Parameters.AddWithValue("IdUser", usuario);
-                    cmd.Parameters.AddWithValue("Password_user", contrasennia);
+                    MySqlCommand cmd = new MySqlCommand($"SELECT * FROM USERS WHERE IdUser = @IdUser and Password_user = @Password_user", connection);
+                    cmd.Parameters.AddWithValue("@IdUser", usuario);
+                    cmd.Parameters.AddWithValue("@Password_user", contrasennia);
 
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     adapter.Fill(dt);
@@ -431,6 +431,66 @@ namespace TiendaPaula.Gestiones
                 }
             }
             return nombreUsuario;
+        }
+
+        public async Task<string> CorreoUsuario(int idU)
+        {
+            string correoUsuario = "";
+
+            using (MySqlConnection cnn = establecerConexion()) // se establece la conexión
+            {
+                try
+                {
+                    await AbrirConexion(cnn); // abrimos la conexión
+                    MySqlCommand cmd = new MySqlCommand($"select Email " +
+                        $"from EMPLOYEES where IdEmployee = {idU}", cnn);
+
+                    object result = await cmd.ExecuteScalarAsync();
+
+                    //devolvemos el correo del usuario
+                    correoUsuario = result.ToString();
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}"); // si da un error lo mostramos
+                }
+                finally
+                {
+                    await cerrarConexion(cnn); // cerramos la conexión en el bloque finally
+                }
+            }
+            return correoUsuario;
+        }
+
+        public async Task<string> ContrasenniaUsuario(int idU)
+        {
+            string contrasenniaUsuario = "";
+
+            using (MySqlConnection cnn = establecerConexion()) // se establece la conexión
+            {
+                try
+                {
+                    await AbrirConexion(cnn); // abrimos la conexión
+                    MySqlCommand cmd = new MySqlCommand($"select `Password_user` " +
+                        $"from USERS where `IdUser` = {idU}", cnn);
+
+                    object result = await cmd.ExecuteScalarAsync();
+
+                    //devolvemos el correo del usuario
+                    contrasenniaUsuario = result.ToString();
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}"); // si da un error lo mostramos
+                }
+                finally
+                {
+                    await cerrarConexion(cnn); // cerramos la conexión en el bloque finally
+                }
+            }
+            return contrasenniaUsuario;
         }
     }
 }
