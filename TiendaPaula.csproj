@@ -212,6 +212,12 @@
     <Compile Include="Formularios\Proveedores.Designer.cs">
       <DependentUpon>Proveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\RecuperarContrasennia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\RecuperarContrasennia.Designer.cs">
+      <DependentUpon>RecuperarContrasennia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Proveedores.resx">
       <DependentUpon>Proveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\RecuperarContrasennia.resx">
+      <DependentUpon>RecuperarContrasennia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Usuarios.resx">
       <DependentUpon>Usuarios.cs</DependentUpon>

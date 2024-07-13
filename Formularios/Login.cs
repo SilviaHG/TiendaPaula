@@ -120,5 +120,12 @@ namespace TiendaPaula.Formularios
                 txtPassword.Text = "";
             }
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            
+            RecuperarContrasennia rc = new RecuperarContrasennia();
+            rc.ShowDialog();
+        }
     }
 }
