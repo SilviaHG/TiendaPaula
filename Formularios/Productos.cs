@@ -335,26 +335,38 @@ namespace TiendaPaula.Formularios
 
         private void dtProductos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //se muestran los datos seleccionado en los textbox, ya sea para eliminar o actualizar
 
-            //habilitamos el boton de actualizar y eliminar y deshabilitamos el de agregar
-            btnActualizar.Enabled = true;
-            btnEliminar.Enabled = true;
-            btnAgregar.Enabled = false;
-            //pasamos los campos de la fila seleccionada a los textBox
-            txtIdProducto.Text = dtProductos[0, e.RowIndex].Value.ToString();
-            txtBuscar.Text = dtProductos[0, e.RowIndex].Value.ToString();
-            cbCategoria.SelectedItem = dtProductos[1, e.RowIndex].Value.ToString();
-            txtProducto.Text = dtProductos[2, e.RowIndex].Value.ToString();
-            txtDescripcion.Text = dtProductos[3, e.RowIndex].Value.ToString();
-            cbMarca.SelectedItem = dtProductos[4, e.RowIndex].Value.ToString();
-            txtTallas.Text = dtProductos[5, e.RowIndex].Value.ToString();
-            cbStock.SelectedItem = dtProductos[6, e.RowIndex].Value.ToString();
-            txtPrecio.Text = dtProductos[7, e.RowIndex].Value.ToString();
+            if (dtProductos.SelectedRows.Count == 1 || dtProductos.SelectedCells.Count == 1)
+            {
+                //se muestran los datos seleccionado en los textbox, ya sea para eliminar o actualizar
 
-            cbCategoria.Refresh();
-            cbMarca.Refresh();
-            cbStock.Refresh();
+                //habilitamos el boton de actualizar y eliminar y deshabilitamos el de agregar
+                btnActualizar.Enabled = true;
+                btnEliminar.Enabled = true;
+                btnAgregar.Enabled = false;
+                //pasamos los campos de la fila seleccionada a los textBox
+                txtIdProducto.Text = dtProductos[0, e.RowIndex].Value.ToString();
+                txtBuscar.Text = dtProductos[0, e.RowIndex].Value.ToString();
+                cbCategoria.SelectedItem = dtProductos[1, e.RowIndex].Value.ToString();
+                txtProducto.Text = dtProductos[2, e.RowIndex].Value.ToString();
+                txtDescripcion.Text = dtProductos[3, e.RowIndex].Value.ToString();
+                cbMarca.SelectedItem = dtProductos[4, e.RowIndex].Value.ToString();
+                txtTallas.Text = dtProductos[5, e.RowIndex].Value.ToString();
+                cbStock.SelectedItem = dtProductos[6, e.RowIndex].Value.ToString();
+                txtPrecio.Text = dtProductos[7, e.RowIndex].Value.ToString();
+
+                cbCategoria.Refresh();
+                cbMarca.Refresh();
+                cbStock.Refresh();
+
+                lblMsj.Text = ""; //Limpiamos el label de errores
+            }
+            else
+            {
+                lblMsj.ForeColor = Color.Red;
+                lblMsj.Text = "Tienes muchas filas seleccionadas";
+            }
+            
 
         }
         //boton que lo dirige al formulario para agregar una marca nueva

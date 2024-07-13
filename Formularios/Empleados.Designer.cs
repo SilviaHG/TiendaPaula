@@ -63,19 +63,19 @@
             this.panel1.Controls.Add(this.btnEliminar);
             this.panel1.Controls.Add(this.btnActualizar);
             this.panel1.Controls.Add(this.btnAgregar);
-            this.panel1.Location = new System.Drawing.Point(6, 483);
+            this.panel1.Location = new System.Drawing.Point(8, 594);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(250, 163);
+            this.panel1.Size = new System.Drawing.Size(332, 200);
             this.panel1.TabIndex = 11;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(158, 140);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(211, 172);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 13);
+            this.label3.Size = new System.Drawing.Size(51, 16);
             this.label3.TabIndex = 56;
             this.label3.Text = "Limpiar";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -84,10 +84,9 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label5.Location = new System.Drawing.Point(50, 140);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(67, 172);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 13);
+            this.label5.Size = new System.Drawing.Size(55, 16);
             this.label5.TabIndex = 57;
             this.label5.Text = "Eliminar";
             // 
@@ -95,10 +94,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(150, 65);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(200, 80);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 13);
+            this.label4.Size = new System.Drawing.Size(65, 16);
             this.label4.TabIndex = 57;
             this.label4.Text = "Actualizar";
             // 
@@ -106,10 +104,9 @@
             // 
             this.Agregar.AutoSize = true;
             this.Agregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.Agregar.Location = new System.Drawing.Point(50, 65);
-            this.Agregar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Agregar.Location = new System.Drawing.Point(67, 80);
             this.Agregar.Name = "Agregar";
-            this.Agregar.Size = new System.Drawing.Size(44, 13);
+            this.Agregar.Size = new System.Drawing.Size(56, 16);
             this.Agregar.TabIndex = 53;
             this.Agregar.Text = "Agregar";
             this.Agregar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -117,9 +114,10 @@
             // btnClean
             // 
             this.btnClean.Image = global::TiendaPaula.Properties.Resources.icons8_cheque;
-            this.btnClean.Location = new System.Drawing.Point(148, 85);
+            this.btnClean.Location = new System.Drawing.Point(197, 105);
+            this.btnClean.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClean.Name = "btnClean";
-            this.btnClean.Size = new System.Drawing.Size(58, 53);
+            this.btnClean.Size = new System.Drawing.Size(77, 65);
             this.btnClean.TabIndex = 3;
             this.btnClean.UseVisualStyleBackColor = true;
             this.btnClean.Click += new System.EventHandler(this.btnClean_Click);
@@ -127,9 +125,10 @@
             // btnEliminar
             // 
             this.btnEliminar.Image = global::TiendaPaula.Properties.Resources.icons8_eliminar;
-            this.btnEliminar.Location = new System.Drawing.Point(42, 85);
+            this.btnEliminar.Location = new System.Drawing.Point(56, 105);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(58, 53);
+            this.btnEliminar.Size = new System.Drawing.Size(77, 65);
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -137,9 +136,10 @@
             // btnActualizar
             // 
             this.btnActualizar.Image = global::TiendaPaula.Properties.Resources.icons8_actualizar;
-            this.btnActualizar.Location = new System.Drawing.Point(148, 10);
+            this.btnActualizar.Location = new System.Drawing.Point(197, 12);
+            this.btnActualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(58, 53);
+            this.btnActualizar.Size = new System.Drawing.Size(77, 65);
             this.btnActualizar.TabIndex = 1;
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
@@ -147,9 +147,10 @@
             // btnAgregar
             // 
             this.btnAgregar.Image = global::TiendaPaula.Properties.Resources.icons8_guardar2;
-            this.btnAgregar.Location = new System.Drawing.Point(42, 10);
+            this.btnAgregar.Location = new System.Drawing.Point(56, 12);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(58, 53);
+            this.btnAgregar.Size = new System.Drawing.Size(77, 65);
             this.btnAgregar.TabIndex = 0;
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -164,7 +165,8 @@
             this.txtDireccionE.HideSelection = true;
             this.txtDireccionE.Hint = "Dirección";
             this.txtDireccionE.LeadingIcon = null;
-            this.txtDireccionE.Location = new System.Drawing.Point(6, 371);
+            this.txtDireccionE.Location = new System.Drawing.Point(8, 457);
+            this.txtDireccionE.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDireccionE.MaxLength = 32767;
             this.txtDireccionE.MouseState = MaterialSkin.MouseState.OUT;
             this.txtDireccionE.Name = "txtDireccionE";
@@ -176,7 +178,7 @@
             this.txtDireccionE.SelectionLength = 0;
             this.txtDireccionE.SelectionStart = 0;
             this.txtDireccionE.ShortcutsEnabled = true;
-            this.txtDireccionE.Size = new System.Drawing.Size(250, 48);
+            this.txtDireccionE.Size = new System.Drawing.Size(333, 48);
             this.txtDireccionE.TabIndex = 10;
             this.txtDireccionE.TabStop = false;
             this.txtDireccionE.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -193,7 +195,8 @@
             this.txtEmailE.HideSelection = true;
             this.txtEmailE.Hint = "Email";
             this.txtEmailE.LeadingIcon = null;
-            this.txtEmailE.Location = new System.Drawing.Point(6, 304);
+            this.txtEmailE.Location = new System.Drawing.Point(8, 374);
+            this.txtEmailE.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtEmailE.MaxLength = 32767;
             this.txtEmailE.MouseState = MaterialSkin.MouseState.OUT;
             this.txtEmailE.Name = "txtEmailE";
@@ -205,7 +208,7 @@
             this.txtEmailE.SelectionLength = 0;
             this.txtEmailE.SelectionStart = 0;
             this.txtEmailE.ShortcutsEnabled = true;
-            this.txtEmailE.Size = new System.Drawing.Size(250, 48);
+            this.txtEmailE.Size = new System.Drawing.Size(333, 48);
             this.txtEmailE.TabIndex = 9;
             this.txtEmailE.TabStop = false;
             this.txtEmailE.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -222,7 +225,8 @@
             this.txtTelefonoE.HideSelection = true;
             this.txtTelefonoE.Hint = "Teléfono";
             this.txtTelefonoE.LeadingIcon = null;
-            this.txtTelefonoE.Location = new System.Drawing.Point(6, 238);
+            this.txtTelefonoE.Location = new System.Drawing.Point(8, 293);
+            this.txtTelefonoE.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTelefonoE.MaxLength = 32767;
             this.txtTelefonoE.MouseState = MaterialSkin.MouseState.OUT;
             this.txtTelefonoE.Name = "txtTelefonoE";
@@ -234,7 +238,7 @@
             this.txtTelefonoE.SelectionLength = 0;
             this.txtTelefonoE.SelectionStart = 0;
             this.txtTelefonoE.ShortcutsEnabled = true;
-            this.txtTelefonoE.Size = new System.Drawing.Size(250, 48);
+            this.txtTelefonoE.Size = new System.Drawing.Size(333, 48);
             this.txtTelefonoE.TabIndex = 8;
             this.txtTelefonoE.TabStop = false;
             this.txtTelefonoE.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -252,7 +256,8 @@
             this.txtNombreE.HideSelection = true;
             this.txtNombreE.Hint = "Nombre Completo";
             this.txtNombreE.LeadingIcon = null;
-            this.txtNombreE.Location = new System.Drawing.Point(6, 178);
+            this.txtNombreE.Location = new System.Drawing.Point(8, 219);
+            this.txtNombreE.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNombreE.MaxLength = 32767;
             this.txtNombreE.MouseState = MaterialSkin.MouseState.OUT;
             this.txtNombreE.Name = "txtNombreE";
@@ -264,7 +269,7 @@
             this.txtNombreE.SelectionLength = 0;
             this.txtNombreE.SelectionStart = 0;
             this.txtNombreE.ShortcutsEnabled = true;
-            this.txtNombreE.Size = new System.Drawing.Size(250, 48);
+            this.txtNombreE.Size = new System.Drawing.Size(333, 48);
             this.txtNombreE.TabIndex = 7;
             this.txtNombreE.TabStop = false;
             this.txtNombreE.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -282,7 +287,8 @@
             this.txtCedulaE.HideSelection = true;
             this.txtCedulaE.Hint = "Cédula";
             this.txtCedulaE.LeadingIcon = null;
-            this.txtCedulaE.Location = new System.Drawing.Point(6, 119);
+            this.txtCedulaE.Location = new System.Drawing.Point(8, 146);
+            this.txtCedulaE.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCedulaE.MaxLength = 32767;
             this.txtCedulaE.MouseState = MaterialSkin.MouseState.OUT;
             this.txtCedulaE.Name = "txtCedulaE";
@@ -294,7 +300,7 @@
             this.txtCedulaE.SelectionLength = 0;
             this.txtCedulaE.SelectionStart = 0;
             this.txtCedulaE.ShortcutsEnabled = true;
-            this.txtCedulaE.Size = new System.Drawing.Size(250, 48);
+            this.txtCedulaE.Size = new System.Drawing.Size(333, 48);
             this.txtCedulaE.TabIndex = 6;
             this.txtCedulaE.TabStop = false;
             this.txtCedulaE.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -318,11 +324,12 @@
             this.cbPosiciones.ItemHeight = 43;
             this.cbPosiciones.Items.AddRange(new object[] {
             "Seleccione"});
-            this.cbPosiciones.Location = new System.Drawing.Point(7, 426);
+            this.cbPosiciones.Location = new System.Drawing.Point(9, 524);
+            this.cbPosiciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbPosiciones.MaxDropDownItems = 4;
             this.cbPosiciones.MouseState = MaterialSkin.MouseState.OUT;
             this.cbPosiciones.Name = "cbPosiciones";
-            this.cbPosiciones.Size = new System.Drawing.Size(249, 49);
+            this.cbPosiciones.Size = new System.Drawing.Size(331, 49);
             this.cbPosiciones.StartIndex = 0;
             this.cbPosiciones.TabIndex = 12;
             // 
@@ -333,9 +340,10 @@
             this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnBuscar.Image = global::TiendaPaula.Properties.Resources.icons8_buscar_30__1_;
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(865, 122);
+            this.btnBuscar.Location = new System.Drawing.Point(1153, 150);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(94, 41);
+            this.btnBuscar.Size = new System.Drawing.Size(125, 50);
             this.btnBuscar.TabIndex = 15;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -352,7 +360,8 @@
             this.txtBuscar.HideSelection = true;
             this.txtBuscar.Hint = "Buscar por número de cédula";
             this.txtBuscar.LeadingIcon = null;
-            this.txtBuscar.Location = new System.Drawing.Point(280, 119);
+            this.txtBuscar.Location = new System.Drawing.Point(373, 146);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBuscar.MaxLength = 32767;
             this.txtBuscar.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBuscar.Name = "txtBuscar";
@@ -364,7 +373,7 @@
             this.txtBuscar.SelectionLength = 0;
             this.txtBuscar.SelectionStart = 0;
             this.txtBuscar.ShortcutsEnabled = true;
-            this.txtBuscar.Size = new System.Drawing.Size(575, 48);
+            this.txtBuscar.Size = new System.Drawing.Size(767, 48);
             this.txtBuscar.TabIndex = 14;
             this.txtBuscar.TabStop = false;
             this.txtBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -377,35 +386,39 @@
             // 
             this.dtEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtEmpleados.Location = new System.Drawing.Point(280, 178);
+            this.dtEmpleados.Location = new System.Drawing.Point(373, 219);
+            this.dtEmpleados.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtEmpleados.Name = "dtEmpleados";
             this.dtEmpleados.ReadOnly = true;
-            this.dtEmpleados.Size = new System.Drawing.Size(679, 352);
+            this.dtEmpleados.RowHeadersWidth = 51;
+            this.dtEmpleados.Size = new System.Drawing.Size(905, 433);
             this.dtEmpleados.TabIndex = 13;
             this.dtEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtEmpleados_CellClick);
             // 
             // lblMsj
             // 
-            this.lblMsj.Location = new System.Drawing.Point(441, 597);
+            this.lblMsj.Location = new System.Drawing.Point(588, 735);
+            this.lblMsj.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMsj.Name = "lblMsj";
-            this.lblMsj.Size = new System.Drawing.Size(395, 41);
+            this.lblMsj.Size = new System.Drawing.Size(527, 50);
             this.lblMsj.TabIndex = 16;
             this.lblMsj.Text = "MENSAJES DE ERROR";
             this.lblMsj.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(7, 78);
+            this.label1.Location = new System.Drawing.Point(9, 96);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(398, 23);
+            this.label1.Size = new System.Drawing.Size(531, 28);
             this.label1.TabIndex = 17;
             this.label1.Text = "label1";
             // 
             // Empleados
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(979, 665);
+            this.ClientSize = new System.Drawing.Size(1305, 818);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblMsj);
             this.Controls.Add(this.btnBuscar);
@@ -418,7 +431,9 @@
             this.Controls.Add(this.txtTelefonoE);
             this.Controls.Add(this.txtNombreE);
             this.Controls.Add(this.txtCedulaE);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Empleados";
+            this.Padding = new System.Windows.Forms.Padding(4, 79, 4, 4);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Empleados";
             this.Load += new System.EventHandler(this.Empleados_Load);

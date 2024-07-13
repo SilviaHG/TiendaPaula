@@ -151,14 +151,25 @@ namespace TiendaPaula.Formularios
 
         private void dtGastos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            btActualizar.Enabled = true;
-            btEliminar.Enabled = true;
+            if (dtGastos.SelectedRows.Count == 1 || dtGastos.SelectedCells.Count == 1)
+            {
+                btActualizar.Enabled = true;
+                btEliminar.Enabled = true;
 
-            txtId_Gasto.Text = dtGastos[0, e.RowIndex].Value.ToString(); //Almacena el ID del gasto 
-            txtNombre_Gasto.Text = dtGastos[1, e.RowIndex].Value.ToString();
-            txtPrecioTotal.Text = dtGastos[3, e.RowIndex].Value.ToString();
-            txtCambios.Visible = true; //label que muestra un mensaje
-            btGuardar_Gasto.Enabled = false; //La opción de actualizar se desabilita
+                txtId_Gasto.Text = dtGastos[0, e.RowIndex].Value.ToString(); //Almacena el ID del gasto 
+                txtNombre_Gasto.Text = dtGastos[1, e.RowIndex].Value.ToString();
+                txtPrecioTotal.Text = dtGastos[3, e.RowIndex].Value.ToString();
+                txtCambios.Visible = true; //label que muestra un mensaje
+                btGuardar_Gasto.Enabled = false; //La opción de actualizar se desabilita
+
+                lblMsj.Text = ""; //Limpiamos el label de errores
+            }
+            else
+            {
+                lblMsj.ForeColor = Color.Red;
+                lblMsj.Text = "Tienes muchas filas seleccionadas";
+            }
+            
         }
 
         private async void btGuardar_Gasto_Click(object sender, EventArgs e)

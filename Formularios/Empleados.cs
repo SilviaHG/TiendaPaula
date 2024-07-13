@@ -433,23 +433,35 @@ namespace TiendaPaula.Formularios
         }
         private void dtEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //se muestran los datos seleccionado en los textbox, ya sea para eliminar o actualizar
 
-            //se deshabilita para que no pueda editar la cédula
-            txtCedulaE.Enabled = false;
-            //habilitamos el boton de actualizar y eliminar y deshabilitamos el de agregar
-            btnActualizar.Enabled = true;
-            btnEliminar.Enabled = true;
-            btnAgregar.Enabled = false;
-            //pasamos los campos de la fila seleccionada a los textBox
-            txtCedulaE.Text = dtEmpleados[0, e.RowIndex].Value.ToString();
-            txtBuscar.Text = dtEmpleados[0, e.RowIndex].Value.ToString();
-            txtNombreE.Text = dtEmpleados[1, e.RowIndex].Value.ToString();
-            txtTelefonoE.Text = dtEmpleados[2, e.RowIndex].Value.ToString();
-            txtEmailE.Text = dtEmpleados[4, e.RowIndex].Value.ToString();
-            txtDireccionE.Text = dtEmpleados[4, e.RowIndex].Value.ToString();
-            cbPosiciones.SelectedItem = dtEmpleados[5, e.RowIndex].Value.ToString();
-            cbPosiciones.Refresh();
+            if (dtEmpleados.SelectedRows.Count == 1 || dtEmpleados.SelectedCells.Count == 1)
+            {
+                //se muestran los datos seleccionado en los textbox, ya sea para eliminar o actualizar
+
+                //se deshabilita para que no pueda editar la cédula
+                txtCedulaE.Enabled = false;
+                //habilitamos el boton de actualizar y eliminar y deshabilitamos el de agregar
+                btnActualizar.Enabled = true;
+                btnEliminar.Enabled = true;
+                btnAgregar.Enabled = false;
+                //pasamos los campos de la fila seleccionada a los textBox
+                txtCedulaE.Text = dtEmpleados[0, e.RowIndex].Value.ToString();
+                txtBuscar.Text = dtEmpleados[0, e.RowIndex].Value.ToString();
+                txtNombreE.Text = dtEmpleados[1, e.RowIndex].Value.ToString();
+                txtTelefonoE.Text = dtEmpleados[2, e.RowIndex].Value.ToString();
+                txtEmailE.Text = dtEmpleados[4, e.RowIndex].Value.ToString();
+                txtDireccionE.Text = dtEmpleados[4, e.RowIndex].Value.ToString();
+                cbPosiciones.SelectedItem = dtEmpleados[5, e.RowIndex].Value.ToString();
+                cbPosiciones.Refresh();
+
+                lblMsj.Text = ""; //Limpiamos el label de errores
+            }
+            else
+            {
+                lblMsj.ForeColor = Color.Red;
+                lblMsj.Text = "Tienes muchas filas seleccionadas";
+            }
+            
         }
     }
 }

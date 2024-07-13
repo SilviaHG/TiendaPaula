@@ -423,22 +423,33 @@ namespace TiendaPaula.Formularios
 
         private void dtClientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //se muestran los datos seleccionado en los textbox,
-            //ya sea para eliminar o actualizar
 
-            //se deshabilita para que no pueda editar la cédula
-            txtCedulaCliente.Enabled = false;
-            //habilitamos el boton de actualizar y eliminar y deshabilitamos el de agregar
-            btnActualiza.Enabled = true;
-            btnEliminar.Enabled = true;
-            btnAgregar.Enabled = false;
-            //pasamos los campos de la fila seleccionada a los textBox
-            txtCedulaCliente.Text = dtClientes[0, e.RowIndex].Value.ToString();
-            txtBuscar.Text = dtClientes[0, e.RowIndex].Value.ToString();
-            txtNombreCompletoCliente.Text = dtClientes[1, e.RowIndex].Value.ToString();
-            txtTelefonoCliente.Text = dtClientes[2, e.RowIndex].Value.ToString();
-            txtEmailCliente.Text = dtClientes[3, e.RowIndex].Value.ToString();
-            txtDireccionCliente.Text = dtClientes[4, e.RowIndex].Value.ToString();
+            if (dtClientes.SelectedRows.Count == 1 || dtClientes.SelectedCells.Count == 1)
+            {
+                //se muestran los datos seleccionado en los textbox,
+                //ya sea para eliminar o actualizar
+
+                //se deshabilita para que no pueda editar la cédula
+                txtCedulaCliente.Enabled = false;
+                //habilitamos el boton de actualizar y eliminar y deshabilitamos el de agregar
+                btnActualiza.Enabled = true;
+                btnEliminar.Enabled = true;
+                btnAgregar.Enabled = false;
+                //pasamos los campos de la fila seleccionada a los textBox
+                txtCedulaCliente.Text = dtClientes[0, e.RowIndex].Value.ToString();
+                txtBuscar.Text = dtClientes[0, e.RowIndex].Value.ToString();
+                txtNombreCompletoCliente.Text = dtClientes[1, e.RowIndex].Value.ToString();
+                txtTelefonoCliente.Text = dtClientes[2, e.RowIndex].Value.ToString();
+                txtEmailCliente.Text = dtClientes[3, e.RowIndex].Value.ToString();
+                txtDireccionCliente.Text = dtClientes[4, e.RowIndex].Value.ToString();
+                lblMsj.Text = ""; //Limpiamos el label de errores
+            }
+            else
+            {
+                lblMsj.ForeColor = Color.Red;
+                lblMsj.Text = "Tienes muchas filas seleccionadas";
+            }
+            
 
         }
     }
